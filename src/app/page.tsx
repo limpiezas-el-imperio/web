@@ -7,7 +7,6 @@ import MapaZonas from "@/componentes/MapaZonas";
 import Opiniones from "@/componentes/Opiniones";
 import { type Foto, fotos } from "@/datos/fotos";
 import {
-  type Categoria,
   enlaceWhatsApp,
   negocio,
   redes,
@@ -23,16 +22,19 @@ export const metadata = metadatosPagina({
   ruta: "/",
 });
 
-// La foto de cada grupo de servicios. Cristales y obras no tienen foto propia
-// todavía: van con la más cercana hasta que lleguen (ver todo.md).
-const fotoDe: Record<Categoria, Foto> = {
-  viviendas: fotos.cocina,
-  cristales: fotos.ducha,
-  comunidades: fotos.karcher,
-  empresas: fotos.sillas,
-  obras: fotos.suelo,
-  reparaciones: fotos.grifo,
-};
+// Las fotos de «Nuestro trabajo». Van aparte y no dentro de cada servicio: no
+// hay foto para todos y emparejarlas a la fuerza enseñaba, por ejemplo, un
+// salón en «Obras». Aquí son lo que son: prueba de trabajos reales.
+// `zona` es el sitio de cada una en la rejilla de escritorio (ver el CSS).
+const trabajos: { foto: Foto; zona: string }[] = [
+  { foto: fotos.karcher, zona: s.fotoA },
+  { foto: fotos.cocina, zona: s.fotoB },
+  { foto: fotos.banio, zona: s.fotoC },
+  { foto: fotos.grifo, zona: s.fotoD },
+  { foto: fotos.suelo, zona: s.fotoE },
+  { foto: fotos.ducha, zona: s.fotoF },
+  { foto: fotos.sillas, zona: s.fotoG },
+];
 
 // Lo que dice su web de cómo trabaja: «Por qué elegirnos» y la FAQ.
 const hechos = [
@@ -156,7 +158,6 @@ export default function Inicio() {
 
           <div className={s.indice}>
             {servicios.map((g, i) => {
-              const foto = fotoDe[g.categoria];
               return (
                 <details
                   key={g.categoria}
@@ -172,37 +173,63 @@ export default function Inicio() {
                     <Plus aria-hidden="true" size={22} className={s.grupo__signo} />
                   </summary>
                   <div className={s.grupo__cuerpo}>
-                    <div>
-                      <p className={s.grupo__resumen}>{g.resumen}</p>
-                      <ul className={s.grupo__lista}>
-                        {g.lista.map((l) => (
-                          <li key={l}>{l}</li>
-                        ))}
-                      </ul>
-                      <a
-                        className="enlace-flecha"
-                        href={enlaceWhatsApp(
-                          `Hola, quería pedir presupuesto para ${g.titulo.toLowerCase()}.`,
-                        )}
-                      >
-                        Pedir presupuesto
-                        <ArrowUpRight aria-hidden="true" size={18} />
-                      </a>
-                    </div>
-                    <div className={s.grupo__foto}>
-                      <Image
-                        src={foto.src}
-                        alt={foto.alt}
-                        fill
-                        sizes="(max-width: 48rem) 100vw, 18rem"
-                        placeholder="blur"
-                      />
-                    </div>
+                    <p className={s.grupo__resumen}>{g.resumen}</p>
+                    <ul className={s.grupo__lista}>
+                      {g.lista.map((l) => (
+                        <li key={l}>{l}</li>
+                      ))}
+                    </ul>
+                    <a
+                      className="enlace-flecha"
+                      href={enlaceWhatsApp(
+                        `Hola, quería pedir presupuesto para ${g.titulo.toLowerCase()}.`,
+                      )}
+                    >
+                      Pedir presupuesto
+                      <ArrowUpRight aria-hidden="true" size={18} />
+                    </a>
                   </div>
                 </details>
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ——— Nuestro trabajo: las fotos como prueba ——— */}
+      <section id="trabajos" className={`seccion ${s.trabajos}`}>
+        <div className="contenedor">
+          <header className={s.trabajos__cabecera}>
+            <div>
+              <p className="antetitulo">Nuestro trabajo</p>
+              <h2 className="seccion__titulo">Resultados reales</h2>
+            </div>
+            <p className="seccion__entradilla">
+              Fotos de nuestros propios trabajos. Nada de bancos de imágenes.
+            </p>
+          </header>
+
+          <ul className={s.galeria} aria-label="Fotos de trabajos realizados">
+            {trabajos.map(({ foto, zona }) => (
+              <li key={foto.pie} className={zona}>
+                <figure className={s.foto}>
+                  <div className={s.foto__marco}>
+                    <Image
+                      src={foto.src}
+                      alt={foto.alt}
+                      fill
+                      sizes="(max-width: 40rem) 80vw, (max-width: 56rem) 50vw, 36rem"
+                      placeholder="blur"
+                    />
+                  </div>
+                  <figcaption>{foto.pie}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+          <p className={s.galeria__pista} aria-hidden="true">
+            {trabajos.length} fotos · desliza para verlas
+          </p>
         </div>
       </section>
 

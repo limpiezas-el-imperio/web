@@ -14,6 +14,7 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
    - [x] Logo en cabecera y pie; fotos reales en la portada
    - [x] Rediseño editorial de la portada: titular + foto, índice de servicios
          desplegable, franja de pasos, mapa de zonas, una opinión grande
+   - [x] Fotos fuera de los servicios, en su sección «Nuestro trabajo»
    - [ ] `/nuestros-servicios`
    - [ ] `/contacto` (nueva: lo mismo que la sección de contacto, en su página)
    - [x] `/preguntas-frecuentes` (ya es la plantilla de las demás)

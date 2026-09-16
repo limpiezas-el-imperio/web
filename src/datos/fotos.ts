@@ -14,8 +14,10 @@ import karcher from "@/imagenes/frank-limpiando-con-karcher.jpg";
 // es público. Si llegan fotos nuevas, compruébalo antes de añadirlas:
 //   python3 -c "from PIL import Image; print(dict(Image.open('x.jpg').getexif()))"
 //
-// No hay página de galería a propósito: con ocho fotos quedaría vacía. Cada
-// foto va junto a lo que enseña.
+// No hay página de galería a propósito: con ocho fotos quedaría vacía. Van en
+// la portada: la de Frank aspirando abre la página y las demás forman la
+// sección «Nuestro trabajo». No van dentro de cada servicio: no las hay para
+// todos y emparejarlas a la fuerza no casaba.
 
 export type Foto = { src: StaticImageData; alt: string; pie: string };
 
@@ -48,7 +50,7 @@ export const fotos = {
   grifo: {
     src: grifo,
     alt: "Grifo termostático cromado de una ducha, reluciente, sobre azulejos de gresite",
-    pie: "Grifería sin cal",
+    pie: "Grifería",
   },
   sillas: {
     src: sillas,

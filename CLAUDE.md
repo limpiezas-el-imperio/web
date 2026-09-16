@@ -240,9 +240,11 @@ Aprendido en la contabilidad, y aplica aquí:
   `src/datos/fotos.ts` con su texto alternativo. **Antes de añadir una foto,
   comprueba que no lleva EXIF ni GPS**: son casas de clientes y el repositorio
   es público. Las primeras ocho venían limpias.
-- **No hay página de galería**, decidido: con ocho fotos quedaría vacía. Cada
-  foto va junto a lo que enseña (portada, servicios, quiénes somos). Se
-  replantea si llegan muchas más.
+- **No hay página de galería**, decidido: con ocho fotos quedaría vacía. Van en
+  la portada: Frank aspirando abre la página y las otras siete forman la
+  sección «Nuestro trabajo» (rejilla en escritorio y tablet, fila deslizable
+  en el móvil). **Las fotos no van dentro de cada servicio**: no hay una para
+  cada uno y emparejarlas a la fuerza no casaba. Los servicios son sólo texto.
 - **Contacto primero**: el WhatsApp es la acción principal en toda la web, y en
   el móvil hay una barra fija con WhatsApp y Llamar.
 - **Se navega por páginas, no por una sola página larga.** Cada tema importante
