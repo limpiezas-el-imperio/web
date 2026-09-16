@@ -412,11 +412,12 @@ Reglas:
   menú ninguno.
 - **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en azul
   muy claro con la cabecera blanca (en azul resultaba demasiado azul): enlaces grandes y,
-  abajo, WhatsApp y Llamar lado a lado, el correo y un enlace secundario a
-  «Trabaja con nosotros». **Tiene que caber sin desplazarse** (lo pidió Kevin):
+  abajo, WhatsApp y Llamar lado a lado y el correo. «Trabaja con nosotros» va
+  como un enlace más al final de la lista (sólo en el móvil; en escritorio,
+  en el pie). **Tiene que caber sin desplazarse** (lo pidió Kevin):
   las alturas van en `svh`, el horario se quitó para que cupiera y en
   horizontal los enlaces van en dos columnas, con filas más bajas y sin el
-  correo. **Va justo**: en 320×568 sobran 12 px y en 667×375, 11. Si añades
+  correo. **Va justo**, sobre todo en un iPhone pequeño con las barras de Safari (375×548). Si añades
   algo al menú, mide el panel abierto (`scrollHeight` frente a
   `clientHeight`) en 320×568 y 667×375. Mientras está abierto
   lo de detrás queda `inert` y sin scroll, y al cerrarlo el foco vuelve al

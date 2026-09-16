@@ -550,7 +550,7 @@ svg.lucide:not([fill="currentColor"]) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: clamp(2.75rem, 7.5svh, 4rem);
+    min-height: clamp(2.5rem, 7svh, 3.75rem);
     font-family: var(--fuente-titulos), system-ui, sans-serif;
     font-size: clamp(1.0625rem, min(5vw, 3.3svh), 1.5rem);
     font-weight: 700;
@@ -615,32 +615,6 @@ svg.lucide:not([fill="currentColor"]) {
     color: var(--azul);
   }
 
-  /* Correo y «Trabaja con nosotros», en una línea si caben. */
-  .menu__extra {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem 1.25rem;
-  }
-
-  .menu__secundario {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: var(--texto-suave);
-    text-decoration: none;
-  }
-
-  .menu__secundario svg {
-    color: var(--azul);
-  }
-
-  .menu__secundario[aria-current="page"] {
-    color: var(--azul);
-  }
 
 
   /* Con el menú abierto: la página no se desplaza y la barra de contacto
@@ -668,7 +642,6 @@ svg.lucide:not([fill="currentColor"]) {
       display: none;
     }
 
-    /* Con «Trabaja con nosotros» abajo, las filas un poco más bajas. */
     .menu__lista a {
       min-height: 2.5rem;
     }

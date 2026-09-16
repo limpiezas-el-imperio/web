@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -10,6 +10,15 @@ import { enlaces } from "@/datos/navegacion";
 // La navegación de la cabecera. En escritorio, los enlaces en fila; en tablet
 // y móvil, un botón «Menú» que abre el menú a pantalla completa. Es componente
 // de cliente sólo por eso: abrir y cerrar, y saber en qué página estás.
+// Los enlaces del menú del móvil: Inicio, los de la cabecera y, al final,
+// «Trabaja con nosotros» (en escritorio sólo está en el pie, pero desde el
+// móvil el pie queda lejos). Va en la lista, igual que los demás.
+const menuMovil = [
+  { href: "/", texto: "Inicio" },
+  ...enlaces,
+  { href: "/trabaja-con-nosotros", texto: "Trabaja con nosotros" },
+];
+
 export default function Navegacion() {
   const ruta = usePathname();
   const [abierto, setAbierto] = useState(false);
@@ -110,7 +119,7 @@ export default function Navegacion() {
       >
         <div className="menu__contenido">
           <ul className="menu__lista">
-            {[{ href: "/", texto: "Inicio" }, ...enlaces].map((e, i) => (
+            {menuMovil.map((e, i) => (
               <li key={e.href} style={{ "--i": i } as React.CSSProperties}>
                 <Link
                   href={e.href}
@@ -142,23 +151,10 @@ export default function Navegacion() {
             </div>
             {/* El horario no va: con él el menú no cabía en un móvil sin
                 desplazarse. Está en el pie, en el contacto y en /contacto. */}
-            <div className="menu__extra">
-              <a className="menu__correo" href={`mailto:${negocio.correo}`}>
-                <Mail aria-hidden="true" size={20} />
-                {negocio.correo}
-              </a>
-              {/* Secundario: el empleo no es para clientes, pero desde el
-                  móvil el pie queda lejos. */}
-              <Link
-                className="menu__secundario"
-                href="/trabaja-con-nosotros"
-                aria-current={actual("/trabaja-con-nosotros")}
-                onClick={() => cerrar(false)}
-              >
-                Trabaja con nosotros
-                <ArrowRight aria-hidden="true" size={16} />
-              </Link>
-            </div>
+            <a className="menu__correo" href={`mailto:${negocio.correo}`}>
+              <Mail aria-hidden="true" size={20} />
+              {negocio.correo}
+            </a>
           </div>
         </div>
       </nav>
