@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
 
-// En Vercel sale el dominio de producción (el .vercel.app hoy, el propio el día
-// que se conecte). En local no existe y basta con localhost.
-const dominio = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+// El dominio por el que se sirve la web DE VERDAD. Va escrito a mano y no sale
+// de VERCEL_PROJECT_PRODUCTION_URL: esa variable dice el dominio asignado en
+// Vercel, aunque sus DNS sigan apuntando a otro sitio. Pasó: con el .net
+// añadido en Vercel pero aún en Webador, el canonical y la imagen para
+// compartir apuntaban a páginas que daban 404.
+//
+// Cámbialo el día que el dominio propio sirva esta web, y no antes.
+const dominioPublico = "limpiezaselimperio.vercel.app";
 
-export const urlBase = dominio ? `https://${dominio}` : "http://localhost:3000";
+export const urlBase =
+  process.env.VERCEL_ENV === "production"
+    ? `https://${dominioPublico}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000";
 
 const nombre = "Limpiezas El Imperio";
 

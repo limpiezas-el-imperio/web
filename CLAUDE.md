@@ -131,9 +131,13 @@ Copia `preguntas-frecuentes/`, que es la plantilla:
   o `animation-delay`.
 - Añádela a la cabecera y al pie.
 
-**La URL base sale de `VERCEL_PROJECT_PRODUCTION_URL`** (`src/datos/sitio.ts`),
-que Vercel pone solo. Hoy es el `.vercel.app`; el día que se conecte el dominio
-propio, el canonical y las imágenes de Open Graph cambian sin tocar código.
+**La URL base va escrita a mano en `src/datos/sitio.ts`** (`dominioPublico`),
+y de ella salen el canonical, la imagen para compartir y los datos
+estructurados. **No la saques de `VERCEL_PROJECT_PRODUCTION_URL`**: se hizo así
+y en cuanto se añadió `www.limpiezaselimperio.net` al proyecto de Vercel —con
+los DNS todavía en Webador— la web publicada empezó a mandar a Google y a
+WhatsApp a URLs de Webador que daban 404. **Se cambia a mano el día que el
+dominio propio sirva esta web**, comprobado con `curl`, y no antes.
 
 ## Arrancar en local
 
