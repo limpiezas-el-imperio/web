@@ -1,0 +1,67 @@
+.mapa {
+  position: relative;
+}
+
+/* En el móvil las etiquetas quedarían ilegibles y la lista de zonas ya está
+   justo encima: el mapa sobra. */
+@media (max-width: 40rem) {
+  .mapa {
+    display: none;
+  }
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.anillo {
+  fill: none;
+  stroke: var(--marino);
+  stroke-opacity: 0.18;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 6;
+}
+
+.km {
+  font-family: var(--fuente-texto), system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--texto-suave);
+}
+
+.zona circle {
+  fill: var(--marino);
+}
+
+.zona text,
+.base text {
+  font-family: var(--fuente-texto), system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  fill: var(--texto);
+  paint-order: stroke;
+  stroke: var(--fondo);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.base circle {
+  fill: var(--oro);
+  stroke: var(--marino);
+  stroke-width: 3;
+}
+
+.base text {
+  font-family: var(--fuente-titulos), Georgia, serif;
+  font-size: 21px;
+  font-weight: 700;
+  fill: var(--marino);
+}
+
+.pie {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--texto-suave);
+}

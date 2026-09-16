@@ -17,8 +17,9 @@
   --whatsapp: #15803d;
   --whatsapp-hover: #116a32;
 
-  --radio: 1rem;
-  --radio-grande: 1.5rem;
+  /* Esquinas discretas: el redondeo grande era parte del aire de plantilla. */
+  --radio: 0.375rem;
+  --radio-grande: 0.625rem;
   --sombra: 0 1px 2px rgb(14 36 99 / 0.06), 0 8px 24px -8px rgb(14 36 99 / 0.12);
   --sombra-alta: 0 2px 4px rgb(9 23 67 / 0.08), 0 24px 48px -16px rgb(9 23 67 / 0.35);
 
@@ -161,26 +162,6 @@ p {
   color: var(--oro-claro);
 }
 
-/* ——— Adorno: la estrella del logo, flotando ———
-   Cada página coloca las suyas (top, left, width) en su módulo. */
-.adorno {
-  position: absolute;
-  pointer-events: none;
-  color: var(--oro-claro);
-  animation: brillo 6s ease-in-out infinite;
-}
-
-@keyframes brillo {
-  /* Sin tocar la opacidad: el dorado a medias sobre el azul se ve gris. */
-  0%,
-  100% {
-    transform: scale(0.8) rotate(0deg);
-  }
-  50% {
-    transform: scale(1) rotate(12deg);
-  }
-}
-
 /* ——— Botones ——— */
 .boton {
   display: inline-flex;
@@ -190,7 +171,7 @@ p {
   min-height: 2.75rem;
   padding: 0.625rem 1.25rem;
   border: 2px solid transparent;
-  border-radius: 999px;
+  border-radius: var(--radio);
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
@@ -240,6 +221,27 @@ p {
   background: var(--papel);
   border-color: var(--linea);
   color: var(--marino);
+}
+
+/* Enlace de texto con flecha: la acción secundaria de toda la web. */
+.enlace-flecha {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 700;
+  color: var(--marino);
+  text-decoration: underline;
+  text-decoration-color: var(--oro);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.enlace-flecha svg {
+  transition: transform 0.15s ease;
+}
+
+.enlace-flecha:hover svg {
+  transform: translate(2px, -2px);
 }
 
 /* ——— Marca ——— */
@@ -319,7 +321,7 @@ p {
 .cabecera__nav a {
   display: block;
   padding: 0.5rem 0.75rem;
-  border-radius: 999px;
+  border-radius: var(--radio);
   font-size: 0.9375rem;
   font-weight: 600;
   color: var(--texto-suave);
@@ -370,7 +372,7 @@ p {
     min-height: 2.5rem;
     padding: 0.5rem 0.875rem;
     border: 1px solid var(--linea);
-    border-radius: 999px;
+    border-radius: var(--radio);
     background: var(--papel);
     font: inherit;
     font-size: 0.9375rem;

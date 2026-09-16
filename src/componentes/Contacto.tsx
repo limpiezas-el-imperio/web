@@ -1,5 +1,4 @@
 import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import Destello from "./Destello";
 import { enlaceWhatsApp, horario, negocio } from "@/datos/negocio";
 import s from "./Contacto.module.css";
 
@@ -7,11 +6,10 @@ import s from "./Contacto.module.css";
 export default function Contacto() {
   return (
     <section id="contacto" className={`seccion ${s.contacto}`}>
-      <Destello className={`adorno ${s.adorno}`} />
       <div className={`contenedor ${s.contacto__rejilla}`}>
         <header>
           <p className="antetitulo antetitulo--claro">Contacto</p>
-          <h2 className="seccion__titulo">¿Hablamos?</h2>
+          <h2 className={s.titulo}>¿Hablamos?</h2>
           <p className="seccion__entradilla">
             Cuéntanos qué necesitas y te respondemos con tu presupuesto.
           </p>

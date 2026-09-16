@@ -1,0 +1,77 @@
+.opiniones {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.cita {
+  animation: entrar 0.4s ease-out;
+}
+
+.cita blockquote {
+  max-width: 36ch;
+  font-family: var(--fuente-titulos), Georgia, serif;
+  font-size: clamp(1.625rem, 3.2vw, 2.625rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--marino);
+  font-variation-settings:
+    "SOFT" 100,
+    "opsz" 144;
+  text-wrap: balance;
+}
+
+.cita figcaption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  font-weight: 700;
+}
+
+.cita figcaption::before {
+  content: "";
+  width: 2rem;
+  height: 2px;
+  background: var(--oro);
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.controles button {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--marino);
+  border-radius: var(--radio);
+  background: transparent;
+  color: var(--marino);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.controles button:hover {
+  background: var(--marino);
+  color: #fff;
+}
+
+.contador {
+  min-width: 3ch;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}

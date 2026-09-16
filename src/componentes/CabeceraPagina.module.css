@@ -1,67 +1,37 @@
 .cabecera {
-  position: relative;
-  overflow: hidden;
-  color: #fff;
-  background:
-    radial-gradient(50rem 30rem at 90% -20%, rgb(31 95 214 / 0.55), transparent 60%),
-    radial-gradient(30rem 20rem at -5% 120%, rgb(217 165 58 / 0.16), transparent 60%),
-    var(--marino);
+  border-bottom: 1px solid var(--linea);
 }
 
 .contenido {
-  position: relative;
-  padding-block: clamp(3rem, 8vw, 5.5rem);
+  padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem);
 }
 
 .titulo {
-  max-width: 20ch;
-  font-size: clamp(2.5rem, 6.5vw, 4.25rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+  max-width: 16ch;
+  font-size: clamp(2.75rem, 7.5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  color: var(--marino);
   font-variation-settings:
     "SOFT" 100,
     "opsz" 144;
 }
 
 .titulo em {
-  font-style: italic;
-  color: var(--oro-claro);
+  font-weight: 400;
+  color: var(--oro-texto);
 }
 
 .entradilla {
-  max-width: 38rem;
-  margin-top: 1.25rem;
+  max-width: 36rem;
+  margin-top: 1.5rem;
   font-size: clamp(1.0625rem, 2vw, 1.25rem);
-  color: rgb(255 255 255 / 0.8);
+  color: var(--texto-suave);
 }
 
 .entradilla a {
-  color: #fff;
   font-weight: 600;
+  color: var(--marino);
+  text-decoration-color: var(--oro);
   text-underline-offset: 4px;
-}
-
-.adorno1 {
-  width: 2.75rem;
-  top: 22%;
-  right: 9%;
-}
-
-.adorno2 {
-  width: 1.25rem;
-  bottom: 20%;
-  right: 24%;
-  color: #5b8ff0;
-  animation-delay: 1.5s;
-}
-
-@media (max-width: 40rem) {
-  .adorno2 {
-    display: none;
-  }
-  .adorno1 {
-    top: 1.5rem;
-    right: 1rem;
-    width: 1.75rem;
-  }
 }

@@ -1,21 +1,19 @@
 /* ——— Contacto ——— */
-.adorno {
-  width: 3.5rem;
-  top: 5rem;
-  right: 8%;
-}
-
 .contacto {
   position: relative;
   overflow: hidden;
   color: #fff;
-  background:
-    radial-gradient(50rem 30rem at 100% 0%, rgb(31 95 214 / 0.5), transparent 60%),
-    var(--marino);
+  background: var(--marino);
 }
 
-.contacto :global(.seccion__titulo) {
+.titulo {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
   color: #fff;
+  font-variation-settings:
+    "SOFT" 100,
+    "opsz" 144;
 }
 
 .contacto :global(.seccion__entradilla) {
@@ -33,17 +31,14 @@
 
 .contacto__lista {
   display: grid;
-  gap: 1px;
-  overflow: hidden;
-  border-radius: var(--radio-grande);
-  background: rgb(255 255 255 / 0.12);
+  border-top: 1px solid rgb(255 255 255 / 0.2);
 }
 
 .contacto__lista li {
   display: flex;
   gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  background: var(--marino-hondo);
+  padding: 1.25rem 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.2);
 }
 
 .contacto__lista svg {

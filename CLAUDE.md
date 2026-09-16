@@ -91,14 +91,16 @@ la raíz**: Next la tomaría como directorio de rutas y dejaría de ver `src/app
 src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   page.tsx + inicio.module.css (la portada)
                   preguntas-frecuentes/ (page.tsx + su módulo)
-                  globals.css (paleta, botones, adorno, cabecera, pie)
+                  globals.css (paleta, botones, enlace-flecha, cabecera, pie)
                   icon.svg · apple-icon.png
 src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
                   Pie · BarraContacto (sólo móvil)
                   CabeceraPagina (la banda azul de cada página)
                   Contacto (el cierre de cada página)
                   DatosEstructurados (JSON-LD)
-                  Marca (logo + nombre) · Destello (la estrella del logo)
+                  Marca (logo + nombre)
+                  Opiniones (una grande, con flechas; cliente)
+                  MapaZonas (esquema SVG con coordenadas reales)
 src/imagenes/     fotos reales de sus trabajos (se importan, no se enlazan)
 src/datos/        negocio.ts (datos del negocio) · preguntas.ts (la FAQ)
                   fotos.ts (cada foto con su alt y su pie)
@@ -128,11 +130,9 @@ Copia `preguntas-frecuentes/`, que es la plantilla:
   «Contacto» de la cabecera va a `#contacto` de la página en la que estés: si
   una página no lo lleva, ese enlace no hace nada.
 - **JSON-LD con `<DatosEstructurados>`**, que escapa el `<`.
-- **Los estilos de la página en su `.module.css`.** Las estrellas llevan la
-  clase global `adorno` y el módulo sólo pone dónde y de qué tamaño. **No uses
-  `animation: brillo …` en un módulo**: Next renombra `brillo` dentro del
-  módulo y la animación deja de existir sin avisar. Sólo `animation-duration`
-  o `animation-delay`.
+- **Los estilos de la página en su `.module.css`.** Ojo con `@keyframes` en un
+  módulo: Next renombra la animación dentro del módulo, así que una animación
+  definida en `globals.css` no se puede nombrar desde un módulo.
 - **Añádela a `src/datos/navegacion.ts`**: de ahí salen la cabecera, el menú
   del móvil y el pie. Si sustituye a una sección de la portada (Servicios,
   Zonas…), cambia ese `href` de `/#seccion` a la ruta nueva.
@@ -192,6 +192,18 @@ Aprendido en la contabilidad, y aplica aquí:
 
 - **Toda la interfaz y todo el código —nombres, comentarios, commits— en
   español.**
+- **Dirección editorial con fotos reales** (elegida por Kevin, sept 2026, entre
+  tres maquetas). Lo que la define, y lo que la estropea:
+  - Tipografía grande con mucho contraste (Fraunces con `opsz` 144 y `SOFT`),
+    fondo crema, azul marino como tinta y el dorado sólo de acento.
+  - **Reglas finas en vez de tarjetas.** Nada de rejillas de cajas con borde,
+    sombra y elevación al pasar: era lo que daba aire de plantilla de
+    WordPress. Tampoco estrellas flotando de adorno ni pastillas redondas.
+  - Esquinas discretas (`--radio`, 6 px). Botones rectangulares.
+  - Las fotos reales llevan el peso: la portada abre con Frank trabajando y
+    cada grupo de servicios enseña la suya.
+  - Una sola franja azul a media página («Cómo trabajamos») y el cierre de
+    contacto. No alternes bandas de color sección tras sección.
 - Responsive con el móvil primero, foco visible, `prefers-reduced-motion`
   respetado, textos alternativos en todas las imágenes (hoy no hay ni uno).
 - **CSS plano. Nada de Tailwind ni SASS**, como en la contabilidad. Lo común

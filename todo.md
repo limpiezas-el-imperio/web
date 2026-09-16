@@ -11,7 +11,9 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
        Contacto. Trabaja con nosotros y los legales, en el pie. Opiniones se
        queda como sección de la portada.
    - [x] Menú para tablet y móvil, página actual marcada, enlaces en el pie
-   - [x] Logo en cabecera y pie; fotos reales en la portada («Nuestro trabajo»)
+   - [x] Logo en cabecera y pie; fotos reales en la portada
+   - [x] Rediseño editorial de la portada: titular + foto, índice de servicios
+         desplegable, franja de pasos, mapa de zonas, una opinión grande
    - [ ] `/nuestros-servicios`
    - [ ] `/contacto` (nueva: lo mismo que la sección de contacto, en su página)
    - [x] `/preguntas-frecuentes` (ya es la plantilla de las demás)
@@ -82,8 +84,7 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
 
 ## 3. Diseño y construcción
 
-- [x] Dirección visual: paleta del logo, Fraunces + Figtree, la estrella del logo
-      como único adorno
+- [x] Dirección visual: editorial con fotos reales (ver `CLAUDE.md`, *Estilo*)
 - [x] Portada: qué hace, servicios agrupados, cómo trabaja, zonas, opiniones y
       contacto. Metadatos, iconos, Open Graph y `LocalBusiness`
 - [ ] Que él vea la portada: agrupación de servicios, zonas (sólo las que están

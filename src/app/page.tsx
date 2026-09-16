@@ -1,34 +1,19 @@
-import type { LucideIcon } from "lucide-react";
-import {
-  ArrowUpRight,
-  Blinds,
-  Building2,
-  Check,
-  Clock,
-  HardHat,
-  House,
-  MapPin,
-  MessageCircle,
-  Phone,
-  Store,
-  Wrench,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Clock, Leaf, MessageCircle, Package, Plus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Contacto from "@/componentes/Contacto";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
-import Destello from "@/componentes/Destello";
+import MapaZonas from "@/componentes/MapaZonas";
+import Opiniones from "@/componentes/Opiniones";
+import { type Foto, fotos } from "@/datos/fotos";
 import {
   type Categoria,
   enlaceWhatsApp,
-  horario,
   negocio,
-  opiniones,
   redes,
   servicios,
   zonas,
 } from "@/datos/negocio";
-import { type Foto, fotos } from "@/datos/fotos";
 import { metadatosPagina, urlBase } from "@/datos/sitio";
 import s from "./inicio.module.css";
 
@@ -38,57 +23,44 @@ export const metadata = metadatosPagina({
   ruta: "/",
 });
 
-const iconos: Record<Categoria, LucideIcon> = {
-  viviendas: House,
-  cristales: Blinds,
-  comunidades: Building2,
-  empresas: Store,
-  obras: HardHat,
-  reparaciones: Wrench,
+// La foto de cada grupo de servicios. Cristales y obras no tienen foto propia
+// todavía: van con la más cercana hasta que lleguen (ver todo.md).
+const fotoDe: Record<Categoria, Foto> = {
+  viviendas: fotos.cocina,
+  cristales: fotos.ducha,
+  comunidades: fotos.karcher,
+  empresas: fotos.sillas,
+  obras: fotos.suelo,
+  reparaciones: fotos.grifo,
 };
 
-// Lo que dice su web de cómo trabaja: «Por qué elegirnos» y las preguntas
-// frecuentes. «Tarifas premium» no se usa: suena a caro, no a bueno.
-const incluye = [
-  "Materiales y productos de limpieza incluidos",
-  "Productos para cada superficie, también ecológicos",
-  "Servicio rápido y puntual",
-  "Atención personalizada y garantía de satisfacción",
+// Lo que dice su web de cómo trabaja: «Por qué elegirnos» y la FAQ.
+const hechos = [
+  { icono: Package, texto: "Materiales y productos incluidos" },
+  { icono: Leaf, texto: "Productos ecológicos" },
+  { icono: Clock, texto: "L–V, de 6:00 a 18:00" },
+  { icono: MessageCircle, texto: "Presupuesto por WhatsApp" },
 ];
 
 const pasos = [
   {
-    titulo: "Cuéntanos qué necesitas",
-    texto:
-      "Escríbenos por WhatsApp, llámanos o mándanos un correo. Dinos qué hay que limpiar, dónde y cuándo.",
+    titulo: "Nos cuentas",
+    texto: "Por WhatsApp, teléfono o correo: qué hay que limpiar, dónde y cuándo.",
   },
   {
     titulo: "Te damos presupuesto",
-    texto:
-      "Por hora, por servicio o con un paquete mensual, según el trabajo.",
+    texto: "Por hora, por servicio o con un paquete mensual, según el trabajo.",
   },
   {
     titulo: "Lo dejamos impecable",
-    texto:
-      "Vamos con todo lo necesario. Una vez, o cada día, semana, quincena o mes: tú eliges la frecuencia.",
+    texto: "Una vez, o cada día, semana, quincena o mes: tú eliges.",
   },
-];
-
-// El mosaico de la portada. `zona` es el área de la rejilla en el CSS.
-const trabajos: { foto: Foto; zona: string; sizes: string }[] = [
-  { foto: fotos.aspirado, zona: s.fotoA, sizes: "(max-width: 48rem) 100vw, 36rem" },
-  { foto: fotos.karcher, zona: s.fotoB, sizes: "(max-width: 48rem) 50vw, 18rem" },
-  { foto: fotos.grifo, zona: s.fotoC, sizes: "(max-width: 48rem) 50vw, 18rem" },
-  { foto: fotos.cocina, zona: s.fotoD, sizes: "(max-width: 48rem) 50vw, 18rem" },
-  { foto: fotos.suelo, zona: s.fotoE, sizes: "(max-width: 48rem) 100vw, 36rem" },
-  { foto: fotos.sillas, zona: s.fotoF, sizes: "(max-width: 48rem) 100vw, 36rem" },
 ];
 
 const negocioEstructurado = {
   "@type": "LocalBusiness",
   name: negocio.nombre,
-  description:
-    "Limpieza de viviendas, comunidades, oficinas, locales y obras.",
+  description: "Limpieza de viviendas, comunidades, oficinas, locales y obras.",
   image: `${urlBase}/logo.jpg`,
   logo: `${urlBase}/logo.jpg`,
   url: urlBase,
@@ -119,12 +91,8 @@ export default function Inicio() {
     <>
       <DatosEstructurados datos={negocioEstructurado} />
 
-      {/* ——— Portada ——— */}
+      {/* ——— Portada: titular y foto ——— */}
       <section className={s.portada}>
-        <Destello className={`adorno ${s.adorno1}`} />
-        <Destello className={`adorno ${s.adorno2}`} />
-        <Destello className={`adorno ${s.adorno3}`} />
-
         <div className={`contenedor ${s.portada__rejilla}`}>
           <div className={s.portada__texto}>
             <p className="antetitulo">
@@ -132,57 +100,52 @@ export default function Inicio() {
               <span>Valencia</span>
             </p>
             <h1 className={s.portada__titulo}>
-              Limpieza que <em>se nota</em>.
+              Limpieza que <em>se&nbsp;nota</em>.
             </h1>
             <p className={s.portada__entradilla}>
-              Limpiamos viviendas, comunidades, oficinas, locales y obras.
-              Llevamos los materiales y los productos: tú sólo nos cuentas qué
-              necesitas.
+              Viviendas, comunidades, oficinas, locales y obras. Llevamos los
+              materiales y los productos: tú sólo nos cuentas qué necesitas.
             </p>
             <div className={s.acciones}>
               <a className="boton boton--whatsapp boton--grande" href={enlaceWhatsApp()}>
                 <MessageCircle aria-hidden="true" size={22} />
-                Pide presupuesto por WhatsApp
+                Pide presupuesto
               </a>
-              <a
-                className="boton boton--contorno boton--grande"
-                href={`tel:${negocio.telefono}`}
-              >
-                <Phone aria-hidden="true" size={20} />
-                {negocio.telefonoVisible}
+              <a className={s.telefono} href={`tel:${negocio.telefono}`}>
+                o llama al {negocio.telefonoVisible}
+                <ArrowRight aria-hidden="true" size={18} />
               </a>
             </div>
           </div>
 
-          <aside className={s.tarjeta} aria-label="Qué incluye cada servicio">
-            <p className={s.tarjeta__titulo}>
-              <Destello className={s.tarjeta__destello} />
-              Cada servicio incluye
-            </p>
-            <ul className={s.tarjeta__lista}>
-              {incluye.map((i) => (
-                <li key={i}>
-                  <Check aria-hidden="true" size={18} strokeWidth={2.5} />
-                  {i}
-                </li>
-              ))}
-            </ul>
-            <div className={s.tarjeta__horario}>
-              <Clock aria-hidden="true" size={18} />
-              <p>
-                {horario.semana}
-                <br />
-                <span>{horario.finDeSemana}</span>
-              </p>
-            </div>
-          </aside>
+          <figure className={s.portada__foto}>
+            <Image
+              src={fotos.aspirado.src}
+              alt={fotos.aspirado.alt}
+              fill
+              sizes="(max-width: 56rem) 100vw, 32rem"
+              placeholder="blur"
+              loading="eager"
+              fetchPriority="high"
+            />
+            <figcaption>Frank, en pleno trabajo</figcaption>
+          </figure>
         </div>
+
+        <ul className={`contenedor ${s.hechos}`}>
+          {hechos.map(({ icono: Icono, texto }) => (
+            <li key={texto}>
+              <Icono aria-hidden="true" size={20} />
+              {texto}
+            </li>
+          ))}
+        </ul>
       </section>
 
-      {/* ——— Servicios ——— */}
+      {/* ——— Servicios: índice numerado ——— */}
       <section id="servicios" className={`seccion ${s.servicios}`}>
-        <div className="contenedor">
-          <header className="seccion__cabecera">
+        <div className={`contenedor ${s.dos_columnas}`}>
+          <header className={s.lateral}>
             <p className="antetitulo">Servicios</p>
             <h2 className="seccion__titulo">De la casa a la obra</h2>
             <p className="seccion__entradilla">
@@ -191,111 +154,88 @@ export default function Inicio() {
             </p>
           </header>
 
-          <ul className={s.servicios__rejilla}>
-            {servicios.map((g) => {
-              const Icono = iconos[g.categoria];
+          <div className={s.indice}>
+            {servicios.map((g, i) => {
+              const foto = fotoDe[g.categoria];
               return (
-                <li key={g.categoria} className={s.servicio}>
-                  <span className={s.servicio__icono}>
-                    <Icono aria-hidden="true" size={24} />
-                  </span>
-                  <h3 className={s.servicio__titulo}>{g.titulo}</h3>
-                  <p className={s.servicio__resumen}>{g.resumen}</p>
-                  <ul className={s.servicio__lista}>
-                    {g.lista.map((l) => (
-                      <li key={l}>{l}</li>
-                    ))}
-                  </ul>
-                  <a
-                    className={s.servicio__enlace}
-                    href={enlaceWhatsApp(
-                      `Hola, quería pedir presupuesto para ${g.titulo.toLowerCase()}.`,
-                    )}
-                  >
-                    Pedir presupuesto
-                    <ArrowUpRight aria-hidden="true" size={18} />
-                  </a>
-                </li>
+                <details
+                  key={g.categoria}
+                  name="servicios"
+                  className={s.grupo}
+                  open={i === 0}
+                >
+                  <summary>
+                    <span className={s.grupo__numero}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className={s.grupo__titulo}>{g.titulo}</span>
+                    <Plus aria-hidden="true" size={22} className={s.grupo__signo} />
+                  </summary>
+                  <div className={s.grupo__cuerpo}>
+                    <div>
+                      <p className={s.grupo__resumen}>{g.resumen}</p>
+                      <ul className={s.grupo__lista}>
+                        {g.lista.map((l) => (
+                          <li key={l}>{l}</li>
+                        ))}
+                      </ul>
+                      <a
+                        className="enlace-flecha"
+                        href={enlaceWhatsApp(
+                          `Hola, quería pedir presupuesto para ${g.titulo.toLowerCase()}.`,
+                        )}
+                      >
+                        Pedir presupuesto
+                        <ArrowUpRight aria-hidden="true" size={18} />
+                      </a>
+                    </div>
+                    <div className={s.grupo__foto}>
+                      <Image
+                        src={foto.src}
+                        alt={foto.alt}
+                        fill
+                        sizes="(max-width: 48rem) 100vw, 18rem"
+                        placeholder="blur"
+                      />
+                    </div>
+                  </div>
+                </details>
               );
             })}
-          </ul>
+          </div>
         </div>
       </section>
 
-      {/* ——— Nuestro trabajo (fotos reales) ——— */}
-      <section id="trabajos" className={`seccion ${s.trabajos}`}>
+      {/* ——— Cómo trabajamos: una franja, no una sección entera ——— */}
+      <section id="como-trabajamos" className={s.pasos}>
         <div className="contenedor">
-          <header className="seccion__cabecera">
-            <p className="antetitulo antetitulo--claro">Nuestro trabajo</p>
-            <h2 className="seccion__titulo">Fotos de verdad, no de catálogo</h2>
-            <p className="seccion__entradilla">
-              Así quedan las casas y los locales donde trabajamos.
-            </p>
-          </header>
-          <ul className={s.mosaico}>
-            {trabajos.map(({ foto, zona, sizes }) => (
-              <li key={foto.pie} className={zona}>
-                <figure className={s.foto}>
-                  <Image
-                    src={foto.src}
-                    alt={foto.alt}
-                    fill
-                    sizes={sizes}
-                    placeholder="blur"
-                  />
-                  <figcaption>{foto.pie}</figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* ——— Cómo trabajamos ——— */}
-      <section id="como-trabajamos" className={`seccion ${s.pasos}`}>
-        <div className="contenedor">
-          <header className="seccion__cabecera">
-            <p className="antetitulo">Cómo trabajamos</p>
-            <h2 className="seccion__titulo">Tres pasos y listo</h2>
-          </header>
+          <h2 className={s.pasos__titulo}>Cómo trabajamos</h2>
           <ol className={s.pasos__lista}>
             {pasos.map((p, i) => (
-              <li key={p.titulo} className={s.paso}>
-                <span className={s.paso__numero} aria-hidden="true">
-                  {i + 1}
-                </span>
-                <h3 className={s.paso__titulo}>{p.titulo}</h3>
+              <li key={p.titulo}>
+                <span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{p.titulo}</h3>
                 <p>{p.texto}</p>
               </li>
             ))}
           </ol>
-          <p className={s.pasos__consejo}>
-            <Destello className={s.pasos__destello} />
-            Nuestro consejo: una limpieza profunda al mes.
-          </p>
-          <p className={s.pasos__dudas}>
-            ¿Tienes dudas?{" "}
-            <Link href="/preguntas-frecuentes">Mira las preguntas frecuentes</Link>
+          <p className={s.pasos__pie}>
+            Nuestro consejo: una limpieza profunda al mes. ¿Más dudas?{" "}
+            <Link href="/preguntas-frecuentes">Preguntas frecuentes</Link>
           </p>
         </div>
       </section>
 
-      {/* ——— Zonas ——— */}
+      {/* ——— Zonas: mapa ——— */}
       <section id="zonas" className={`seccion ${s.zonas}`}>
-        <div className={`contenedor ${s.zonas__rejilla}`}>
-          <header>
+        <div className={`contenedor ${s.dos_columnas}`}>
+          <header className={s.lateral}>
             <p className="antetitulo">Zonas</p>
             <h2 className="seccion__titulo">Cerca de ti</h2>
             <p className="seccion__entradilla">
               Salimos desde {negocio.localidad} y trabajamos en el Camp de Túria,
               Valencia y alrededores.
             </p>
-            <a className={s.zonas__mapa} href={negocio.mapa}>
-              <MapPin aria-hidden="true" size={18} />
-              Ver en Google Maps
-            </a>
-          </header>
-          <div>
             <ul className={s.zonas__lista}>
               {zonas.map((z) => (
                 <li key={z}>{z}</li>
@@ -306,38 +246,25 @@ export default function Inicio() {
               <a href={enlaceWhatsApp("Hola, ¿trabajáis en mi zona? Estoy en ")}>
                 Pregúntanos
               </a>
-              .
+              {" · "}
+              <a href={negocio.mapa}>Ver en Google Maps</a>
             </p>
-          </div>
+          </header>
+          <MapaZonas />
         </div>
       </section>
 
-      {/* ——— Opiniones ——— */}
+      {/* ——— Opiniones: una, grande ——— */}
       <section id="opiniones" className={`seccion ${s.opiniones}`}>
         <div className="contenedor">
-          <header className="seccion__cabecera">
+          <div className={s.opiniones__cabecera}>
             <p className="antetitulo">Opiniones</p>
-            <h2 className="seccion__titulo">Lo que dicen de nosotros</h2>
-            <p className="seccion__entradilla">{negocio.lema}.</p>
-          </header>
-          <ul className={s.opiniones__rejilla}>
-            {opiniones.map((o) => (
-              <li key={o.autor}>
-                <figure className={s.opinion}>
-                  <blockquote>
-                    <p>«{o.texto}»</p>
-                  </blockquote>
-                  <figcaption>{o.autor}</figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
-          <p className={s.opiniones__mas}>
-            <a href={negocio.mapa}>
-              Lee más opiniones en Google
+            <a className="enlace-flecha" href={negocio.mapa}>
+              Más opiniones en Google
               <ArrowUpRight aria-hidden="true" size={18} />
             </a>
-          </p>
+          </div>
+          <Opiniones />
         </div>
       </section>
 
