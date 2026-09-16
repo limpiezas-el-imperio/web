@@ -12,11 +12,12 @@ tal cual y las malas se renombran sin más.
 
 | Ruta nueva | Viene de | Qué lleva |
 |---|---|---|
-| `/` | `/` | Hecha |
+| `/` | `/` | ✅ Hecha |
 | `/quienes-somos` | igual | Reescrita: dónde está, por qué elegirle, los tres valores como texto (no imágenes). Visión y misión fuera |
-| `/nuestros-servicios` | igual | **Una sola página** con los seis grupos y una descripción corta por servicio |
+| `/nuestros-servicios` | igual | ✅ Hecha. **Una sola página** con los seis grupos y una descripción corta por servicio (borrador) |
 | `/zonas-de-servicio` | igual | Cuando él diga cuál de las dos listas vale |
-| `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | Sólo la FAQ; el blog fuera |
+| `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |
+| `/contacto` | — (nueva) | Añadida después: lo mismo que la sección de contacto, en su página |
 | `/trabaja-con-nosotros` | igual | Sin formulario: datos por WhatsApp o correo |
 | `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | Reescrito de cero; falta su NIF |
 | `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | Reescrita de cero |

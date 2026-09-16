@@ -1,112 +1,142 @@
 # Pendiente
 
+Actualizado el **16 de septiembre de 2026**, al cerrar la primera sesión.
+
+## Por dónde seguir
+
+1. **Enseñarle a Frank lo que hay** (https://limpiezaselimperio.vercel.app) y
+   hacerle las preguntas de *Preguntas para Frank*. Varias páginas y el
+   dominio dependen de sus respuestas.
+2. Mientras tanto, seguir con las páginas que no dependen de él: `/contacto` y
+   `/quienes-somos` (ésta con lo que ya hay; ver `docs/sitio-actual.md`).
+3. `sitemap.ts` y `robots.ts`, y una página 404 propia.
+
 ## Plan de trabajo (acordado el 16 sept 2026)
 
 Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
 
 1. [x] **Decidir qué contenido de la web vieja se queda**, página a página
        (`docs/sitio-actual.md`, *Decisión por página*)
-2. [ ] **Integrarlo** en la web nueva (sin redirecciones), página a página.
-       Menú: Inicio · Servicios · Zonas · Quiénes somos · Preguntas frecuentes ·
-       Contacto. Trabaja con nosotros y los legales, en el pie. Opiniones se
-       queda como sección de la portada.
-   - [x] Menú para tablet y móvil, página actual marcada, enlaces en el pie
-   - [x] Logo en cabecera y pie; fotos reales en la portada
-   - [x] Rediseño editorial de la portada: titular + foto, índice de servicios
-         desplegable, franja de pasos, mapa de zonas, una opinión grande
-   - [x] Fotos fuera de los servicios, en su sección «Nuestro trabajo»
-   - [x] `/nuestros-servicios`: índice de áreas, cada servicio con descripción,
-         «En todos los servicios» y datos estructurados de los 26
-   - [ ] `/contacto` (nueva: lo mismo que la sección de contacto, en su página)
-   - [x] `/preguntas-frecuentes` (ya es la plantilla de las demás)
-   - [ ] `/quienes-somos`
-   - [ ] `/trabaja-con-nosotros`
-   - [ ] `/zonas-de-servicio` (espera la lista buena)
-   - [ ] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies`
-         (esperan su NIF)
+2. [ ] **Integrarlo** en la web nueva (sin redirecciones), página a página
 3. [ ] **Iterar**: mejorar, optimizar
 4. [ ] **Mirar `../limpiezas-imperio-software/`** para entender mejor el
        negocio. Proyecto aparte e independiente: se lee para entender, **nada
        de sus datos entra aquí** (este repositorio es público)
 
-## 0. Contexto
+## Páginas
 
-- [x] `CLAUDE.md`, `README.md`, `docs/`, `todo.md`
-- [x] Inventario de la web actual → `docs/sitio-actual.md`
-- [x] Remoto `origin` → `limpiezas-el-imperio/web`
-- [x] Primer commit y push a `main`
-- [x] Repositorio público (necesario para desplegar desde Hobby)
-- [x] Proyecto en su Vercel enlazado al repo; push → despliegue comprobado
-      (https://limpiezaselimperio.vercel.app)
+Menú acordado: Inicio · Servicios · Zonas · Quiénes somos · Preguntas
+frecuentes · Contacto. Trabaja con nosotros y los legales, en el pie.
+Opiniones se queda como sección de la portada.
 
-## 1. Preguntas para Frank
+- [x] `/` — portada
+- [x] `/nuestros-servicios`
+- [x] `/preguntas-frecuentes`
+- [ ] `/contacto` — lo mismo que la sección de contacto, en su página. **No
+      depende de nadie**
+- [ ] `/quienes-somos` — dónde está, por qué elegirle, los tres valores como
+      texto. Se puede empezar; la experiencia («desde cuándo») la tiene que
+      decir él
+- [ ] `/trabaja-con-nosotros` — sin formulario. Espera a saber si sigue
+      buscando gente así
+- [ ] `/zonas-de-servicio` — espera la lista buena de zonas
+- [ ] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` —
+      rehechos de cero; esperan su NIF
+- [ ] Menú: añadir Quiénes somos cuando exista; Zonas pasa de `/#zonas` a su
+      página cuando exista
+- [ ] Pie: enlaces a Trabaja con nosotros y a los legales cuando existan
 
-- [x] ¿Dónde está registrado el `.net`? En Webador
-- [x] ¿El buzón `info@` lo da Webador? **Sí** (MX `mail.webador.com`), y es
-      también el correo de su cuenta de Vercel
-- [ ] **Dominio**: se va hacia apuntar el `.net` a Vercel. ¿Deja el panel de
-      Webador editar el A y el CNAME sin cambiar los nameservers?
-      (`docs/dominio.md`)
+## Preguntas para Frank
+
+**Antes de nada**
+
+- [ ] **¿Le gusta?** Portada, servicios y FAQ. Decisiones de diseño que
+      conviene que valide: paleta sólo azul y gris (su logo tiene dorado),
+      botón de WhatsApp en azul y no en verde, portada del móvil sin botones
+      (la barra de abajo hace de llamada a la acción)
+- [ ] **NIF**: lo exige el aviso legal. Va a `docs/privado/` hasta que lo
+      publique él
+- [ ] **Dominio**: ¿deja el panel de Webador editar el A y el CNAME del `.net`
+      sin cambiar los nameservers? (`docs/dominio.md`)
 - [ ] **Webador**: ¿el buzón `info@` sigue funcionando si se da de baja la web?
-      Preguntarlo **antes** de cancelar nada
-- [ ] **NIF**: falta en el aviso legal y la ley lo exige
-- [ ] **Zonas**: la web tiene dos listas distintas, ¿cuál es la buena?
-- [x] **Reseñas**: sí, de Google. 4,9 con 68 reseñas (16 sept 2026). En la
-      portada van cinco recientes, en extracto y sin nombres del personal
-- [ ] **Opiniones**: ¿le parece bien que salgan en su web? ¿Y los nombres de
-      su equipo (Michel, Maribel, Viviana…), los quiere o no?
-- [ ] **Experiencia**: la web dice «2 años» (texto de 2024). ¿Desde cuándo?
-      Cuando lo diga, vuelve como pregunta en `src/datos/preguntas.ts`
+      Preguntarlo **antes** de cancelar nada. Es también el correo de su
+      cuenta de Vercel
+
+**Contenido**
+
+- [ ] **Descripciones de los servicios** (`src/datos/negocio.ts`): son un
+      borrador nuestro. Que las lea y corrija; sobre todo «Cuidado de
+      propiedades», «Fachadas» y «Reparaciones eléctricas»
+- [ ] **Servicios**: ¿siguen los 26? ¿Le vale la agrupación en seis áreas?
+      ¿Reparaciones eléctricas sigue siendo cosa suya?
+- [ ] **Zonas**: su web tiene dos listas distintas, ¿cuál es la buena? Hoy
+      salen las 11 que están en las dos
+- [ ] **Opiniones**: ¿le parece bien que salgan las de Google en su web? ¿Y
+      los nombres de su equipo (Michel, Maribel, Viviana…)? Hoy van cortados
+- [ ] **Experiencia**: su web dice «2 años» (texto de 2024). ¿Desde cuándo?
+      Vuelve como pregunta en la FAQ y en Quiénes somos
 - [ ] **Urgencias**: «siempre que el cliente asuma el coste». ¿Cuesta más que
-      un servicio normal? Para decirlo claro en la FAQ
-- [ ] **Servicios**: la lista tiene 26 y un duplicado. ¿Siguen todos? ¿Se
-      agrupan? ¿Reparaciones eléctricas sigue siendo cosa suya?
-- [ ] **Descripciones de los servicios**: son un borrador nuestro
-      (`src/datos/negocio.ts`). Que las lea y corrija; sobre todo «Cuidado de
-      propiedades», «Fachadas» y «Reparaciones eléctricas», que son las más
-      a ciegas
-- [x] **Formularios**: ninguno por ahora. Contacto por WhatsApp, teléfono y
-      correo
-- [x] **Material**: logo en `public/` (ver `docs/sitio-actual.md`, *Imágenes*).
-      Las imágenes de su web son todas generadas con IA
-- [ ] **Material**: ¿logo vectorial o sin el teléfono dentro?
-- [x] **Blog**: fuera (relleno generado)
-- [ ] **Trabaja con nosotros**: ¿sigue buscando gente así?
-- [ ] **Cobro**: la hoja de servicio dice mínimo de 4 horas, desplazamiento y
+      un servicio normal?
+- [ ] **Cobro**: su hoja de servicio dice mínimo de 4 horas, desplazamiento y
       vaporeta aparte. ¿Se puede decir algo de eso en la web?
-- [x] **Logo sin teléfono** en alta: `public/logo.jpg` (2000 px)
-- [x] **Fotos reales**: 8, en `src/imagenes/`. Sin página de galería
-- [ ] **Más fotos**, sobre todo de comunidades, oficinas, obras y cristales,
-      que ahora no tienen ninguna
-- [ ] **Redes**: LinkedIn apunta a un enlace roto; ¿cuáles están vivas?
+- [ ] **Dirección**: hoy sólo sale «La Pobla de Vallbona (Valencia)», no la
+      calle, porque es su casa. ¿La quiere completa?
+- [ ] **Trabaja con nosotros**: ¿sigue buscando gente por la web?
+- [ ] **Redes**: LinkedIn apunta a un enlace roto; ¿cuáles están vivas? Hoy
+      salen Facebook, Instagram, TikTok, YouTube y X
 
-## 2. Decisiones técnicas
+**Material**
 
-- [x] CSS: plano, como en la contabilidad
+- [ ] **Más fotos**, sobre todo de comunidades, oficinas, obras y cristales.
+      Comprobar EXIF y GPS antes de subirlas (ver `CLAUDE.md`)
+- [ ] **Logo vectorial** (SVG o PDF), si lo tiene. El de ahora es un JPG de
+      2000 px
+
+**Ya respondido**
+
+- [x] El `.net` está registrado en Webador, y el buzón `info@` también es de
+      Webador (MX `mail.webador.com`)
+- [x] Las reseñas de su web vieja eran de Google: 4,9 con 68 (16 sept 2026)
 - [x] Formularios: ninguno por ahora
-- [x] **Despliegue automático**: repositorio público (ver `CLAUDE.md`,
-      *Despliegue*)
-- [x] Mapa de rutas: `docs/sitio-actual.md`, *Decisión por página*. Sin 301
-- [ ] Textos legales rehechos para este negocio (aviso legal, privacidad,
-      cookies) y banner de cookies sólo si hay algo que lo exija
+- [x] Blog: fuera
+- [x] Logo sin teléfono en alta y 8 fotos reales
 
-## 3. Diseño y construcción
+## Técnico
 
-- [x] Dirección visual: editorial con fotos reales (ver `CLAUDE.md`, *Estilo*)
-- [x] Paleta sin dorado (azules, grises, blanco) y tipografías sobrias:
-      Newsreader + Geist
-- [x] Portada: qué hace, servicios agrupados, cómo trabaja, zonas, opiniones y
-      contacto. Metadatos, iconos, Open Graph y `LocalBusiness`
-- [ ] Que él vea la portada: agrupación de servicios, zonas (sólo las que están
-      en las dos listas), las tres opiniones elegidas
-- [ ] Pie: enlaces a aviso legal, privacidad y cookies cuando existan
-- [ ] Servicios, zonas, quiénes somos, opiniones, contacto/presupuesto
-- [ ] SEO: títulos y descripciones por página, `sitemap`, `robots`, datos
-      estructurados `LocalBusiness`, Open Graph
-- [ ] Revisión en móvil real (Safari)
+- [ ] `src/app/sitemap.ts` y `src/app/robots.ts`
+- [ ] Página 404 propia (`not-found.tsx`) con la cabecera, el pie y enlaces
+- [ ] Textos legales para este negocio. **Banner de cookies sólo si hace
+      falta**: hoy la web no pone cookies ni analítica. Si se añade analítica,
+      que sea sin cookies (Vercel Web Analytics) y se revisa
+- [ ] Revisión en un **iPhone real con Safari** (él usa el móvil): menú, barra
+      de contacto, carruseles, portada del móvil
+- [ ] Rendimiento y accesibilidad: Lighthouse en móvil, contraste, orden de
+      tabulación
+- [ ] ¿Mensaje de WhatsApp prellenado con lo que pedía el formulario viejo
+      (tipo de vivienda, habitaciones, baños, fecha)? Idea, no decidida
+- [ ] **Mantenimiento**: la nota y el total de Google (`valoracion` en
+      `negocio.ts`) van escritos a mano; revisarlos de vez en cuando
 
-## 4. Lanzamiento
+## Lanzamiento
 
-- [ ] Dominio conectado y HTTPS
-- [ ] Correo `info@` comprobado después del cambio
-- [ ] Actualizar Google Business Profile y redes
+- [ ] Registros DNS del `.net` hacia Vercel **sin tocar el MX ni el SPF**
+      (`docs/dominio.md`)
+- [ ] Comprobar con `curl` que el dominio sirve esta web y **entonces**
+      cambiar `dominioPublico` en `src/datos/sitio.ts`
+- [ ] Mandar un correo de prueba a `info@` y ver que llega
+- [ ] Actualizar el enlace de la web en su ficha de Google y en sus redes
+- [ ] Dar de baja la web de Webador **sólo** después de saber qué pasa con el
+      correo
+
+## Hecho en la primera sesión (16 sept 2026)
+
+- Contexto del proyecto, inventario de la web vieja y decisión página a página
+- Repositorio público y despliegue automático en su Vercel con cada push
+- Portada: rediseño editorial con fotos reales; portada propia para el móvil;
+  galería; mapa de zonas; opiniones de Google en carrusel
+- `/nuestros-servicios` y `/preguntas-frecuentes`
+- Menú de tablet y móvil a pantalla completa, barra de contacto en el móvil
+- Paleta sin dorado, tipografías Newsreader y Geist, y sistema de diseño
+  común (ver `CLAUDE.md`)
+- Metadatos por página, imagen para compartir, iconos, datos estructurados
+  (`LocalBusiness`, `FAQPage`, servicios)

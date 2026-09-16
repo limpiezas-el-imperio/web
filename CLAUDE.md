@@ -13,9 +13,25 @@ esto es la guía operativa.
 | Repositorio | `limpiezas-el-imperio/web` (**público**, del cliente). `kevjrmy` es colaborador |
 | Producción | https://limpiezaselimperio.vercel.app |
 | Vercel | proyecto `web` en la cuenta gratuita del cliente, enlazado al repositorio |
-| Dominio | Ver `docs/dominio.md`. Sin decidir: `.com` comprado en Vercel, o apuntar el `.net` actual |
+| Dominio | `www.limpiezaselimperio.net` añadido en Vercel, **DNS aún en Webador**: sirve la web vieja. Plan y riesgo del correo en `docs/dominio.md` |
 | Web actual | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
-| Pendiente | `todo.md` |
+| Pendiente | `todo.md` (con *Por dónde seguir* arriba del todo) |
+
+## Estado (16 sept 2026, cierre de la primera sesión)
+
+**En producción** (sólo en el `.vercel.app`, todavía sin dominio):
+
+| Ruta | Estado |
+|---|---|
+| `/` | Hecha: portada editorial, galería, mapa de zonas, opiniones de Google |
+| `/nuestros-servicios` | Hecha, **con descripciones en borrador** pendientes de Frank |
+| `/preguntas-frecuentes` | Hecha |
+| `/quienes-somos`, `/trabaja-con-nosotros`, `/contacto` | Por hacer |
+| `/zonas-de-servicio` | Por hacer; espera a que él diga cuál de sus dos listas vale |
+| `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Por hacer; esperan su NIF |
+
+**Frank todavía no ha visto nada.** Todo lo decidido hasta aquí lo ha decidido
+Kevin; las preguntas para él están en `todo.md`.
 
 **Mismo cliente que `../limpiezas-imperio-software/`** (la contabilidad, en
 https://limpiezas-imperio.vercel.app). Son proyectos separados: esta web no lee
@@ -61,13 +77,16 @@ Lo que **no** entra en git:
   capturas de sus cuentas de Vercel, GitHub, Webador o Google.
 - **Su NIF**, aunque haga falta en el aviso legal, hasta que él lo publique en
   la web. Mientras tanto va en `docs/privado/`.
-
 - **`docs/privado/`**: material que él nos pase y no sea para publicar (fotos
   sin elegir, documentos con su NIF, capturas de sus cuentas, facturas del
   dominio).
 - **Nada de la contabilidad.** Ni nombres de clientes o colaboradores, ni
-  cifras. Si hace falta un ejemplo, se usan los nombres inventados de siempre
+  cifras. Sirve para entender el negocio, no como fuente de contenido. Si hace falta un ejemplo, se usan los nombres inventados de siempre
   (ELENA PRADOS, BEATRIZ SOLANO, TOMAS RIVAS…).
+
+Y lo que sí entra, pero con cuidado:
+
+- **Fotos**: sin EXIF ni GPS (ver *Estilo*).
 - **Las opiniones salen de su ficha de Google Maps** y se publican como
   **extractos literales**: donde se corta va «[…]», y no se corrige ni se
   reescribe nada. Autor con nombre e inicial. **Se corta sobre todo para no
@@ -101,11 +120,11 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   page.tsx + inicio.module.css (la portada)
                   nuestros-servicios/ (page.tsx + servicios.module.css)
                   preguntas-frecuentes/ (page.tsx + su módulo)
-                  globals.css (paleta, botones, enlace-flecha, cabecera, pie)
+                  globals.css (paleta, sistema de diseño, cabecera, menú, pie)
                   icon.svg · apple-icon.png
 src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
                   Pie · BarraContacto (sólo móvil)
-                  CabeceraPagina (la banda azul de cada página)
+                  CabeceraPagina (titular con que empieza cada página)
                   Contacto (el cierre de cada página)
                   DatosEstructurados (JSON-LD)
                   Marca (logo + nombre)
@@ -131,7 +150,8 @@ mano en un componente: el día que cambie, se quedaría el viejo.
 
 ### Cómo se hace una página nueva
 
-Copia `preguntas-frecuentes/`, que es la plantilla:
+Copia `preguntas-frecuentes/` o `nuestros-servicios/`, que son las plantillas
+(índice lateral en escritorio, bloques con número y regla):
 
 - **Metadatos con `metadatosPagina()`** de `sitio.ts`, nunca un `openGraph` a
   mano. Next mezcla layout y página sólo en el primer nivel: un `openGraph` en
@@ -142,12 +162,15 @@ Copia `preguntas-frecuentes/`, que es la plantilla:
   «Contacto» de la cabecera va a `#contacto` de la página en la que estés: si
   una página no lo lleva, ese enlace no hace nada.
 - **JSON-LD con `<DatosEstructurados>`**, que escapa el `<`.
+- **Usa las piezas del *Sistema de diseño*** (etiqueta, número, enlaces,
+  botones) antes de escribir estilos propios.
 - **Los estilos de la página en su `.module.css`.** Ojo con `@keyframes` en un
   módulo: Next renombra la animación dentro del módulo, así que una animación
   definida en `globals.css` no se puede nombrar desde un módulo.
 - **Añádela a `src/datos/navegacion.ts`**: de ahí salen la cabecera, el menú
-  del móvil y el pie. Si sustituye a una sección de la portada (Servicios,
-  Zonas…), cambia ese `href` de `/#seccion` a la ruta nueva.
+  del móvil y el pie. Si sustituye a una sección de la portada (hoy Zonas y
+  Opiniones van a `/#zonas` y `/#opiniones`), cambia ese `href` a la ruta
+  nueva.
 
 **La URL base va escrita a mano en `src/datos/sitio.ts`** (`dominioPublico`),
 y de ella salen el canonical, la imagen para compartir y los datos
@@ -164,6 +187,26 @@ npm install
 npm run dev      # http://localhost:3000
 npm run build    # compruébalo antes de dar nada por bueno
 ```
+
+## Comprobar antes de dar nada por bueno
+
+`npm run build` y `npx eslint src` sin errores es lo mínimo, no la prueba. Lo
+que se ha hecho con cada cambio, y conviene seguir haciendo:
+
+- **Mirarlo**, no suponerlo: `npx next start` y capturas con Chrome sin cabeza
+  (`google-chrome --headless=new --screenshot=… --window-size=…`). Para probar
+  interacción (menú, carruseles, anclas) se abre Chrome con
+  `--remote-debugging-port` y se maneja por el protocolo DevTools desde un
+  script de Node; `Page.captureScreenshot` con `captureBeyondViewport` saca la
+  página entera. Los scripts de la primera sesión no se guardaron: se rehacen
+  en diez minutos.
+- **Anchos**: 390 (móvil), **375×667** (móvil bajo), 820 (tablet) y 1280
+  (escritorio). Casi todos los fallos de esta sesión sólo salían en uno.
+- **Siempre**: que la página no se desplace en horizontal
+  (`scrollWidth > innerWidth`), que no haya imágenes rotas, y en el móvil que
+  la barra de contacto no tape lo importante.
+- **Después del push**, que el despliegue quede en `success` (ver abajo) y
+  mirar la URL publicada con `curl`.
 
 ## Lo que ya sabemos del cliente
 
@@ -196,9 +239,11 @@ Aprendido en la contabilidad, y aplica aquí:
   renombran, **sin redirecciones 301**: decisión de Kevin. No añadas páginas ni
   formularios fuera de esa tabla sin hablarlo.
 - **Nada de datos inventados.** Ni años de experiencia, ni número de reseñas,
-  ni zonas, ni servicios que no salgan de él o de su web. La web actual se
-  contradice en varias cosas (dos listas de zonas, 4,9 frente a 4,78); se le
-  pregunta, no se elige.
+  ni zonas, ni servicios que no salgan de él, de su web o de su ficha de
+  Google. Donde su web se contradice (dos listas de zonas) se le pregunta, no
+  se elige; mientras, va lo que está en las dos. **Única excepción consciente:
+  las descripciones de los servicios**, escritas por nosotros como borrador y
+  marcadas como tal en `negocio.ts` y en `todo.md`.
 
 ## Sistema de diseño
 
@@ -256,11 +301,12 @@ Reglas:
     WordPress. Tampoco estrellas flotando de adorno ni pastillas redondas.
   - Esquinas discretas (`--radio`, 6 px). Botones rectangulares.
   - Las fotos reales llevan el peso: la portada abre con Frank trabajando y
-    cada grupo de servicios enseña la suya.
+    las demás forman la galería.
   - Una sola franja azul a media página («Cómo trabajamos») y el cierre de
     contacto. No alternes bandas de color sección tras sección.
 - Responsive con el móvil primero, foco visible, `prefers-reduced-motion`
-  respetado, textos alternativos en todas las imágenes (hoy no hay ni uno).
+  respetado (también en los carruseles) y texto alternativo descriptivo en
+  todas las fotos (`fotos.ts`).
 - **CSS plano. Nada de Tailwind ni SASS**, como en la contabilidad. Lo común
   en `globals.css`; lo de cada página, en su `.module.css`.
 - **Paleta sólo de azules, grises y blanco. Sin dorado** (lo quitó Kevin:
@@ -288,8 +334,9 @@ Reglas:
 - **No hay página de galería**, decidido: con ocho fotos quedaría vacía. Van en
   la portada: Frank aspirando abre la página y las otras siete forman la
   sección «Galería» (`Galeria.tsx`: rejilla en escritorio y tablet, fila
-  deslizable con puntos en el móvil). **Las fotos no van dentro de cada servicio**: no hay una para
-  cada uno y emparejarlas a la fuerza no casaba. Los servicios son sólo texto.
+  deslizable con puntos en el móvil). **Las fotos no van dentro de cada
+  servicio**: no hay una para cada uno y emparejarlas a la fuerza no casaba.
+  Los servicios son sólo texto.
 - **Contacto primero**: el WhatsApp es la acción principal en toda la web, y en
   el móvil hay una barra fija con WhatsApp y Llamar.
 - **En el móvil, la portada no lleva botones**: la barra fija ya es la llamada
@@ -303,8 +350,8 @@ Reglas:
   la cabecera se sustituyen por el botón «Menú»: no los escondas sin dejar otra
   forma de navegar, que es como estaba al principio y en el móvil no había
   menú ninguno.
-- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en gris claro con
-  la cabecera blanca (en azul resultaba demasiado azul): enlaces grandes y,
+- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en gris
+  claro con la cabecera blanca (en azul resultaba demasiado azul): enlaces grandes y,
   abajo, WhatsApp, teléfono, correo y horario. Mientras está abierto
   lo de detrás queda `inert` y sin scroll, y al cerrarlo el foco vuelve al
   botón. Tres detalles que costaron un fallo cada uno, no los deshagas:
@@ -315,6 +362,10 @@ Reglas:
   hacia arriba).
 - **La cabecera es opaca y blanca, y el logo va sin transparencias ni
   fundidos.** Lo pidió Kevin.
+- **Carruseles** (opiniones y galería del móvil): scroll horizontal nativo con
+  anclajes (`scroll-snap`), no librerías. Se deslizan con el dedo; flechas y
+  puntos sólo los mueven. **Nunca pasan solos.** La lógica común está en
+  `useCarrusel`.
 - **Sin formularios por ahora.** El contacto es WhatsApp, teléfono y correo. Un
   formulario pide servicio de correo, antispam y casilla de privacidad: no se
   añade sin que él lo pida.

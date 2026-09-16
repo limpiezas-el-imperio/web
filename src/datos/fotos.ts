@@ -16,7 +16,7 @@ import karcher from "@/imagenes/frank-limpiando-con-karcher.jpg";
 //
 // No hay página de galería a propósito: con ocho fotos quedaría vacía. Van en
 // la portada: la de Frank aspirando abre la página y las demás forman la
-// sección «Nuestro trabajo». No van dentro de cada servicio: no las hay para
+// sección «Galería» (Galeria.tsx). No van dentro de cada servicio: no las hay para
 // todos y emparejarlas a la fuerza no casaba.
 
 export type Foto = { src: StaticImageData; alt: string; pie: string };

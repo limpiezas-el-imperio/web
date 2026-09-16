@@ -26,8 +26,33 @@ tiempo (inventario completo en `docs/sitio-actual.md`):
 ## Por qué Next.js y Vercel
 
 Es la misma pila que su contabilidad (`limpiezas-imperio.vercel.app`) y la misma
-cuenta de Vercel: una sola cosa que mantener y que él ya conoce. La web es casi
-toda estática y en el plan gratuito sobra.
+cuenta de Vercel: una sola cosa que mantener y que él ya conoce. La web es
+estática (todas las páginas se generan al compilar) y en el plan gratuito
+sobra.
+
+## Decisiones que ya están tomadas, y por qué
+
+- **Un repositorio público.** En el plan gratuito de Vercel, un repositorio
+  privado bloquea los despliegues de commits que no son del dueño de la
+  cuenta. Público, cada push despliega solo. A cambio, nada privado entra en
+  git (ver `CLAUDE.md`).
+- **Sin formularios.** El contacto es WhatsApp, teléfono y correo, que es como
+  trabaja él. Un formulario pide servicio de correo, antispam y
+  consentimiento, y los de su web vieja pedían DNI sin nada de eso.
+- **Sin redirecciones.** Las rutas buenas de la web vieja se conservan y las
+  malas se renombran (`docs/sitio-actual.md`, *Decisión por página*).
+- **Diseño editorial y sobrio.** El primer diseño tenía aire de plantilla de
+  WordPress (tarjetas, sombras, bandas de colores). Se cambió por titulares
+  grandes, reglas finas y fotos reales, y luego se quitó el dorado y se
+  pasaron las tipografías a unas más discretas. Todo lo que queda es un
+  sistema común (`CLAUDE.md`, *Sistema de diseño*).
+- **Fotos reales como prueba.** Las de su web vieja eran generadas con IA. Las
+  reales van en una galería, no emparejadas a la fuerza con cada servicio.
+- **Opiniones de Google, no inventadas ni retocadas.** Extractos literales,
+  sin los nombres de su personal.
+- **Una portada distinta en el móvil.** Allí la barra fija de WhatsApp y
+  Llamar ya es la llamada a la acción, así que la portada abre con la foto y
+  la valoración de Google en vez de repetir botones.
 
 ## El dominio
 

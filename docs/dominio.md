@@ -80,5 +80,7 @@ cambiar los nameservers**, antes de cambiarlos:
 
 Queda como alternativa. Se compra desde su cuenta de Vercel y no hay que tocar
 DNS de nadie, así que **no pone en riesgo el correo**. El `.net` seguiría en
-Webador con la web vieja mientras se decide qué hacer con él. Antes de
-comprar, comprobar que el `.com` está libre.
+Webador con la web vieja mientras se decide qué hacer con él.
+
+El 16 sept 2026 `limpiezaselimperio.com` no tenía ni DNS ni registro en
+`whois`: parecía libre. Comprobarlo otra vez antes de comprar.
