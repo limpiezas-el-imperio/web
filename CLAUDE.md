@@ -34,8 +34,10 @@ esto es la guía operativa.
 «demasiado plana», «sin color», «no parece de limpieza», «pocas funciones».
 Tampoco la foto de él aspirando que abría la portada. En la segunda sesión se
 rehízo todo con color y elevación (ver *Estilo*) y la portada lleva una foto
-provisional de Unsplash. **A Kevin le gusta como ha quedado; Frank todavía no
-ha visto esta versión.** Las preguntas para él siguen en `todo.md`.
+provisional de Unsplash. **Frank ha visto la versión nueva y le gusta mucho:
+el diseño está validado** (16 sept 2026). Las páginas que falten se hacen con
+este mismo sistema, sin replantearlo. Las preguntas para él siguen en
+`todo.md`.
 
 **Mismo cliente que `../limpiezas-imperio-software/`** (la contabilidad, en
 https://limpiezas-imperio.vercel.app). Son proyectos separados: esta web no lee
@@ -313,7 +315,8 @@ Reglas:
   versión, editorial y sobria (serif, reglas finas, sin sombras, sin dorado),
   **se la enseñamos a Frank y no le gustó**: «demasiado plana», «sin color»,
   «no parece de limpieza», «pocas cosas». Kevin decidió no discutirlo y
-  cambiarla directamente. **No vuelvas a la sobria.** Lo que la define:
+  cambiarla directamente. **Frank la validó** (le gusta mucho). **No vuelvas
+  a la sobria ni la replantees.** Lo que la define:
   - **Los colores de su logo:** azul cielo, marino y el oro de las estrellas.
     Fondos blancos y azul muy claro.
   - **Tarjetas blancas con sombra suave** y esquinas redondeadas; botones y

@@ -4,8 +4,7 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
 
 ## Por dónde seguir
 
-1. **Enseñarle a Frank la versión nueva** (https://limpiezaselimperio.vercel.app):
-   color, tarjetas con sombra, WhatsApp en verde y foto de portada nueva. Y
+1. **Diseño validado por Frank** (16 sept 2026): le gusta mucho. Queda
    hacerle las preguntas de *Preguntas para Frank*: varias páginas y el
    dominio dependen de sus respuestas.
 2. **Pedirle una foto suya para la portada.** Va una provisional de Unsplash
@@ -62,7 +61,7 @@ Opiniones se queda como sección de la portada.
 - [x] **¿Le gusta?** La primera versión no (16 sept 2026): «demasiado
       plana», «sin color», «no parece de limpieza», «pocas funciones».
       Rehecha con color y elevación
-- [ ] **¿Y la nueva?** Enseñársela (ver *Por dónde seguir*)
+- [x] **¿Y la nueva?** Sí: le gusta mucho, diseño validado (16 sept 2026)
 - [x] **Foto de la portada**: la de él aspirando no le gustó. Va una
       provisional de Unsplash hasta que mande una suya
 - [ ] **NIF**: lo exige el aviso legal. Va a `docs/privado/` hasta que lo
