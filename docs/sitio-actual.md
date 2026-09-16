@@ -5,9 +5,37 @@ Se leyeron convertidas a texto, así que **no se vio**: meta descriptions, Open
 Graph, `lang`, colores, tipografías, banner de cookies ni versión móvil. Hay que
 mirarlo en un navegador antes de darlo por sabido.
 
-## Mapa y redirecciones
+## Decisión por página (16 sept 2026)
 
-Toda ruta que desaparezca lleva un 301 a su equivalente nueva.
+Decidido con Kevin. **Sin redirecciones 301**: las rutas buenas se conservan
+tal cual y las malas se renombran sin más.
+
+| Ruta nueva | Viene de | Qué lleva |
+|---|---|---|
+| `/` | `/` | Hecha |
+| `/quienes-somos` | igual | Reescrita: dónde está, por qué elegirle, los tres valores como texto (no imágenes). Visión y misión fuera |
+| `/nuestros-servicios` | igual | **Una sola página** con los seis grupos y una descripción corta por servicio |
+| `/zonas-de-servicio` | igual | Cuando él diga cuál de las dos listas vale |
+| `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | Sólo la FAQ; el blog fuera |
+| `/trabaja-con-nosotros` | igual | Sin formulario: datos por WhatsApp o correo |
+| `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | Reescrito de cero; falta su NIF |
+| `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | Reescrita de cero |
+| `/politica-de-cookies` | `/politica-de-cookies-limpiezas-el-imperio` | Reescrita de cero |
+
+**Fuera**, sin sustituto:
+
+- `/solicitar-presupuesto`, `/solicitar-servicios`, `/solicitar-presupuesto-1`:
+  no hay formularios. Lo que pedía (tipo de vivienda, habitaciones, baños,
+  fecha) puede servir para el mensaje de WhatsApp.
+- `/reserva-de-servicios` y su PDF: es su parte de trabajo interno.
+- `/datos-de-facturacion`: pedir DNI en un formulario público sin consentimiento
+  es un riesgo. La facturación va por WhatsApp o correo.
+- `/tu-opinion-importa-mucho`: las opiniones ya están en la portada y la fuente
+  real es Google.
+- Las 8 entradas del blog: relleno.
+- `/cart`, `/wishlist`, búsqueda: restos de Webador.
+
+## Mapa de la web antigua
 
 | Ruta actual | Título | Qué es |
 |---|---|---|
@@ -82,8 +110,22 @@ Redes:
 - **Por qué elegirnos:** disponibilidad inmediata, tarifas premium, calidad
   garantizada, servicio rápido y puntual, incluimos materiales y productos de
   limpieza, atención personalizada, garantía de satisfacción.
-- Visión, misión y valores **van como imágenes con texto dentro** (sin leer):
-  `visi-n-high-b6rad2.jpg`, `misi-n-high.jpg`, `valores-high-jvfffd.jpg`
+- Visión, misión y valores **van como imágenes con texto dentro** (leídas el
+  16 sept 2026). Tono corporativo genérico, con pinta de generado:
+  - **Visión:** «Ser reconocidos como la Empresa líder en servicios de limpieza,
+    destacándonos por nuestra innovación, sostenibilidad y compromiso con la
+    excelencia. Aspiramos a ser la primera Opción para nuestros clientes,
+    empleados y socios, creando un impacto positivo en cada comunidad.»
+  - **Misión:** «Proporcionar servicios de limpieza excepcionales y
+    personalizados, utilizando prácticas sostenibles y tecnología avanzada,
+    para crear entornos limpios y saludables que superen las expectativas de
+    nuestros clientes. Nos comprometemos a establecer relaciones de confianza y
+    a contribuir positivamente a la comunidad.»
+  - **Valores:** *Calidad* («servicios de limpieza de la más alta calidad,
+    asegurando la satisfacción de nuestros clientes en cada trabajo»),
+    *Confianza* («relaciones duraderas basadas en la honestidad, la
+    transparencia y el respeto mutuo»), *Sostenibilidad* («productos y métodos
+    respetuosos con el medio ambiente»).
 
 ### Servicios
 
@@ -180,6 +222,39 @@ Formulario con texto de bienvenida. Ver *Formularios*.
 
 **Hay que rehacerlos enteros**, no copiarlos.
 
+### Blog (las 8 entradas, leídas el 16 sept 2026)
+
+**Nada que conservar.** Siete se publicaron el mismo día en hora y cuarto.
+
+| Entrada | Qué es |
+|---|---|
+| solicita-nuestros-servicios… | Lista de palabras clave SEO con «[tu ciudad]» sin rellenar |
+| segmentacion-de-clientes | Cuestionario de marketing para el dueño, con notas de IA y «¿Hay algún aspecto…?» al final |
+| historia-de-la-limpieza | Resumen copiado de otra web con las citas de la IA |
+| transforma-tu-oficina… | Dos párrafos promocionales iguales, uno con «[Nombre de la Empresa]» |
+| servicios-de-limpieza | El mismo párrafo, borrador con «[Nombre de la Empresa]» |
+| nuestros-servicio | Sólo una galería de imágenes (varias de IA) |
+| somos-tu-mejor-opcion | Una frase: el lema |
+| porque-es-importante… 2 limpiezas profundas | Seis motivos genéricos; no menciona la empresa |
+
+La idea de la última (por qué hacer limpiezas profundas) podría servir para un
+texto nuevo con datos suyos. Ojo: la FAQ recomienda **una al mes** y esta
+entrada **dos al año**.
+
+### PDF «Hoja de servicio» (`/reserva-de-servicios`)
+
+No es para el cliente: es **su parte de trabajo interno**, un impreso para
+rellenar a mano. Pero dice cómo cobra:
+
+- **Valor inicial por 4 horas**, más **horas extras** sobre las contratadas
+  («horas reales al terminar el servicio»).
+- **Desplazamiento** aparte.
+- **Vaporeta o Kärcher** con valor aparte.
+- **Productos de limpieza incluidos.**
+- Se anota el personal asignado y lo firman él y el cliente.
+
+Nada de esto se publica sin preguntarle (sobre todo el mínimo de 4 horas).
+
 ## Formularios
 
 Todos de Webador, con campo trampa antispam. Casi todo obligatorio y ninguno
@@ -217,6 +292,10 @@ Las originales están en el CDN de Webador, carpeta
 `alt` vacío.
 
 - **Logo:** `1000796919-high.png` (se muestra a 70 px de alto; pedir original)
+- **Logo SIN el teléfono:** `1000789576-standard-xf6osy.jpg` (526×475, el de
+  Quiénes somos). Es el bueno para la web; falta en más resolución
+- **Logo con teléfono en más resolución:** `1000801794-high.jpg` (1296×1214, el
+  de Inicio)
 - **Inicio:** `1000801794-high.jpg`
 - **Quiénes somos:** `1000789576-standard-xf6osy.jpg`
 - **Servicios:** muchas parecen de banco o generadas (`oig3-…` apunta a Bing

@@ -35,5 +35,4 @@ está registrado en Webador, queda por comprobar en su panel (sin verificar):
   registrador, cambiar los DNS a lo loco (sobre todo los MX, o los
   nameservers enteros) **le corta el correo**. Averiguar dónde vive el buzón
   antes de tocar nada.
-- **Redirecciones de las URLs viejas** (lista en `docs/sitio-actual.md`).
 - Actualizar el enlace en Google Business Profile y en las redes.

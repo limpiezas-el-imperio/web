@@ -144,10 +144,10 @@ Aprendido en la contabilidad, y aplica aquí:
 - **Antes de escribir código de Next, lee la guía en
   `node_modules/next/dist/docs/`** (ver `AGENTS.md`). Esta versión no es la que
   recuerdas.
-- **Las URLs actuales no se pueden perder sin más.** La web de Webador tiene
-  páginas indexadas (`/nuestros-servicios`, `/solicitar-presupuesto`,
-  `/zonas-de-servicio`…). Si una página desaparece o cambia de ruta, lleva su
-  redirección permanente. La lista está en `docs/sitio-actual.md`.
+- **El mapa de la web está decidido** en `docs/sitio-actual.md`, *Decisión por
+  página*. Las rutas buenas de la web vieja se conservan y las malas se
+  renombran, **sin redirecciones 301**: decisión de Kevin. No añadas páginas ni
+  formularios fuera de esa tabla sin hablarlo.
 - **Nada de datos inventados.** Ni años de experiencia, ni número de reseñas,
   ni zonas, ni servicios que no salgan de él o de su web. La web actual se
   contradice en varias cosas (dos listas de zonas, 4,9 frente a 4,78); se le

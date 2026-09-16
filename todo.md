@@ -1,5 +1,24 @@
 # Pendiente
 
+## Plan de trabajo (acordado el 16 sept 2026)
+
+Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
+
+1. [x] **Decidir qué contenido de la web vieja se queda**, página a página
+       (`docs/sitio-actual.md`, *Decisión por página*)
+2. [ ] **Integrarlo** en la web nueva (sin redirecciones), página a página:
+   - [ ] `/nuestros-servicios`
+   - [ ] `/preguntas-frecuentes`
+   - [ ] `/quienes-somos`
+   - [ ] `/trabaja-con-nosotros`
+   - [ ] `/zonas-de-servicio` (espera la lista buena)
+   - [ ] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies`
+         (esperan su NIF)
+3. [ ] **Iterar**: mejorar, optimizar
+4. [ ] **Mirar `../limpiezas-imperio-software/`** para entender mejor el
+       negocio. Proyecto aparte e independiente: se lee para entender, **nada
+       de sus datos entra aquí** (este repositorio es público)
+
 ## 0. Contexto
 
 - [x] `CLAUDE.md`, `README.md`, `docs/`, `todo.md`
@@ -27,7 +46,11 @@
 - [x] **Material**: logo en `public/` (ver `docs/sitio-actual.md`, *Imágenes*).
       Las imágenes de su web son todas generadas con IA
 - [ ] **Material**: ¿logo vectorial o sin el teléfono dentro?
-- [ ] **Blog**: ¿se conserva? Hay entradas generadas sin revisar
+- [x] **Blog**: fuera (relleno generado)
+- [ ] **Trabaja con nosotros**: ¿sigue buscando gente así?
+- [ ] **Cobro**: la hoja de servicio dice mínimo de 4 horas, desplazamiento y
+      vaporeta aparte. ¿Se puede decir algo de eso en la web?
+- [ ] **Logo sin teléfono** en más resolución (el de su web es de 526 px)
 - [ ] **Redes**: LinkedIn apunta a un enlace roto; ¿cuáles están vivas?
 
 ## 2. Decisiones técnicas
@@ -36,7 +59,7 @@
 - [x] Formularios: ninguno por ahora
 - [x] **Despliegue automático**: repositorio público (ver `CLAUDE.md`,
       *Despliegue*)
-- [ ] Mapa de rutas nuevas y redirecciones 301 desde las viejas
+- [x] Mapa de rutas: `docs/sitio-actual.md`, *Decisión por página*. Sin 301
 - [ ] Textos legales rehechos para este negocio (aviso legal, privacidad,
       cookies) y banner de cookies sólo si hay algo que lo exija
 
@@ -57,6 +80,5 @@
 ## 4. Lanzamiento
 
 - [ ] Dominio conectado y HTTPS
-- [ ] Redirecciones comprobadas URL a URL
 - [ ] Correo `info@` comprobado después del cambio
 - [ ] Actualizar Google Business Profile y redes
