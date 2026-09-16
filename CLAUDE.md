@@ -23,10 +23,10 @@ esto es la guía operativa.
 
 | Ruta | Estado |
 |---|---|
-| `/` | Hecha: portada con foto **provisional** de Unsplash, galería, mapa de zonas, opiniones de Google |
+| `/` | Hecha: portada con foto **provisional** de Unsplash, presupuesto guiado por WhatsApp, galería, mapa de zonas, opiniones de Google |
 | `/nuestros-servicios` | Hecha, **con descripciones en borrador** pendientes de Frank |
 | `/preguntas-frecuentes` | Hecha |
-| `/contacto` | Hecha: WhatsApp, teléfono y correo en tarjetas, horario, zonas, redes, y «Qué contarnos» con un WhatsApp con las preguntas ya escritas |
+| `/contacto` | Hecha: WhatsApp, teléfono y correo en tarjetas, horario, zonas, redes, y el presupuesto guiado por WhatsApp |
 | `/quienes-somos` | Hecha: dónde estamos y el lema, cifras reales (Google, servicios, zonas), por qué elegirnos y los tres valores |
 | `/trabaja-con-nosotros` | Por hacer; espera a saber si sigue buscando gente |
 | `/zonas-de-servicio` | Por hacer; espera a que él diga cuál de sus dos listas vale |
@@ -141,6 +141,8 @@ src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
                   DatosEstructurados (JSON-LD)
                   Marca (logo + nombre)
                   Opiniones (carrusel de reseñas; cliente)
+                  Presupuesto (presupuesto guiado que abre WhatsApp con el
+                  mensaje escrito; cliente. En la portada y en /contacto)
                   Galeria (fotos: rejilla o fila deslizable; cliente)
                   useCarrusel (lo común de los dos carruseles)
                   MapaZonas (esquema SVG con coordenadas reales)
@@ -411,6 +413,10 @@ Reglas:
 - **Sin formularios por ahora.** El contacto es WhatsApp, teléfono y correo. Un
   formulario pide servicio de correo, antispam y casilla de privacidad: no se
   añade sin que él lo pida.
+- **El presupuesto guiado no es un formulario** (`Presupuesto.tsx`): no manda
+  nada a ningún servidor, sólo compone el texto y abre WhatsApp. El cliente
+  lo envía desde su WhatsApp, si quiere. Si algún día tiene que enviar datos
+  a algún sitio, pasa a ser un formulario y aplica la regla de arriba.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

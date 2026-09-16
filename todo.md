@@ -10,10 +10,8 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
 2. **Pedirle una foto suya para la portada.** Va una provisional de Unsplash
    (`fotoPortada` en `src/app/page.tsx`). Horizontal, luminosa, a ser posible
    un trabajo terminado, sin personas que no sean ellos. Sin EXIF ni GPS.
-3. **Si sigue pidiendo «más funciones»**: presupuesto guiado que abre
-   WhatsApp con el mensaje escrito (servicio, zona, habitaciones, baños,
-   frecuencia, fecha). Sin formulario ni servidor. Se hizo una versión en la
-   segunda sesión y se borró con `/propuesta`; se rehace en la portada.
+3. **Presupuesto guiado por WhatsApp**: hecho, en la portada y en `/contacto`.
+   Enseñárselo a Frank y preguntarle si le faltan o sobran preguntas.
 4. Las páginas que no dependían de él ya están (`/contacto` y
    `/quienes-somos`). Las que quedan esperan respuestas suyas.
 
@@ -129,7 +127,10 @@ Opiniones se queda como sección de la portada.
       de contacto, carruseles, portada del móvil
 - [ ] Rendimiento y accesibilidad: Lighthouse en móvil, contraste, orden de
       tabulación
-- [ ] Presupuesto guiado por WhatsApp: ver *Por dónde seguir*, punto 3
+- [x] Presupuesto guiado por WhatsApp (`Presupuesto.tsx`): servicio, tipo de
+      vivienda, habitaciones y baños, frecuencia, zona, fecha y comentario.
+      En la portada, tras los servicios, y en `/contacto`, donde sustituye a
+      las cuatro tarjetas de «Qué contarnos»
 - [ ] **Mantenimiento**: la nota y el total de Google (`valoracion` en
       `negocio.ts`) van escritos a mano; revisarlos de vez en cuando
 
@@ -175,3 +176,5 @@ Opiniones se queda como sección de la portada.
 - `/quienes-somos`: dónde estamos, lema, cifras reales, por qué elegirnos y
   valores. En el menú, que pasa a botón por debajo de 64rem
 - `sitemap.xml`, `robots.txt` y página 404 propia
+- Navegación sin desplazamiento animado; menú del móvil que cabe sin scroll
+- Presupuesto guiado por WhatsApp, en la portada y en `/contacto`

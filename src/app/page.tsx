@@ -15,6 +15,7 @@ import DatosEstructurados from "@/componentes/DatosEstructurados";
 import Galeria from "@/componentes/Galeria";
 import MapaZonas from "@/componentes/MapaZonas";
 import Opiniones from "@/componentes/Opiniones";
+import Presupuesto from "@/componentes/Presupuesto";
 import {
   enlaceWhatsApp,
   negocio,
@@ -223,6 +224,21 @@ export default function Inicio() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ——— Presupuesto guiado por WhatsApp (ver Presupuesto.tsx) ——— */}
+      <section id="presupuesto" className={`seccion ${s.presupuesto}`}>
+        <div className={`contenedor ${s.dos_columnas}`}>
+          <header className={s.lateral}>
+            <p className="antetitulo">Presupuesto</p>
+            <h2 className="seccion__titulo">Cuéntanos qué necesitas</h2>
+            <p className="seccion__entradilla">
+              Elige unas opciones y te abrimos WhatsApp con el mensaje ya escrito.
+              Sin formularios: el mensaje lo envías tú.
+            </p>
+          </header>
+          <Presupuesto />
         </div>
       </section>
 

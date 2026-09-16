@@ -1,6 +1,7 @@
 import { ArrowUpRight, Clock, Mail, MapPin, MessageCircle, Phone, Share2 } from "lucide-react";
 import CabeceraPagina from "@/componentes/CabeceraPagina";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
+import Presupuesto from "@/componentes/Presupuesto";
 import {
   enlaceWhatsApp,
   horario,
@@ -18,30 +19,6 @@ export const metadata = metadatosPagina({
     "Pide presupuesto por WhatsApp, teléfono o correo. Limpiezas El Imperio, en La Pobla de Vallbona: lunes a viernes de 6:00 a 18:00.",
   ruta: "/contacto",
 });
-
-// Lo que pedían los formularios de su web vieja (tipo de vivienda,
-// habitaciones, baños, fecha) y lo que dice su FAQ: «qué hay que limpiar,
-// dónde y cuándo». Sin formulario: va escrito en el mensaje de WhatsApp.
-const datosPresupuesto = [
-  {
-    titulo: "Qué hay que limpiar",
-    texto: "Un piso, una casa, una oficina, una comunidad, una obra…",
-  },
-  { titulo: "Dónde", texto: "La localidad o el barrio." },
-  {
-    titulo: "Cuándo y cada cuánto",
-    texto: "Una sola vez, o cada semana, quincena o mes.",
-  },
-  { titulo: "Cómo es", texto: "Si es una vivienda, cuántas habitaciones y baños tiene." },
-];
-
-const mensajePresupuesto = [
-  "Hola, quería pedir presupuesto.",
-  "• Qué hay que limpiar: ",
-  "• Dónde: ",
-  "• Cuándo y cada cuánto: ",
-  "• Habitaciones y baños: ",
-].join("\n");
 
 const paginaContacto = {
   "@type": "ContactPage",
@@ -187,37 +164,18 @@ export default function PaginaContacto() {
         </div>
       </section>
 
-      {/* ——— Qué contarnos ——— */}
-      <section className={`seccion ${s.presupuesto}`}>
-        <div className="contenedor">
-          <header className="seccion__cabecera">
+      {/* ——— Presupuesto guiado por WhatsApp (ver Presupuesto.tsx) ——— */}
+      <section id="presupuesto" className={`seccion ${s.presupuesto}`}>
+        <div className={`contenedor ${s.presupuesto__rejilla}`}>
+          <header>
             <p className="antetitulo">Para darte presupuesto</p>
             <h2 className="seccion__titulo">Qué contarnos</h2>
             <p className="seccion__entradilla">
-              Con estos datos es más fácil darte presupuesto. El mensaje de
-              WhatsApp ya lleva las preguntas: sólo tienes que rellenarlo.
+              Qué hay que limpiar, cada cuánto, dónde y cuándo. Elige las opciones
+              y te abrimos WhatsApp con el mensaje ya escrito.
             </p>
           </header>
-
-          <ol className={s.pasos}>
-            {datosPresupuesto.map((d, i) => (
-              <li key={d.titulo} className="tarjeta">
-                <span className="numero" aria-hidden="true">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3>{d.titulo}</h3>
-                <p>{d.texto}</p>
-              </li>
-            ))}
-          </ol>
-
-          <a
-            className={`boton boton--whatsapp boton--grande ${s.presupuesto__boton}`}
-            href={enlaceWhatsApp(mensajePresupuesto)}
-          >
-            <MessageCircle aria-hidden="true" size={20} />
-            Pedir presupuesto por WhatsApp
-          </a>
+          <Presupuesto />
         </div>
       </section>
     </>

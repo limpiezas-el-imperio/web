@@ -360,6 +360,11 @@
   }
 }
 
+/* ——— Presupuesto (el resto, en componentes/Presupuesto.module.css) ——— */
+.presupuesto {
+  background: var(--azul-velo);
+}
+
 /* ——— Galería (el resto, en componentes/Galeria.module.css) ——— */
 .trabajos {
   background: var(--papel);
