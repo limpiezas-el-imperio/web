@@ -296,11 +296,11 @@ export default function Inicio() {
               >
                 Pregúntanos
               </a>
-              {" · "}
-              <a className="enlace" href={negocio.mapa}>
-                Ver en Google Maps
-              </a>
             </p>
+            <Link className={`enlace-flecha ${s.ver_todos}`} href="/zonas-de-servicio">
+              Todas las zonas
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
           </header>
           <MapaZonas />
         </div>

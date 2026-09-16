@@ -215,22 +215,56 @@ export const servicios: {
   },
 ];
 
-// Su web tiene dos listas de zonas que no coinciden. Aquí van sólo las que
-// están en las dos, hasta que él diga cuál es la buena. Los barrios de Valencia
-// (Benimàmet, Beniferri, Campanar…) se nombran aparte porque así los buscan.
-export const zonas = [
-  "La Pobla de Vallbona",
-  "Llíria",
-  "Benaguasil",
-  "L'Eliana",
-  "La Canyada",
-  "Paterna",
-  "Benimàmet",
-  "Beniferri",
-  "Campanar",
-  "Valencia",
-  "Torrent",
-] as const;
+// Zonas (16 sept 2026). Su web vieja tenía dos listas que no coincidían; se
+// quedan las localidades que estaban en las dos, más las que se ha visto que
+// trabaja de verdad (docs/privado/negocio.md, fuera de git), y fuera las que
+// sólo salían en una lista y nada indica que haga. Por localidades, no por
+// urbanizaciones; de Valencia se nombran los barrios que traían sus dos listas,
+// porque así los busca la gente.
+export type Area = "camp" | "metropolitana" | "valencia";
+
+export const areas: Record<Area, string> = {
+  camp: "Camp de Túria",
+  metropolitana: "Área metropolitana",
+  valencia: "Valencia ciudad",
+};
+
+export const zonasPorArea: { area: Area; localidades: string[] }[] = [
+  {
+    area: "camp",
+    localidades: [
+      "La Pobla de Vallbona",
+      "Llíria",
+      "Benaguasil",
+      "Benisanó",
+      "Olocau",
+      "L'Eliana",
+      "Riba-roja de Túria",
+      "Bétera",
+    ],
+  },
+  {
+    area: "metropolitana",
+    localidades: [
+      "La Canyada",
+      "Paterna",
+      "Godella",
+      "Moncada",
+      "Puçol",
+      "Mislata",
+      "Xirivella",
+      "Aldaia",
+      "Torrent",
+    ],
+  },
+  { area: "valencia", localidades: ["Valencia"] },
+];
+
+export const barriosValencia = ["Benimàmet", "Beniferri", "Campanar"];
+
+// La lista plana, en el orden de arriba: la usan el presupuesto, la FAQ, los
+// datos estructurados y las pastillas de zonas.
+export const zonas: string[] = zonasPorArea.flatMap((a) => a.localidades);
 
 // Opiniones de su ficha de Google Maps, leídas el 16 sept 2026 (las cinco que
 // Google enseña sin iniciar sesión; todas de 5 estrellas y de los últimos seis

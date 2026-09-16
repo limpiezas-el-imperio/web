@@ -45,12 +45,13 @@ Opiniones se queda como sección de la portada.
 - [x] `/trabaja-con-nosotros` — sin formulario: candidatura guiada que abre
       WhatsApp o el correo con nombre, zona, disponibilidad y experiencia. No
       dice que esté contratando ni promete condiciones
-- [ ] `/zonas-de-servicio` — espera la lista buena de zonas
+- [x] `/zonas-de-servicio` — 18 localidades por áreas, con el mapa. La lista
+      la decidió Kevin cruzando sus dos listas con dónde trabaja de verdad
 - [x] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` —
       lo mínimo y en llano, mejorando lo de su web vieja. Falta el NIF
 - [x] Menú: Quiénes somos añadido. Con seis enlaces, el botón «Menú» sale ya
       por debajo de 64rem (antes 60rem): la fila no cabía entre 960 y 1000 px
-- [ ] Menú: Zonas pasa de `/#zonas` a su página cuando exista
+- [x] Menú: Zonas va a `/zonas-de-servicio`
 - [x] Pie: enlaces a los legales, en la línea de abajo
 - [x] Pie: enlace a Trabaja con nosotros, en «La web»
 
@@ -81,8 +82,7 @@ Opiniones se queda como sección de la portada.
       propiedades», «Fachadas» y «Reparaciones eléctricas»
 - [ ] **Servicios**: ¿siguen los 26? ¿Le vale la agrupación en seis áreas?
       ¿Reparaciones eléctricas sigue siendo cosa suya?
-- [ ] **Zonas**: su web tiene dos listas distintas, ¿cuál es la buena? Hoy
-      salen las 11 que están en las dos
+- [x] **Zonas**: resuelto por Kevin (16 sept 2026), ver `/zonas-de-servicio`
 - [ ] **Opiniones**: ¿le parece bien que salgan las de Google en su web? ¿Y
       los nombres de su equipo (Michel, Maribel, Viviana…)? Hoy van cortados
 - [ ] **Experiencia**: su web dice «2 años» (texto de 2024). ¿Desde cuándo?
@@ -115,9 +115,7 @@ publicar nada de eso sin que él lo confirme)
       lo decía su FAQ. ¿Lo ofrece de verdad?
 - [ ] **Horario**: la web dice de lunes a viernes de 6:00 a 18:00 y fines de
       semana con agenda abierta. ¿Sigue así?
-- [ ] **Zonas**: además de elegir entre sus dos listas, proponerle las que
-      faltan (lista en `docs/privado/negocio.md`) y preguntar si sigue yendo
-      a las que no están claras
+- [x] **Zonas**: hecho con sus dos listas y dónde trabaja de verdad
 - [ ] **Equipo**: ¿quiere que la web diga que trabaja con un equipo? Las
       reseñas ya lo dejan ver
 
@@ -212,3 +210,4 @@ publicar nada de eso sin que él lo confirme)
 - `/trabaja-con-nosotros`, con candidatura guiada por WhatsApp o correo
 - «Trabaja con nosotros» también en el menú del móvil (secundario) y al final
   de `/quienes-somos`; letra del menú del móvil un poco más pequeña
+- `/zonas-de-servicio` con 18 localidades por áreas y el mapa rehecho

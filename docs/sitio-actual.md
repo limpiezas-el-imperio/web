@@ -15,7 +15,7 @@ tal cual y las malas se renombran sin más.
 | `/` | `/` | ✅ Hecha |
 | `/quienes-somos` | igual | ✅ Hecha. Dónde está, por qué elegirle, los tres valores como texto (no imágenes). Visión y misión fuera; «tarifas premium» también, a preguntar |
 | `/nuestros-servicios` | igual | ✅ Hecha. **Una sola página** con los seis grupos y una descripción corta por servicio (borrador) |
-| `/zonas-de-servicio` | igual | Cuando él diga cuál de las dos listas vale |
+| `/zonas-de-servicio` | igual | ✅ Hecha. La lista la decidió Kevin (sus dos listas y dónde trabaja de verdad) |
 | `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |
 | `/contacto` | — (nueva) | ✅ Hecha. Canales, horario, zonas, redes y qué contarnos para el presupuesto |
 | `/trabaja-con-nosotros` | igual | ✅ Hecha. Sin formulario: candidatura guiada por WhatsApp o correo |

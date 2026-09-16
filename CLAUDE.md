@@ -29,7 +29,7 @@ esto es la guía operativa.
 | `/contacto` | Hecha: WhatsApp, teléfono y correo en tarjetas, horario, zonas, redes, y el presupuesto guiado por WhatsApp |
 | `/quienes-somos` | Hecha: dónde estamos y el lema, cifras reales (Google, servicios, zonas), por qué elegirnos y los tres valores |
 | `/trabaja-con-nosotros` | Hecha: cómo es el trabajo y candidatura guiada que abre WhatsApp o el correo. Enlazada desde el pie. No dice que esté contratando |
-| `/zonas-de-servicio` | Por hacer; espera a que él diga cuál de sus dos listas vale |
+| `/zonas-de-servicio` | Hecha: 18 localidades en tres áreas (Camp de Túria, área metropolitana, Valencia ciudad) y el mapa. «Zonas» del menú va aquí |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Hechas, lo mínimo y en llano (`TextoLegal`). **Al aviso legal le falta el NIF**, que exige la LSSI. Enlazadas en la línea legal del pie |
 
 **Frank vio la primera versión (16 sept 2026) y no le gustó el diseño**:
@@ -138,6 +138,7 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   contacto/ (page.tsx + contacto.module.css)
                   quienes-somos/ (page.tsx + su módulo)
                   trabaja-con-nosotros/ (page.tsx + su módulo)
+                  zonas-de-servicio/ (page.tsx + su módulo)
                   aviso-legal/ · politica-de-privacidad/ · politica-de-cookies/
                   (sobre TextoLegal)
                   not-found.tsx (la 404, para quien llegue con una URL de la
@@ -284,8 +285,8 @@ Aprendido en la contabilidad, y aplica aquí:
   formularios fuera de esa tabla sin hablarlo.
 - **Nada de datos inventados.** Ni años de experiencia, ni número de reseñas,
   ni zonas, ni servicios que no salgan de él, de su web o de su ficha de
-  Google. Donde su web se contradice (dos listas de zonas) se le pregunta, no
-  se elige; mientras, va lo que está en las dos. **Única excepción consciente:
+  Google. Donde su web se contradecía (dos listas de zonas) decidió Kevin
+  con lo que se ve en su contabilidad (`zonasPorArea` en `negocio.ts`). **Única excepción consciente:
   las descripciones de los servicios**, escritas por nosotros como borrador y
   marcadas como tal en `negocio.ts` y en `todo.md`.
 
