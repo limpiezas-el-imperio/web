@@ -388,7 +388,11 @@ Reglas:
   menú ninguno.
 - **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en azul
   muy claro con la cabecera blanca (en azul resultaba demasiado azul): enlaces grandes y,
-  abajo, WhatsApp, teléfono, correo y horario. Mientras está abierto
+  abajo, WhatsApp y Llamar lado a lado y el correo. **Tiene que caber sin
+  desplazarse** (lo pidió Kevin): las alturas van en `svh`, el horario se quitó
+  para que cupiera y en horizontal los enlaces van en dos columnas sin el
+  correo. Si añades un enlace al menú, mide `scrollHeight` del panel abierto
+  en 320×568 y 667×375. Mientras está abierto
   lo de detrás queda `inert` y sin scroll, y al cerrarlo el foco vuelve al
   botón. Tres detalles que costaron un fallo cada uno, no los deshagas:
   `overflow: hidden` sólo en `<html>` (en `<body>` la cabecera sticky se iba
@@ -398,6 +402,8 @@ Reglas:
   hacia arriba).
 - **La cabecera es opaca y blanca, con sombra en vez de borde, y el logo va sin
   transparencias ni fundidos.** Lo pidió Kevin.
+- **Sin desplazamiento animado al navegar** (lo pidió Kevin): nada de
+  `scroll-behavior: smooth`. Enlaces y anclas van directos a su sitio.
 - **Carruseles** (opiniones y galería del móvil): scroll horizontal nativo con
   anclajes (`scroll-snap`), no librerías. Se deslizan con el dedo; flechas y
   puntos sólo los mueven. **Nunca pasan solos.** La lógica común está en

@@ -4,7 +4,7 @@ import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { enlaceWhatsApp, horario, negocio } from "@/datos/negocio";
+import { enlaceWhatsApp, negocio } from "@/datos/negocio";
 import { enlaces } from "@/datos/navegacion";
 
 // La navegación de la cabecera. En escritorio, los enlaces en fila; en tablet
@@ -127,27 +127,25 @@ export default function Navegacion() {
 
           <div className="menu__contacto">
             <div className="menu__botones">
-              <a className="boton boton--whatsapp boton--grande" href={enlaceWhatsApp()}>
+              <a className="boton boton--whatsapp" href={enlaceWhatsApp()}>
                 <MessageCircle aria-hidden="true" size={20} />
                 WhatsApp
               </a>
               <a
-                className="boton boton--claro boton--grande"
+                className="boton boton--claro"
                 href={`tel:${negocio.telefono}`}
+                aria-label={`Llamar al ${negocio.telefonoVisible}`}
               >
                 <Phone aria-hidden="true" size={20} />
-                {negocio.telefonoVisible}
+                Llamar
               </a>
             </div>
+            {/* El horario no va: con él el menú no cabía en un móvil sin
+                desplazarse. Está en el pie, en el contacto y en /contacto. */}
             <a className="menu__correo" href={`mailto:${negocio.correo}`}>
               <Mail aria-hidden="true" size={20} />
               {negocio.correo}
             </a>
-            <p className="menu__horario">
-              {horario.semana}
-              <br />
-              {horario.finDeSemana}
-            </p>
           </div>
         </div>
       </nav>
