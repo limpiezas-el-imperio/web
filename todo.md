@@ -7,8 +7,8 @@
 - [x] Remoto `origin` → `limpiezas-el-imperio/web`
 - [x] Primer commit y push a `main`
 - [x] Repositorio público (necesario para desplegar desde Hobby)
-- [ ] Crear el proyecto en su Vercel enlazado al repo y comprobar un despliegue
-      de la plantilla en `Ready`
+- [x] Proyecto en su Vercel enlazado al repo; push → despliegue comprobado
+      (https://limpiezaselimperio.vercel.app)
 
 ## 1. Preguntas para Frank
 

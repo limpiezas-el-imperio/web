@@ -11,7 +11,8 @@ esto es la guía operativa.
 | | |
 |---|---|
 | Repositorio | `limpiezas-el-imperio/web` (**público**, del cliente). `kevjrmy` es colaborador |
-| Vercel | cuenta gratuita del cliente. Aún sin proyecto ni despliegue |
+| Producción | https://limpiezaselimperio.vercel.app |
+| Vercel | proyecto `web` en la cuenta gratuita del cliente, enlazado al repositorio |
 | Dominio | Ver `docs/dominio.md`. Sin decidir: `.com` comprado en Vercel, o apuntar el `.net` actual |
 | Web actual | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
 | Pendiente | `todo.md` |
