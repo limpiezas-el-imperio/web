@@ -14,10 +14,13 @@
   --texto: #1b2533;
   --texto-suave: #5d6878;
 
+  /* Sobre fondo azul: texto y líneas. Tres valores y ninguno más. */
+  --blanco: #ffffff;
+  --texto-sobre-azul: rgb(255 255 255 / 0.75);
+  --linea-sobre-azul: rgb(255 255 255 / 0.16);
+
   --radio: 0.375rem;
   --radio-grande: 0.625rem;
-  --sombra: 0 1px 2px rgb(14 36 99 / 0.06), 0 8px 24px -8px rgb(14 36 99 / 0.12);
-  --sombra-alta: 0 2px 4px rgb(9 23 67 / 0.08), 0 24px 48px -16px rgb(9 23 67 / 0.35);
 
   --ancho: 72rem;
   --alto-cabecera: 4.25rem;
@@ -116,8 +119,8 @@ p {
   z-index: 100;
   padding: 0.75rem 1rem;
   background: var(--papel);
-  border-radius: 0.5rem;
-  font-weight: 600;
+  border-radius: var(--radio);
+  font-weight: 500;
 }
 
 .saltar:focus {
@@ -144,10 +147,17 @@ p {
   color: var(--texto-suave);
 }
 
+/* ——— Sistema ———
+   Piezas comunes. Si algo se parece a una de ellas, usa la clase; no copies
+   sus valores en un módulo (ver CLAUDE.md, «Sistema de diseño»). */
+
+/* Etiqueta en mayúsculas: encima de títulos, en el pie, en los índices. */
 .antetitulo {
   margin-bottom: 0.875rem;
+  font-family: var(--fuente-texto), system-ui, sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
+  line-height: 1.4;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--azul);
@@ -155,6 +165,45 @@ p {
 
 .antetitulo--claro {
   color: var(--azul-claro);
+}
+
+/* Número de un índice o de una lista: 01, 02… */
+.numero {
+  font-family: var(--fuente-texto), system-ui, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+  color: var(--azul);
+}
+
+.numero--claro {
+  color: var(--azul-claro);
+}
+
+/* Enlace dentro de un texto. */
+.enlace {
+  font-weight: 500;
+  color: var(--marino);
+  text-decoration: underline;
+  text-decoration-color: var(--azul-claro);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.enlace:hover {
+  text-decoration-color: currentColor;
+}
+
+.enlace--claro {
+  color: var(--blanco);
+}
+
+/* Iconos (lucide): trazo fino, como las líneas de toda la web. Las estrellas,
+   que van rellenas, no. */
+svg.lucide:not([fill="currentColor"]) {
+  stroke-width: 1.5;
 }
 
 /* ——— Botones ——— */
@@ -197,27 +246,22 @@ p {
    azul marino y no en verde: la paleta es sólo de azules y grises. */
 .boton--whatsapp {
   background: var(--marino);
-  color: #fff;
+  color: var(--blanco);
 }
 
 .boton--whatsapp:hover {
   background: var(--marino-hondo);
 }
 
-.boton--contorno {
-  border-color: rgb(255 255 255 / 0.35);
-  color: #fff;
-}
-
-.boton--contorno:hover {
-  border-color: #fff;
-  background: rgb(255 255 255 / 0.08);
-}
-
+/* El secundario: blanco con borde. Llamar, en la barra y en el menú. */
 .boton--claro {
   background: var(--papel);
   border-color: var(--linea);
   color: var(--marino);
+}
+
+.boton--claro:hover {
+  border-color: var(--marino);
 }
 
 /* Enlace de texto con flecha: la acción secundaria de toda la web. */
@@ -231,9 +275,19 @@ p {
   text-decoration-color: var(--azul-claro);
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.enlace-flecha:hover {
+  text-decoration-color: currentColor;
+}
+
+.enlace-flecha--claro {
+  color: var(--blanco);
 }
 
 .enlace-flecha svg {
+  flex-shrink: 0;
   transition: transform 0.15s ease;
 }
 
@@ -254,7 +308,7 @@ p {
   width: 3.25rem;
   height: 3.25rem;
   flex-shrink: 0;
-  border-radius: 0.75rem;
+  border-radius: var(--radio-grande);
   object-fit: contain;
 }
 
@@ -280,7 +334,7 @@ p {
 }
 
 .marca--clara {
-  color: #fff;
+  color: var(--blanco);
 }
 
 /* Sobre azul, el logo va en su tarjeta blanca. */
@@ -288,7 +342,7 @@ p {
   width: 4rem;
   height: 4rem;
   padding: 0.25rem;
-  background: #fff;
+  background: var(--blanco);
 }
 
 /* ——— Cabecera ——— */
@@ -320,7 +374,7 @@ p {
   padding: 0.5rem 0.75rem;
   border-radius: var(--radio);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--texto-suave);
   text-decoration: none;
   transition:
@@ -373,7 +427,7 @@ p {
     background: var(--papel);
     font: inherit;
     font-size: 0.9375rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--marino);
     cursor: pointer;
   }
@@ -474,7 +528,7 @@ p {
     align-items: center;
     gap: 0.5rem;
     justify-self: start;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--marino);
     text-decoration: none;
     overflow-wrap: anywhere;
@@ -489,11 +543,7 @@ p {
     color: var(--texto-suave);
   }
 
-  /* El botón del teléfono, en contorno azul sobre el crema. */
-  .menu__botones .boton--contorno {
-    border-color: var(--marino);
-    color: var(--marino);
-  }
+
 
   /* Con el menú abierto: la página no se desplaza y la barra de contacto
      sobra, porque el menú ya la lleva. La cabecera se queda blanca; sólo el
@@ -508,7 +558,7 @@ p {
   html.menu-abierto .cabecera .menu__boton {
     background: var(--marino);
     border-color: var(--marino);
-    color: #fff;
+    color: var(--blanco);
   }
 
   html.menu-abierto .cabecera__whatsapp,
@@ -545,9 +595,7 @@ p {
     grid-template-columns: 1.4fr 1fr;
     gap: 0.625rem;
     padding: 0.625rem 1rem calc(0.625rem + env(safe-area-inset-bottom, 0px));
-    background: rgb(255 255 255 / 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: var(--papel); /* opaca, como la cabecera */
     border-top: 1px solid var(--linea);
   }
 
@@ -574,7 +622,7 @@ p {
 /* ——— Pie ——— */
 .pie {
   background: var(--marino-hondo);
-  color: rgb(255 255 255 / 0.72);
+  color: var(--texto-sobre-azul);
   font-size: 0.9375rem;
 }
 
@@ -591,15 +639,7 @@ p {
   margin-top: 1rem;
 }
 
-.pie__titulo {
-  margin-bottom: 0.875rem;
-  font-family: var(--fuente-texto), system-ui, sans-serif;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--azul-claro);
-}
+/* Los títulos del pie llevan .antetitulo .antetitulo--claro. */
 
 .pie__lista {
   display: grid;
@@ -612,7 +652,7 @@ p {
 }
 
 .pie__lista a:hover {
-  color: #fff;
+  color: var(--blanco);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -623,9 +663,9 @@ p {
   justify-content: space-between;
   gap: 0.5rem 1.5rem;
   padding-block: 1.5rem;
-  border-top: 1px solid rgb(255 255 255 / 0.1);
+  border-top: 1px solid var(--linea-sobre-azul);
   font-size: 0.875rem;
-  color: rgb(255 255 255 / 0.55);
+  color: var(--texto-sobre-azul);
 }
 
 @media (max-width: 56rem) {

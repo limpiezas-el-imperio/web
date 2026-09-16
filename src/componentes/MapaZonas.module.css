@@ -27,7 +27,7 @@
 .km {
   font-family: var(--fuente-texto), system-ui, sans-serif;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   fill: var(--texto-suave);
 }
 

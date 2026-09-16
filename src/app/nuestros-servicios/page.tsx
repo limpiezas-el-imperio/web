@@ -79,12 +79,14 @@ export default function NuestrosServicios() {
         <div className={`contenedor ${s.rejilla}`}>
           {/* Índice: lateral fijo en escritorio, fila deslizable en el móvil */}
           <nav className={s.indice} aria-label="Áreas de servicio">
-            <p className={s.indice__titulo}>Áreas</p>
+            <p className="antetitulo">Áreas</p>
             <ol>
               {servicios.map((g, i) => (
                 <li key={g.categoria}>
                   <a href={`#${g.categoria}`}>
-                    <span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="numero" aria-hidden="true">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
                     {g.titulo}
                   </a>
                 </li>
@@ -101,7 +103,7 @@ export default function NuestrosServicios() {
                 aria-labelledby={`titulo-${g.categoria}`}
               >
                 <header className={s.grupo__cabecera}>
-                  <span className={s.grupo__numero} aria-hidden="true">
+                  <span className={`numero ${s.grupo__numero}`} aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
@@ -128,7 +130,7 @@ export default function NuestrosServicios() {
                   )}
                 >
                   Pedir presupuesto
-                  <ArrowUpRight aria-hidden="true" size={18} />
+                  <ArrowUpRight aria-hidden="true" size={16} />
                 </a>
               </section>
             ))}
@@ -139,11 +141,11 @@ export default function NuestrosServicios() {
       {/* ——— Lo que incluyen todos ——— */}
       <section className={s.incluido}>
         <div className="contenedor">
-          <h2 className={s.incluido__titulo}>En todos los servicios</h2>
+          <h2 className={`antetitulo ${s.incluido__titulo}`}>En todos los servicios</h2>
           <ul className={s.incluido__lista}>
             {incluido.map(({ icono: Icono, titulo, texto }) => (
               <li key={titulo}>
-                <Icono aria-hidden="true" size={22} />
+                <Icono aria-hidden="true" size={20} />
                 <h3>{titulo}</h3>
                 <p>{texto}</p>
               </li>
@@ -151,7 +153,7 @@ export default function NuestrosServicios() {
           </ul>
           <p className={s.incluido__pie}>
             ¿Precios, frecuencias, zonas?{" "}
-            <Link href="/preguntas-frecuentes">
+            <Link className="enlace-flecha" href="/preguntas-frecuentes">
               Preguntas frecuentes
               <ArrowRight aria-hidden="true" size={16} />
             </Link>

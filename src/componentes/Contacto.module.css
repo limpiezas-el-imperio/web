@@ -2,7 +2,7 @@
 .contacto {
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: var(--blanco);
   background: var(--marino);
 }
 
@@ -10,12 +10,12 @@
   font-size: clamp(2.5rem, 5.5vw, 4rem);
   line-height: 1;
   letter-spacing: -0.02em;
-  color: #fff;
+  color: var(--blanco);
 }
 
 .contacto :global(.seccion__entradilla) {
   margin-bottom: 2rem;
-  color: rgb(255 255 255 / 0.8);
+  color: var(--texto-sobre-azul);
 }
 
 .contacto__rejilla {
@@ -28,14 +28,14 @@
 
 .contacto__lista {
   display: grid;
-  border-top: 1px solid rgb(255 255 255 / 0.2);
+  border-top: 1px solid var(--linea-sobre-azul);
 }
 
 .contacto__lista li {
   display: flex;
   gap: 1rem;
   padding: 1.25rem 0;
-  border-bottom: 1px solid rgb(255 255 255 / 0.2);
+  border-bottom: 1px solid var(--linea-sobre-azul);
 }
 
 .contacto__lista svg {
@@ -44,32 +44,29 @@
   color: var(--azul-claro);
 }
 
-.contacto__lista span {
+.contacto__lista :global(.antetitulo) {
   display: block;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgb(255 255 255 / 0.6);
+  margin-bottom: 0.25rem;
 }
 
 .contacto__lista a,
 .contacto__lista p {
   font-size: 1.125rem;
-  font-weight: 600;
-  color: #fff;
+  font-weight: 500;
+  color: var(--blanco);
   text-decoration: none;
   overflow-wrap: anywhere;
 }
 
 .contacto__lista a:hover {
   text-decoration: underline;
+  text-decoration-color: var(--azul-claro);
   text-underline-offset: 4px;
 }
 
 .contacto__lista p {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 @media (max-width: 48rem) {
@@ -80,7 +77,7 @@
 
 /* Sobre el azul, el botón principal va en blanco: en azul marino no se vería. */
 .contacto :global(.boton--whatsapp) {
-  background: #fff;
+  background: var(--blanco);
   color: var(--marino);
 }
 

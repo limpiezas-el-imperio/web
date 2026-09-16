@@ -15,7 +15,7 @@ export default function Pie() {
         </div>
 
         <nav aria-label="La web">
-          <h2 className="pie__titulo">La web</h2>
+          <h2 className="antetitulo antetitulo--claro">La web</h2>
           <ul className="pie__lista">
             <li>
               <Link href="/">Inicio</Link>
@@ -29,7 +29,7 @@ export default function Pie() {
         </nav>
 
         <div>
-          <h2 className="pie__titulo">Contacto</h2>
+          <h2 className="antetitulo antetitulo--claro">Contacto</h2>
           <ul className="pie__lista">
             <li>
               <a href={`tel:${negocio.telefono}`}>{negocio.telefonoVisible}</a>
@@ -46,7 +46,7 @@ export default function Pie() {
         </div>
 
         <div>
-          <h2 className="pie__titulo">Horario</h2>
+          <h2 className="antetitulo antetitulo--claro">Horario</h2>
           <ul className="pie__lista">
             <li>{horario.semana}</li>
             <li>{horario.finDeSemana}</li>
@@ -54,7 +54,7 @@ export default function Pie() {
         </div>
 
         <div>
-          <h2 className="pie__titulo">Síguenos</h2>
+          <h2 className="antetitulo antetitulo--claro">Síguenos</h2>
           <ul className="pie__lista">
             {redes.map((r) => (
               <li key={r.nombre}>

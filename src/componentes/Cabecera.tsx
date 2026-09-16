@@ -13,7 +13,7 @@ export default function Cabecera() {
           className="boton boton--whatsapp boton--pequeno cabecera__whatsapp"
           href={enlaceWhatsApp()}
         >
-          <MessageCircle aria-hidden="true" size={18} />
+          <MessageCircle aria-hidden="true" size={16} />
           <span>WhatsApp</span>
         </a>
       </div>

@@ -17,7 +17,7 @@ export default function Contacto() {
             className="boton boton--whatsapp boton--grande"
             href={enlaceWhatsApp()}
           >
-            <MessageCircle aria-hidden="true" size={22} />
+            <MessageCircle aria-hidden="true" size={20} />
             Escríbenos por WhatsApp
           </a>
         </header>
@@ -26,21 +26,21 @@ export default function Contacto() {
           <li>
             <Phone aria-hidden="true" size={20} />
             <div>
-              <span>Teléfono</span>
+              <span className="antetitulo antetitulo--claro">Teléfono</span>
               <a href={`tel:${negocio.telefono}`}>{negocio.telefonoVisible}</a>
             </div>
           </li>
           <li>
             <Mail aria-hidden="true" size={20} />
             <div>
-              <span>Correo</span>
+              <span className="antetitulo antetitulo--claro">Correo</span>
               <a href={`mailto:${negocio.correo}`}>{negocio.correo}</a>
             </div>
           </li>
           <li>
             <Clock aria-hidden="true" size={20} />
             <div>
-              <span>Horario</span>
+              <span className="antetitulo antetitulo--claro">Horario</span>
               <p>
                 {horario.semana}
                 <br />
@@ -51,7 +51,7 @@ export default function Contacto() {
           <li>
             <MapPin aria-hidden="true" size={20} />
             <div>
-              <span>Dónde estamos</span>
+              <span className="antetitulo antetitulo--claro">Dónde estamos</span>
               <a href={negocio.mapa}>
                 {negocio.localidad} ({negocio.provincia})
               </a>

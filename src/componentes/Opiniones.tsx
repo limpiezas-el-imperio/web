@@ -56,7 +56,7 @@ export default function Opiniones() {
               </blockquote>
               <figcaption className={s.autor}>
                 <span>{o.autor}</span>
-                <a href={negocio.mapa} className={s.fuente}>
+                <a href={negocio.mapa} className={`enlace-flecha ${s.fuente}`}>
                   Leer en Google
                   <ArrowUpRight aria-hidden="true" size={16} />
                 </a>
@@ -103,7 +103,7 @@ function Estrellas() {
   return (
     <span className={s.estrellas} role="img" aria-label="5 de 5 estrellas">
       {Array.from({ length: 5 }, (_, i) => (
-        <Star key={i} aria-hidden="true" size={18} fill="currentColor" strokeWidth={0} />
+        <Star key={i} aria-hidden="true" size={16} fill="currentColor" strokeWidth={0} />
       ))}
     </span>
   );

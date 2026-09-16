@@ -200,6 +200,43 @@ Aprendido en la contabilidad, y aplica aquí:
   contradice en varias cosas (dos listas de zonas, 4,9 frente a 4,78); se le
   pregunta, no se elige.
 
+## Sistema de diseño
+
+**Coherencia antes que novedad.** Todo lo de abajo vive en `globals.css`. Si
+algo que vas a hacer se parece a una de estas piezas, usa la clase; no copies
+sus valores en un módulo. Se hizo una auditoría (sept 2026) porque habían
+aparecido seis versiones de la etiqueta en mayúsculas, ocho de enlace y dos de
+numeración.
+
+| Pieza | Clase | Cuándo |
+|---|---|---|
+| Etiqueta en mayúsculas | `.antetitulo` (+ `--claro` sobre azul) | Encima de un título, títulos del pie, «Áreas», «En esta página», etiquetas de los datos de contacto |
+| Número de índice | `.numero` (+ `--claro`) | 01, 02… en servicios, pasos, preguntas |
+| Enlace en un texto | `.enlace` (+ `--claro`) | Dentro de una frase |
+| Enlace de acción | `.enlace-flecha` (+ `--claro`) | «Pedir presupuesto», «Ver todos…» |
+| Botón principal | `.boton .boton--whatsapp` | Azul marino; en blanco sobre fondo azul |
+| Botón secundario | `.boton .boton--claro` | Blanco con borde: «Llamar», en la barra y en el menú |
+
+Reglas:
+
+- **Pesos:** 400 para texto y titulares; 500 para enlaces, navegación,
+  botones, nombres y datos; **600 sólo** en etiquetas en mayúsculas y números.
+  Nunca 700.
+- **Flechas:** `ArrowRight` (→) si el enlace se queda en la web;
+  `ArrowUpRight` (↗) si sale de ella (WhatsApp, Google, llamar).
+- **Iconos:** lucide, trazo 1,5 (lo pone `globals.css`; las estrellas rellenas
+  no). 16 px dentro de enlaces, 20 px en todo lo demás.
+- **Líneas:** siempre de 1 px. `--linea` sobre claro, `--linea-sobre-azul`
+  sobre azul, `--marino` para abrir un bloque (índices, grupos).
+- **Sobre azul**, sólo `--blanco`, `--texto-sobre-azul` y
+  `--linea-sobre-azul`. Nada de `rgb(255 255 255 / …)` escrito a mano.
+- **Esquinas:** `--radio` en todo; `--radio-grande` sólo en la tarjeta del
+  logo; redondo del todo sólo en los puntos de los carruseles.
+- **Sin tarjetas** (fondo de color + esquina grande) **ni sombras.** Un bloque
+  se separa con una regla encima.
+- **Sin transparencias** en superficies: cabecera, barra de contacto, pies de
+  foto, todo opaco.
+
 ## Estilo
 
 - **Toda la interfaz y todo el código —nombres, comentarios, commits— en

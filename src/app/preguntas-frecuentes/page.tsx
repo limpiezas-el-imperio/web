@@ -58,7 +58,7 @@ export default function PreguntasFrecuentes() {
         <div className={`contenedor ${s.rejilla}`}>
           <aside className={s.lateral}>
             <nav aria-label="Preguntas">
-              <p className={s.lateral__titulo}>En esta página</p>
+              <p className="antetitulo">En esta página</p>
               <ol className={s.indice}>
                 {preguntas.map((p) => (
                   <li key={p.pregunta}>
@@ -88,16 +88,19 @@ export default function PreguntasFrecuentes() {
                 id={ancla(p.pregunta)}
                 className={s.pregunta}
               >
-                <span className={s.pregunta__numero} aria-hidden="true">
+                <span className={`numero ${s.pregunta__numero}`} aria-hidden="true">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div>
                   <h2 className={s.pregunta__titulo}>{p.pregunta}</h2>
                   <p className={s.pregunta__respuesta}>{p.respuesta}</p>
                   {p.enlace && (
-                    <Link className={s.pregunta__enlace} href={p.enlace.href}>
+                    <Link
+                      className={`enlace-flecha ${s.pregunta__enlace}`}
+                      href={p.enlace.href}
+                    >
                       {p.enlace.texto}
-                      <ArrowRight aria-hidden="true" size={18} />
+                      <ArrowRight aria-hidden="true" size={16} />
                     </Link>
                   )}
                 </div>

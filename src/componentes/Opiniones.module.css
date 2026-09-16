@@ -22,7 +22,7 @@
 
 .total {
   margin-top: 0.25rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--texto-suave);
 }
 
@@ -79,7 +79,7 @@
   justify-content: space-between;
   gap: 0.5rem 1rem;
   margin-top: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .autor > span {
@@ -96,17 +96,7 @@
 }
 
 .fuente {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
   font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--texto-suave);
-  text-underline-offset: 4px;
-}
-
-.fuente:hover {
-  color: var(--marino);
 }
 
 /* ——— Controles ——— */
@@ -134,7 +124,7 @@
 
 .controles > button:hover:not(:disabled) {
   background: var(--marino);
-  color: #fff;
+  color: var(--blanco);
 }
 
 .controles > button:disabled {

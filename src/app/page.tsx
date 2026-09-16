@@ -112,12 +112,12 @@ export default function Inicio() {
             </p>
             <div className={s.acciones}>
               <a className="boton boton--whatsapp boton--grande" href={enlaceWhatsApp()}>
-                <MessageCircle aria-hidden="true" size={22} />
+                <MessageCircle aria-hidden="true" size={20} />
                 Pide presupuesto
               </a>
-              <a className={s.telefono} href={`tel:${negocio.telefono}`}>
+              <a className="enlace-flecha" href={`tel:${negocio.telefono}`}>
                 o llama al {negocio.telefonoVisible}
-                <ArrowRight aria-hidden="true" size={18} />
+                <ArrowUpRight aria-hidden="true" size={16} />
               </a>
             </div>
             {/* En el móvil sustituye a los botones: la barra fija de abajo ya
@@ -171,7 +171,7 @@ export default function Inicio() {
             </p>
             <Link className={`enlace-flecha ${s.ver_todos}`} href="/nuestros-servicios">
               Todos los servicios, con detalle
-              <ArrowRight aria-hidden="true" size={18} />
+              <ArrowRight aria-hidden="true" size={16} />
             </Link>
           </header>
 
@@ -185,11 +185,11 @@ export default function Inicio() {
                   open={i === 0}
                 >
                   <summary>
-                    <span className={s.grupo__numero}>
+                    <span className={`numero ${s.grupo__numero}`}>
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className={s.grupo__titulo}>{g.titulo}</span>
-                    <Plus aria-hidden="true" size={22} className={s.grupo__signo} />
+                    <Plus aria-hidden="true" size={20} className={s.grupo__signo} />
                   </summary>
                   <div className={s.grupo__cuerpo}>
                     <p className={s.grupo__resumen}>{g.resumen}</p>
@@ -205,7 +205,7 @@ export default function Inicio() {
                       )}
                     >
                       Pedir presupuesto
-                      <ArrowUpRight aria-hidden="true" size={18} />
+                      <ArrowUpRight aria-hidden="true" size={16} />
                     </a>
                   </div>
                 </details>
@@ -230,11 +230,13 @@ export default function Inicio() {
       {/* ——— Cómo trabajamos: una franja, no una sección entera ——— */}
       <section id="como-trabajamos" className={s.pasos}>
         <div className="contenedor">
-          <h2 className={s.pasos__titulo}>Cómo trabajamos</h2>
+          <h2 className={`antetitulo antetitulo--claro ${s.pasos__titulo}`}>Cómo trabajamos</h2>
           <ol className={s.pasos__lista}>
             {pasos.map((p, i) => (
               <li key={p.titulo}>
-                <span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
+                <span className="numero numero--claro" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <h3>{p.titulo}</h3>
                 <p>{p.texto}</p>
               </li>
@@ -242,7 +244,9 @@ export default function Inicio() {
           </ol>
           <p className={s.pasos__pie}>
             Nuestro consejo: una limpieza profunda al mes. ¿Más dudas?{" "}
-            <Link href="/preguntas-frecuentes">Preguntas frecuentes</Link>
+            <Link className="enlace enlace--claro" href="/preguntas-frecuentes">
+              Preguntas frecuentes
+            </Link>
           </p>
         </div>
       </section>
@@ -264,11 +268,16 @@ export default function Inicio() {
             </ul>
             <p className={s.zonas__nota}>
               ¿No ves tu zona?{" "}
-              <a href={enlaceWhatsApp("Hola, ¿trabajáis en mi zona? Estoy en ")}>
+              <a
+                className="enlace"
+                href={enlaceWhatsApp("Hola, ¿trabajáis en mi zona? Estoy en ")}
+              >
                 Pregúntanos
               </a>
               {" · "}
-              <a href={negocio.mapa}>Ver en Google Maps</a>
+              <a className="enlace" href={negocio.mapa}>
+                Ver en Google Maps
+              </a>
             </p>
           </header>
           <MapaZonas />
@@ -285,7 +294,7 @@ export default function Inicio() {
             </div>
             <a className="enlace-flecha" href={negocio.mapa}>
               Todas las reseñas en Google
-              <ArrowUpRight aria-hidden="true" size={18} />
+              <ArrowUpRight aria-hidden="true" size={16} />
             </a>
           </div>
           <Opiniones />

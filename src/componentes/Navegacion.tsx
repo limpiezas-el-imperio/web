@@ -94,9 +94,9 @@ export default function Navegacion() {
         onClick={() => (abierto ? cerrar(true) : setAbierto(true))}
       >
         {abierto ? (
-          <X aria-hidden="true" size={22} />
+          <X aria-hidden="true" size={20} />
         ) : (
-          <Menu aria-hidden="true" size={22} />
+          <Menu aria-hidden="true" size={20} />
         )}
         <span>{abierto ? "Cerrar" : "Menú"}</span>
       </button>
@@ -128,11 +128,11 @@ export default function Navegacion() {
           <div className="menu__contacto">
             <div className="menu__botones">
               <a className="boton boton--whatsapp boton--grande" href={enlaceWhatsApp()}>
-                <MessageCircle aria-hidden="true" size={22} />
+                <MessageCircle aria-hidden="true" size={20} />
                 WhatsApp
               </a>
               <a
-                className="boton boton--contorno boton--grande"
+                className="boton boton--claro boton--grande"
                 href={`tel:${negocio.telefono}`}
               >
                 <Phone aria-hidden="true" size={20} />
@@ -140,7 +140,7 @@ export default function Navegacion() {
               </a>
             </div>
             <a className="menu__correo" href={`mailto:${negocio.correo}`}>
-              <Mail aria-hidden="true" size={18} />
+              <Mail aria-hidden="true" size={20} />
               {negocio.correo}
             </a>
             <p className="menu__horario">
