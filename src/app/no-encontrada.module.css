@@ -1,0 +1,100 @@
+.pagina {
+  padding-block: clamp(3rem, 8vw, 5.5rem) clamp(4rem, 9vw, 6rem);
+  background:
+    radial-gradient(50rem 24rem at 85% 0%, rgb(30 144 232 / 0.16), transparent 70%),
+    linear-gradient(180deg, var(--azul-velo) 0%, var(--fondo) 60%);
+}
+
+.cabecera {
+  max-width: 40rem;
+}
+
+.titulo {
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--marino);
+}
+
+.entradilla {
+  margin-top: 1.25rem;
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  color: var(--texto-suave);
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* ——— A dónde ir ——— */
+.destinos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.destino {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+  padding: 1.25rem 1.5rem;
+  color: var(--texto-suave);
+  text-decoration: none;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.destino:hover {
+  box-shadow: var(--sombra-grande);
+  transform: translateY(-2px);
+}
+
+.destino__texto {
+  display: grid;
+  flex: 1;
+  gap: 0.125rem;
+}
+
+.destino__texto strong {
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--marino);
+}
+
+.destino__flecha {
+  flex-shrink: 0;
+  color: var(--azul);
+  transition: transform 0.2s ease;
+}
+
+.destino:hover .destino__flecha {
+  transform: translateX(3px);
+}
+
+@media (max-width: 40rem) {
+  .destinos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .destino {
+    padding: 1rem 1.125rem;
+  }
+
+  .acciones :global(.boton) {
+    width: 100%;
+  }
+
+  /* La barra fija de abajo ya lleva WhatsApp: aquí sería repetirlo. */
+  .acciones :global(.boton--whatsapp) {
+    display: none;
+  }
+}

@@ -16,7 +16,6 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
    segunda sesión y se borró con `/propuesta`; se rehace en la portada.
 4. Las páginas que no dependían de él ya están (`/contacto` y
    `/quienes-somos`). Las que quedan esperan respuestas suyas.
-5. `sitemap.ts` y `robots.ts`, y una página 404 propia.
 
 ## Plan de trabajo (acordado el 16 sept 2026)
 
@@ -116,8 +115,13 @@ Opiniones se queda como sección de la portada.
 
 ## Técnico
 
-- [ ] `src/app/sitemap.ts` y `src/app/robots.ts`
-- [ ] Página 404 propia (`not-found.tsx`) con la cabecera, el pie y enlaces
+- [x] `src/app/sitemap.ts` (lista de páginas a mano) y `src/app/robots.ts`,
+      los dos con `urlBase`: cambian solos con el dominio
+- [x] Página 404 propia (`not-found.tsx`): explica que la web se ha renovado,
+      para quien llegue de Google con una URL de Webador, y lleva a
+      servicios, presupuesto, preguntas y quiénes somos
+- [ ] Cuando el dominio sirva esta web, **dar de alta el sitemap en Google
+      Search Console** para que olvide antes las URLs viejas
 - [ ] Textos legales para este negocio. **Banner de cookies sólo si hace
       falta**: hoy la web no pone cookies ni analítica. Si se añade analítica,
       que sea sin cookies (Vercel Web Analytics) y se revisa
@@ -170,3 +174,4 @@ Opiniones se queda como sección de la portada.
   El menú, la FAQ y el cierre de contacto de cada página enlazan aquí
 - `/quienes-somos`: dónde estamos, lema, cifras reales, por qué elegirnos y
   valores. En el menú, que pasa a botón por debajo de 64rem
+- `sitemap.xml`, `robots.txt` y página 404 propia

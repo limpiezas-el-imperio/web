@@ -130,6 +130,8 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   preguntas-frecuentes/ (page.tsx + su módulo)
                   contacto/ (page.tsx + contacto.module.css)
                   quienes-somos/ (page.tsx + su módulo)
+                  not-found.tsx (la 404, para quien llegue con una URL de la
+                  web vieja) · sitemap.ts · robots.ts
                   globals.css (paleta, sistema de diseño, cabecera, menú, pie)
                   icon.svg · apple-icon.png
 src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
@@ -178,6 +180,8 @@ Copia `preguntas-frecuentes/` o `nuestros-servicios/`, que son las plantillas
 - **Los estilos de la página en su `.module.css`.** Ojo con `@keyframes` en un
   módulo: Next renombra la animación dentro del módulo, así que una animación
   definida en `globals.css` no se puede nombrar desde un módulo.
+- **Añádela a `src/app/sitemap.ts`**, que tiene la lista de páginas escrita a
+  mano.
 - **Añádela a `src/datos/navegacion.ts`**: de ahí salen la cabecera, el menú
   del móvil y el pie. Si sustituye a una sección de la portada (hoy Zonas y
   Opiniones van a `/#zonas` y `/#opiniones`), cambia ese `href` a la ruta
