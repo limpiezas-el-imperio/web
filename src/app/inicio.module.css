@@ -22,7 +22,8 @@
   animation-delay: 2.4s;
 }
 
-@media (max-width: 40rem) {
+/* En tablet y móvil cae encima del antetítulo. */
+@media (max-width: 60rem) {
   .adorno2 {
     display: none;
   }

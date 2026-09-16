@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Marca from "./Marca";
 import { horario, negocio, redes } from "@/datos/negocio";
+import { enlaces } from "@/datos/navegacion";
 
 export default function Pie() {
   const año = new Date().getFullYear();
@@ -12,6 +13,20 @@ export default function Pie() {
           <Marca claro />
           <p>{negocio.lema}.</p>
         </div>
+
+        <nav aria-label="La web">
+          <h2 className="pie__titulo">La web</h2>
+          <ul className="pie__lista">
+            <li>
+              <Link href="/">Inicio</Link>
+            </li>
+            {enlaces.map((e) => (
+              <li key={e.href}>
+                <Link href={e.href}>{e.texto}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div>
           <h2 className="pie__titulo">Contacto</h2>
@@ -56,13 +71,6 @@ export default function Pie() {
         <p>
           © {año} {negocio.nombre} · {negocio.titular}
         </p>
-        <nav aria-label="Pie">
-          <ul>
-            <li>
-              <Link href="/preguntas-frecuentes">Preguntas frecuentes</Link>
-            </li>
-          </ul>
-        </nav>
       </div>
     </footer>
   );

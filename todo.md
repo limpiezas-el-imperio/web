@@ -6,8 +6,13 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
 
 1. [x] **Decidir qué contenido de la web vieja se queda**, página a página
        (`docs/sitio-actual.md`, *Decisión por página*)
-2. [ ] **Integrarlo** en la web nueva (sin redirecciones), página a página:
+2. [ ] **Integrarlo** en la web nueva (sin redirecciones), página a página.
+       Menú: Inicio · Servicios · Zonas · Quiénes somos · Preguntas frecuentes ·
+       Contacto. Trabaja con nosotros y los legales, en el pie. Opiniones se
+       queda como sección de la portada.
+   - [x] Menú para tablet y móvil, página actual marcada, enlaces en el pie
    - [ ] `/nuestros-servicios`
+   - [ ] `/contacto` (nueva: lo mismo que la sección de contacto, en su página)
    - [x] `/preguntas-frecuentes` (ya es la plantilla de las demás)
    - [ ] `/quienes-somos`
    - [ ] `/trabaja-con-nosotros`

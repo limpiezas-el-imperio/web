@@ -93,12 +93,14 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   preguntas-frecuentes/ (page.tsx + su módulo)
                   globals.css (paleta, botones, adorno, cabecera, pie)
                   icon.svg · apple-icon.png
-src/componentes/  Cabecera · Pie · BarraContacto (sólo móvil)
+src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
+                  Pie · BarraContacto (sólo móvil)
                   CabeceraPagina (la banda azul de cada página)
                   Contacto (el cierre de cada página)
                   DatosEstructurados (JSON-LD)
                   Marca (el nombre escrito) · Destello (la estrella del logo)
 src/datos/        negocio.ts (datos del negocio) · preguntas.ts (la FAQ)
+                  navegacion.ts (los enlaces del menú y del pie)
                   sitio.ts (URL base y metadatosPagina)
 public/           el logo, tal cual venía de su web · opengraph-image.jpg
 docs/             contexto del proyecto (en git)
@@ -129,7 +131,9 @@ Copia `preguntas-frecuentes/`, que es la plantilla:
   `animation: brillo …` en un módulo**: Next renombra `brillo` dentro del
   módulo y la animación deja de existir sin avisar. Sólo `animation-duration`
   o `animation-delay`.
-- Añádela a la cabecera y al pie.
+- **Añádela a `src/datos/navegacion.ts`**: de ahí salen la cabecera, el menú
+  del móvil y el pie. Si sustituye a una sección de la portada (Servicios,
+  Zonas…), cambia ese `href` de `/#seccion` a la ruta nueva.
 
 **La URL base va escrita a mano en `src/datos/sitio.ts`** (`dominioPublico`),
 y de ella salen el canonical, la imagen para compartir y los datos
@@ -201,6 +205,11 @@ Aprendido en la contabilidad, y aplica aquí:
   compartir.
 - **Contacto primero**: el WhatsApp es la acción principal en toda la web, y en
   el móvil hay una barra fija con WhatsApp y Llamar.
+- **Se navega por páginas, no por una sola página larga.** Cada tema importante
+  tiene la suya; la portada resume y enlaza. Por debajo de 60rem los enlaces de
+  la cabecera se sustituyen por el botón «Menú»: no los escondas sin dejar otra
+  forma de navegar, que es como estaba al principio y en el móvil no había
+  menú ninguno.
 - **Sin formularios por ahora.** El contacto es WhatsApp, teléfono y correo. Un
   formulario pide servicio de correo, antispam y casilla de privacidad: no se
   añade sin que él lo pida.
