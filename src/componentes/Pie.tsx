@@ -72,6 +72,11 @@ export default function Pie() {
         <p>
           © {año} {negocio.nombre} · {negocio.titular}
         </p>
+        <nav aria-label="Legal" className="pie__legales">
+          <Link href="/aviso-legal">Aviso legal</Link>
+          <Link href="/politica-de-privacidad">Privacidad</Link>
+          <Link href="/politica-de-cookies">Cookies</Link>
+        </nav>
         <p>
           Foto de portada:{" "}
           <a href={fotoPortada.enlace} rel="noopener">

@@ -753,7 +753,13 @@ svg.lucide:not([fill="currentColor"]) {
   color: var(--texto-sobre-azul);
 }
 
-/* El crédito de la foto de la portada: discreto, como el resto de la línea. */
+.pie__legales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+
+/* Los enlaces legales y el crédito de la foto: discretos, como la línea. */
 .pie__legal a {
   text-decoration: underline;
   text-decoration-color: var(--linea-sobre-azul);

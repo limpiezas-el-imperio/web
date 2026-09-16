@@ -1,0 +1,61 @@
+/* Texto corrido de las páginas legales: una tarjeta estrecha y legible. */
+.texto {
+  max-width: 48rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  color: var(--texto);
+}
+
+.texto h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: var(--marino);
+}
+
+.texto h2:first-child {
+  margin-top: 0;
+}
+
+.texto p,
+.texto ul,
+.texto dl {
+  margin-top: 0.75rem;
+}
+
+.texto ul {
+  display: grid;
+  gap: 0.375rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.texto li::marker {
+  color: var(--azul);
+}
+
+.texto dl {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.5rem 1.5rem;
+}
+
+.texto dt {
+  font-weight: 700;
+  color: var(--marino);
+}
+
+.texto dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 30rem) {
+  .texto dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .texto dd + dt {
+    margin-top: 0.625rem;
+  }
+}

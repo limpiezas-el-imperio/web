@@ -44,12 +44,13 @@ Opiniones se queda como sección de la portada.
 - [ ] `/trabaja-con-nosotros` — sin formulario. Espera a saber si sigue
       buscando gente así
 - [ ] `/zonas-de-servicio` — espera la lista buena de zonas
-- [ ] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` —
-      rehechos de cero; esperan su NIF
+- [x] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` —
+      lo mínimo y en llano, mejorando lo de su web vieja. Falta el NIF
 - [x] Menú: Quiénes somos añadido. Con seis enlaces, el botón «Menú» sale ya
       por debajo de 64rem (antes 60rem): la fila no cabía entre 960 y 1000 px
 - [ ] Menú: Zonas pasa de `/#zonas` a su página cuando exista
-- [ ] Pie: enlaces a Trabaja con nosotros y a los legales cuando existan
+- [x] Pie: enlaces a los legales, en la línea de abajo
+- [ ] Pie: enlace a Trabaja con nosotros cuando exista
 
 ## Preguntas para Frank
 
@@ -61,8 +62,10 @@ Opiniones se queda como sección de la portada.
 - [x] **¿Y la nueva?** Sí: le gusta mucho, diseño validado (16 sept 2026)
 - [x] **Foto de la portada**: la de él aspirando no le gustó. Va una
       de Unsplash, y le gustó: se queda (acreditada en el pie)
-- [ ] **NIF**: lo exige el aviso legal. Va a `docs/privado/` hasta que lo
-      publique él
+- [ ] **NIF**: lo exige el aviso legal (LSSI, art. 10), que ya está publicado
+      sin él (tampoco lo tenía su web vieja). Cuando lo dé: a `negocio.ts` y a
+      «Datos del titular» en `src/app/aviso-legal/page.tsx`. Recordarle que
+      publicarlo es cosa suya
 - [ ] **Dominio**: ¿deja el panel de Webador editar el A y el CNAME del `.net`
       sin cambiar los nameservers? (`docs/dominio.md`)
 - [ ] **Webador**: ¿el buzón `info@` sigue funcionando si se da de baja la web?
@@ -119,9 +122,9 @@ Opiniones se queda como sección de la portada.
       servicios, presupuesto, preguntas y quiénes somos
 - [ ] Cuando el dominio sirva esta web, **dar de alta el sitemap en Google
       Search Console** para que olvide antes las URLs viejas
-- [ ] Textos legales para este negocio. **Banner de cookies sólo si hace
-      falta**: hoy la web no pone cookies ni analítica. Si se añade analítica,
-      que sea sin cookies (Vercel Web Analytics) y se revisa
+- [x] Textos legales. Sin aviso de cookies: la web no pone ninguna ni usa
+      analítica (comprobado en la publicada). Si se añade algo de terceros, se
+      revisa la política de cookies
 - [ ] Revisión en un **iPhone real con Safari** (él usa el móvil): menú, barra
       de contacto, carruseles, portada del móvil
 - [x] Rendimiento y accesibilidad, pasada rápida (Lighthouse en móvil): verde
@@ -181,3 +184,4 @@ Opiniones se queda como sección de la portada.
 - Navegación sin desplazamiento animado; menú del móvil que cabe sin scroll
 - Presupuesto guiado por WhatsApp, en la portada y en `/contacto`
 - Pasada rápida de rendimiento y accesibilidad: AA en el verde, AVIF
+- Páginas legales (aviso legal, privacidad, cookies), sin NIF todavía

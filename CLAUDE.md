@@ -30,7 +30,7 @@ esto es la guía operativa.
 | `/quienes-somos` | Hecha: dónde estamos y el lema, cifras reales (Google, servicios, zonas), por qué elegirnos y los tres valores |
 | `/trabaja-con-nosotros` | Por hacer; espera a saber si sigue buscando gente |
 | `/zonas-de-servicio` | Por hacer; espera a que él diga cuál de sus dos listas vale |
-| `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Por hacer; esperan su NIF |
+| `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Hechas, lo mínimo y en llano (`TextoLegal`). **Al aviso legal le falta el NIF**, que exige la LSSI. Enlazadas en la línea legal del pie |
 
 **Frank vio la primera versión (16 sept 2026) y no le gustó el diseño**:
 «demasiado plana», «sin color», «no parece de limpieza», «pocas funciones».
@@ -135,6 +135,8 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   preguntas-frecuentes/ (page.tsx + su módulo)
                   contacto/ (page.tsx + contacto.module.css)
                   quienes-somos/ (page.tsx + su módulo)
+                  aviso-legal/ · politica-de-privacidad/ · politica-de-cookies/
+                  (sobre TextoLegal)
                   not-found.tsx (la 404, para quien llegue con una URL de la
                   web vieja) · sitemap.ts · robots.ts
                   globals.css (paleta, sistema de diseño, cabecera, menú, pie)
@@ -179,7 +181,8 @@ Copia `preguntas-frecuentes/` o `nuestros-servicios/`, que son las plantillas
   eso, y no como `opengraph-image.jpg` en `src/app`.
 - **Empieza con `<CabeceraPagina>`** y **acaba con `<Contacto />`**, el cierre
   con WhatsApp y los datos, que enlaza a `/contacto`. La única que no lo lleva
-  es `/contacto`: repetiría lo mismo dos veces seguidas. El enlace «Contacto»
+  es `/contacto`: repetiría lo mismo dos veces seguidas. Las legales tampoco
+  (van sobre `TextoLegal`). El enlace «Contacto»
   del menú va a `/contacto`.
 - **JSON-LD con `<DatosEstructurados>`**, que escapa el `<`.
 - **Usa las piezas del *Sistema de diseño*** (etiqueta, número, enlaces,
@@ -425,6 +428,13 @@ Reglas:
   anclajes (`scroll-snap`), no librerías. Se deslizan con el dedo; flechas y
   puntos sólo los mueven. **Nunca pasan solos.** La lógica común está en
   `useCarrusel`.
+- **Sin cookies, analítica ni seguimiento.** Comprobado en la web publicada
+  (16 sept 2026): ninguna cookie, nada en localStorage y ninguna petición a
+  otro dominio. La política de cookies lo dice tal cual, así que **si añades
+  algo de terceros** (analítica, un mapa o un vídeo incrustado, una fuente de
+  Google enlazada) **revisa esa página** y si hace falta aviso de cookies.
+- **Legales: lo mínimo y en lenguaje llano.** No somos abogados y el titular
+  es él (lo dijo Kevin): se mejoró lo que tenía su web vieja, sin más.
 - **Sin formularios por ahora.** El contacto es WhatsApp, teléfono y correo. Un
   formulario pide servicio de correo, antispam y casilla de privacidad: no se
   añade sin que él lo pida.

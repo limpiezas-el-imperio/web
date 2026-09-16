@@ -8,6 +8,10 @@ export const negocio = {
   telefono: "+34617545397",
   telefonoVisible: "617 545 397",
   correo: "info@limpiezaselimperio.net",
+  // La calle sólo sale en el aviso legal, que la exige (LSSI) y donde ya la
+  // publicaba su web vieja. En el resto de la web va sólo la localidad: es su
+  // casa (pregunta pendiente en todo.md).
+  direccion: "Calle El Trinquete 49, piso 3, puerta 6",
   localidad: "La Pobla de Vallbona",
   codigoPostal: "46185",
   provincia: "Valencia",

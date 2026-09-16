@@ -19,9 +19,9 @@ tal cual y las malas se renombran sin más.
 | `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |
 | `/contacto` | — (nueva) | ✅ Hecha. Canales, horario, zonas, redes y qué contarnos para el presupuesto |
 | `/trabaja-con-nosotros` | igual | Sin formulario: datos por WhatsApp o correo |
-| `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | Reescrito de cero; falta su NIF |
-| `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | Reescrita de cero |
-| `/politica-de-cookies` | `/politica-de-cookies-limpiezas-el-imperio` | Reescrita de cero |
+| `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | ✅ Reescrito de cero; falta su NIF |
+| `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | ✅ Reescrita de cero |
+| `/politica-de-cookies` | `/politica-de-cookies-limpiezas-el-imperio` | ✅ Reescrita de cero |
 
 **Fuera**, sin sustituto:
 
