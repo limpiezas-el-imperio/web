@@ -5,7 +5,8 @@
 - [x] `CLAUDE.md`, `README.md`, `docs/`, `todo.md`
 - [x] Inventario de la web actual → `docs/sitio-actual.md`
 - [x] Remoto `origin` → `limpiezas-el-imperio/web`
-- [ ] Primer commit y push a `main`
+- [x] Primer commit y push a `main`
+- [x] Repositorio público (necesario para desplegar desde Hobby)
 - [ ] Crear el proyecto en su Vercel enlazado al repo y comprobar un despliegue
       de la plantilla en `Ready`
 
@@ -33,8 +34,8 @@
 
 - [x] CSS: plano, como en la contabilidad
 - [x] Formularios: ninguno por ahora
-- [ ] **Despliegue automático**: repo privado + Vercel Hobby bloquea los
-      despliegues de commits de colaboradores (ver `CLAUDE.md`, *Despliegue*)
+- [x] **Despliegue automático**: repositorio público (ver `CLAUDE.md`,
+      *Despliegue*)
 - [ ] Mapa de rutas nuevas y redirecciones 301 desde las viejas
 - [ ] Textos legales rehechos para este negocio (aviso legal, privacidad,
       cookies) y banner de cookies sólo si hay algo que lo exija

@@ -10,7 +10,7 @@ esto es la guía operativa.
 
 | | |
 |---|---|
-| Repositorio | `limpiezas-el-imperio/web` (privado, del cliente). `kevjrmy` es colaborador |
+| Repositorio | `limpiezas-el-imperio/web` (**público**, del cliente). `kevjrmy` es colaborador |
 | Vercel | cuenta gratuita del cliente. Aún sin proyecto ni despliegue |
 | Dominio | Ver `docs/dominio.md`. Sin decidir: `.com` comprado en Vercel, o apuntar el `.net` actual |
 | Web actual | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
@@ -37,24 +37,29 @@ GitHub ni en su Vercel. Eso es la integración de Git de Vercel: el proyecto de
 su cuenta enlazado al repositorio, y cada push a `main` es un despliegue de
 producción.
 
-**Ojo con el plan Hobby y los repositorios privados.** Hobby no admite
-colaboración: en un repositorio privado, un commit cuyo autor no es el dueño
-de la cuenta de Vercel se **bloquea** en vez de desplegarse, y los commits de
-aquí los firma `kevjrmy`. Arreglos, de mejor a peor:
-
-1. **Hacer público el repositorio**, que es lo que se hizo con la
-   contabilidad. Aquí no hay nada que esconder: es una web pública y los datos
-   del cliente no entran en git.
-2. Pasar la cuenta de Vercel a Pro. Cuesta dinero cada mes.
+**Funciona porque el repositorio es público.** En el plan Hobby, un
+repositorio privado bloquea los despliegues de commits cuyo autor no es el
+dueño de la cuenta, y los de aquí los firma `kevjrmy`. Por eso se hizo público
+(16 sept 2026), igual que la contabilidad. **No lo vuelvas privado** sin pasar
+antes la cuenta a Pro, o los despliegues se quedarán en «Blocked».
 
 **No lo arregles firmando los commits como él**: sería suplantarle.
 
 ## Qué se puede publicar y qué no
 
-La web es pública, así que casi todo su contenido ya lo es: nombre del titular,
-dirección, teléfono y correo están hoy en su propia web y en el aviso legal.
+**El repositorio es público: todo lo que entra en git lo puede leer cualquiera,
+para siempre.** Borrarlo en un commit posterior no sirve; queda en el historial.
+
+La web también es pública, así que casi todo su contenido ya lo es: nombre del
+titular, dirección, teléfono y correo están hoy en su propia web y en el aviso
+legal. Ese es el listón: **si no está ya publicado por él, no entra.**
 
 Lo que **no** entra en git:
+
+- **Secretos**: tokens, claves, `.env*` (el `.gitignore` los excluye), IDs o
+  capturas de sus cuentas de Vercel, GitHub, Webador o Google.
+- **Su NIF**, aunque haga falta en el aviso legal, hasta que él lo publique en
+  la web. Mientras tanto va en `docs/privado/`.
 
 - **`docs/privado/`**: material que él nos pase y no sea para publicar (fotos
   sin elegir, documentos con su NIF, capturas de sus cuentas, facturas del
@@ -64,6 +69,15 @@ Lo que **no** entra en git:
   (ELENA PRADOS, BEATRIZ SOLANO, TOMAS RIVAS…).
 - **Las reseñas se publican tal y como estén en su fuente pública**, con el
   nombre que la persona puso allí, y nunca se inventan ni se retocan.
+
+Antes de cualquier commit, mira lo que entra:
+
+```bash
+git diff --cached --name-only | grep -Ei '^docs/privado/|\.env|\.(pem|key|csv|xlsx?|ods)$'
+git diff --cached | grep -Ei 'token|secret|password|api[_-]?key|BEGIN .*PRIVATE'
+```
+
+Si cualquiera de las dos imprime algo, para y míralo.
 
 ## Estructura
 
