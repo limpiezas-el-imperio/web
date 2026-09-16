@@ -4,153 +4,55 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
 
 ## Por dónde seguir
 
-1. **Diseño validado por Frank** (16 sept 2026): le gusta mucho. Queda
-   hacerle las preguntas de *Preguntas para Frank*: varias páginas y el
-   dominio dependen de sus respuestas.
-2. **Foto de la portada: resuelta.** A Frank le gustó la de Unsplash; se queda,
-   servida desde `src/imagenes/` y acreditada en el pie.
-3. **Presupuesto guiado por WhatsApp**: hecho, en la portada y en `/contacto`.
-   Enseñárselo a Frank y preguntarle si le faltan o sobran preguntas.
-4. Las páginas que no dependían de él ya están (`/contacto` y
-   `/quienes-somos`). Las que quedan esperan respuestas suyas.
+**La web está completa**: todas las páginas hechas y el diseño validado por
+Frank. Lo que queda depende de él:
 
-## Plan de trabajo (acordado el 16 sept 2026)
-
-Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
-
-1. [x] **Decidir qué contenido de la web vieja se queda**, página a página
-       (`docs/sitio-actual.md`, *Decisión por página*)
-2. [ ] **Integrarlo** en la web nueva (sin redirecciones), página a página
-3. [ ] **Iterar**: mejorar, optimizar
-4. [x] **Mirar `../limpiezas-imperio-software/`** para entender mejor el
-       negocio (16 sept 2026). Las conclusiones están en
-       `docs/privado/negocio.md`, **fuera de git**; aquí sólo las preguntas
-       que salen de ellas
-
-## Páginas
-
-Menú acordado: Inicio · Servicios · Zonas · Quiénes somos · Preguntas
-frecuentes · Contacto. Trabaja con nosotros y los legales, en el pie.
-Opiniones se queda como sección de la portada.
-
-- [x] `/` — portada
-- [x] `/nuestros-servicios`
-- [x] `/preguntas-frecuentes`
-- [x] `/contacto` — canales, horario, zonas, redes y qué contarnos para el
-      presupuesto (WhatsApp con las preguntas ya escritas). El menú y la FAQ
-      enlazan aquí
-- [x] `/quienes-somos` — dónde estamos y el lema, cifras reales, por qué
-      elegirnos (sin «tarifas premium») y los tres valores. Sin años de
-      experiencia hasta que él diga desde cuándo
-- [x] `/trabaja-con-nosotros` — sin formulario: candidatura guiada que abre
-      WhatsApp o el correo con nombre, zona, disponibilidad y experiencia. No
-      dice que esté contratando ni promete condiciones
-- [x] `/zonas-de-servicio` — 18 localidades por áreas, con el mapa. La lista
-      la decidió Kevin cruzando sus dos listas con dónde trabaja de verdad
-- [x] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` —
-      lo mínimo y en llano, mejorando lo de su web vieja. Sin NIF (decisión
-      de Kevin)
-- [x] Menú: Quiénes somos añadido. Con seis enlaces, el botón «Menú» sale ya
-      por debajo de 64rem (antes 60rem): la fila no cabía entre 960 y 1000 px
-- [x] Menú: Zonas va a `/zonas-de-servicio`
-- [x] Pie: enlaces a los legales, en la línea de abajo
-- [x] Pie: enlace a Trabaja con nosotros, en «La web»
+1. **Mandarle las preguntas de abajo**, de una vez. Las que más pesan: el
+   dominio, las descripciones de los servicios y el horario.
+2. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
+3. **Lanzar** con el dominio, cuando conteste lo del panel de Webador.
 
 ## Preguntas para Frank
 
-**Antes de nada**
+**Para lanzar**
 
-- [x] **¿Le gusta?** La primera versión no (16 sept 2026): «demasiado
-      plana», «sin color», «no parece de limpieza», «pocas funciones».
-      Rehecha con color y elevación
-- [x] **¿Y la nueva?** Sí: le gusta mucho, diseño validado (16 sept 2026)
-- [x] **Foto de la portada**: la de él aspirando no le gustó. Va una
-      de Unsplash, y le gustó: se queda (acreditada en el pie)
-- [x] ~~NIF~~: no se pone (decisión de Kevin, 16 sept 2026)
-- [ ] **Dominio**: ¿deja el panel de Webador editar el A y el CNAME del `.net`
-      sin cambiar los nameservers? (`docs/dominio.md`)
-- [x] **Webador**: si se borra la cuenta, `info@` deja de funcionar
-      (confirmado, 16 sept 2026). La cuenta se queda (ver *Lanzamiento*)
+- [ ] **Dominio**: ¿deja el panel de Webador editar el registro A y el CNAME
+      del `.net` sin cambiar los nameservers? (`docs/dominio.md`)
+
+**Contenido publicado que conviene que confirme**
+
 - [ ] **Descripciones de los servicios** (`src/datos/negocio.ts`): son un
-      borrador nuestro. Que las lea y corrija; sobre todo «Cuidado de
-      propiedades», «Fachadas» y «Reparaciones eléctricas»
-- [ ] **Servicios**: ¿siguen los 26? ¿Le vale la agrupación en seis áreas?
-      ¿Reparaciones eléctricas sigue siendo cosa suya?
-- [x] **Zonas**: resuelto por Kevin (16 sept 2026), ver `/zonas-de-servicio`
-- [ ] **Opiniones**: ¿le parece bien que salgan las de Google en su web? ¿Y
-      los nombres de su equipo (Michel, Maribel, Viviana…)? Hoy van cortados
-- [ ] **Experiencia**: su web dice «2 años» (texto de 2024). ¿Desde cuándo?
-      Vuelve como pregunta en la FAQ y en Quiénes somos
-- [ ] **Urgencias**: «siempre que el cliente asuma el coste». ¿Cuesta más que
-      un servicio normal?
-- [ ] **Cobro**: su hoja de servicio dice mínimo de 4 horas, desplazamiento y
-      vaporeta aparte. ¿Se puede decir algo de eso en la web?
-- [ ] **Dirección**: hoy sólo sale «La Pobla de Vallbona (Valencia)», no la
-      calle, porque es su casa. ¿La quiere completa?
-- [ ] **Trabaja con nosotros**: la página ya está. ¿Sigue buscando gente? ¿Le
-      llegan las candidaturas por WhatsApp o prefiere sólo correo? Si no busca,
-      se quita el enlace del pie
-- [ ] **«Tarifas premium»**: estaba en su «Por qué elegirnos» y no se ha
-      puesto, porque suena a caro. ¿Qué quería decir?
-- [ ] **Redes**: LinkedIn apunta a un enlace roto; ¿cuáles están vivas? Hoy
-      salen Facebook, Instagram, TikTok, YouTube y X
-
-**Lo que enseña cómo trabaja** (detalle en `docs/privado/negocio.md`; no
-publicar nada de eso sin que él lo confirme)
-
-- [x] **Reparaciones, parkings y naves**: fuera de la web (Kevin, 16 sept
-      2026). Si Frank dice que los hace, vuelven
-- [ ] **Urgencias**: la FAQ dice que sí. ¿Las sigue haciendo?
-- [x] **Servicios que no salían en la web**: añadidos alquiler vacacional,
-      sofás y colchones, mosquiteras, piscinas y escaparates. La vaporeta y la
-      Kärcher siguen dentro de sus servicios, sin hablar de cobro aparte
-- [x] **«Paquete mensual»**: quitado. Ahora dice «por horas o con precio
-      cerrado, según el trabajo» (portada, servicios y FAQ)
-- [ ] **Horario**: la web dice de lunes a viernes de 6:00 a 18:00 y fines de
+      borrador nuestro. Que las lea y corrija, sobre todo «Cuidado de
+      propiedades» y «Fachadas»
+- [ ] **Servicios**: ¿le valen los 25 y las cinco áreas? Se quitaron
+      reparaciones y parkings y naves, y se añadieron alquiler vacacional,
+      sofás y colchones, mosquiteras, piscinas y escaparates. Si hace algo de
+      lo quitado, vuelve
+- [ ] **Horario**: la web dice lunes a viernes de 6:00 a 18:00 y fines de
       semana con agenda abierta. ¿Sigue así?
-- [x] **Zonas**: hecho con sus dos listas y dónde trabaja de verdad
-- [x] **Equipo**: la web ya lo dice (Quiénes somos y Servicios)
+- [ ] **Urgencias**: la FAQ dice que sí, «siempre que el cliente asuma el
+      coste». ¿Las sigue haciendo? ¿Cuestan más?
+- [ ] **Cobro**: la web dice «por horas o con precio cerrado, según el
+      trabajo». ¿Quiere decir algo más (mínimo de horas, desplazamiento,
+      vaporeta y Kärcher aparte)?
+- [ ] **Presupuesto guiado** (portada y `/contacto`): ¿le faltan o le sobran
+      preguntas?
+- [ ] **Opiniones**: ¿le parece bien que salgan las de Google? Van cortadas
+      para no nombrar a su equipo
+- [ ] **Redes**: ¿cuáles están vivas? Hoy salen Facebook, Instagram, TikTok,
+      YouTube y X (LinkedIn se quitó: enlace roto)
+- [ ] **Trabaja con nosotros**: ¿sigue buscando gente? ¿Candidaturas por
+      WhatsApp o sólo por correo? Si no busca, se quitan la página y sus
+      enlaces (pie, menú del móvil y Quiénes somos)
 
-**Material**
+**Lo que no está en la web hasta que lo diga**
 
-- [x] **Más fotos**: no tiene más por ahora (16 sept 2026). Si llegan,
-      comprobar EXIF y GPS antes de subirlas (ver `CLAUDE.md`)
-- [x] **Logo**: se queda el actual (el JPG de 2000 px, sin teléfono). No hay
-      versión vectorial
-
-**Ya respondido**
-
-- [x] El `.net` está registrado en Webador, y el buzón `info@` también es de
-      Webador (MX `mail.webador.com`)
-- [x] Las reseñas de su web vieja eran de Google: 4,9 con 68 (16 sept 2026)
-- [x] Formularios: ninguno por ahora
-- [x] Blog: fuera
-- [x] Logo sin teléfono en alta y 8 fotos reales
-
-## Técnico
-
-- [x] `src/app/sitemap.ts` (lista de páginas a mano) y `src/app/robots.ts`,
-      los dos con `urlBase`: cambian solos con el dominio
-- [x] Página 404 propia (`not-found.tsx`): explica que la web se ha renovado,
-      para quien llegue de Google con una URL de Webador, y lleva a
-      servicios, presupuesto, preguntas y quiénes somos
-- [x] ~~Google Search Console~~: fuera, lo decidió el cliente
-- [x] Textos legales. Sin aviso de cookies: la web no pone ninguna ni usa
-      analítica (comprobado en la publicada). Si se añade algo de terceros, se
-      revisa la política de cookies
-- [x] ~~Revisión en un iPhone real con Safari~~: fuera (decisión de Kevin)
-- [x] Rendimiento y accesibilidad, pasada rápida (Lighthouse en móvil): verde
-      de WhatsApp oscurecido para pasar AA, imágenes en AVIF y `sizes`
-      ajustados. Accesibilidad 100 y rendimiento 96–99 en las cinco páginas.
-      La revisión a fondo (tabulación, lector de pantalla) no se hace: con
-      esto basta (decisión de Kevin)
-- [x] Presupuesto guiado por WhatsApp (`Presupuesto.tsx`): servicio, tipo de
-      vivienda, habitaciones y baños, frecuencia, zona, fecha y comentario.
-      En la portada, tras los servicios, y en `/contacto`, donde sustituye a
-      las cuatro tarjetas de «Qué contarnos»
-- [x] **Nota de Google** (`valoracion` en `negocio.ts`): revisada por Kevin el
-      16 sept 2026, sigue en 4,9 con 68 reseñas. Va escrita a mano: volver a
-      mirarla de vez en cuando
+- [ ] **Experiencia**: su web vieja decía «2 años» (texto de 2024). ¿Desde
+      cuándo? Iría en Quiénes somos y en la FAQ
+- [ ] **«Tarifas premium»**: estaba en su «Por qué elegirnos». ¿Qué quería
+      decir? No se puso porque suena a caro
+- [ ] **Dirección**: fuera del aviso legal sólo sale la localidad, porque es su
+      casa. ¿La quiere completa?
 
 ## Lanzamiento
 
@@ -160,51 +62,37 @@ publicar nada de eso sin que él lo confirme)
       cambiar `dominioPublico` en `src/datos/sitio.ts`
 - [ ] Mandar un correo de prueba a `info@` y ver que llega
 - [ ] Actualizar el enlace de la web en su ficha de Google y en sus redes
-- [ ] **No borrar la cuenta de Webador**: el correo `info@` vive allí y se
-      perdería (y con él el acceso a su Vercel). Si se quiere dejar, antes
-      mover el buzón a otro proveedor (`docs/dominio.md`)
+- [ ] **No borrar la cuenta de Webador**: con ella se iría el correo `info@`,
+      que es también el de su cuenta de Vercel. Si algún día se deja Webador,
+      antes se mueve el buzón a otro proveedor
 
-## Hecho en la primera sesión (16 sept 2026)
+## Ya decidido (no volver a preguntar)
 
-- Contexto del proyecto, inventario de la web vieja y decisión página a página
-- Repositorio público y despliegue automático en su Vercel con cada push
-- Portada: rediseño editorial con fotos reales; portada propia para el móvil;
-  galería; mapa de zonas; opiniones de Google en carrusel
-- `/nuestros-servicios` y `/preguntas-frecuentes`
-- Menú de tablet y móvil a pantalla completa, barra de contacto en el móvil
-- Sistema de diseño común (ver `CLAUDE.md`). Primero sobrio (Newsreader y
-  Geist, sin dorado); a Frank no le gustó y se rehízo el mismo día con color,
-  tarjetas con sombra, Montserrat y Nunito Sans, y WhatsApp en verde
-- Metadatos por página, imagen para compartir, iconos, datos estructurados
-  (`LocalBusiness`, `FAQPage`, servicios)
+- **Diseño**: validado por Frank. Foto de portada de Unsplash, acreditada
+- **Zonas**: 18 localidades por áreas (Kevin, con sus dos listas y dónde
+  trabaja de verdad)
+- **Correo**: `info@` muere si se borra la cuenta de Webador → no se borra
+- **NIF**: no se pone (Kevin)
+- **Logo**: se queda el actual, sin versión vectorial. **Fotos**: no hay más
+  por ahora
+- **Nota de Google**: 4,9 con 68, revisada por Kevin el 16 sept 2026. Va a
+  mano: mirarla de vez en cuando
+- **Fuera**: formularios, blog, redirecciones desde la web vieja, Google
+  Search Console, revisión en un iPhone real y revisión de accesibilidad a
+  fondo (Lighthouse ya da 100)
 
-## Hecho en la segunda sesión (16 sept 2026)
+## Hecho (16 sept 2026, dos sesiones)
 
-- Frank vio la primera versión y no le gustó. Se rehízo el sistema de diseño
-  entero sin tocar la estructura: colores del logo (cielo, marino, oro),
-  tarjetas con sombra, esquinas redondeadas, Montserrat y Nunito Sans, y
-  WhatsApp en verde. `CLAUDE.md` y `README.md` recogen la dirección nueva
-- Portada con foto de Unsplash. Primero enlazada; cuando a Frank le gustó,
-  descargada a `src/imagenes/`, acreditada en el pie y fuera la excepción de
-  `next.config.ts`
-- Se probó una página `/propuesta` aparte y se descartó: los cambios de
-  diseño se hacen directamente en la web
-- Frank valida el diseño nuevo
-- `/contacto`: WhatsApp destacado, teléfono y correo en tarjetas; horario,
-  zonas y redes; «Qué contarnos» con un WhatsApp con las preguntas escritas.
-  El menú, la FAQ y el cierre de contacto de cada página enlazan aquí
-- `/quienes-somos`: dónde estamos, lema, cifras reales, por qué elegirnos y
-  valores. En el menú, que pasa a botón por debajo de 64rem
-- `sitemap.xml`, `robots.txt` y página 404 propia
-- Navegación sin desplazamiento animado; menú del móvil que cabe sin scroll
-- Presupuesto guiado por WhatsApp, en la portada y en `/contacto`
-- Pasada rápida de rendimiento y accesibilidad: AA en el verde, AVIF
-- Páginas legales (aviso legal, privacidad, cookies), sin NIF todavía
-- `/trabaja-con-nosotros`, con candidatura guiada por WhatsApp o correo
-- «Trabaja con nosotros» también en el menú del móvil (secundario) y al final
-  de `/quienes-somos`; letra del menú del móvil un poco más pequeña
-- `/zonas-de-servicio` con 18 localidades por áreas y el mapa rehecho
-- Web alineada con cómo trabaja: servicios (fuera reparaciones y parkings,
-  dentro alquiler vacacional, sofás, mosquiteras, piscinas, escaparates),
-  «por horas o con precio cerrado», el equipo, y el presupuesto empieza por
-  semanal. Correo: la cuenta de Webador se queda
+- Inventario de la web vieja y decisión página a página
+- Repositorio público con despliegue automático en su Vercel
+- Primer diseño sobrio; Frank no lo quiso y se rehízo con color, tarjetas y
+  WhatsApp en verde. Validado
+- Páginas: portada, servicios, zonas, quiénes somos, preguntas, contacto,
+  trabaja con nosotros, legales y 404; sitemap y robots
+- Presupuesto y candidatura guiados por WhatsApp o correo, sin formularios
+- Menú del móvil a pantalla completa que cabe sin desplazarse; barra de
+  contacto en el móvil; navegación sin animación
+- Lighthouse en móvil: accesibilidad 100, rendimiento 96–99. Imágenes AVIF
+- Sin cookies, analítica ni peticiones a terceros (comprobado)
+- Lectura de su contabilidad (`docs/privado/negocio.md`) y contenido alineado
+  con cómo trabaja

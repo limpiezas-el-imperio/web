@@ -38,27 +38,39 @@ sobra.
   git (ver `CLAUDE.md`).
 - **Sin formularios.** El contacto es WhatsApp, teléfono y correo, que es como
   trabaja él. Un formulario pide servicio de correo, antispam y
-  consentimiento, y los de su web vieja pedían DNI sin nada de eso.
+  consentimiento, y los de su web vieja pedían DNI sin nada de eso. Para pedir
+  presupuesto o mandar una candidatura hay pasos guiados que sólo escriben el
+  mensaje y abren WhatsApp o el correo: no mandan nada a ningún servidor.
 - **Sin redirecciones.** Las rutas buenas de la web vieja se conservan y las
-  malas se renombran (`docs/sitio-actual.md`, *Decisión por página*).
+  malas se renombran (`docs/sitio-actual.md`, *Decisión por página*). Quien
+  llegue con una dirección vieja ve una 404 que se lo explica.
 - **Diseño con color y elevación.** Se hizo primero una versión editorial y
-  sobria (serif, reglas finas, sin sombras); a Frank le pareció plana y sin
-  color, y se rehízo con los colores de su logo, tarjetas con sombra,
-  titulares en sans-serif gruesa y botones verdes de WhatsApp, sin pasarse.
-  Todo va en un sistema común (`CLAUDE.md`, *Sistema de diseño*).
+  sobria; a Frank le pareció plana y sin color, y se rehízo con los colores de
+  su logo, tarjetas con sombra, titulares en sans-serif gruesa y botones verdes
+  de WhatsApp, sin pasarse. Frank la validó. Todo va en un sistema común
+  (`CLAUDE.md`, *Sistema de diseño*).
 - **Fotos reales como prueba.** Las de su web vieja eran generadas con IA. Las
-  reales van en una galería, no emparejadas a la fuerza con cada servicio.
+  reales van en una galería, no emparejadas a la fuerza con cada servicio. La
+  única que no es suya es la de la portada, de Unsplash y acreditada, porque la
+  suya no le gustó.
 - **Opiniones de Google, no inventadas ni retocadas.** Extractos literales,
   sin los nombres de su personal.
 - **Una portada distinta en el móvil.** Allí la barra fija de WhatsApp y
   Llamar ya es la llamada a la acción, así que la portada abre con la foto y
   la valoración de Google en vez de repetir botones.
+- **Sin cookies, analítica ni seguimiento.** Tipografías e imágenes se sirven
+  desde la propia web, así que no hace falta aviso de cookies.
 
 ## El dominio
 
-Ver `docs/dominio.md`.
+Ver `docs/dominio.md`. El correo `info@` vive en Webador y se perdería si se
+borra la cuenta: la cuenta se queda.
 
 ## Contenido
 
-Todo el contenido sale de él o de su web actual. Nada inventado: donde la web
-actual se contradice, se le pregunta.
+Todo el contenido sale de él, de su web vieja o de su ficha de Google. Donde
+su web vieja se contradecía o no se correspondía con cómo trabaja de verdad
+(zonas, servicios, forma de cobro), decidió Kevin con lo que enseña su
+contabilidad, que se lee para entender el negocio y nunca entra en este
+repositorio. Las descripciones de los servicios son un borrador nuestro,
+pendiente de que Frank las revise.

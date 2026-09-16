@@ -1,5 +1,8 @@
 # Web actual: limpiezaselimperio.net (Webador)
 
+**Referencia de la web vieja**, tal como estaba antes de rehacerla. Las
+decisiones de abajo ya están todas aplicadas; lo pendiente está en `todo.md`.
+
 Inventario tomado el **16 de septiembre de 2026** leyendo 15 URLs (todas 200).
 Se leyeron convertidas a texto, así que **no se vio**: meta descriptions, Open
 Graph, `lang`, colores, tipografías, banner de cookies ni versión móvil. Hay que
@@ -14,12 +17,12 @@ tal cual y las malas se renombran sin más.
 |---|---|---|
 | `/` | `/` | ✅ Hecha |
 | `/quienes-somos` | igual | ✅ Hecha. Dónde está, por qué elegirle, los tres valores como texto (no imágenes). Visión y misión fuera; «tarifas premium» también, a preguntar |
-| `/nuestros-servicios` | igual | ✅ Hecha. **Una sola página** con los seis grupos y una descripción corta por servicio (borrador) |
+| `/nuestros-servicios` | igual | ✅ Hecha. **Una sola página** con cinco áreas y una descripción corta por servicio (borrador) |
 | `/zonas-de-servicio` | igual | ✅ Hecha. La lista la decidió Kevin (sus dos listas y dónde trabaja de verdad) |
 | `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |
 | `/contacto` | — (nueva) | ✅ Hecha. Canales, horario, zonas, redes y qué contarnos para el presupuesto |
 | `/trabaja-con-nosotros` | igual | ✅ Hecha. Sin formulario: candidatura guiada por WhatsApp o correo |
-| `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | ✅ Reescrito de cero; falta su NIF |
+| `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | ✅ Reescrito de cero, sin NIF (decisión de Kevin) |
 | `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | ✅ Reescrita de cero |
 | `/politica-de-cookies` | `/politica-de-cookies-limpiezas-el-imperio` | ✅ Reescrita de cero |
 
@@ -27,7 +30,7 @@ tal cual y las malas se renombran sin más.
 
 - `/solicitar-presupuesto`, `/solicitar-servicios`, `/solicitar-presupuesto-1`:
   no hay formularios. Lo que pedía (tipo de vivienda, habitaciones, baños,
-  fecha) puede servir para el mensaje de WhatsApp.
+  fecha) está en el presupuesto guiado por WhatsApp.
 - `/reserva-de-servicios` y su PDF: es su parte de trabajo interno.
 - `/datos-de-facturacion`: pedir DNI en un formulario público sin consentimiento
   es un riesgo. La facturación va por WhatsApp o correo.
@@ -280,13 +283,8 @@ pide aceptar la privacidad.
 
 **Todas las de su web son generadas con IA** (confirmado con Kevin), así que no
 hay fotos propias que rescatar. Las fotos reales las pasó Kevin aparte (16 sept
-2026) y están en `src/imagenes/`. Lo que sí se trae:
-
-- `public/limpiezaselimperio.webp` — logo completo, 816×819. Relieve dorado y
-  azul sobre fondo claro **con el teléfono dentro**: vale para redes o Open
-  Graph, no como logo de cabecera.
-- `public/limpiezaselimperio-icon.webp` — la misma imagen en pequeño, sin el
-  teléfono. Candidato a favicon.
+2026) y están en `src/imagenes/`. Del logo se usa la versión **sin teléfono**,
+que está en `public/logo.jpg`; las versiones con el teléfono dentro no se usan.
 
 Colores del logo: azul marino y azul brillante, y dorado.
 

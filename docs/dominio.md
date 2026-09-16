@@ -2,7 +2,10 @@
 
 **Estado (16 sept 2026): se va hacia la opción B, apuntar el `.net` a Vercel.**
 `www.limpiezaselimperio.net` ya está añadido al proyecto de Vercel, pero sus
-DNS siguen en Webador: el dominio todavía sirve la web vieja.
+DNS siguen en Webador: el dominio todavía sirve la web vieja. **Falta que Frank
+diga si el panel de Webador deja editar registros sueltos.** Confirmado: si se
+borra la cuenta de Webador, el correo `info@` deja de funcionar, así que la
+cuenta se queda.
 
 Kevin dejó en `.env` (fuera de git) lo que pide Vercel. No son secretos:
 
