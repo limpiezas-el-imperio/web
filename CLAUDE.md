@@ -234,8 +234,9 @@ Aprendido en la contabilidad, y aplica aquí:
   la cabecera se sustituyen por el botón «Menú»: no los escondas sin dejar otra
   forma de navegar, que es como estaba al principio y en el móvil no había
   menú ninguno.
-- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`): enlaces
-  grandes y, abajo, WhatsApp, teléfono, correo y horario. Mientras está abierto
+- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en crema con
+  la cabecera blanca (en azul resultaba demasiado azul): enlaces grandes y,
+  abajo, WhatsApp, teléfono, correo y horario. Mientras está abierto
   lo de detrás queda `inert` y sin scroll, y al cerrarlo el foco vuelve al
   botón. Tres detalles que costaron un fallo cada uno, no los deshagas:
   `overflow: hidden` sólo en `<html>` (en `<body>` la cabecera sticky se iba

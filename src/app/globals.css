@@ -389,11 +389,10 @@ p {
     z-index: 70;
     overflow-y: auto;
     overscroll-behavior: contain;
-    color: #fff;
-    background:
-      radial-gradient(40rem 30rem at 100% 0%, rgb(31 95 214 / 0.45), transparent 60%),
-      radial-gradient(30rem 25rem at 0% 100%, rgb(217 165 58 / 0.14), transparent 60%),
-      var(--marino);
+    /* Crema, como el resto de la web: en azul con degradado quedaba demasiado
+       azul (lo dijo Kevin). */
+    color: var(--texto);
+    background: var(--fondo);
     animation: aparecer 0.2s ease-out;
   }
 
@@ -413,7 +412,7 @@ p {
   }
 
   .menu__lista li {
-    border-bottom: 1px solid rgb(255 255 255 / 0.1);
+    border-bottom: 1px solid var(--linea);
     animation: entrar 0.35s ease-out both;
     animation-delay: calc(var(--i) * 35ms + 50ms);
   }
@@ -427,7 +426,7 @@ p {
     font-size: clamp(1.75rem, 7vw, 2.5rem);
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: #fff;
+    color: var(--marino);
     text-decoration: none;
     font-variation-settings:
       "SOFT" 100,
@@ -438,7 +437,7 @@ p {
     content: "→";
     font-family: var(--fuente-texto), system-ui, sans-serif;
     font-size: 1.25rem;
-    color: rgb(255 255 255 / 0.35);
+    color: var(--linea);
     transition:
       transform 0.15s ease,
       color 0.15s ease;
@@ -446,13 +445,13 @@ p {
 
   .menu__lista a:hover::after,
   .menu__lista a:focus-visible::after {
-    color: var(--oro-claro);
+    color: var(--oro);
     transform: translateX(0.25rem);
   }
 
   .menu__lista a[aria-current="page"] {
     font-style: italic;
-    color: var(--oro-claro);
+    color: var(--oro-texto);
   }
 
   .menu__lista a[aria-current="page"]::after {
@@ -460,11 +459,7 @@ p {
     width: 0.625rem;
     height: 0.625rem;
     border-radius: 999px;
-    background: var(--oro-claro);
-  }
-
-  .menu__lista a:focus-visible {
-    outline-color: var(--oro-claro);
+    background: var(--oro);
   }
 
   .menu__contacto {
@@ -486,22 +481,29 @@ p {
     gap: 0.5rem;
     justify-self: start;
     font-weight: 600;
-    color: #fff;
+    color: var(--marino);
     text-decoration: none;
     overflow-wrap: anywhere;
   }
 
   .menu__correo svg {
-    color: var(--oro-claro);
+    color: var(--oro-texto);
   }
 
   .menu__horario {
     font-size: 0.9375rem;
-    color: rgb(255 255 255 / 0.65);
+    color: var(--texto-suave);
   }
 
-  /* Con el menú abierto: la página no se desplaza, la cabecera se vuelve azul
-     y la barra de contacto sobra porque el menú ya la lleva. */
+  /* El botón del teléfono, en contorno azul sobre el crema. */
+  .menu__botones .boton--contorno {
+    border-color: var(--marino);
+    color: var(--marino);
+  }
+
+  /* Con el menú abierto: la página no se desplaza y la barra de contacto
+     sobra, porque el menú ya la lleva. La cabecera se queda blanca; sólo el
+     botón pasa a azul para que «Cerrar» se vea. */
   /* Sólo en <html>. Si se pone también en <body>, el body pasa a ser el
      contenedor de la cabecera sticky y ésta se va con la página: abriendo el
      menú a media página, la cabecera (y el botón Cerrar) desaparecían. */
@@ -509,24 +511,10 @@ p {
     overflow: hidden;
   }
 
-  html.menu-abierto .cabecera {
-    background: var(--marino);
-    border-bottom-color: rgb(255 255 255 / 0.1);
-  }
-
-  html.menu-abierto .cabecera .marca {
-    color: #fff;
-  }
-
-  html.menu-abierto .cabecera .marca__logo {
-    padding: 0.125rem;
-    background: #fff;
-  }
-
   html.menu-abierto .cabecera .menu__boton {
-    background: #fff;
-    border-color: #fff;
-    color: var(--marino);
+    background: var(--marino);
+    border-color: var(--marino);
+    color: #fff;
   }
 
   html.menu-abierto .cabecera__whatsapp,
