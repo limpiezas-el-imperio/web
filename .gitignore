@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Material del cliente que no es para publicar (fotos sin elegir, NIF, facturas)
+docs/privado/
+
+# Scratch
+tmp/

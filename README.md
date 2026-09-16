@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Limpiezas El Imperio — web
 
-## Getting Started
+Web pública de Limpiezas El Imperio, empresa de limpieza de La Pobla de
+Vallbona (Valencia). Sustituye a **limpiezaselimperio.net**, hecha en Webador.
 
-First, run the development server:
+Este archivo explica **por qué** cada cosa es como es. `CLAUDE.md` es la guía
+operativa y `todo.md` lo que falta.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Por qué se rehace
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La web actual cumple, pero se le notan los límites de la herramienta y del
+tiempo (inventario completo en `docs/sitio-actual.md`):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **La portada no dice nada.** Una imagen y el bloque de contacto: ni qué hace,
+  ni dónde, ni cómo pedirlo.
+- **Plan básico de Webador**: su marca en el pie y una tienda activada sin
+  productos (carrito y lista de deseos en el menú).
+- **Diez entradas de menú sin agrupar**, con páginas duplicadas.
+- **Formularios que espantan**: el presupuesto pide DNI y «firma»; la
+  facturación, escalera y letra, todo obligatorio. Ninguno pide aceptar la
+  política de privacidad.
+- **Textos legales copiados de otras empresas**, con sus nombres dentro.
+- **SEO casi nulo**: el título de casi todas las páginas es sólo el nombre, sin
+  servicio ni localidad, y ninguna imagen tiene texto alternativo.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Por qué Next.js y Vercel
 
-## Learn More
+Es la misma pila que su contabilidad (`limpiezas-imperio.vercel.app`) y la misma
+cuenta de Vercel: una sola cosa que mantener y que él ya conoce. La web es casi
+toda estática y en el plan gratuito sobra.
 
-To learn more about Next.js, take a look at the following resources:
+## El dominio
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ver `docs/dominio.md`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contenido
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Todo el contenido sale de él o de su web actual. Nada inventado: donde la web
+actual se contradice, se le pregunta.
