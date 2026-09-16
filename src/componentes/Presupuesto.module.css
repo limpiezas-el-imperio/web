@@ -224,7 +224,7 @@
   margin-bottom: 0.625rem;
   font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--verde-hondo);
+  color: var(--verde-hondo); /* 5,6:1 sobre el verde claro */
 }
 
 .burbuja {

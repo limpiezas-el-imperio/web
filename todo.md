@@ -124,8 +124,10 @@ Opiniones se queda como sección de la portada.
       que sea sin cookies (Vercel Web Analytics) y se revisa
 - [ ] Revisión en un **iPhone real con Safari** (él usa el móvil): menú, barra
       de contacto, carruseles, portada del móvil
-- [ ] Rendimiento y accesibilidad: Lighthouse en móvil, contraste, orden de
-      tabulación
+- [x] Rendimiento y accesibilidad, pasada rápida (Lighthouse en móvil): verde
+      de WhatsApp oscurecido para pasar AA, imágenes en AVIF y `sizes`
+      ajustados. Accesibilidad 100 y rendimiento 96–99 en las cinco páginas.
+      Queda sin mirar a fondo: orden de tabulación y lector de pantalla
 - [x] Presupuesto guiado por WhatsApp (`Presupuesto.tsx`): servicio, tipo de
       vivienda, habitaciones y baños, frecuencia, zona, fecha y comentario.
       En la portada, tras los servicios, y en `/contacto`, donde sustituye a
@@ -178,3 +180,4 @@ Opiniones se queda como sección de la portada.
 - `sitemap.xml`, `robots.txt` y página 404 propia
 - Navegación sin desplazamiento animado; menú del móvil que cabe sin scroll
 - Presupuesto guiado por WhatsApp, en la portada y en `/contacto`
+- Pasada rápida de rendimiento y accesibilidad: AA en el verde, AVIF

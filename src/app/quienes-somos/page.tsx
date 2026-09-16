@@ -159,7 +159,7 @@ export default function QuienesSomos() {
               src={fotos.cocina.src}
               alt={fotos.cocina.alt}
               fill
-              sizes="(max-width: 56rem) 100vw, 32rem"
+              sizes="(max-width: 40rem) calc(100vw - 2rem), (max-width: 56rem) calc(100vw - 4rem), 32rem"
               placeholder="blur"
             />
           </div>

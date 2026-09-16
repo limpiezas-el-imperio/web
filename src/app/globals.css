@@ -11,8 +11,9 @@
   --azul-claro: #bfe0fb; /* el acento sobre fondo azul */
   --azul-velo: #eaf5fd;
   --oro: #f2b01e; /* estrellas, rayas de los antetítulos. Nunca texto */
-  --verde: #179c4a; /* WhatsApp */
-  --verde-hondo: #12863e;
+  --verde: #128740; /* WhatsApp. Más oscuro que el de la marca para que el
+                       texto blanco pase AA (4,6:1); con #179c4a no pasaba */
+  --verde-hondo: #0e6f35;
 
   --fondo: #f5f9fd;
   --papel: #ffffff;

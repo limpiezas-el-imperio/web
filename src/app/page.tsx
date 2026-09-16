@@ -145,7 +145,8 @@ export default function Inicio() {
               src={fotoPortada.src}
               alt={fotoPortada.alt}
               fill
-              sizes="(max-width: 56rem) 100vw, 32rem"
+              // Móvil: a sangre. Tablet: el ancho del contenedor. Escritorio: su columna.
+              sizes="(max-width: 40rem) 100vw, (max-width: 56rem) calc(100vw - 4rem), 32rem"
               placeholder="blur"
               loading="eager"
               fetchPriority="high"

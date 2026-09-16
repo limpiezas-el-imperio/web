@@ -354,7 +354,15 @@ Reglas:
   `--fondo`, `--linea`, `--texto-suave`, y `--degradado` para las franjas y los
   iconos. **`--oro` sólo en estrellas, rayas y puntos**, nunca en texto.
 - **El botón principal (WhatsApp) es verde** (`--verde`), el que todo el mundo
-  reconoce. Sobre las franjas azules también va en verde.
+  reconoce. Sobre las franjas azules también va en verde. Es un verde algo más
+  oscuro que el de WhatsApp (`#128740`) para que el texto blanco pase AA; no
+  lo aclares.
+- **Imágenes en AVIF, con WebP de respaldo** (`next.config.ts`): un 30 % menos
+  en el móvil. Pon siempre `sizes` con el ancho real en cada tramo (a sangre
+  en el móvil es `100vw`; dentro del contenedor, `calc(100vw - 2rem)`).
+- **Lighthouse en móvil (sept 2026):** accesibilidad 100 en todas las páginas,
+  rendimiento 96–99. Si tocas colores o fotos, vuelve a pasarlo
+  (`npx lighthouse@12 URL --only-categories=performance,accessibility`).
 - **Montserrat para títulos, botones y navegación; Nunito Sans para texto**,
   con `next/font`. **Nada de serif.** Sustituyeron a Newsreader y Geist.
 - Iconos de `lucide-react`. Lucide ya no trae logos de marcas: las redes van
