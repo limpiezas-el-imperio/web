@@ -108,7 +108,9 @@ src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
                   Contacto (el cierre de cada página)
                   DatosEstructurados (JSON-LD)
                   Marca (logo + nombre)
-                  Opiniones (una grande, con flechas; cliente)
+                  Opiniones (carrusel de reseñas; cliente)
+                  Galeria (fotos: rejilla o fila deslizable; cliente)
+                  useCarrusel (lo común de los dos carruseles)
                   MapaZonas (esquema SVG con coordenadas reales)
 src/imagenes/     fotos reales de sus trabajos (se importan, no se enlazan)
 src/datos/        negocio.ts (datos del negocio) · preguntas.ts (la FAQ)
@@ -200,7 +202,12 @@ Aprendido en la contabilidad, y aplica aquí:
 ## Estilo
 
 - **Toda la interfaz y todo el código —nombres, comentarios, commits— en
-  español.**
+  español.** Única excepción: los hooks empiezan por `use` (`useCarrusel`),
+  porque React y su linter sólo los reconocen así.
+- **Media queries con rango cerrado** cuando una maquetación cambia de
+  estructura (`min-width … and max-width …`). Con sólo `max-width`, las reglas
+  de tablet de la galería se colaban en el móvil y la fila deslizable se
+  partía en dos líneas.
 - **Dirección editorial con fotos reales** (elegida por Kevin, sept 2026, entre
   tres maquetas). Lo que la define, y lo que la estropea:
   - **Sobriedad y elegancia** (segunda vuelta, pedida por Kevin): titulares en
@@ -242,8 +249,8 @@ Aprendido en la contabilidad, y aplica aquí:
   es público. Las primeras ocho venían limpias.
 - **No hay página de galería**, decidido: con ocho fotos quedaría vacía. Van en
   la portada: Frank aspirando abre la página y las otras siete forman la
-  sección «Nuestro trabajo» (rejilla en escritorio y tablet, fila deslizable
-  en el móvil). **Las fotos no van dentro de cada servicio**: no hay una para
+  sección «Galería» (`Galeria.tsx`: rejilla en escritorio y tablet, fila
+  deslizable con puntos en el móvil). **Las fotos no van dentro de cada servicio**: no hay una para
   cada uno y emparejarlas a la fuerza no casaba. Los servicios son sólo texto.
 - **Contacto primero**: el WhatsApp es la acción principal en toda la web, y en
   el móvil hay una barra fija con WhatsApp y Llamar.

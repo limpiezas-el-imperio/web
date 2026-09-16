@@ -1,9 +1,9 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, ArrowUpRight, Star } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { negocio, opiniones, valoracion } from "@/datos/negocio";
 import s from "./Opiniones.module.css";
+import { useCarrusel } from "./useCarrusel";
 
 // Carrusel de opiniones de Google. Es un scroll horizontal con puntos de
 // anclaje (scroll-snap), no un carrusel hecho a mano: en el móvil se desliza
@@ -11,54 +11,8 @@ import s from "./Opiniones.module.css";
 // No pasa solo: un texto que cambia mientras lo lees es un texto que no
 // terminas.
 export default function Opiniones() {
-  const pista = useRef<HTMLUListElement>(null);
-  const [actual, setActual] = useState(0);
   const total = opiniones.length;
-
-  // La opinión «actual» sale de cuánto se ha desplazado la pista, se llegue
-  // con las flechas o deslizando. No con IntersectionObserver: en escritorio
-  // se ven dos a la vez (una entera y media siguiente) y contaba la segunda.
-  // Al final del todo cuenta como la última, aunque no quede alineada a la
-  // izquierda: en pantallas anchas la última no puede llegar hasta ahí.
-  useEffect(() => {
-    const contenedor = pista.current;
-    if (!contenedor) return;
-    let pendiente = 0;
-    const alDesplazar = () => {
-      cancelAnimationFrame(pendiente);
-      pendiente = requestAnimationFrame(() => {
-        const [a, b] = contenedor.children as HTMLCollectionOf<HTMLElement>;
-        const paso = b ? b.offsetLeft - a.offsetLeft : contenedor.clientWidth;
-        const maximo = contenedor.scrollWidth - contenedor.clientWidth;
-        setActual(
-          contenedor.scrollLeft >= maximo - 4
-            ? total - 1
-            : Math.round(contenedor.scrollLeft / paso),
-        );
-      });
-    };
-    alDesplazar();
-    contenedor.addEventListener("scroll", alDesplazar, { passive: true });
-    window.addEventListener("resize", alDesplazar);
-    return () => {
-      cancelAnimationFrame(pendiente);
-      contenedor.removeEventListener("scroll", alDesplazar);
-      window.removeEventListener("resize", alDesplazar);
-    };
-  }, [total]);
-
-  const ir = (i: number) => {
-    const contenedor = pista.current;
-    const destino = contenedor?.children[Math.max(0, Math.min(total - 1, i))] as
-      | HTMLElement
-      | undefined;
-    if (!contenedor || !destino) return;
-    const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    contenedor.scrollTo({
-      left: destino.offsetLeft - contenedor.offsetLeft,
-      behavior: sinMovimiento ? "auto" : "smooth",
-    });
-  };
+  const { pista, actual, ir } = useCarrusel<HTMLUListElement>(total);
 
   return (
     <div className={s.opiniones}>

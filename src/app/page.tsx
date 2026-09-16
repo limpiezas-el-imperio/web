@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Contacto from "@/componentes/Contacto";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
+import Galeria from "@/componentes/Galeria";
 import MapaZonas from "@/componentes/MapaZonas";
 import Opiniones from "@/componentes/Opiniones";
-import { type Foto, fotos } from "@/datos/fotos";
+import { fotos } from "@/datos/fotos";
 import {
   enlaceWhatsApp,
   negocio,
@@ -21,20 +22,6 @@ export const metadata = metadatosPagina({
     "Limpieza de viviendas, comunidades, oficinas y obras en La Pobla de Vallbona, el Camp de Túria y Valencia. Materiales y productos incluidos. Pide presupuesto por WhatsApp.",
   ruta: "/",
 });
-
-// Las fotos de «Nuestro trabajo». Van aparte y no dentro de cada servicio: no
-// hay foto para todos y emparejarlas a la fuerza enseñaba, por ejemplo, un
-// salón en «Obras». Aquí son lo que son: prueba de trabajos reales.
-// `zona` es el sitio de cada una en la rejilla de escritorio (ver el CSS).
-const trabajos: { foto: Foto; zona: string }[] = [
-  { foto: fotos.karcher, zona: s.fotoA },
-  { foto: fotos.cocina, zona: s.fotoB },
-  { foto: fotos.banio, zona: s.fotoC },
-  { foto: fotos.grifo, zona: s.fotoD },
-  { foto: fotos.suelo, zona: s.fotoE },
-  { foto: fotos.ducha, zona: s.fotoF },
-  { foto: fotos.sillas, zona: s.fotoG },
-];
 
 // Lo que dice su web de cómo trabaja: «Por qué elegirnos» y la FAQ.
 const hechos = [
@@ -196,40 +183,15 @@ export default function Inicio() {
         </div>
       </section>
 
-      {/* ——— Nuestro trabajo: las fotos como prueba ——— */}
+      {/* ——— Galería: las fotos como prueba (ver Galeria.tsx) ——— */}
       <section id="trabajos" className={`seccion ${s.trabajos}`}>
         <div className="contenedor">
-          <header className={s.trabajos__cabecera}>
-            <div>
-              <p className="antetitulo">Nuestro trabajo</p>
-              <h2 className="seccion__titulo">Resultados reales</h2>
-            </div>
-            <p className="seccion__entradilla">
-              Fotos de nuestros propios trabajos. Nada de bancos de imágenes.
-            </p>
+          <header className="seccion__cabecera">
+            <p className="antetitulo">Nuestro trabajo</p>
+            <h2 className="seccion__titulo">Galería</h2>
           </header>
 
-          <ul className={s.galeria} aria-label="Fotos de trabajos realizados">
-            {trabajos.map(({ foto, zona }) => (
-              <li key={foto.pie} className={zona}>
-                <figure className={s.foto}>
-                  <div className={s.foto__marco}>
-                    <Image
-                      src={foto.src}
-                      alt={foto.alt}
-                      fill
-                      sizes="(max-width: 40rem) 80vw, (max-width: 56rem) 50vw, 36rem"
-                      placeholder="blur"
-                    />
-                  </div>
-                  <figcaption>{foto.pie}</figcaption>
-                </figure>
-              </li>
-            ))}
-          </ul>
-          <p className={s.galeria__pista} aria-hidden="true">
-            {trabajos.length} fotos · desliza para verlas
-          </p>
+          <Galeria />
         </div>
       </section>
 
