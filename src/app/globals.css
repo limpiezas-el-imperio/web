@@ -257,7 +257,6 @@ p {
   flex-shrink: 0;
   border-radius: 0.75rem;
   object-fit: contain;
-  mix-blend-mode: multiply; /* el fondo casi blanco del logo se funde con el crema */
 }
 
 .marca__texto {
@@ -285,13 +284,12 @@ p {
   color: #fff;
 }
 
-/* Sobre azul, el logo va en su tarjeta blanca: fundido se vería sucio. */
+/* Sobre azul, el logo va en su tarjeta blanca. */
 .marca--clara .marca__logo {
   width: 4rem;
   height: 4rem;
   padding: 0.25rem;
   background: #fff;
-  mix-blend-mode: normal;
 }
 
 /* ——— Cabecera ——— */
@@ -299,10 +297,10 @@ p {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgb(250 248 243 / 0.85);
-  backdrop-filter: saturate(1.4) blur(12px);
-  -webkit-backdrop-filter: saturate(1.4) blur(12px);
-  border-bottom: 1px solid rgb(14 36 99 / 0.08);
+  /* Opaca y blanca, sin transparencia ni desenfoque: decisión de Kevin. El
+     blanco es además el fondo del logo, así que no se le ve el recuadro. */
+  background: var(--papel);
+  border-bottom: 1px solid var(--linea);
 }
 
 .cabecera__fila {
@@ -501,8 +499,7 @@ p {
   }
 
   /* Con el menú abierto: la página no se desplaza, la cabecera se vuelve azul
-     y sin desenfoque (un backdrop-filter encerraría al panel fijo dentro de
-     la cabecera), y la barra de contacto sobra porque el menú ya la lleva. */
+     y la barra de contacto sobra porque el menú ya la lleva. */
   /* Sólo en <html>. Si se pone también en <body>, el body pasa a ser el
      contenedor de la cabecera sticky y ésta se va con la página: abriendo el
      menú a media página, la cabecera (y el botón Cerrar) desaparecían. */
@@ -513,8 +510,6 @@ p {
   html.menu-abierto .cabecera {
     background: var(--marino);
     border-bottom-color: rgb(255 255 255 / 0.1);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
   }
 
   html.menu-abierto .cabecera .marca {
@@ -524,7 +519,6 @@ p {
   html.menu-abierto .cabecera .marca__logo {
     padding: 0.125rem;
     background: #fff;
-    mix-blend-mode: normal;
   }
 
   html.menu-abierto .cabecera .menu__boton {

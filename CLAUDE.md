@@ -227,9 +227,12 @@ Aprendido en la contabilidad, y aplica aquí:
   lo de detrás queda `inert` y sin scroll, y al cerrarlo el foco vuelve al
   botón. Tres detalles que costaron un fallo cada uno, no los deshagas:
   `overflow: hidden` sólo en `<html>` (en `<body>` la cabecera sticky se iba
-  con la página), sin `backdrop-filter` en la cabecera mientras está abierto
-  (encierra al panel fijo) y `focus({ preventScroll: true })` (sin él, cerrar
-  el menú desplazaba la página hacia arriba).
+  con la página), **nada de `backdrop-filter` ni `transform` en la cabecera**
+  (convierten la cabecera en el contenedor del panel fijo y lo encierran) y
+  `focus({ preventScroll: true })` (sin él, cerrar el menú desplazaba la página
+  hacia arriba).
+- **La cabecera es opaca y blanca, y el logo va sin transparencias ni
+  fundidos.** Lo pidió Kevin.
 - **Sin formularios por ahora.** El contacto es WhatsApp, teléfono y correo. Un
   formulario pide servicio de correo, antispam y casilla de privacidad: no se
   añade sin que él lo pida.

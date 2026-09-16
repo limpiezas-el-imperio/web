@@ -36,9 +36,8 @@ export default function Navegacion() {
     if (!abierto) return;
 
     // Lo que queda detrás no se desplaza ni se puede tabular: `inert` en todo
-    // lo que no es la cabecera. La clase en <html> bloquea el scroll y quita el
-    // desenfoque de la cabecera, que si no encerraría al panel (un
-    // backdrop-filter hace de contenedor de los position: fixed).
+    // lo que no es la cabecera. La clase en <html> bloquea el scroll y pone la
+    // cabecera en azul.
     const html = document.documentElement;
     const detras = document.querySelectorAll<HTMLElement>(
       "body > :not(.cabecera):not(script)",
