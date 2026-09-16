@@ -1,17 +1,28 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { enlaceWhatsApp, horario, negocio } from "@/datos/negocio";
 import { enlaces } from "@/datos/navegacion";
 
 // La navegación de la cabecera. En escritorio, los enlaces en fila; en tablet
-// y móvil, un botón «Menú» que despliega la lista. Es componente de cliente
-// sólo por dos cosas: abrir y cerrar ese menú, y saber en qué página estás.
+// y móvil, un botón «Menú» que abre el menú a pantalla completa. Es componente
+// de cliente sólo por eso: abrir y cerrar, y saber en qué página estás.
 export default function Navegacion() {
   const ruta = usePathname();
   const [abierto, setAbierto] = useState(false);
+  const boton = useRef<HTMLButtonElement>(null);
+  const panel = useRef<HTMLElement>(null);
+  // Al cerrar con Escape o con el botón, el foco vuelve al botón. Al cerrar
+  // por elegir un enlace, no: el foco tiene que ir a donde lleva el enlace.
+  const devolverFoco = useRef(false);
+
+  const cerrar = (conFoco: boolean) => {
+    devolverFoco.current = conFoco;
+    setAbierto(false);
+  };
 
   // Cerrar al cambiar de página (se ajusta el estado durante el render, como
   // recomienda React, en vez de hacerlo en un efecto).
@@ -21,53 +32,67 @@ export default function Navegacion() {
     setAbierto(false);
   }
 
-  // Cerrar con Escape.
   useEffect(() => {
     if (!abierto) return;
+
+    // Lo que queda detrás no se desplaza ni se puede tabular: `inert` en todo
+    // lo que no es la cabecera. La clase en <html> bloquea el scroll y quita el
+    // desenfoque de la cabecera, que si no encerraría al panel (un
+    // backdrop-filter hace de contenedor de los position: fixed).
+    const html = document.documentElement;
+    const detras = document.querySelectorAll<HTMLElement>(
+      "body > :not(.cabecera):not(script)",
+    );
+    html.classList.add("menu-abierto");
+    detras.forEach((el) => (el.inert = true));
+    // preventScroll en los dos focus(): el botón vive en una cabecera sticky y,
+    // sin él, devolverle el foco hacía que la página se desplazara hacia arriba
+    // al cerrar. Te sacaba de donde estabas leyendo.
+    panel.current?.querySelector("a")?.focus({ preventScroll: true });
+
+    const botonMenu = boton.current;
     const alPulsar = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setAbierto(false);
+      if (e.key === "Escape") cerrar(true);
     };
+    // Si se ensancha la ventana hasta escritorio, el menú ya no tiene sentido.
+    const escritorio = window.matchMedia("(min-width: 60.0625rem)");
+    const alEnsanchar = () => escritorio.matches && cerrar(false);
+
     document.addEventListener("keydown", alPulsar);
-    return () => document.removeEventListener("keydown", alPulsar);
+    escritorio.addEventListener("change", alEnsanchar);
+    return () => {
+      html.classList.remove("menu-abierto");
+      detras.forEach((el) => (el.inert = false));
+      document.removeEventListener("keydown", alPulsar);
+      escritorio.removeEventListener("change", alEnsanchar);
+      if (devolverFoco.current) botonMenu?.focus({ preventScroll: true });
+      devolverFoco.current = false;
+    };
   }, [abierto]);
 
-  const lista = (conInicio: boolean) => (
-    <ul>
-      {conInicio && (
-        <li>
-          <Link href="/" aria-current={ruta === "/" ? "page" : undefined}>
-            Inicio
-          </Link>
-        </li>
-      )}
-      {enlaces.map((e) => (
-        <li key={e.href}>
-          <Link
-            href={e.href}
-            aria-current={e.href === ruta ? "page" : undefined}
-            // Un enlace a una sección de la misma página no cambia la ruta:
-            // hay que cerrar el menú a mano.
-            onClick={() => setAbierto(false)}
-          >
-            {e.texto}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  );
+  const actual = (href: string) => (href === ruta ? "page" : undefined);
 
   return (
     <>
       <nav aria-label="Principal" className="cabecera__nav">
-        {lista(false)}
+        <ul>
+          {enlaces.map((e) => (
+            <li key={e.href}>
+              <Link href={e.href} aria-current={actual(e.href)}>
+                {e.texto}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </nav>
 
       <button
+        ref={boton}
         type="button"
         className="menu__boton"
         aria-expanded={abierto}
         aria-controls="menu-movil"
-        onClick={() => setAbierto((a) => !a)}
+        onClick={() => (abierto ? cerrar(true) : setAbierto(true))}
       >
         {abierto ? (
           <X aria-hidden="true" size={22} />
@@ -78,12 +103,54 @@ export default function Navegacion() {
       </button>
 
       <nav
+        ref={panel}
         id="menu-movil"
         aria-label="Menú"
         className="menu__panel"
         hidden={!abierto}
       >
-        {lista(true)}
+        <div className="menu__contenido">
+          <ul className="menu__lista">
+            {[{ href: "/", texto: "Inicio" }, ...enlaces].map((e, i) => (
+              <li key={e.href} style={{ "--i": i } as React.CSSProperties}>
+                <Link
+                  href={e.href}
+                  aria-current={actual(e.href)}
+                  // Un enlace a una sección de la misma página no cambia la
+                  // ruta: hay que cerrar el menú a mano.
+                  onClick={() => cerrar(false)}
+                >
+                  {e.texto}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="menu__contacto">
+            <div className="menu__botones">
+              <a className="boton boton--whatsapp boton--grande" href={enlaceWhatsApp()}>
+                <MessageCircle aria-hidden="true" size={22} />
+                WhatsApp
+              </a>
+              <a
+                className="boton boton--contorno boton--grande"
+                href={`tel:${negocio.telefono}`}
+              >
+                <Phone aria-hidden="true" size={20} />
+                {negocio.telefonoVisible}
+              </a>
+            </div>
+            <a className="menu__correo" href={`mailto:${negocio.correo}`}>
+              <Mail aria-hidden="true" size={18} />
+              {negocio.correo}
+            </a>
+            <p className="menu__horario">
+              {horario.semana}
+              <br />
+              {horario.finDeSemana}
+            </p>
+          </div>
+        </div>
       </nav>
     </>
   );

@@ -381,63 +381,174 @@ p {
     cursor: pointer;
   }
 
-  .menu__boton[aria-expanded="true"] {
-    background: var(--marino);
-    border-color: var(--marino);
-    color: #fff;
-  }
-
+  /* Menú a pantalla completa: ocupa todo lo que hay bajo la cabecera. */
   .menu__panel:not([hidden]) {
     display: block;
-    position: absolute;
-    inset-inline: 0;
-    top: 100%;
-    max-height: calc(100dvh - var(--alto-cabecera));
+    position: fixed;
+    inset: var(--alto-cabecera) 0 0;
+    z-index: 70;
     overflow-y: auto;
-    padding: 0.5rem clamp(1rem, 4vw, 2rem) 1.25rem;
-    background: var(--papel);
-    border-bottom: 1px solid var(--linea);
-    box-shadow: 0 24px 32px -16px rgb(9 23 67 / 0.25);
-    animation: desplegar 0.18s ease-out;
+    overscroll-behavior: contain;
+    color: #fff;
+    background:
+      radial-gradient(40rem 30rem at 100% 0%, rgb(31 95 214 / 0.45), transparent 60%),
+      radial-gradient(30rem 25rem at 0% 100%, rgb(217 165 58 / 0.14), transparent 60%),
+      var(--marino);
+    animation: aparecer 0.2s ease-out;
   }
 
-  .menu__panel ul {
+  .menu__contenido {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    min-height: 100%;
+    max-width: var(--ancho);
+    margin-inline: auto;
+    padding: clamp(1.5rem, 5vh, 3rem) clamp(1rem, 4vw, 2rem)
+      calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .menu__lista {
     display: grid;
   }
 
-  .menu__panel li + li {
-    border-top: 1px solid var(--linea);
+  .menu__lista li {
+    border-bottom: 1px solid rgb(255 255 255 / 0.1);
+    animation: entrar 0.35s ease-out both;
+    animation-delay: calc(var(--i) * 35ms + 50ms);
   }
 
-  .menu__panel a {
+  .menu__lista a {
     display: flex;
     align-items: center;
-    min-height: 3.25rem;
+    justify-content: space-between;
+    min-height: clamp(3.5rem, 9vh, 4.5rem);
     font-family: var(--fuente-titulos), Georgia, serif;
-    font-size: 1.375rem;
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
     font-weight: 600;
-    color: var(--marino);
+    letter-spacing: -0.02em;
+    color: #fff;
     text-decoration: none;
+    font-variation-settings:
+      "SOFT" 100,
+      "opsz" 144;
   }
 
-  .menu__panel a[aria-current="page"] {
-    color: var(--oro-texto);
+  .menu__lista a::after {
+    content: "→";
+    font-family: var(--fuente-texto), system-ui, sans-serif;
+    font-size: 1.25rem;
+    color: rgb(255 255 255 / 0.35);
+    transition:
+      transform 0.15s ease,
+      color 0.15s ease;
   }
 
-  .menu__panel a[aria-current="page"]::after {
+  .menu__lista a:hover::after,
+  .menu__lista a:focus-visible::after {
+    color: var(--oro-claro);
+    transform: translateX(0.25rem);
+  }
+
+  .menu__lista a[aria-current="page"] {
+    font-style: italic;
+    color: var(--oro-claro);
+  }
+
+  .menu__lista a[aria-current="page"]::after {
     content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    margin-left: 0.625rem;
+    width: 0.625rem;
+    height: 0.625rem;
     border-radius: 999px;
-    background: var(--oro);
+    background: var(--oro-claro);
+  }
+
+  .menu__lista a:focus-visible {
+    outline-color: var(--oro-claro);
+  }
+
+  .menu__contacto {
+    display: grid;
+    gap: 1rem;
+    margin-top: auto;
+    animation: entrar 0.35s ease-out 0.3s both;
+  }
+
+  .menu__botones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+    gap: 0.625rem;
+  }
+
+  .menu__correo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-self: start;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+  }
+
+  .menu__correo svg {
+    color: var(--oro-claro);
+  }
+
+  .menu__horario {
+    font-size: 0.9375rem;
+    color: rgb(255 255 255 / 0.65);
+  }
+
+  /* Con el menú abierto: la página no se desplaza, la cabecera se vuelve azul
+     y sin desenfoque (un backdrop-filter encerraría al panel fijo dentro de
+     la cabecera), y la barra de contacto sobra porque el menú ya la lleva. */
+  /* Sólo en <html>. Si se pone también en <body>, el body pasa a ser el
+     contenedor de la cabecera sticky y ésta se va con la página: abriendo el
+     menú a media página, la cabecera (y el botón Cerrar) desaparecían. */
+  html.menu-abierto {
+    overflow: hidden;
+  }
+
+  html.menu-abierto .cabecera {
+    background: var(--marino);
+    border-bottom-color: rgb(255 255 255 / 0.1);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  html.menu-abierto .cabecera .marca {
+    color: #fff;
+  }
+
+  html.menu-abierto .cabecera .marca__logo {
+    padding: 0.125rem;
+    background: #fff;
+    mix-blend-mode: normal;
+  }
+
+  html.menu-abierto .cabecera .menu__boton {
+    background: #fff;
+    border-color: #fff;
+    color: var(--marino);
+  }
+
+  html.menu-abierto .cabecera__whatsapp,
+  html.menu-abierto .barra-contacto {
+    display: none;
   }
 }
 
-@keyframes desplegar {
+@keyframes aparecer {
   from {
     opacity: 0;
-    transform: translateY(-0.5rem);
+  }
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
   }
 }
 

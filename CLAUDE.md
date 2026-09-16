@@ -222,6 +222,14 @@ Aprendido en la contabilidad, y aplica aquí:
   la cabecera se sustituyen por el botón «Menú»: no los escondas sin dejar otra
   forma de navegar, que es como estaba al principio y en el móvil no había
   menú ninguno.
+- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`): enlaces
+  grandes y, abajo, WhatsApp, teléfono, correo y horario. Mientras está abierto
+  lo de detrás queda `inert` y sin scroll, y al cerrarlo el foco vuelve al
+  botón. Tres detalles que costaron un fallo cada uno, no los deshagas:
+  `overflow: hidden` sólo en `<html>` (en `<body>` la cabecera sticky se iba
+  con la página), sin `backdrop-filter` en la cabecera mientras está abierto
+  (encierra al panel fijo) y `focus({ preventScroll: true })` (sin él, cerrar
+  el menú desplazaba la página hacia arriba).
 - **Sin formularios por ahora.** El contacto es WhatsApp, teléfono y correo. Un
   formulario pide servicio de correo, antispam y casilla de privacidad: no se
   añade sin que él lo pida.
