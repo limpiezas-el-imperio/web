@@ -1,4 +1,13 @@
-import { ArrowRight, ArrowUpRight, Clock, Leaf, MessageCircle, Package, Plus } from "lucide-react";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Clock,
+  Leaf,
+  MessageCircle,
+  Package,
+  Plus,
+  Star,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Contacto from "@/componentes/Contacto";
@@ -12,6 +21,7 @@ import {
   negocio,
   redes,
   servicios,
+  valoracion,
   zonas,
 } from "@/datos/negocio";
 import { metadatosPagina, urlBase } from "@/datos/sitio";
@@ -85,15 +95,20 @@ export default function Inicio() {
         <div className={`contenedor ${s.portada__rejilla}`}>
           <div className={s.portada__texto}>
             <p className="antetitulo">
-              <span>{negocio.localidad}</span> · <span>Camp de Túria</span> ·{" "}
+              <span>{negocio.localidad}</span>
+              <span className={s.solo_ancho}> · Camp de Túria</span> ·{" "}
               <span>Valencia</span>
             </p>
             <h1 className={s.portada__titulo}>
               Limpieza que <em>se&nbsp;nota</em>.
             </h1>
             <p className={s.portada__entradilla}>
-              Viviendas, comunidades, oficinas, locales y obras. Llevamos los
-              materiales y los productos: tú sólo nos cuentas qué necesitas.
+              Viviendas, comunidades, oficinas, locales y obras.
+              <span className={s.solo_ancho}>
+                {" "}
+                Llevamos los materiales y los productos: tú sólo nos cuentas qué
+                necesitas.
+              </span>
             </p>
             <div className={s.acciones}>
               <a className="boton boton--whatsapp boton--grande" href={enlaceWhatsApp()}>
@@ -105,6 +120,19 @@ export default function Inicio() {
                 <ArrowRight aria-hidden="true" size={18} />
               </a>
             </div>
+            {/* En el móvil sustituye a los botones: la barra fija de abajo ya
+                es la llamada a la acción, y aquí va la prueba social. */}
+            <a className={s.valoracion} href="#opiniones">
+              <span className={s.valoracion__estrellas} aria-hidden="true">
+                {Array.from({ length: 5 }, (_, i) => (
+                  <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
+                ))}
+              </span>
+              <span>
+                <strong>{valoracion.nota}</strong> · {valoracion.total} reseñas en Google
+              </span>
+              <ArrowRight aria-hidden="true" size={16} />
+            </a>
           </div>
 
           <figure className={s.portada__foto}>

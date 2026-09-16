@@ -254,6 +254,12 @@ Aprendido en la contabilidad, y aplica aquí:
   cada uno y emparejarlas a la fuerza no casaba. Los servicios son sólo texto.
 - **Contacto primero**: el WhatsApp es la acción principal en toda la web, y en
   el móvil hay una barra fija con WhatsApp y Llamar.
+- **En el móvil, la portada no lleva botones**: la barra fija ya es la llamada
+  a la acción, y con los del titular había cuatro en la primera pantalla. Abre
+  con la foto de Frank a sangre, titular corto y la valoración de Google (4,9 ·
+  68). La altura de la foto sale de la pantalla (`100svh - 27rem`), no de una
+  proporción: con la foto cuadrada, en pantallas bajas la valoración quedaba
+  tapada por la barra. Compruébalo en 375×667 si tocas esa portada.
 - **Se navega por páginas, no por una sola página larga.** Cada tema importante
   tiene la suya; la portada resume y enlaza. Por debajo de 60rem los enlaces de
   la cabecera se sustituyen por el botón «Menú»: no los escondas sin dejar otra
