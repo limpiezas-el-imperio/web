@@ -1,29 +1,39 @@
-/* ——— Paleta: la del logo. Azul marino, azul vivo y dorado. ——— */
+/* ——— Paleta: la del logo ———
+   Azul cielo de la ola, azul marino de la casa y el oro de las estrellas.
+   Segunda dirección (sept 2026): a Frank la versión sobria le pareció plana y
+   sin color. Ahora hay color, tarjetas con sombra y esquinas redondeadas, sin
+   pasarse: el blanco y el azul claro siguen mandando. */
 :root {
-  /* ——— Paleta: azules, grises y blanco. Sin dorado (decisión de Kevin, sept
-     2026: más sobrio y elegante). El logo conserva sus colores: es su marca. */
-  --marino: #14305a;
-  --marino-hondo: #0c1f3d;
-  --azul: #2e5c9e; /* acento: enlaces, números, marcas pequeñas (AA sobre blanco) */
-  --azul-claro: #a9c1e3; /* el acento sobre fondo azul */
-  --azul-velo: #eef3f9;
+  --marino: #0c2d5c;
+  --marino-hondo: #081f42;
+  --azul: #0b6bc4; /* acento sobre claro: enlaces, números, iconos (AA sobre blanco) */
+  --cielo: #1e90e8; /* el azul vivo del logo: degradados y detalles, no texto */
+  --azul-claro: #bfe0fb; /* el acento sobre fondo azul */
+  --azul-velo: #eaf5fd;
+  --oro: #f2b01e; /* estrellas, rayas de los antetítulos. Nunca texto */
+  --verde: #179c4a; /* WhatsApp */
+  --verde-hondo: #12863e;
 
-  --fondo: #f7f8fa;
+  --fondo: #f5f9fd;
   --papel: #ffffff;
-  --linea: #e2e6ec;
-  --texto: #1b2533;
-  --texto-suave: #5d6878;
+  --linea: #dde7f1;
+  --texto: #1c2a3d;
+  --texto-suave: #55647a;
 
-  /* Sobre fondo azul: texto y líneas. Tres valores y ninguno más. */
+  /* Sobre fondo azul: texto y líneas. */
   --blanco: #ffffff;
-  --texto-sobre-azul: rgb(255 255 255 / 0.75);
-  --linea-sobre-azul: rgb(255 255 255 / 0.16);
+  --texto-sobre-azul: rgb(255 255 255 / 0.85);
+  --linea-sobre-azul: rgb(255 255 255 / 0.18);
 
-  --radio: 0.375rem;
-  --radio-grande: 0.625rem;
+  --degradado: linear-gradient(135deg, #1e90e8 0%, #0b5fb0 55%, #0c2d5c 100%);
+  --sombra: 0 10px 30px -14px rgb(12 45 92 / 0.28);
+  --sombra-grande: 0 24px 56px -22px rgb(12 45 92 / 0.38);
 
-  --ancho: 72rem;
-  --alto-cabecera: 4.25rem;
+  --radio: 0.75rem;
+  --radio-grande: 1.25rem;
+
+  --ancho: 74rem;
+  --alto-cabecera: 4.75rem;
 
   color-scheme: light;
 }
@@ -74,11 +84,18 @@ a {
 h1,
 h2,
 h3 {
-  font-family: var(--fuente-titulos), Georgia, serif;
-  font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.01em;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   text-wrap: balance;
+}
+
+/* Lo resaltado de un titular: en azul vivo, sin cursiva. */
+h1 em,
+h2 em {
+  font-style: normal;
+  color: var(--azul);
 }
 
 p {
@@ -86,7 +103,7 @@ p {
 }
 
 :focus-visible {
-  outline: 3px solid var(--azul);
+  outline: 3px solid var(--cielo);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -120,7 +137,7 @@ p {
   padding: 0.75rem 1rem;
   background: var(--papel);
   border-radius: var(--radio);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .saltar:focus {
@@ -128,16 +145,16 @@ p {
 }
 
 .seccion {
-  padding-block: clamp(4rem, 10vw, 7rem);
+  padding-block: clamp(4rem, 9vw, 6rem);
 }
 
 .seccion__cabecera {
-  max-width: 40rem;
+  max-width: 42rem;
   margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 .seccion__titulo {
-  font-size: clamp(1.875rem, 3.8vw, 2.75rem);
+  font-size: clamp(1.875rem, 4.2vw, 2.75rem);
   color: var(--marino);
 }
 
@@ -151,43 +168,84 @@ p {
    Piezas comunes. Si algo se parece a una de ellas, usa la clase; no copies
    sus valores en un módulo (ver CLAUDE.md, «Sistema de diseño»). */
 
-/* Etiqueta en mayúsculas: encima de títulos, en el pie, en los índices. */
+/* Etiqueta en mayúsculas, con la raya dorada de las estrellas del logo. */
 .antetitulo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 0.875rem;
-  font-family: var(--fuente-texto), system-ui, sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
   line-height: 1.4;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--azul);
+}
+
+.antetitulo::before {
+  content: "";
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 3px;
+  margin-right: 0.625rem;
+  border-radius: 3px;
+  background: var(--oro);
 }
 
 .antetitulo--claro {
   color: var(--azul-claro);
 }
 
-/* Número de un índice o de una lista: 01, 02… */
+/* Número de un índice o de una lista, en un círculo: 1, 2… */
 .numero {
-  font-family: var(--fuente-texto), system-ui, sans-serif;
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--azul-velo);
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-variant-numeric: tabular-nums;
   color: var(--azul);
 }
 
 .numero--claro {
-  color: var(--azul-claro);
+  background: var(--blanco);
+  color: var(--azul);
+}
+
+/* Tarjeta: blanca, esquinas redondeadas y sombra suave. */
+.tarjeta {
+  border-radius: var(--radio-grande);
+  background: var(--papel);
+  box-shadow: var(--sombra);
+}
+
+/* Icono dentro de un círculo con el degradado del logo. */
+.icono-circulo {
+  display: inline-grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--degradado);
+  color: var(--blanco);
+  box-shadow: 0 8px 18px -8px rgb(11 107 196 / 0.7);
 }
 
 /* Enlace dentro de un texto. */
 .enlace {
-  font-weight: 500;
-  color: var(--marino);
+  font-weight: 700;
+  color: var(--azul);
   text-decoration: underline;
   text-decoration-color: var(--azul-claro);
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 2px;
   text-underline-offset: 4px;
   transition: text-decoration-color 0.15s ease;
 }
@@ -200,10 +258,9 @@ p {
   color: var(--blanco);
 }
 
-/* Iconos (lucide): trazo fino, como las líneas de toda la web. Las estrellas,
-   que van rellenas, no. */
+/* Iconos (lucide). Las estrellas, que van rellenas, no llevan trazo. */
 svg.lucide:not([fill="currentColor"]) {
-  stroke-width: 1.5;
+  stroke-width: 2;
 }
 
 /* ——— Botones ——— */
@@ -212,28 +269,39 @@ svg.lucide:not([fill="currentColor"]) {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 2.75rem;
-  padding: 0.625rem 1.25rem;
-  border: 1px solid transparent;
-  border-radius: var(--radio);
-  font-weight: 500;
+  min-height: 3rem;
+  padding: 0.625rem 1.375rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
   white-space: nowrap;
   transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease,
-    transform 0.15s ease;
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.boton svg {
+  flex-shrink: 0;
+}
+
+.boton:hover {
+  transform: translateY(-2px);
 }
 
 .boton:active {
-  transform: translateY(1px);
+  transform: translateY(0);
 }
 
 .boton--pequeno {
-  min-height: 2.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.9375rem;
+  min-height: 2.625rem;
+  padding: 0.5rem 1.125rem;
+  font-size: 0.875rem;
 }
 
 .boton--grande {
@@ -242,15 +310,15 @@ svg.lucide:not([fill="currentColor"]) {
   font-size: 1.0625rem;
 }
 
-/* El botón principal. Se llama «whatsapp» porque es lo que abre, pero va en
-   azul marino y no en verde: la paleta es sólo de azules y grises. */
+/* El botón principal: verde WhatsApp, el que todo el mundo reconoce. */
 .boton--whatsapp {
-  background: var(--marino);
+  background: var(--verde);
   color: var(--blanco);
+  box-shadow: 0 10px 22px -10px rgb(23 156 74 / 0.75);
 }
 
 .boton--whatsapp:hover {
-  background: var(--marino-hondo);
+  background: var(--verde-hondo);
 }
 
 /* El secundario: blanco con borde. Llamar, en la barra y en el menú. */
@@ -261,25 +329,25 @@ svg.lucide:not([fill="currentColor"]) {
 }
 
 .boton--claro:hover {
-  border-color: var(--marino);
+  border-color: var(--cielo);
 }
 
 /* Enlace de texto con flecha: la acción secundaria de toda la web. */
 .enlace-flecha {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  font-weight: 500;
-  color: var(--marino);
-  text-decoration: underline;
-  text-decoration-color: var(--azul-claro);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
-  transition: text-decoration-color 0.15s ease;
+  gap: 0.375rem;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--azul);
+  text-decoration: none;
 }
 
 .enlace-flecha:hover {
-  text-decoration-color: currentColor;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 }
 
 .enlace-flecha--claro {
@@ -288,11 +356,11 @@ svg.lucide:not([fill="currentColor"]) {
 
 .enlace-flecha svg {
   flex-shrink: 0;
-  transition: transform 0.15s ease;
+  transition: transform 0.2s ease;
 }
 
 .enlace-flecha:hover svg {
-  transform: translate(2px, -2px);
+  transform: translateX(3px);
 }
 
 /* ——— Marca ——— */
@@ -305,42 +373,48 @@ svg.lucide:not([fill="currentColor"]) {
 }
 
 .marca__logo {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3.5rem;
+  height: 3.5rem;
   flex-shrink: 0;
-  border-radius: var(--radio-grande);
+  border-radius: var(--radio);
   object-fit: contain;
 }
 
 .marca__texto {
   display: flex;
   flex-direction: column;
-  line-height: 1;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  line-height: 1.05;
+  white-space: nowrap;
 }
 
 .marca__linea {
   font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: var(--azul);
 }
 
 .marca__nombre {
-  margin-top: 0.1875rem;
-  font-family: var(--fuente-titulos), Georgia, serif;
-  font-size: 1.375rem;
-  font-weight: 500;
-  letter-spacing: -0.005em;
+  margin-top: 0.125rem;
+  font-size: 1.3125rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .marca--clara {
   color: var(--blanco);
 }
 
+.marca--clara .marca__linea {
+  color: var(--azul-claro);
+}
+
 /* Sobre azul, el logo va en su tarjeta blanca. */
 .marca--clara .marca__logo {
-  width: 4rem;
-  height: 4rem;
+  width: 4.5rem;
+  height: 4.5rem;
   padding: 0.25rem;
   background: var(--blanco);
 }
@@ -350,10 +424,10 @@ svg.lucide:not([fill="currentColor"]) {
   position: sticky;
   top: 0;
   z-index: 50;
-  /* Opaca y blanca, sin transparencia ni desenfoque: decisión de Kevin. El
-     blanco es además el fondo del logo, así que no se le ve el recuadro. */
+  /* Opaca y blanca. Sombra en vez de borde. Nada de backdrop-filter ni
+     transform: encerrarían el menú del móvil (ver CLAUDE.md). */
   background: var(--papel);
-  border-bottom: 1px solid var(--linea);
+  box-shadow: 0 6px 20px -12px rgb(12 45 92 / 0.25);
 }
 
 .cabecera__fila {
@@ -371,11 +445,12 @@ svg.lucide:not([fill="currentColor"]) {
 
 .cabecera__nav a {
   display: block;
-  padding: 0.5rem 0.75rem;
-  border-radius: var(--radio);
+  padding: 0.5rem 0.875rem;
+  border-radius: 999px;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
   font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--texto-suave);
+  font-weight: 600;
+  color: var(--marino);
   text-decoration: none;
   transition:
     color 0.15s ease,
@@ -383,12 +458,12 @@ svg.lucide:not([fill="currentColor"]) {
 }
 
 .cabecera__nav a:hover {
-  color: var(--marino);
+  color: var(--azul);
   background: var(--azul-velo);
 }
 
 .cabecera__nav a[aria-current="page"] {
-  color: var(--marino);
+  color: var(--azul);
   background: var(--azul-velo);
 }
 
@@ -420,14 +495,14 @@ svg.lucide:not([fill="currentColor"]) {
     align-items: center;
     gap: 0.375rem;
     order: 3;
-    min-height: 2.5rem;
-    padding: 0.5rem 0.875rem;
-    border: 1px solid var(--linea);
-    border-radius: var(--radio);
-    background: var(--papel);
-    font: inherit;
+    min-height: 2.75rem;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--azul-velo);
+    font-family: var(--fuente-titulos), system-ui, sans-serif;
     font-size: 0.9375rem;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--marino);
     cursor: pointer;
   }
@@ -440,8 +515,6 @@ svg.lucide:not([fill="currentColor"]) {
     z-index: 70;
     overflow-y: auto;
     overscroll-behavior: contain;
-    /* Crema, como el resto de la web: en azul con degradado quedaba demasiado
-       azul (lo dijo Kevin). */
     color: var(--texto);
     background: var(--fondo);
     animation: aparecer 0.2s ease-out;
@@ -473,19 +546,18 @@ svg.lucide:not([fill="currentColor"]) {
     align-items: center;
     justify-content: space-between;
     min-height: clamp(3.5rem, 9vh, 4.5rem);
-    font-family: var(--fuente-titulos), Georgia, serif;
-    font-size: clamp(1.5rem, 6vw, 2rem);
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-family: var(--fuente-titulos), system-ui, sans-serif;
+    font-size: clamp(1.375rem, 5.5vw, 1.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--marino);
     text-decoration: none;
   }
 
   .menu__lista a::after {
     content: "→";
-    font-family: var(--fuente-texto), system-ui, sans-serif;
     font-size: 1.25rem;
-    color: var(--linea);
+    color: var(--azul-claro);
     transition:
       transform 0.15s ease,
       color 0.15s ease;
@@ -498,7 +570,6 @@ svg.lucide:not([fill="currentColor"]) {
   }
 
   .menu__lista a[aria-current="page"] {
-    font-style: italic;
     color: var(--azul);
   }
 
@@ -507,7 +578,7 @@ svg.lucide:not([fill="currentColor"]) {
     width: 0.625rem;
     height: 0.625rem;
     border-radius: 999px;
-    background: var(--azul);
+    background: var(--oro);
   }
 
   .menu__contacto {
@@ -528,7 +599,7 @@ svg.lucide:not([fill="currentColor"]) {
     align-items: center;
     gap: 0.5rem;
     justify-self: start;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--marino);
     text-decoration: none;
     overflow-wrap: anywhere;
@@ -543,11 +614,8 @@ svg.lucide:not([fill="currentColor"]) {
     color: var(--texto-suave);
   }
 
-
-
   /* Con el menú abierto: la página no se desplaza y la barra de contacto
-     sobra, porque el menú ya la lleva. La cabecera se queda blanca; sólo el
-     botón pasa a azul para que «Cerrar» se vea. */
+     sobra, porque el menú ya la lleva. */
   /* Sólo en <html>. Si se pone también en <body>, el body pasa a ser el
      contenedor de la cabecera sticky y ésta se va con la página: abriendo el
      menú a media página, la cabecera (y el botón Cerrar) desaparecían. */
@@ -557,7 +625,6 @@ svg.lucide:not([fill="currentColor"]) {
 
   html.menu-abierto .cabecera .menu__boton {
     background: var(--marino);
-    border-color: var(--marino);
     color: var(--blanco);
   }
 
@@ -596,7 +663,7 @@ svg.lucide:not([fill="currentColor"]) {
     gap: 0.625rem;
     padding: 0.625rem 1rem calc(0.625rem + env(safe-area-inset-bottom, 0px));
     background: var(--papel); /* opaca, como la cabecera */
-    border-top: 1px solid var(--linea);
+    box-shadow: 0 -8px 24px -12px rgb(12 45 92 / 0.3);
   }
 
   .barra-contacto .boton {

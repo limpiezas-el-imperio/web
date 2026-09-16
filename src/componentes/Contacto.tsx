@@ -26,21 +26,21 @@ export default function Contacto() {
           <li>
             <Phone aria-hidden="true" size={20} />
             <div>
-              <span className="antetitulo antetitulo--claro">Teléfono</span>
+              <span className="antetitulo">Teléfono</span>
               <a href={`tel:${negocio.telefono}`}>{negocio.telefonoVisible}</a>
             </div>
           </li>
           <li>
             <Mail aria-hidden="true" size={20} />
             <div>
-              <span className="antetitulo antetitulo--claro">Correo</span>
+              <span className="antetitulo">Correo</span>
               <a href={`mailto:${negocio.correo}`}>{negocio.correo}</a>
             </div>
           </li>
           <li>
             <Clock aria-hidden="true" size={20} />
             <div>
-              <span className="antetitulo antetitulo--claro">Horario</span>
+              <span className="antetitulo">Horario</span>
               <p>
                 {horario.semana}
                 <br />
@@ -51,7 +51,7 @@ export default function Contacto() {
           <li>
             <MapPin aria-hidden="true" size={20} />
             <div>
-              <span className="antetitulo antetitulo--claro">Dónde estamos</span>
+              <span className="antetitulo">Dónde estamos</span>
               <a href={negocio.mapa}>
                 {negocio.localidad} ({negocio.provincia})
               </a>

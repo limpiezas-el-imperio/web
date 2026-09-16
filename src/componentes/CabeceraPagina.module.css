@@ -1,33 +1,39 @@
 .cabecera {
-  border-bottom: 1px solid var(--linea);
+  background:
+    radial-gradient(50rem 20rem at 85% 0%, rgb(30 144 232 / 0.16), transparent 70%),
+    linear-gradient(180deg, var(--azul-velo) 0%, var(--fondo) 100%);
 }
 
 .contenido {
-  padding-block: clamp(3rem, 8vw, 5.5rem) clamp(2.5rem, 6vw, 4rem);
+  padding-block: clamp(3rem, 7vw, 5rem) clamp(2rem, 5vw, 3rem);
 }
 
 .titulo {
-  max-width: 18ch;
-  font-size: clamp(2.5rem, 5.5vw, 4rem);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
+  max-width: 20ch;
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: var(--marino);
 }
 
 .titulo em {
-  color: var(--azul);
+  background: linear-gradient(90deg, var(--cielo), var(--azul));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .entradilla {
   max-width: 36rem;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   font-size: clamp(1.0625rem, 2vw, 1.25rem);
   color: var(--texto-suave);
 }
 
 .entradilla a {
-  font-weight: 500;
-  color: var(--marino);
+  font-weight: 700;
+  color: var(--azul);
   text-decoration-color: var(--azul-claro);
   text-underline-offset: 4px;
 }

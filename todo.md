@@ -50,10 +50,12 @@ Opiniones se queda como sección de la portada.
 
 **Antes de nada**
 
-- [ ] **¿Le gusta?** Portada, servicios y FAQ. Decisiones de diseño que
-      conviene que valide: paleta sólo azul y gris (su logo tiene dorado),
-      botón de WhatsApp en azul y no en verde, portada del móvil sin botones
-      (la barra de abajo hace de llamada a la acción)
+- [x] **¿Le gusta?** La primera versión no (16 sept 2026): «demasiado
+      plana», «sin color», «no parece de limpieza», «pocas funciones».
+      Rehecha con color y elevación
+- [ ] **¿Y la nueva?** Enseñársela. Si sigue pidiendo «más funciones», la
+      idea con más peso es un presupuesto guiado que abre WhatsApp con el
+      mensaje escrito (sin formulario ni servidor)
 - [ ] **NIF**: lo exige el aviso legal. Va a `docs/privado/` hasta que lo
       publique él
 - [ ] **Dominio**: ¿deja el panel de Webador editar el A y el CNAME del `.net`
@@ -136,7 +138,8 @@ Opiniones se queda como sección de la portada.
   galería; mapa de zonas; opiniones de Google en carrusel
 - `/nuestros-servicios` y `/preguntas-frecuentes`
 - Menú de tablet y móvil a pantalla completa, barra de contacto en el móvil
-- Paleta sin dorado, tipografías Newsreader y Geist, y sistema de diseño
-  común (ver `CLAUDE.md`)
+- Sistema de diseño común (ver `CLAUDE.md`). Primero sobrio (Newsreader y
+  Geist, sin dorado); a Frank no le gustó y se rehízo el mismo día con color,
+  tarjetas con sombra, Montserrat y Nunito Sans, y WhatsApp en verde
 - Metadatos por página, imagen para compartir, iconos, datos estructurados
   (`LocalBusiness`, `FAQPage`, servicios)

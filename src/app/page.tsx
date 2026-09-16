@@ -94,10 +94,14 @@ export default function Inicio() {
       <section className={s.portada}>
         <div className={`contenedor ${s.portada__rejilla}`}>
           <div className={s.portada__texto}>
+            {/* Todo en un span: el antetítulo es flex y se comería los espacios
+                entre elementos sueltos. */}
             <p className="antetitulo">
-              <span>{negocio.localidad}</span>
-              <span className={s.solo_ancho}> · Camp de Túria</span> ·{" "}
-              <span>Valencia</span>
+              <span>
+                <span>{negocio.localidad}</span>
+                <span className={s.solo_ancho}> · Camp de Túria</span> ·{" "}
+                <span>Valencia</span>
+              </span>
             </p>
             <h1 className={s.portada__titulo}>
               Limpieza que <em>se&nbsp;nota</em>.
@@ -121,11 +125,11 @@ export default function Inicio() {
               </a>
             </div>
             {/* En el móvil sustituye a los botones: la barra fija de abajo ya
-                es la llamada a la acción, y aquí va la prueba social. */}
+                es la llamada a la acción. En escritorio va debajo de ellos. */}
             <a className={s.valoracion} href="#opiniones">
               <span className={s.valoracion__estrellas} aria-hidden="true">
                 {Array.from({ length: 5 }, (_, i) => (
-                  <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
+                  <Star key={i} size={18} fill="currentColor" strokeWidth={0} />
                 ))}
               </span>
               <span>
@@ -152,7 +156,9 @@ export default function Inicio() {
         <ul className={`contenedor ${s.hechos}`}>
           {hechos.map(({ icono: Icono, texto }) => (
             <li key={texto}>
-              <Icono aria-hidden="true" size={20} />
+              <span className="icono-circulo">
+                <Icono aria-hidden="true" size={22} />
+              </span>
               {texto}
             </li>
           ))}

@@ -41,11 +41,11 @@ sobra.
   consentimiento, y los de su web vieja pedían DNI sin nada de eso.
 - **Sin redirecciones.** Las rutas buenas de la web vieja se conservan y las
   malas se renombran (`docs/sitio-actual.md`, *Decisión por página*).
-- **Diseño editorial y sobrio.** El primer diseño tenía aire de plantilla de
-  WordPress (tarjetas, sombras, bandas de colores). Se cambió por titulares
-  grandes, reglas finas y fotos reales, y luego se quitó el dorado y se
-  pasaron las tipografías a unas más discretas. Todo lo que queda es un
-  sistema común (`CLAUDE.md`, *Sistema de diseño*).
+- **Diseño con color y elevación.** Se hizo primero una versión editorial y
+  sobria (serif, reglas finas, sin sombras); a Frank le pareció plana y sin
+  color, y se rehízo con los colores de su logo, tarjetas con sombra,
+  titulares en sans-serif gruesa y botones verdes de WhatsApp, sin pasarse.
+  Todo va en un sistema común (`CLAUDE.md`, *Sistema de diseño*).
 - **Fotos reales como prueba.** Las de su web vieja eran generadas con IA. Las
   reales van en una galería, no emparejadas a la fuerza con cada servicio.
 - **Opiniones de Google, no inventadas ni retocadas.** Extractos literales,

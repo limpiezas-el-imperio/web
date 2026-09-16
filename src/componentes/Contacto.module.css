@@ -3,13 +3,16 @@
   position: relative;
   overflow: hidden;
   color: var(--blanco);
-  background: var(--marino);
+  background:
+    radial-gradient(circle at 100% 0%, rgb(255 255 255 / 0.14), transparent 40%),
+    var(--degradado);
 }
 
 .titulo {
-  font-size: clamp(2.5rem, 5.5vw, 4rem);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: var(--blanco);
 }
 
@@ -26,47 +29,60 @@
   align-items: center;
 }
 
+/* Cada dato, en una tarjeta blanca. */
 .contacto__lista {
   display: grid;
-  border-top: 1px solid var(--linea-sobre-azul);
+  gap: 0.75rem;
 }
 
 .contacto__lista li {
   display: flex;
+  align-items: center;
   gap: 1rem;
-  padding: 1.25rem 0;
-  border-bottom: 1px solid var(--linea-sobre-azul);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radio-grande);
+  background: var(--papel);
+  box-shadow: 0 16px 36px -18px rgb(0 0 0 / 0.45);
+  color: var(--texto);
 }
 
-.contacto__lista svg {
+.contacto__lista li > svg {
   flex-shrink: 0;
-  margin-top: 0.1875rem;
-  color: var(--azul-claro);
+  box-sizing: content-box;
+  padding: 0.625rem;
+  border-radius: 50%;
+  background: var(--azul-velo);
+  color: var(--azul);
 }
 
 .contacto__lista :global(.antetitulo) {
-  display: block;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.125rem;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+}
+
+.contacto__lista :global(.antetitulo)::before {
+  display: none;
 }
 
 .contacto__lista a,
 .contacto__lista p {
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: var(--blanco);
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--marino);
   text-decoration: none;
   overflow-wrap: anywhere;
 }
 
 .contacto__lista a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--azul-claro);
-  text-underline-offset: 4px;
+  color: var(--azul);
 }
 
 .contacto__lista p {
+  font-family: var(--fuente-texto), system-ui, sans-serif;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 @media (max-width: 48rem) {
@@ -75,12 +91,13 @@
   }
 }
 
-/* Sobre el azul, el botón principal va en blanco: en azul marino no se vería. */
-.contacto :global(.boton--whatsapp) {
-  background: var(--blanco);
-  color: var(--marino);
-}
-
-.contacto :global(.boton--whatsapp:hover) {
-  background: var(--azul-velo);
+/* En el móvil, que el correo quepa en una línea. */
+@media (max-width: 30rem) {
+  .contacto__lista li {
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+  }
+  .contacto__lista a {
+    font-size: 0.9375rem;
+  }
 }

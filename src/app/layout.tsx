@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Newsreader } from "next/font/google";
+import { Montserrat, Nunito_Sans } from "next/font/google";
 import Cabecera from "@/componentes/Cabecera";
 import Pie from "@/componentes/Pie";
 import BarraContacto from "@/componentes/BarraContacto";
@@ -7,20 +7,18 @@ import { negocio } from "@/datos/negocio";
 import { urlBase } from "@/datos/sitio";
 import "./globals.css";
 
-// Sobrias y poco invasivas: Newsreader, una serif de lectura con tamaños
-// ópticos, para titulares en peso normal; Geist, una sans neutra, para el
-// texto. Sustituyen a Fraunces y Figtree, que tenían demasiada personalidad.
-const texto = Geist({
+// Sans las dos, sin serif (lo pidió Frank: la versión sobria le parecía
+// plana y sin color). Montserrat, en los titulares, recuerda a las letras de
+// «LIMPIEZAS» del logo; Nunito Sans es una sans amable para el texto.
+const texto = Nunito_Sans({
   variable: "--fuente-texto",
   subsets: ["latin"],
 });
 
-const titulos = Newsreader({
+const titulos = Montserrat({
   variable: "--fuente-titulos",
   subsets: ["latin"],
-  axes: ["opsz"],
 });
-
 
 const descripcion =
   "Limpieza de viviendas, comunidades, oficinas y obras en La Pobla de Vallbona, el Camp de Túria y Valencia. Materiales y productos incluidos. Pide presupuesto por WhatsApp.";
@@ -41,7 +39,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#14305a",
+  themeColor: "#0c2d5c",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

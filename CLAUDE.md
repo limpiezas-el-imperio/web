@@ -30,8 +30,9 @@ esto es la guía operativa.
 | `/zonas-de-servicio` | Por hacer; espera a que él diga cuál de sus dos listas vale |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Por hacer; esperan su NIF |
 
-**Frank todavía no ha visto nada.** Todo lo decidido hasta aquí lo ha decidido
-Kevin; las preguntas para él están en `todo.md`.
+**Frank vio la primera versión (16 sept 2026) y no le gustó el diseño**:
+plana, sin color, poco de limpieza. Se rehízo con color y elevación (ver
+*Estilo*). Las demás preguntas para él siguen en `todo.md`.
 
 **Mismo cliente que `../limpiezas-imperio-software/`** (la contabilidad, en
 https://limpiezas-imperio.vercel.app). Son proyectos separados: esta web no lee
@@ -255,32 +256,33 @@ numeración.
 
 | Pieza | Clase | Cuándo |
 |---|---|---|
-| Etiqueta en mayúsculas | `.antetitulo` (+ `--claro` sobre azul) | Encima de un título, títulos del pie, «Áreas», «En esta página», etiquetas de los datos de contacto |
-| Número de índice | `.numero` (+ `--claro`) | 01, 02… en servicios, pasos, preguntas |
+| Etiqueta en mayúsculas | `.antetitulo` (+ `--claro` sobre azul) | Encima de un título, títulos del pie, «Áreas», «En esta página». Lleva la raya dorada delante |
+| Número de índice | `.numero` (+ `--claro`) | 01, 02… en un círculo: servicios, pasos, preguntas |
+| Tarjeta | `.tarjeta` | Bloque blanco con esquina grande y sombra |
+| Icono en círculo | `.icono-circulo` | Iconos de hechos y ventajas, con el degradado |
 | Enlace en un texto | `.enlace` (+ `--claro`) | Dentro de una frase |
 | Enlace de acción | `.enlace-flecha` (+ `--claro`) | «Pedir presupuesto», «Ver todos…» |
-| Botón principal | `.boton .boton--whatsapp` | Azul marino; en blanco sobre fondo azul |
+| Botón principal | `.boton .boton--whatsapp` | Verde WhatsApp, redondeado, con sombra. También sobre azul |
 | Botón secundario | `.boton .boton--claro` | Blanco con borde: «Llamar», en la barra y en el menú |
 
 Reglas:
 
-- **Pesos:** 400 para texto y titulares; 500 para enlaces, navegación,
-  botones, nombres y datos; **600 sólo** en etiquetas en mayúsculas y números.
-  Nunca 700.
+- **Pesos:** 400 para texto; 600–700 para enlaces, navegación, botones,
+  nombres y titulares; **800 sólo** en los titulares grandes (portada, cabecera
+  de página, contacto) y en la nota de Google.
 - **Flechas:** `ArrowRight` (→) si el enlace se queda en la web;
   `ArrowUpRight` (↗) si sale de ella (WhatsApp, Google, llamar).
-- **Iconos:** lucide, trazo 1,5 (lo pone `globals.css`; las estrellas rellenas
-  no). 16 px dentro de enlaces, 20 px en todo lo demás.
-- **Líneas:** siempre de 1 px. `--linea` sobre claro, `--linea-sobre-azul`
-  sobre azul, `--marino` para abrir un bloque (índices, grupos).
-- **Sobre azul**, sólo `--blanco`, `--texto-sobre-azul` y
-  `--linea-sobre-azul`. Nada de `rgb(255 255 255 / …)` escrito a mano.
-- **Esquinas:** `--radio` en todo; `--radio-grande` sólo en la tarjeta del
-  logo; redondo del todo sólo en los puntos de los carruseles.
-- **Sin tarjetas** (fondo de color + esquina grande) **ni sombras.** Un bloque
-  se separa con una regla encima.
-- **Sin transparencias** en superficies: cabecera, barra de contacto, pies de
-  foto, todo opaco.
+- **Iconos:** lucide, trazo 2 (lo pone `globals.css`; las estrellas rellenas
+  no). 16 px dentro de enlaces, 20–22 px en todo lo demás.
+- **Elevación con sombra, no con bordes:** `--sombra` para tarjetas,
+  `--sombra-grande` al pasar el ratón, en un acordeón abierto y en la foto de
+  la portada. Sólo esas dos: no inventes sombras nuevas.
+- **Esquinas:** `--radio` (12 px) en lo pequeño, `--radio-grande` (20 px) en
+  tarjetas y fotos; botones, pastillas y números, redondos del todo.
+- **Sobre azul**, sólo `--blanco`, `--texto-sobre-azul`, `--azul-claro` y
+  `--linea-sobre-azul`.
+- **Dos franjas de color, no más:** «Cómo trabajamos» y el contacto, con
+  `--degradado`. El resto, blanco y azul muy claro (`--fondo`, `--azul-velo`).
 
 ## Estilo
 
@@ -291,34 +293,35 @@ Reglas:
   estructura (`min-width … and max-width …`). Con sólo `max-width`, las reglas
   de tablet de la galería se colaban en el móvil y la fila deslizable se
   partía en dos líneas.
-- **Dirección editorial con fotos reales** (elegida por Kevin, sept 2026, entre
-  tres maquetas). Lo que la define, y lo que la estropea:
-  - **Sobriedad y elegancia** (segunda vuelta, pedida por Kevin): titulares en
-    serif de peso normal y tamaño contenido, fondo gris muy claro, azul marino
-    como tinta y un azul medio de acento.
-  - **Reglas finas en vez de tarjetas.** Nada de rejillas de cajas con borde,
-    sombra y elevación al pasar: era lo que daba aire de plantilla de
-    WordPress. Tampoco estrellas flotando de adorno ni pastillas redondas.
-  - Esquinas discretas (`--radio`, 6 px). Botones rectangulares.
+- **Dirección: luminosa, con color y elevación** (16 sept 2026). La primera
+  versión, editorial y sobria (serif, reglas finas, sin sombras, sin dorado),
+  **se la enseñamos a Frank y no le gustó**: «demasiado plana», «sin color»,
+  «no parece de limpieza», «pocas cosas». Kevin decidió no discutirlo y
+  cambiarla directamente. **No vuelvas a la sobria.** Lo que la define:
+  - **Los colores de su logo:** azul cielo, marino y el oro de las estrellas.
+    Fondos blancos y azul muy claro.
+  - **Tarjetas blancas con sombra suave** y esquinas redondeadas; botones y
+    pastillas redondos del todo.
+  - **Sans-serif gruesa en los titulares**, con la palabra clave en azul vivo.
+  - **Sin pasarse** (lo pidió Kevin): nada de destellos animados, olas,
+    brillos ni degradados en todas partes. Si dudas, menos.
   - Las fotos reales llevan el peso: la portada abre con Frank trabajando y
     las demás forman la galería.
-  - Una sola franja azul a media página («Cómo trabajamos») y el cierre de
-    contacto. No alternes bandas de color sección tras sección.
 - Responsive con el móvil primero, foco visible, `prefers-reduced-motion`
   respetado (también en los carruseles) y texto alternativo descriptivo en
   todas las fotos (`fotos.ts`).
 - **CSS plano. Nada de Tailwind ni SASS**, como en la contabilidad. Lo común
   en `globals.css`; lo de cada página, en su `.module.css`.
-- **Paleta sólo de azules, grises y blanco. Sin dorado** (lo quitó Kevin:
-  más sobrio). Variables en `globals.css`: `--marino` y `--marino-hondo` para
-  tinta y fondos oscuros, `--azul` de acento sobre claro, `--azul-claro` de
-  acento sobre azul, `--azul-velo`, y los grises `--fondo`, `--linea`,
-  `--texto-suave`. El logo conserva su dorado: es su marca, no se toca.
-- **El botón principal (WhatsApp) es azul marino, no verde**: el verde se sale
-  de la paleta. Sobre fondo azul va en blanco (`Contacto.module.css`).
-- **Newsreader para títulos (peso 400) y Geist para texto**, con `next/font`.
-  Sustituyeron a Fraunces y Figtree, que resultaban invasivas. Nada de pesos
-  700: el máximo es 600, y en titulares 400.
+- **Paleta del logo.** Variables en `globals.css`: `--marino` y
+  `--marino-hondo` para tinta y fondos oscuros, `--azul` de acento sobre claro
+  (enlaces, números, iconos), `--cielo` sólo en degradados y detalles (no
+  pasa AA como texto), `--azul-claro` de acento sobre azul, `--azul-velo`,
+  `--fondo`, `--linea`, `--texto-suave`, y `--degradado` para las franjas y los
+  iconos. **`--oro` sólo en estrellas, rayas y puntos**, nunca en texto.
+- **El botón principal (WhatsApp) es verde** (`--verde`), el que todo el mundo
+  reconoce. Sobre las franjas azules también va en verde.
+- **Montserrat para títulos, botones y navegación; Nunito Sans para texto**,
+  con `next/font`. **Nada de serif.** Sustituyeron a Newsreader y Geist.
 - Iconos de `lucide-react`. Lucide ya no trae logos de marcas: las redes van
   como texto.
 - **El logo es su marca y se usa, pero sin abusar**: en la cabecera y en el pie
@@ -350,8 +353,8 @@ Reglas:
   la cabecera se sustituyen por el botón «Menú»: no los escondas sin dejar otra
   forma de navegar, que es como estaba al principio y en el móvil no había
   menú ninguno.
-- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en gris
-  claro con la cabecera blanca (en azul resultaba demasiado azul): enlaces grandes y,
+- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en azul
+  muy claro con la cabecera blanca (en azul resultaba demasiado azul): enlaces grandes y,
   abajo, WhatsApp, teléfono, correo y horario. Mientras está abierto
   lo de detrás queda `inert` y sin scroll, y al cerrarlo el foco vuelve al
   botón. Tres detalles que costaron un fallo cada uno, no los deshagas:
@@ -360,8 +363,8 @@ Reglas:
   (convierten la cabecera en el contenedor del panel fijo y lo encierran) y
   `focus({ preventScroll: true })` (sin él, cerrar el menú desplazaba la página
   hacia arriba).
-- **La cabecera es opaca y blanca, y el logo va sin transparencias ni
-  fundidos.** Lo pidió Kevin.
+- **La cabecera es opaca y blanca, con sombra en vez de borde, y el logo va sin
+  transparencias ni fundidos.** Lo pidió Kevin.
 - **Carruseles** (opiniones y galería del móvil): scroll horizontal nativo con
   anclajes (`scroll-snap`), no librerías. Se deslizan con el dedo; flechas y
   puntos sólo los mueven. **Nunca pasan solos.** La lógica común está en

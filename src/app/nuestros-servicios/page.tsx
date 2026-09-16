@@ -145,7 +145,9 @@ export default function NuestrosServicios() {
           <ul className={s.incluido__lista}>
             {incluido.map(({ icono: Icono, titulo, texto }) => (
               <li key={titulo}>
-                <Icono aria-hidden="true" size={20} />
+                <span className="icono-circulo">
+                  <Icono aria-hidden="true" size={22} />
+                </span>
                 <h3>{titulo}</h3>
                 <p>{texto}</p>
               </li>

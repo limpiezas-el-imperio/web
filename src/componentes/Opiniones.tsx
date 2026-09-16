@@ -55,7 +55,7 @@ export default function Opiniones() {
                 <p>«{o.extracto}»</p>
               </blockquote>
               <figcaption className={s.autor}>
-                <span>{o.autor}</span>
+                <span data-inicial={o.autor[0]}>{o.autor}</span>
                 <a href={negocio.mapa} className={`enlace-flecha ${s.fuente}`}>
                   Leer en Google
                   <ArrowUpRight aria-hidden="true" size={16} />

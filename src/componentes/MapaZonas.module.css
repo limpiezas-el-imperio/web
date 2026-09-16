@@ -18,8 +18,8 @@
 
 .anillo {
   fill: none;
-  stroke: var(--marino);
-  stroke-opacity: 0.18;
+  stroke: var(--azul);
+  stroke-opacity: 0.35;
   stroke-width: 1.5;
   stroke-dasharray: 4 6;
 }
@@ -32,15 +32,17 @@
 }
 
 .zona circle {
-  fill: var(--marino);
+  fill: var(--cielo);
+  stroke: var(--papel);
+  stroke-width: 2;
 }
 
 .zona text,
 .base text {
   font-family: var(--fuente-texto), system-ui, sans-serif;
   font-size: 17px;
-  font-weight: 500;
-  fill: var(--texto);
+  font-weight: 700;
+  fill: var(--marino);
   paint-order: stroke;
   stroke: var(--fondo);
   stroke-width: 5px;
@@ -48,15 +50,15 @@
 }
 
 .base circle {
-  fill: var(--azul);
+  fill: var(--oro);
   stroke: var(--marino);
   stroke-width: 3;
 }
 
 .base text {
-  font-family: var(--fuente-titulos), Georgia, serif;
-  font-size: 22px;
-  font-weight: 500;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
   fill: var(--marino);
 }
 
