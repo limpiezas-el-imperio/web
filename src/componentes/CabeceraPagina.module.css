@@ -7,19 +7,15 @@
 }
 
 .titulo {
-  max-width: 16ch;
-  font-size: clamp(2.75rem, 7.5vw, 5.5rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  max-width: 18ch;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
   color: var(--marino);
-  font-variation-settings:
-    "SOFT" 100,
-    "opsz" 144;
 }
 
 .titulo em {
-  font-weight: 400;
-  color: var(--oro-texto);
+  color: var(--azul);
 }
 
 .entradilla {
@@ -32,6 +28,6 @@
 .entradilla a {
   font-weight: 600;
   color: var(--marino);
-  text-decoration-color: var(--oro);
+  text-decoration-color: var(--azul-claro);
   text-underline-offset: 4px;
 }

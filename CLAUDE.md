@@ -203,8 +203,9 @@ Aprendido en la contabilidad, y aplica aquí:
   español.**
 - **Dirección editorial con fotos reales** (elegida por Kevin, sept 2026, entre
   tres maquetas). Lo que la define, y lo que la estropea:
-  - Tipografía grande con mucho contraste (Fraunces con `opsz` 144 y `SOFT`),
-    fondo crema, azul marino como tinta y el dorado sólo de acento.
+  - **Sobriedad y elegancia** (segunda vuelta, pedida por Kevin): titulares en
+    serif de peso normal y tamaño contenido, fondo gris muy claro, azul marino
+    como tinta y un azul medio de acento.
   - **Reglas finas en vez de tarjetas.** Nada de rejillas de cajas con borde,
     sombra y elevación al pasar: era lo que daba aire de plantilla de
     WordPress. Tampoco estrellas flotando de adorno ni pastillas redondas.
@@ -217,10 +218,16 @@ Aprendido en la contabilidad, y aplica aquí:
   respetado, textos alternativos en todas las imágenes (hoy no hay ni uno).
 - **CSS plano. Nada de Tailwind ni SASS**, como en la contabilidad. Lo común
   en `globals.css`; lo de cada página, en su `.module.css`.
-- **Paleta del logo**: azul marino, azul vivo y dorado, en variables de
-  `globals.css`. El dorado de texto sobre fondo claro es `--oro-texto`, no
-  `--oro`: el otro no llega al contraste AA.
-- Fraunces para títulos, Figtree para texto, con `next/font`.
+- **Paleta sólo de azules, grises y blanco. Sin dorado** (lo quitó Kevin:
+  más sobrio). Variables en `globals.css`: `--marino` y `--marino-hondo` para
+  tinta y fondos oscuros, `--azul` de acento sobre claro, `--azul-claro` de
+  acento sobre azul, `--azul-velo`, y los grises `--fondo`, `--linea`,
+  `--texto-suave`. El logo conserva su dorado: es su marca, no se toca.
+- **El botón principal (WhatsApp) es azul marino, no verde**: el verde se sale
+  de la paleta. Sobre fondo azul va en blanco (`Contacto.module.css`).
+- **Newsreader para títulos (peso 400) y Geist para texto**, con `next/font`.
+  Sustituyeron a Fraunces y Figtree, que resultaban invasivas. Nada de pesos
+  700: el máximo es 600, y en titulares 400.
 - Iconos de `lucide-react`. Lucide ya no trae logos de marcas: las redes van
   como texto.
 - **El logo es su marca y se usa, pero sin abusar**: en la cabecera y en el pie
@@ -243,7 +250,7 @@ Aprendido en la contabilidad, y aplica aquí:
   la cabecera se sustituyen por el botón «Menú»: no los escondas sin dejar otra
   forma de navegar, que es como estaba al principio y en el móvil no había
   menú ninguno.
-- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en crema con
+- **El menú del móvil es a pantalla completa** (`Navegacion.tsx`), en gris claro con
   la cabecera blanca (en azul resultaba demasiado azul): enlaces grandes y,
   abajo, WhatsApp, teléfono, correo y horario. Mientras está abierto
   lo de detrás queda `inert` y sin scroll, y al cerrarlo el foco vuelve al

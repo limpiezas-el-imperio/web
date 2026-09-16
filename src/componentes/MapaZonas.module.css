@@ -39,7 +39,7 @@
 .base text {
   font-family: var(--fuente-texto), system-ui, sans-serif;
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   fill: var(--texto);
   paint-order: stroke;
   stroke: var(--fondo);
@@ -48,15 +48,15 @@
 }
 
 .base circle {
-  fill: var(--oro);
+  fill: var(--azul);
   stroke: var(--marino);
   stroke-width: 3;
 }
 
 .base text {
   font-family: var(--fuente-titulos), Georgia, serif;
-  font-size: 21px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 500;
   fill: var(--marino);
 }
 

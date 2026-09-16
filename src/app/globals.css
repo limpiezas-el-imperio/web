@@ -1,23 +1,19 @@
 /* ——— Paleta: la del logo. Azul marino, azul vivo y dorado. ——— */
 :root {
-  --marino: #0e2463;
-  --marino-hondo: #091743;
-  --azul: #1f5fd6;
-  --azul-velo: #eaf0fc;
-  --oro: #d9a53a;
-  --oro-claro: #f3d48a;
-  --oro-texto: #8f6412; /* el dorado legible sobre claro (AA) */
+  /* ——— Paleta: azules, grises y blanco. Sin dorado (decisión de Kevin, sept
+     2026: más sobrio y elegante). El logo conserva sus colores: es su marca. */
+  --marino: #14305a;
+  --marino-hondo: #0c1f3d;
+  --azul: #2e5c9e; /* acento: enlaces, números, marcas pequeñas (AA sobre blanco) */
+  --azul-claro: #a9c1e3; /* el acento sobre fondo azul */
+  --azul-velo: #eef3f9;
 
-  --fondo: #faf8f3;
+  --fondo: #f7f8fa;
   --papel: #ffffff;
-  --linea: #e7e2d7;
-  --texto: #18213d;
-  --texto-suave: #525b75;
+  --linea: #e2e6ec;
+  --texto: #1b2533;
+  --texto-suave: #5d6878;
 
-  --whatsapp: #15803d;
-  --whatsapp-hover: #116a32;
-
-  /* Esquinas discretas: el redondeo grande era parte del aire de plantilla. */
   --radio: 0.375rem;
   --radio-grande: 0.625rem;
   --sombra: 0 1px 2px rgb(14 36 99 / 0.06), 0 8px 24px -8px rgb(14 36 99 / 0.12);
@@ -76,11 +72,10 @@ h1,
 h2,
 h3 {
   font-family: var(--fuente-titulos), Georgia, serif;
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
   text-wrap: balance;
-  font-variation-settings: "SOFT" 50;
 }
 
 p {
@@ -139,27 +134,27 @@ p {
 }
 
 .seccion__titulo {
-  font-size: clamp(2.125rem, 5vw, 3.25rem);
+  font-size: clamp(1.875rem, 3.8vw, 2.75rem);
   color: var(--marino);
 }
 
 .seccion__entradilla {
   margin-top: 1rem;
-  font-size: 1.1875rem;
+  font-size: 1.125rem;
   color: var(--texto-suave);
 }
 
 .antetitulo {
   margin-bottom: 0.875rem;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--oro-texto);
+  color: var(--azul);
 }
 
 .antetitulo--claro {
-  color: var(--oro-claro);
+  color: var(--azul-claro);
 }
 
 /* ——— Botones ——— */
@@ -170,9 +165,9 @@ p {
   gap: 0.5rem;
   min-height: 2.75rem;
   padding: 0.625rem 1.25rem;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: var(--radio);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2;
   text-decoration: none;
   white-space: nowrap;
@@ -198,13 +193,15 @@ p {
   font-size: 1.0625rem;
 }
 
+/* El botón principal. Se llama «whatsapp» porque es lo que abre, pero va en
+   azul marino y no en verde: la paleta es sólo de azules y grises. */
 .boton--whatsapp {
-  background: var(--whatsapp);
+  background: var(--marino);
   color: #fff;
 }
 
 .boton--whatsapp:hover {
-  background: var(--whatsapp-hover);
+  background: var(--marino-hondo);
 }
 
 .boton--contorno {
@@ -228,11 +225,11 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--marino);
   text-decoration: underline;
-  text-decoration-color: var(--oro);
-  text-decoration-thickness: 2px;
+  text-decoration-color: var(--azul-claro);
+  text-decoration-thickness: 1px;
   text-underline-offset: 5px;
 }
 
@@ -269,7 +266,7 @@ p {
 
 .marca__linea {
   font-size: 0.6875rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
 }
@@ -278,8 +275,8 @@ p {
   margin-top: 0.1875rem;
   font-family: var(--fuente-titulos), Georgia, serif;
   font-size: 1.375rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 500;
+  letter-spacing: -0.005em;
 }
 
 .marca--clara {
@@ -376,7 +373,7 @@ p {
     background: var(--papel);
     font: inherit;
     font-size: 0.9375rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--marino);
     cursor: pointer;
   }
@@ -423,14 +420,11 @@ p {
     justify-content: space-between;
     min-height: clamp(3.5rem, 9vh, 4.5rem);
     font-family: var(--fuente-titulos), Georgia, serif;
-    font-size: clamp(1.75rem, 7vw, 2.5rem);
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-weight: 400;
+    letter-spacing: -0.01em;
     color: var(--marino);
     text-decoration: none;
-    font-variation-settings:
-      "SOFT" 100,
-      "opsz" 144;
   }
 
   .menu__lista a::after {
@@ -445,13 +439,13 @@ p {
 
   .menu__lista a:hover::after,
   .menu__lista a:focus-visible::after {
-    color: var(--oro);
+    color: var(--azul);
     transform: translateX(0.25rem);
   }
 
   .menu__lista a[aria-current="page"] {
     font-style: italic;
-    color: var(--oro-texto);
+    color: var(--azul);
   }
 
   .menu__lista a[aria-current="page"]::after {
@@ -459,7 +453,7 @@ p {
     width: 0.625rem;
     height: 0.625rem;
     border-radius: 999px;
-    background: var(--oro);
+    background: var(--azul);
   }
 
   .menu__contacto {
@@ -487,7 +481,7 @@ p {
   }
 
   .menu__correo svg {
-    color: var(--oro-texto);
+    color: var(--azul);
   }
 
   .menu__horario {
@@ -601,10 +595,10 @@ p {
   margin-bottom: 0.875rem;
   font-family: var(--fuente-texto), system-ui, sans-serif;
   font-size: 0.8125rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--oro-claro);
+  color: var(--azul-claro);
 }
 
 .pie__lista {

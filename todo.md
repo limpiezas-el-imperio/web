@@ -87,6 +87,8 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
 ## 3. Diseño y construcción
 
 - [x] Dirección visual: editorial con fotos reales (ver `CLAUDE.md`, *Estilo*)
+- [x] Paleta sin dorado (azules, grises, blanco) y tipografías sobrias:
+      Newsreader + Geist
 - [x] Portada: qué hace, servicios agrupados, cómo trabaja, zonas, opiniones y
       contacto. Metadatos, iconos, Open Graph y `LocalBusiness`
 - [ ] Que él vea la portada: agrupación de servicios, zonas (sólo las que están

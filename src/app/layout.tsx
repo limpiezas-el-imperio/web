@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree, Fraunces } from "next/font/google";
+import { Geist, Newsreader } from "next/font/google";
 import Cabecera from "@/componentes/Cabecera";
 import Pie from "@/componentes/Pie";
 import BarraContacto from "@/componentes/BarraContacto";
@@ -7,15 +7,18 @@ import { negocio } from "@/datos/negocio";
 import { urlBase } from "@/datos/sitio";
 import "./globals.css";
 
-const texto = Figtree({
+// Sobrias y poco invasivas: Newsreader, una serif de lectura con tamaños
+// ópticos, para titulares en peso normal; Geist, una sans neutra, para el
+// texto. Sustituyen a Fraunces y Figtree, que tenían demasiada personalidad.
+const texto = Geist({
   variable: "--fuente-texto",
   subsets: ["latin"],
 });
 
-const titulos = Fraunces({
+const titulos = Newsreader({
   variable: "--fuente-titulos",
   subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
+  axes: ["opsz"],
 });
 
 
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0e2463",
+  themeColor: "#14305a",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

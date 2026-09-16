@@ -7,13 +7,10 @@
 }
 
 .titulo {
-  font-size: clamp(3rem, 8vw, 6rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
   color: #fff;
-  font-variation-settings:
-    "SOFT" 100,
-    "opsz" 144;
 }
 
 .contacto :global(.seccion__entradilla) {
@@ -44,13 +41,13 @@
 .contacto__lista svg {
   flex-shrink: 0;
   margin-top: 0.1875rem;
-  color: var(--oro-claro);
+  color: var(--azul-claro);
 }
 
 .contacto__lista span {
   display: block;
   font-size: 0.8125rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgb(255 255 255 / 0.6);
@@ -79,4 +76,14 @@
   .contacto__rejilla {
     grid-template-columns: 1fr;
   }
+}
+
+/* Sobre el azul, el botón principal va en blanco: en azul marino no se vería. */
+.contacto :global(.boton--whatsapp) {
+  background: #fff;
+  color: var(--marino);
+}
+
+.contacto :global(.boton--whatsapp:hover) {
+  background: var(--azul-velo);
 }
