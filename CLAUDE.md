@@ -87,7 +87,9 @@ Lo que **no** entra en git:
   la web. Mientras tanto va en `docs/privado/`.
 - **`docs/privado/`**: material que él nos pase y no sea para publicar (fotos
   sin elegir, documentos con su NIF, capturas de sus cuentas, facturas del
-  dominio).
+  dominio). También `negocio.md`: cómo trabaja de verdad según la
+  contabilidad (sin nombres ni cifras). **Léelo antes de tocar servicios,
+  zonas u horario**, y pregúntale antes de cambiar nada por lo que diga.
 - **Nada de la contabilidad.** Ni nombres de clientes o colaboradores, ni
   cifras. Sirve para entender el negocio, no como fuente de contenido. Si hace falta un ejemplo, se usan los nombres inventados de siempre
   (ELENA PRADOS, BEATRIZ SOLANO, TOMAS RIVAS…).

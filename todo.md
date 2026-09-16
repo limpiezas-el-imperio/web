@@ -22,9 +22,10 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
        (`docs/sitio-actual.md`, *Decisión por página*)
 2. [ ] **Integrarlo** en la web nueva (sin redirecciones), página a página
 3. [ ] **Iterar**: mejorar, optimizar
-4. [ ] **Mirar `../limpiezas-imperio-software/`** para entender mejor el
-       negocio. Proyecto aparte e independiente: se lee para entender, **nada
-       de sus datos entra aquí** (este repositorio es público)
+4. [x] **Mirar `../limpiezas-imperio-software/`** para entender mejor el
+       negocio (16 sept 2026). Las conclusiones están en
+       `docs/privado/negocio.md`, **fuera de git**; aquí sólo las preguntas
+       que salen de ellas
 
 ## Páginas
 
@@ -100,12 +101,32 @@ Opiniones se queda como sección de la portada.
 - [ ] **Redes**: LinkedIn apunta a un enlace roto; ¿cuáles están vivas? Hoy
       salen Facebook, Instagram, TikTok, YouTube y X
 
+**Lo que enseña cómo trabaja** (detalle en `docs/privado/negocio.md`; no
+publicar nada de eso sin que él lo confirme)
+
+- [ ] **Reparaciones, parkings y naves**: ¿los sigue haciendo? Si no, fuera
+      de la web
+- [ ] **Urgencias**: la FAQ dice que sí. ¿Las sigue haciendo?
+- [ ] **Servicios que no salen en la web**: ¿añadir limpieza de alquiler
+      vacacional, jardín y piscina, sofás y colchones, escaparates,
+      mosquiteras? ¿Y la vaporeta y la Kärcher como extras?
+- [ ] **«Paquete mensual»**: la web (portada, servicios y FAQ) dice que se
+      puede contratar por hora, por servicio o con un paquete mensual, porque
+      lo decía su FAQ. ¿Lo ofrece de verdad?
+- [ ] **Horario**: la web dice de lunes a viernes de 6:00 a 18:00 y fines de
+      semana con agenda abierta. ¿Sigue así?
+- [ ] **Zonas**: además de elegir entre sus dos listas, proponerle las que
+      faltan (lista en `docs/privado/negocio.md`) y preguntar si sigue yendo
+      a las que no están claras
+- [ ] **Equipo**: ¿quiere que la web diga que trabaja con un equipo? Las
+      reseñas ya lo dejan ver
+
 **Material**
 
-- [ ] **Más fotos**, sobre todo de comunidades, oficinas, obras y cristales.
-      Comprobar EXIF y GPS antes de subirlas (ver `CLAUDE.md`)
-- [ ] **Logo vectorial** (SVG o PDF), si lo tiene. El de ahora es un JPG de
-      2000 px
+- [x] **Más fotos**: no tiene más por ahora (16 sept 2026). Si llegan,
+      comprobar EXIF y GPS antes de subirlas (ver `CLAUDE.md`)
+- [x] **Logo**: se queda el actual (el JPG de 2000 px, sin teléfono). No hay
+      versión vectorial
 
 **Ya respondido**
 
@@ -123,23 +144,23 @@ Opiniones se queda como sección de la portada.
 - [x] Página 404 propia (`not-found.tsx`): explica que la web se ha renovado,
       para quien llegue de Google con una URL de Webador, y lleva a
       servicios, presupuesto, preguntas y quiénes somos
-- [ ] Cuando el dominio sirva esta web, **dar de alta el sitemap en Google
-      Search Console** para que olvide antes las URLs viejas
+- [x] ~~Google Search Console~~: fuera, lo decidió el cliente
 - [x] Textos legales. Sin aviso de cookies: la web no pone ninguna ni usa
       analítica (comprobado en la publicada). Si se añade algo de terceros, se
       revisa la política de cookies
-- [ ] Revisión en un **iPhone real con Safari** (él usa el móvil): menú, barra
-      de contacto, carruseles, portada del móvil
+- [x] ~~Revisión en un iPhone real con Safari~~: fuera (decisión de Kevin)
 - [x] Rendimiento y accesibilidad, pasada rápida (Lighthouse en móvil): verde
       de WhatsApp oscurecido para pasar AA, imágenes en AVIF y `sizes`
       ajustados. Accesibilidad 100 y rendimiento 96–99 en las cinco páginas.
-      Queda sin mirar a fondo: orden de tabulación y lector de pantalla
+      La revisión a fondo (tabulación, lector de pantalla) no se hace: con
+      esto basta (decisión de Kevin)
 - [x] Presupuesto guiado por WhatsApp (`Presupuesto.tsx`): servicio, tipo de
       vivienda, habitaciones y baños, frecuencia, zona, fecha y comentario.
       En la portada, tras los servicios, y en `/contacto`, donde sustituye a
       las cuatro tarjetas de «Qué contarnos»
-- [ ] **Mantenimiento**: la nota y el total de Google (`valoracion` en
-      `negocio.ts`) van escritos a mano; revisarlos de vez en cuando
+- [x] **Nota de Google** (`valoracion` en `negocio.ts`): revisada por Kevin el
+      16 sept 2026, sigue en 4,9 con 68 reseñas. Va escrita a mano: volver a
+      mirarla de vez en cuando
 
 ## Lanzamiento
 
