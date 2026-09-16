@@ -257,6 +257,85 @@
   text-underline-offset: 4px;
 }
 
+/* ——— Nuestro trabajo ——— */
+.trabajos {
+  color: #fff;
+  background:
+    radial-gradient(40rem 25rem at 0% 0%, rgb(31 95 214 / 0.35), transparent 60%),
+    var(--marino-hondo);
+}
+
+.trabajos :global(.seccion__titulo) {
+  color: #fff;
+}
+
+.trabajos :global(.seccion__entradilla) {
+  color: rgb(255 255 255 / 0.75);
+}
+
+.mosaico {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, clamp(12rem, 20vw, 16rem));
+  grid-template-areas:
+    "a a b c"
+    "a a b d"
+    "e e f f";
+  gap: 0.75rem;
+}
+
+.fotoA { grid-area: a; }
+.fotoB { grid-area: b; }
+.fotoC { grid-area: c; }
+.fotoD { grid-area: d; }
+.fotoE { grid-area: e; }
+.fotoF { grid-area: f; }
+
+.foto {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radio);
+  background: var(--marino);
+}
+
+.foto img {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.foto:hover img {
+  transform: scale(1.04);
+}
+
+.foto figcaption {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  max-width: calc(100% - 1.5rem);
+  padding: 0.3125rem 0.75rem;
+  border-radius: 999px;
+  background: rgb(9 23 67 / 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+@media (max-width: 48rem) {
+  .mosaico {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 18rem repeat(2, 13rem) 14rem 14rem;
+    grid-template-areas:
+      "a a"
+      "b c"
+      "b d"
+      "e e"
+      "f f";
+  }
+}
+
 /* ——— Cómo trabajamos ——— */
 .pasos {
   background: var(--papel);

@@ -48,7 +48,7 @@ export function metadatosPagina({
           url: "/opengraph-image.jpg",
           width: 1200,
           height: 630,
-          alt: "Logo de Limpiezas El Imperio, con su teléfono +34 617 545 397",
+          alt: "Logo de Limpiezas El Imperio",
         },
       ],
     },

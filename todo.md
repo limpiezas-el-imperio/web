@@ -11,6 +11,7 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
        Contacto. Trabaja con nosotros y los legales, en el pie. Opiniones se
        queda como sección de la portada.
    - [x] Menú para tablet y móvil, página actual marcada, enlaces en el pie
+   - [x] Logo en cabecera y pie; fotos reales en la portada («Nuestro trabajo»)
    - [ ] `/nuestros-servicios`
    - [ ] `/contacto` (nueva: lo mismo que la sección de contacto, en su página)
    - [x] `/preguntas-frecuentes` (ya es la plantilla de las demás)
@@ -58,7 +59,10 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
 - [ ] **Trabaja con nosotros**: ¿sigue buscando gente así?
 - [ ] **Cobro**: la hoja de servicio dice mínimo de 4 horas, desplazamiento y
       vaporeta aparte. ¿Se puede decir algo de eso en la web?
-- [ ] **Logo sin teléfono** en más resolución (el de su web es de 526 px)
+- [x] **Logo sin teléfono** en alta: `public/logo.jpg` (2000 px)
+- [x] **Fotos reales**: 8, en `src/imagenes/`. Sin página de galería
+- [ ] **Más fotos**, sobre todo de comunidades, oficinas, obras y cristales,
+      que ahora no tienen ninguna
 - [ ] **Redes**: LinkedIn apunta a un enlace roto; ¿cuáles están vivas?
 
 ## 2. Decisiones técnicas

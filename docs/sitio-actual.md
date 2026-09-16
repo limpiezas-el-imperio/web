@@ -277,7 +277,8 @@ pide aceptar la privacidad.
 ## Imágenes
 
 **Todas las de su web son generadas con IA** (confirmado con Kevin), así que no
-hay fotos propias que rescatar. Lo que sí se trae:
+hay fotos propias que rescatar. Las fotos reales las pasó Kevin aparte (16 sept
+2026) y están en `src/imagenes/`. Lo que sí se trae:
 
 - `public/limpiezaselimperio.webp` — logo completo, 816×819. Relieve dorado y
   azul sobre fondo claro **con el teléfono dentro**: vale para redes o Open

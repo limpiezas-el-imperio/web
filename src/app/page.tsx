@@ -13,6 +13,7 @@ import {
   Store,
   Wrench,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import Contacto from "@/componentes/Contacto";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
@@ -27,6 +28,7 @@ import {
   servicios,
   zonas,
 } from "@/datos/negocio";
+import { type Foto, fotos } from "@/datos/fotos";
 import { metadatosPagina, urlBase } from "@/datos/sitio";
 import s from "./inicio.module.css";
 
@@ -72,12 +74,23 @@ const pasos = [
   },
 ];
 
+// El mosaico de la portada. `zona` es el área de la rejilla en el CSS.
+const trabajos: { foto: Foto; zona: string; sizes: string }[] = [
+  { foto: fotos.aspirado, zona: s.fotoA, sizes: "(max-width: 48rem) 100vw, 36rem" },
+  { foto: fotos.karcher, zona: s.fotoB, sizes: "(max-width: 48rem) 50vw, 18rem" },
+  { foto: fotos.grifo, zona: s.fotoC, sizes: "(max-width: 48rem) 50vw, 18rem" },
+  { foto: fotos.cocina, zona: s.fotoD, sizes: "(max-width: 48rem) 50vw, 18rem" },
+  { foto: fotos.suelo, zona: s.fotoE, sizes: "(max-width: 48rem) 100vw, 36rem" },
+  { foto: fotos.sillas, zona: s.fotoF, sizes: "(max-width: 48rem) 100vw, 36rem" },
+];
+
 const negocioEstructurado = {
   "@type": "LocalBusiness",
   name: negocio.nombre,
   description:
     "Limpieza de viviendas, comunidades, oficinas, locales y obras.",
-  image: `${urlBase}/limpiezaselimperio.webp`,
+  image: `${urlBase}/logo.jpg`,
+  logo: `${urlBase}/logo.jpg`,
   url: urlBase,
   telephone: negocio.telefono,
   email: negocio.correo,
@@ -205,6 +218,35 @@ export default function Inicio() {
                 </li>
               );
             })}
+          </ul>
+        </div>
+      </section>
+
+      {/* ——— Nuestro trabajo (fotos reales) ——— */}
+      <section id="trabajos" className={`seccion ${s.trabajos}`}>
+        <div className="contenedor">
+          <header className="seccion__cabecera">
+            <p className="antetitulo antetitulo--claro">Nuestro trabajo</p>
+            <h2 className="seccion__titulo">Fotos de verdad, no de catálogo</h2>
+            <p className="seccion__entradilla">
+              Así quedan las casas y los locales donde trabajamos.
+            </p>
+          </header>
+          <ul className={s.mosaico}>
+            {trabajos.map(({ foto, zona, sizes }) => (
+              <li key={foto.pie} className={zona}>
+                <figure className={s.foto}>
+                  <Image
+                    src={foto.src}
+                    alt={foto.alt}
+                    fill
+                    sizes={sizes}
+                    placeholder="blur"
+                  />
+                  <figcaption>{foto.pie}</figcaption>
+                </figure>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

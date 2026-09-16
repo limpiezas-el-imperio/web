@@ -98,11 +98,13 @@ src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
                   CabeceraPagina (la banda azul de cada página)
                   Contacto (el cierre de cada página)
                   DatosEstructurados (JSON-LD)
-                  Marca (el nombre escrito) · Destello (la estrella del logo)
+                  Marca (logo + nombre) · Destello (la estrella del logo)
+src/imagenes/     fotos reales de sus trabajos (se importan, no se enlazan)
 src/datos/        negocio.ts (datos del negocio) · preguntas.ts (la FAQ)
+                  fotos.ts (cada foto con su alt y su pie)
                   navegacion.ts (los enlaces del menú y del pie)
                   sitio.ts (URL base y metadatosPagina)
-public/           el logo, tal cual venía de su web · opengraph-image.jpg
+public/           logo.jpg (sin teléfono) · opengraph-image.jpg (sale del logo)
 docs/             contexto del proyecto (en git)
 docs/privado/     material del cliente no publicable (fuera de git)
 todo.md           lo pendiente, por fases
@@ -200,9 +202,19 @@ Aprendido en la contabilidad, y aplica aquí:
 - Fraunces para títulos, Figtree para texto, con `next/font`.
 - Iconos de `lucide-react`. Lucide ya no trae logos de marcas: las redes van
   como texto.
-- **El logo no va en la cabecera**: lleva el teléfono dentro y a ese tamaño no
-  se lee. La marca va escrita (`Marca.tsx`) y el logo se usa como imagen para
-  compartir.
+- **El logo es su marca y se usa, pero sin abusar**: en la cabecera y en el pie
+  (`Marca.tsx`, pequeño y con el nombre escrito al lado, porque sus letras a ese
+  tamaño no se leen), en la imagen para compartir y en los datos estructurados.
+  En ningún sitio más. Es `public/logo.jpg`, la versión **sin teléfono**; las
+  que lo llevaban dentro se borraron.
+- **Fotos reales, nunca de banco ni generadas.** Van en `src/imagenes/` (no en
+  `public/`, para que sólo se sirvan optimizadas) y se describen en
+  `src/datos/fotos.ts` con su texto alternativo. **Antes de añadir una foto,
+  comprueba que no lleva EXIF ni GPS**: son casas de clientes y el repositorio
+  es público. Las primeras ocho venían limpias.
+- **No hay página de galería**, decidido: con ocho fotos quedaría vacía. Cada
+  foto va junto a lo que enseña (portada, servicios, quiénes somos). Se
+  replantea si llegan muchas más.
 - **Contacto primero**: el WhatsApp es la acción principal en toda la web, y en
   el móvil hay una barra fija con WhatsApp y Llamar.
 - **Se navega por páginas, no por una sola página larga.** Cada tema importante
