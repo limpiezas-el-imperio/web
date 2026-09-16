@@ -35,8 +35,11 @@ Dos maneras de romperlo sin darse cuenta:
    Vercel no hay ningún MX ni SPF: el correo deja de llegar en cuanto el cambio
    se propaga, que puede ser en minutos o en horas. Sin error, simplemente no
    llega nada.
-2. **Dar de baja el plan de Webador** con la web ya en Vercel. Sin confirmar si
-   el buzón sobrevive sin la web; hay que preguntarlo a Webador **antes**.
+2. **Borrar la cuenta de Webador.** **Confirmado (16 sept 2026): si se borra,
+   `info@` deja de funcionar.** Así que la cuenta de Webador **se queda**
+   mientras el correo viva allí. Si algún día se quiere dejar Webador, antes
+   hay que llevar el buzón a otro proveedor, cambiar el MX y el SPF, y cambiar
+   el correo de la cuenta de Vercel.
 
 ## Cómo hacerlo (recomendado)
 

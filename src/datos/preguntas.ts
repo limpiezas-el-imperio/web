@@ -20,13 +20,13 @@ export const preguntas: Pregunta[] = [
   {
     pregunta: "¿Qué servicios ofrecéis?",
     respuesta:
-      "Limpiamos pisos, casas y chalets, comunidades, oficinas, locales comerciales, obras y parkings. Hacemos limpieza general, regular y profunda, de cristales, ventanas y persianas, y también pequeñas reparaciones.",
+      "Limpiamos pisos, casas y chalets, alquileres vacacionales, comunidades, oficinas, locales comerciales y obras. Hacemos limpieza general, regular y profunda, de cristales, ventanas, persianas y mosquiteras, y también de jardines, piscinas, sofás y colchones.",
     enlace: { href: "/nuestros-servicios", texto: "Ver todos los servicios" },
   },
   {
     pregunta: "¿Cuánto cuesta una limpieza?",
     respuesta:
-      "Depende del trabajo que haya que hacer y de cómo lo contrates: por hora, por servicio o con un paquete mensual. Cuéntanos qué necesitas y te damos presupuesto.",
+      "Depende del trabajo que haya que hacer: normalmente se cobra por horas, y algunos servicios tienen precio cerrado. Cuéntanos qué necesitas y te damos presupuesto.",
   },
   {
     pregunta: "¿Qué productos utilizáis?",

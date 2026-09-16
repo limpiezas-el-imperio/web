@@ -48,7 +48,8 @@ Opiniones se queda como sección de la portada.
 - [x] `/zonas-de-servicio` — 18 localidades por áreas, con el mapa. La lista
       la decidió Kevin cruzando sus dos listas con dónde trabaja de verdad
 - [x] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` —
-      lo mínimo y en llano, mejorando lo de su web vieja. Falta el NIF
+      lo mínimo y en llano, mejorando lo de su web vieja. Sin NIF (decisión
+      de Kevin)
 - [x] Menú: Quiénes somos añadido. Con seis enlaces, el botón «Menú» sale ya
       por debajo de 64rem (antes 60rem): la fila no cabía entre 960 y 1000 px
 - [x] Menú: Zonas va a `/zonas-de-servicio`
@@ -65,18 +66,11 @@ Opiniones se queda como sección de la portada.
 - [x] **¿Y la nueva?** Sí: le gusta mucho, diseño validado (16 sept 2026)
 - [x] **Foto de la portada**: la de él aspirando no le gustó. Va una
       de Unsplash, y le gustó: se queda (acreditada en el pie)
-- [ ] **NIF**: lo exige el aviso legal (LSSI, art. 10), que ya está publicado
-      sin él (tampoco lo tenía su web vieja). Cuando lo dé: a `negocio.ts` y a
-      «Datos del titular» en `src/app/aviso-legal/page.tsx`. Recordarle que
-      publicarlo es cosa suya
+- [x] ~~NIF~~: no se pone (decisión de Kevin, 16 sept 2026)
 - [ ] **Dominio**: ¿deja el panel de Webador editar el A y el CNAME del `.net`
       sin cambiar los nameservers? (`docs/dominio.md`)
-- [ ] **Webador**: ¿el buzón `info@` sigue funcionando si se da de baja la web?
-      Preguntarlo **antes** de cancelar nada. Es también el correo de su
-      cuenta de Vercel
-
-**Contenido**
-
+- [x] **Webador**: si se borra la cuenta, `info@` deja de funcionar
+      (confirmado, 16 sept 2026). La cuenta se queda (ver *Lanzamiento*)
 - [ ] **Descripciones de los servicios** (`src/datos/negocio.ts`): son un
       borrador nuestro. Que las lea y corrija; sobre todo «Cuidado de
       propiedades», «Fachadas» y «Reparaciones eléctricas»
@@ -104,20 +98,18 @@ Opiniones se queda como sección de la portada.
 **Lo que enseña cómo trabaja** (detalle en `docs/privado/negocio.md`; no
 publicar nada de eso sin que él lo confirme)
 
-- [ ] **Reparaciones, parkings y naves**: ¿los sigue haciendo? Si no, fuera
-      de la web
+- [x] **Reparaciones, parkings y naves**: fuera de la web (Kevin, 16 sept
+      2026). Si Frank dice que los hace, vuelven
 - [ ] **Urgencias**: la FAQ dice que sí. ¿Las sigue haciendo?
-- [ ] **Servicios que no salen en la web**: ¿añadir limpieza de alquiler
-      vacacional, jardín y piscina, sofás y colchones, escaparates,
-      mosquiteras? ¿Y la vaporeta y la Kärcher como extras?
-- [ ] **«Paquete mensual»**: la web (portada, servicios y FAQ) dice que se
-      puede contratar por hora, por servicio o con un paquete mensual, porque
-      lo decía su FAQ. ¿Lo ofrece de verdad?
+- [x] **Servicios que no salían en la web**: añadidos alquiler vacacional,
+      sofás y colchones, mosquiteras, piscinas y escaparates. La vaporeta y la
+      Kärcher siguen dentro de sus servicios, sin hablar de cobro aparte
+- [x] **«Paquete mensual»**: quitado. Ahora dice «por horas o con precio
+      cerrado, según el trabajo» (portada, servicios y FAQ)
 - [ ] **Horario**: la web dice de lunes a viernes de 6:00 a 18:00 y fines de
       semana con agenda abierta. ¿Sigue así?
 - [x] **Zonas**: hecho con sus dos listas y dónde trabaja de verdad
-- [ ] **Equipo**: ¿quiere que la web diga que trabaja con un equipo? Las
-      reseñas ya lo dejan ver
+- [x] **Equipo**: la web ya lo dice (Quiénes somos y Servicios)
 
 **Material**
 
@@ -168,8 +160,9 @@ publicar nada de eso sin que él lo confirme)
       cambiar `dominioPublico` en `src/datos/sitio.ts`
 - [ ] Mandar un correo de prueba a `info@` y ver que llega
 - [ ] Actualizar el enlace de la web en su ficha de Google y en sus redes
-- [ ] Dar de baja la web de Webador **sólo** después de saber qué pasa con el
-      correo
+- [ ] **No borrar la cuenta de Webador**: el correo `info@` vive allí y se
+      perdería (y con él el acceso a su Vercel). Si se quiere dejar, antes
+      mover el buzón a otro proveedor (`docs/dominio.md`)
 
 ## Hecho en la primera sesión (16 sept 2026)
 
@@ -211,3 +204,7 @@ publicar nada de eso sin que él lo confirme)
 - «Trabaja con nosotros» también en el menú del móvil (secundario) y al final
   de `/quienes-somos`; letra del menú del móvil un poco más pequeña
 - `/zonas-de-servicio` con 18 localidades por áreas y el mapa rehecho
+- Web alineada con cómo trabaja: servicios (fuera reparaciones y parkings,
+  dentro alquiler vacacional, sofás, mosquiteras, piscinas, escaparates),
+  «por horas o con precio cerrado», el equipo, y el presupuesto empieza por
+  semanal. Correo: la cuenta de Webador se queda

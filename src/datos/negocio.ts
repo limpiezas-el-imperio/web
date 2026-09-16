@@ -43,11 +43,13 @@ export type Categoria =
   | "cristales"
   | "comunidades"
   | "empresas"
-  | "obras"
-  | "reparaciones";
+  | "obras";
 
-// Los 26 servicios de su web, agrupados. El reparto en grupos es nuestro y
-// los nombres de cada servicio son los suyos.
+// Los servicios de su web, agrupados. El reparto en grupos es nuestro y los
+// nombres de cada servicio son los suyos, con un ajuste de Kevin (16 sept
+// 2026) para que se parezcan a lo que hace de verdad (docs/privado/negocio.md,
+// fuera de git): fuera las reparaciones y los parkings y naves; dentro alquiler
+// vacacional, sofás y colchones, mosquiteras, piscinas y escaparates.
 //
 // ⚠️ Las `descripcion` son un BORRADOR nuestro, pendiente de que Frank las
 // revise: su web sólo tenía los nombres. Están escritas para no prometer nada
@@ -66,7 +68,7 @@ export const servicios: {
   {
     categoria: "viviendas",
     titulo: "Viviendas",
-    resumen: "Pisos, casas y chalets, de una vez o con la frecuencia que elijas.",
+    resumen: "Pisos, casas y chalets: cada semana, cada quince días o una sola vez.",
     lista: [
       {
         nombre: "Limpieza general",
@@ -75,7 +77,7 @@ export const servicios: {
       {
         nombre: "Limpieza regular",
         descripcion:
-          "La misma limpieza con la frecuencia que elijas: diaria, semanal, quincenal o mensual.",
+          "La limpieza de tu casa cada semana o cada quince días, o con la frecuencia que elijas.",
       },
       {
         nombre: "Limpieza profunda",
@@ -94,12 +96,20 @@ export const servicios: {
         nombre: "Baños con vaporeta",
         descripcion: "El baño limpiado con vapor: azulejos, juntas, mampara y grifería.",
       },
+      {
+        nombre: "Alquiler vacacional",
+        descripcion: "Pisos y casas de alquiler vacacional, listos para los siguientes huéspedes.",
+      },
+      {
+        nombre: "Sofás y colchones",
+        descripcion: "Limpieza de sofás y colchones, en tu casa.",
+      },
     ],
   },
   {
     categoria: "cristales",
     titulo: "Cristales y persianas",
-    resumen: "Ventanas, cristales y persianas, también con vaporeta.",
+    resumen: "Ventanas, cristales, persianas y mosquiteras, también con vaporeta.",
     lista: [
       {
         nombre: "Limpieza de cristales",
@@ -110,15 +120,15 @@ export const servicios: {
         descripcion: "Cristales, marcos, guías y persianas limpiados con vapor.",
       },
       {
-        nombre: "Limpieza de persianas",
-        descripcion: "Lamas y guías, que son las que más polvo acumulan.",
+        nombre: "Persianas y mosquiteras",
+        descripcion: "Lamas, guías y mosquiteras, que son las que más polvo acumulan.",
       },
     ],
   },
   {
     categoria: "comunidades",
     titulo: "Comunidades y propiedades",
-    resumen: "Zonas comunes, garajes y exteriores, y el cuidado de tu propiedad.",
+    resumen: "Zonas comunes, garajes, jardines y piscinas, y el cuidado de tu propiedad.",
     lista: [
       {
         nombre: "Limpieza de comunidades",
@@ -134,8 +144,8 @@ export const servicios: {
         descripcion: "Plazas, rampas y zonas comunes del garaje.",
       },
       {
-        nombre: "Patios y jardines",
-        descripcion: "Patios y terrazas limpios, y el jardín sin hojas ni suciedad.",
+        nombre: "Patios, jardines y piscinas",
+        descripcion: "Patios y terrazas limpios, el jardín sin hojas y la zona de la piscina limpia.",
       },
       {
         nombre: "Exteriores",
@@ -150,7 +160,7 @@ export const servicios: {
   {
     categoria: "empresas",
     titulo: "Oficinas y locales",
-    resumen: "Oficinas, comercios y espacios después de un evento.",
+    resumen: "Oficinas, comercios y escaparates, y espacios después de un evento.",
     lista: [
       {
         nombre: "Limpieza de oficinas",
@@ -162,6 +172,10 @@ export const servicios: {
         descripcion: "Tiendas y locales abiertos al público, listos para abrir.",
       },
       {
+        nombre: "Escaparates",
+        descripcion: "Escaparates de tiendas y locales, una vez o cada quince días.",
+      },
+      {
         nombre: "Post evento",
         descripcion: "Después de una celebración o un evento, el espacio como estaba.",
       },
@@ -169,8 +183,8 @@ export const servicios: {
   },
   {
     categoria: "obras",
-    titulo: "Obras, parkings y naves",
-    resumen: "Durante la obra, al terminarla, y en superficies grandes.",
+    titulo: "Obras y fin de obra",
+    resumen: "Durante la obra, al terminarla, y el aspirado a fondo.",
     lista: [
       {
         nombre: "Limpieza de obra",
@@ -181,35 +195,12 @@ export const servicios: {
         descripcion: "Al acabar la obra o la reforma, para dejarlo todo listo para usar.",
       },
       {
-        nombre: "Aspirado en obras, parkings y naves",
-        descripcion: "Con aspiradora industrial, para el polvo de obra y las superficies grandes.",
-      },
-      {
-        nombre: "Parkings y naves",
-        descripcion: "Aparcamientos y naves industriales.",
-      },
-      {
         nombre: "Aspirado a fondo",
-        descripcion: "Aspirado profundo de suelos y alfombras.",
+        descripcion: "Con aspiradora industrial: el polvo de obra, suelos y alfombras.",
       },
       {
         nombre: "Pulido y vitrificado de suelos",
         descripcion: "Para devolver el brillo al suelo y protegerlo.",
-      },
-    ],
-  },
-  {
-    categoria: "reparaciones",
-    titulo: "Reparaciones",
-    resumen: "Pequeños arreglos para que todo quede en orden.",
-    lista: [
-      {
-        nombre: "Reparaciones eléctricas",
-        descripcion: "Pequeñas reparaciones eléctricas. Cuéntanos qué necesitas.",
-      },
-      {
-        nombre: "Reparación de persianas",
-        descripcion: "Cintas, lamas y mecanismos de persianas que no suben o no bajan.",
       },
     ],
   },

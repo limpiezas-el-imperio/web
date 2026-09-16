@@ -49,7 +49,7 @@ const pasos = [
   },
   {
     titulo: "Te damos presupuesto",
-    texto: "Por hora, por servicio o con un paquete mensual, según el trabajo.",
+    texto: "Por horas o con precio cerrado, según el trabajo.",
   },
   {
     titulo: "Lo dejamos impecable",

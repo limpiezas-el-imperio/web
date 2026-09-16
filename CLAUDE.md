@@ -13,7 +13,7 @@ esto es la guía operativa.
 | Repositorio | `limpiezas-el-imperio/web` (**público**, del cliente). `kevjrmy` es colaborador |
 | Producción | https://limpiezaselimperio.vercel.app |
 | Vercel | proyecto `web` en la cuenta gratuita del cliente, enlazado al repositorio |
-| Dominio | `www.limpiezaselimperio.net` añadido en Vercel, **DNS aún en Webador**: sirve la web vieja. Plan y riesgo del correo en `docs/dominio.md` |
+| Dominio | `www.limpiezaselimperio.net` añadido en Vercel, **DNS aún en Webador**: sirve la web vieja. **El correo `info@` vive en Webador y muere si se borra la cuenta**: no se borra. Plan en `docs/dominio.md` |
 | Web actual | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
 | Pendiente | `todo.md` (con *Por dónde seguir* arriba del todo) |
 
@@ -30,7 +30,7 @@ esto es la guía operativa.
 | `/quienes-somos` | Hecha: dónde estamos y el lema, cifras reales (Google, servicios, zonas), por qué elegirnos y los tres valores |
 | `/trabaja-con-nosotros` | Hecha: cómo es el trabajo y candidatura guiada que abre WhatsApp o el correo. Enlazada desde el pie. No dice que esté contratando |
 | `/zonas-de-servicio` | Hecha: 18 localidades en tres áreas (Camp de Túria, área metropolitana, Valencia ciudad) y el mapa. «Zonas» del menú va aquí |
-| `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Hechas, lo mínimo y en llano (`TextoLegal`). **Al aviso legal le falta el NIF**, que exige la LSSI. Enlazadas en la línea legal del pie |
+| `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Hechas, lo mínimo y en llano (`TextoLegal`). Sin NIF (decisión de Kevin). Enlazadas en la línea legal del pie |
 
 **Frank vio la primera versión (16 sept 2026) y no le gustó el diseño**:
 «demasiado plana», «sin color», «no parece de limpieza», «pocas funciones».

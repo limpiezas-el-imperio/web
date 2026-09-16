@@ -45,7 +45,7 @@ const motivos = [
   {
     icono: Timer,
     titulo: "Disponibilidad inmediata",
-    texto: "También hacemos limpiezas de urgencia.",
+    texto: "Cuéntanos qué necesitas y lo organizamos.",
   },
   {
     icono: BadgeCheck,
@@ -146,9 +146,14 @@ export default function QuienesSomos() {
               Benaguasil a Paterna, Campanar o Torrent.
             </p>
             <p>
-              Limpiamos pisos, casas y chalets, comunidades de vecinos, oficinas y
-              locales, obras, parkings y naves. Una vez, o con la frecuencia que
-              necesites, y siempre con nuestros materiales y productos.
+              Limpiamos pisos, casas y chalets, alquileres vacacionales,
+              comunidades de vecinos, oficinas, locales y obras. Sobre todo cada
+              semana o cada quince días, pero también una sola vez, y siempre con
+              nuestros materiales y productos.
+            </p>
+            <p>
+              No trabajamos solos: somos un equipo, y cada limpieza la hacen
+              personas que viven en la zona.
             </p>
             <blockquote className={s.lema}>
               <p>«{negocio.lema}».</p>

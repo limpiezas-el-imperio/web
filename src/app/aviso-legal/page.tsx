@@ -10,9 +10,7 @@ export const metadata = metadatosPagina({
   ruta: "/aviso-legal",
 });
 
-// ⚠️ Falta el NIF, que la LSSI (art. 10) exige. Tampoco estaba en su web vieja.
-// No entra en git hasta que él lo publique (CLAUDE.md): cuando lo dé, se añade
-// a negocio.ts y aquí, en «Datos del titular».
+// Sin NIF: tampoco estaba en su web vieja, y no se pone (decisión de Kevin).
 export default function AvisoLegal() {
   return (
     <TextoLegal antetitulo="Legal" titulo="Aviso legal" actualizado="16 de septiembre de 2026">

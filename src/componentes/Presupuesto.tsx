@@ -15,8 +15,9 @@ import s from "./Presupuesto.module.css";
 // habitaciones, baños, fecha) y lo que dice su FAQ: qué, dónde, cuándo y cada
 // cuánto (diaria, semanal, quincenal o mensual).
 
-const frecuencias = ["Una sola vez", "Diaria", "Semanal", "Quincenal", "Mensual"] as const;
-const tiposVivienda = ["Piso", "Casa", "Chalet"] as const;
+// Primero lo más habitual en su trabajo: cada semana o cada quince días.
+const frecuencias = ["Semanal", "Quincenal", "Mensual", "Una sola vez", "Diaria"] as const;
+const tiposVivienda = ["Piso", "Casa", "Chalet", "Alquiler vacacional"] as const;
 const OTRA_ZONA = "Otra zona";
 const MAX_HABITACIONES = 6;
 const MAX_BANOS = 4;

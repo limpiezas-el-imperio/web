@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Clock, Leaf, Package, Siren } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Clock, Leaf, Package, Users } from "lucide-react";
 import Link from "next/link";
 import CabeceraPagina from "@/componentes/CabeceraPagina";
 import Contacto from "@/componentes/Contacto";
@@ -10,7 +10,7 @@ import s from "./servicios.module.css";
 export const metadata = metadatosPagina({
   titulo: "Servicios de limpieza",
   descripcion:
-    "Limpieza de viviendas, cristales y persianas, comunidades, oficinas y locales, obras, parkings y naves, y pequeñas reparaciones. En La Pobla de Vallbona, el Camp de Túria y Valencia.",
+    "Limpieza de viviendas y alquileres vacacionales, cristales y persianas, comunidades, jardines y piscinas, oficinas, locales y obras. En La Pobla de Vallbona, el Camp de Túria y Valencia.",
   ruta: "/nuestros-servicios",
 });
 
@@ -32,12 +32,12 @@ const incluido = [
   {
     icono: Clock,
     titulo: "Como te venga mejor",
-    texto: "Por hora, por servicio o con un paquete mensual.",
+    texto: "Por horas o con precio cerrado, según el trabajo.",
   },
   {
-    icono: Siren,
-    titulo: "Urgencias",
-    texto: "También hacemos limpiezas de urgencia.",
+    icono: Users,
+    titulo: "Un equipo cerca",
+    texto: "Trabajamos con un equipo de personas que viven en la zona.",
   },
 ];
 
