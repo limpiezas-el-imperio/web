@@ -305,8 +305,8 @@ Reglas:
   - **Sans-serif gruesa en los titulares**, con la palabra clave en azul vivo.
   - **Sin pasarse** (lo pidió Kevin): nada de destellos animados, olas,
     brillos ni degradados en todas partes. Si dudas, menos.
-  - Las fotos reales llevan el peso: la portada abre con Frank trabajando y
-    las demás forman la galería.
+  - Las fotos reales llevan el peso en la galería. La portada lleva, de
+    momento, una foto provisional de Unsplash (ver *Fotos*).
 - Responsive con el móvil primero, foco visible, `prefers-reduced-motion`
   respetado (también en los carruseles) y texto alternativo descriptivo en
   todas las fotos (`fotos.ts`).
@@ -329,14 +329,19 @@ Reglas:
   tamaño no se leen), en la imagen para compartir y en los datos estructurados.
   En ningún sitio más. Es `public/logo.jpg`, la versión **sin teléfono**; las
   que lo llevaban dentro se borraron.
+- **Foto de la portada, provisional de Unsplash** (16 sept 2026): la de Frank
+  aspirando no le gustó. Kevin pidió una de Unsplash **enlazada, no
+  descargada** (`fotoPortada` en `page.tsx`; `images.unsplash.com` está
+  permitido en `next.config.ts`). Es la única excepción a la regla de abajo,
+  y se cambia por una suya en cuanto la mande. Sin personas: una foto de banco
+  con alguien trabajando pasaría por su personal.
 - **Fotos reales, nunca de banco ni generadas.** Van en `src/imagenes/` (no en
   `public/`, para que sólo se sirvan optimizadas) y se describen en
   `src/datos/fotos.ts` con su texto alternativo. **Antes de añadir una foto,
   comprueba que no lleva EXIF ni GPS**: son casas de clientes y el repositorio
   es público. Las primeras ocho venían limpias.
 - **No hay página de galería**, decidido: con ocho fotos quedaría vacía. Van en
-  la portada: Frank aspirando abre la página y las otras siete forman la
-  sección «Galería» (`Galeria.tsx`: rejilla en escritorio y tablet, fila
+  la portada, en la sección «Galería» (`Galeria.tsx`: rejilla en escritorio y tablet, fila
   deslizable con puntos en el móvil). **Las fotos no van dentro de cada
   servicio**: no hay una para cada uno y emparejarlas a la fuerza no casaba.
   Los servicios son sólo texto.
@@ -344,7 +349,7 @@ Reglas:
   el móvil hay una barra fija con WhatsApp y Llamar.
 - **En el móvil, la portada no lleva botones**: la barra fija ya es la llamada
   a la acción, y con los del titular había cuatro en la primera pantalla. Abre
-  con la foto de Frank a sangre, titular corto y la valoración de Google (4,9 ·
+  con la foto a sangre, titular corto y la valoración de Google (4,9 ·
   68). La altura de la foto sale de la pantalla (`100svh - 27rem`), no de una
   proporción: con la foto cuadrada, en pantallas bajas la valoración quedaba
   tapada por la barra. Compruébalo en 375×667 si tocas esa portada.

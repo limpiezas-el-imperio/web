@@ -15,8 +15,8 @@ import karcher from "@/imagenes/frank-limpiando-con-karcher.jpg";
 //   python3 -c "from PIL import Image; print(dict(Image.open('x.jpg').getexif()))"
 //
 // No hay página de galería a propósito: con ocho fotos quedaría vacía. Van en
-// la portada: la de Frank aspirando abre la página y las demás forman la
-// sección «Galería» (Galeria.tsx). No van dentro de cada servicio: no las hay para
+// la portada, en la sección «Galería» (Galeria.tsx). La de Frank aspirando
+// abría la portada, pero no le gustó: ahora no sale en ningún sitio. No van dentro de cada servicio: no las hay para
 // todos y emparejarlas a la fuerza no casaba.
 
 export type Foto = { src: StaticImageData; alt: string; pie: string };

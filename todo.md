@@ -10,6 +10,9 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la primera sesión.
 2. Mientras tanto, seguir con las páginas que no dependen de él: `/contacto` y
    `/quienes-somos` (ésta con lo que ya hay; ver `docs/sitio-actual.md`).
 3. `sitemap.ts` y `robots.ts`, y una página 404 propia.
+4. **Pedirle a Frank una foto para la portada.** La de él aspirando no le
+   gustó y va una provisional de Unsplash (`fotoPortada` en `src/app/page.tsx`).
+   Horizontal, luminosa, a ser posible un trabajo terminado. Sin EXIF ni GPS
 
 ## Plan de trabajo (acordado el 16 sept 2026)
 

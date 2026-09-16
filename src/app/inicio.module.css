@@ -65,27 +65,13 @@
   overflow: hidden;
   border: 6px solid var(--papel);
   border-radius: var(--radio-grande);
-  background: var(--marino);
+  background: var(--azul-velo);
   box-shadow: var(--sombra-grande);
 }
 
 .portada__foto img {
   object-fit: cover;
   object-position: 45% center;
-}
-
-.portada__foto figcaption {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  background: var(--papel);
-  box-shadow: var(--sombra);
-  font-family: var(--fuente-titulos), system-ui, sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  color: var(--marino);
 }
 
 /* La valoración de Google */
@@ -186,14 +172,6 @@
 
   .portada__foto img {
     object-position: 40% center;
-  }
-
-  .portada__foto figcaption {
-    left: auto;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    font-size: 0.75rem;
   }
 
   .solo_ancho {
