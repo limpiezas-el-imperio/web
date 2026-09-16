@@ -1,55 +1,29 @@
-/* ——— Destellos (adorno) ——— */
-.destello {
-  position: absolute;
-  pointer-events: none;
-  color: var(--oro);
-}
-
-.destello1 {
+/* ——— Destellos de la portada (el estilo común está en globals.css) ——— */
+.adorno1 {
   width: 2.5rem;
-  color: var(--oro-claro);
   top: 14%;
   right: 6%;
-  animation: brillo 5s ease-in-out infinite;
+  animation-duration: 5s;
 }
 
-.destello2 {
+.adorno2 {
   width: 1.25rem;
   top: 8%;
   right: 42%;
   color: #5b8ff0;
-  animation: brillo 6s ease-in-out 1.2s infinite;
+  animation-delay: 1.2s;
 }
 
-.destello3 {
+.adorno3 {
   width: 1.5rem;
   bottom: 12%;
   left: 4%;
-  color: var(--oro-claro);
-  animation: brillo 7s ease-in-out 2.4s infinite;
-}
-
-.destello4 {
-  width: 3.5rem;
-  top: 5rem;
-  color: var(--oro-claro);
-  right: 8%;
-  animation: brillo 6s ease-in-out infinite;
-}
-
-@keyframes brillo {
-  /* Sin tocar la opacidad: el dorado a medias sobre el azul se ve gris. */
-  0%,
-  100% {
-    transform: scale(0.8) rotate(0deg);
-  }
-  50% {
-    transform: scale(1) rotate(12deg);
-  }
+  animation-duration: 7s;
+  animation-delay: 2.4s;
 }
 
 @media (max-width: 40rem) {
-  .destello2 {
+  .adorno2 {
     display: none;
   }
 }
@@ -335,6 +309,17 @@
   color: var(--marino);
 }
 
+.pasos__dudas {
+  margin-top: 1.25rem;
+  color: var(--texto-suave);
+}
+
+.pasos__dudas a {
+  font-weight: 700;
+  color: var(--azul);
+  text-underline-offset: 4px;
+}
+
 .pasos__destello {
   width: 1rem;
   flex-shrink: 0;
@@ -474,86 +459,4 @@
 .opiniones__mas a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
-}
-
-/* ——— Contacto ——— */
-.contacto {
-  position: relative;
-  overflow: hidden;
-  color: #fff;
-  background:
-    radial-gradient(50rem 30rem at 100% 0%, rgb(31 95 214 / 0.5), transparent 60%),
-    var(--marino);
-}
-
-.contacto :global(.seccion__titulo) {
-  color: #fff;
-}
-
-.contacto :global(.seccion__entradilla) {
-  margin-bottom: 2rem;
-  color: rgb(255 255 255 / 0.8);
-}
-
-.contacto__rejilla {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(2.5rem, 6vw, 5rem);
-  align-items: center;
-}
-
-.contacto__lista {
-  display: grid;
-  gap: 1px;
-  overflow: hidden;
-  border-radius: var(--radio-grande);
-  background: rgb(255 255 255 / 0.12);
-}
-
-.contacto__lista li {
-  display: flex;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  background: var(--marino-hondo);
-}
-
-.contacto__lista svg {
-  flex-shrink: 0;
-  margin-top: 0.1875rem;
-  color: var(--oro-claro);
-}
-
-.contacto__lista span {
-  display: block;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgb(255 255 255 / 0.6);
-}
-
-.contacto__lista a,
-.contacto__lista p {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
-
-.contacto__lista a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-.contacto__lista p {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-@media (max-width: 48rem) {
-  .contacto__rejilla {
-    grid-template-columns: 1fr;
-  }
 }

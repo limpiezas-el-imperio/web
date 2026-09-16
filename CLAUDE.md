@@ -88,14 +88,19 @@ la raíz**: Next la tomaría como directorio de rutas y dejaría de ver `src/app
 (pasó en la contabilidad).
 
 ```
-src/app/          layout.tsx (fuentes, metadatos, cabecera y pie)
+src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   page.tsx + inicio.module.css (la portada)
-                  globals.css (paleta, botones, cabecera, pie)
-                  icon.svg · apple-icon.png · opengraph-image.jpg
+                  preguntas-frecuentes/ (page.tsx + su módulo)
+                  globals.css (paleta, botones, adorno, cabecera, pie)
+                  icon.svg · apple-icon.png
 src/componentes/  Cabecera · Pie · BarraContacto (sólo móvil)
+                  CabeceraPagina (la banda azul de cada página)
+                  Contacto (el cierre de cada página)
+                  DatosEstructurados (JSON-LD)
                   Marca (el nombre escrito) · Destello (la estrella del logo)
-src/datos/        negocio.ts (todos los datos del negocio) · sitio.ts (URL base)
-public/           el logo, tal cual venía de su web
+src/datos/        negocio.ts (datos del negocio) · preguntas.ts (la FAQ)
+                  sitio.ts (URL base y metadatosPagina)
+public/           el logo, tal cual venía de su web · opengraph-image.jpg
 docs/             contexto del proyecto (en git)
 docs/privado/     material del cliente no publicable (fuera de git)
 todo.md           lo pendiente, por fases
@@ -105,6 +110,26 @@ todo.md           lo pendiente, por fases
 horario, redes, servicios, zonas y opiniones. La portada, la cabecera, el pie y
 los datos estructurados leen de ahí. No escribas un teléfono ni un horario a
 mano en un componente: el día que cambie, se quedaría el viejo.
+
+### Cómo se hace una página nueva
+
+Copia `preguntas-frecuentes/`, que es la plantilla:
+
+- **Metadatos con `metadatosPagina()`** de `sitio.ts`, nunca un `openGraph` a
+  mano. Next mezcla layout y página sólo en el primer nivel: un `openGraph` en
+  la página borra entero el del layout, imagen incluida. Pasó con esta misma
+  página y se quedó sin imagen al compartirla. La imagen está en `public/` por
+  eso, y no como `opengraph-image.jpg` en `src/app`.
+- **Empieza con `<CabeceraPagina>`** y **acaba con `<Contacto />`**. El enlace
+  «Contacto» de la cabecera va a `#contacto` de la página en la que estés: si
+  una página no lo lleva, ese enlace no hace nada.
+- **JSON-LD con `<DatosEstructurados>`**, que escapa el `<`.
+- **Los estilos de la página en su `.module.css`.** Las estrellas llevan la
+  clase global `adorno` y el módulo sólo pone dónde y de qué tamaño. **No uses
+  `animation: brillo …` en un módulo**: Next renombra `brillo` dentro del
+  módulo y la animación deja de existir sin avisar. Sólo `animation-duration`
+  o `animation-delay`.
+- Añádela a la cabecera y al pie.
 
 **La URL base sale de `VERCEL_PROJECT_PRODUCTION_URL`** (`src/datos/sitio.ts`),
 que Vercel pone solo. Hoy es el `.vercel.app`; el día que se conecte el dominio

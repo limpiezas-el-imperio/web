@@ -161,6 +161,26 @@ p {
   color: var(--oro-claro);
 }
 
+/* ——— Adorno: la estrella del logo, flotando ———
+   Cada página coloca las suyas (top, left, width) en su módulo. */
+.adorno {
+  position: absolute;
+  pointer-events: none;
+  color: var(--oro-claro);
+  animation: brillo 6s ease-in-out infinite;
+}
+
+@keyframes brillo {
+  /* Sin tocar la opacidad: el dorado a medias sobre el azul se ve gris. */
+  0%,
+  100% {
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(12deg);
+  }
+}
+
 /* ——— Botones ——— */
 .boton {
   display: inline-flex;
@@ -397,10 +417,30 @@ p {
 }
 
 .pie__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
   padding-block: 1.5rem;
   border-top: 1px solid rgb(255 255 255 / 0.1);
   font-size: 0.875rem;
   color: rgb(255 255 255 / 0.55);
+}
+
+.pie__legal ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.pie__legal a {
+  text-decoration: none;
+}
+
+.pie__legal a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 56rem) {

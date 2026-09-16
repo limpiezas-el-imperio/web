@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Marca from "./Marca";
 import { horario, negocio, redes } from "@/datos/negocio";
 
@@ -55,6 +56,13 @@ export default function Pie() {
         <p>
           © {año} {negocio.nombre} · {negocio.titular}
         </p>
+        <nav aria-label="Pie">
+          <ul>
+            <li>
+              <Link href="/preguntas-frecuentes">Preguntas frecuentes</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </footer>
   );

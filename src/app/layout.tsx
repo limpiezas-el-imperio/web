@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     template: `%s · ${negocio.nombre}`,
   },
   description: descripcion,
-  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "es_ES",

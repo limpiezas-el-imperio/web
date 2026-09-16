@@ -1,0 +1,87 @@
+/* ——— Contacto ——— */
+.adorno {
+  width: 3.5rem;
+  top: 5rem;
+  right: 8%;
+}
+
+.contacto {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(50rem 30rem at 100% 0%, rgb(31 95 214 / 0.5), transparent 60%),
+    var(--marino);
+}
+
+.contacto :global(.seccion__titulo) {
+  color: #fff;
+}
+
+.contacto :global(.seccion__entradilla) {
+  margin-bottom: 2rem;
+  color: rgb(255 255 255 / 0.8);
+}
+
+.contacto__rejilla {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.contacto__lista {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  border-radius: var(--radio-grande);
+  background: rgb(255 255 255 / 0.12);
+}
+
+.contacto__lista li {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--marino-hondo);
+}
+
+.contacto__lista svg {
+  flex-shrink: 0;
+  margin-top: 0.1875rem;
+  color: var(--oro-claro);
+}
+
+.contacto__lista span {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(255 255 255 / 0.6);
+}
+
+.contacto__lista a,
+.contacto__lista p {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contacto__lista a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contacto__lista p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 48rem) {
+  .contacto__rejilla {
+    grid-template-columns: 1fr;
+  }
+}

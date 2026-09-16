@@ -8,7 +8,7 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
        (`docs/sitio-actual.md`, *Decisión por página*)
 2. [ ] **Integrarlo** en la web nueva (sin redirecciones), página a página:
    - [ ] `/nuestros-servicios`
-   - [ ] `/preguntas-frecuentes`
+   - [x] `/preguntas-frecuentes` (ya es la plantilla de las demás)
    - [ ] `/quienes-somos`
    - [ ] `/trabaja-con-nosotros`
    - [ ] `/zonas-de-servicio` (espera la lista buena)
@@ -39,6 +39,9 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
 - [ ] **Reseñas**: «más de 60 reseñas y 4,9», ¿de Google? Su ficha:
       https://maps.app.goo.gl/fVZXBH8RQqnJXfyp9 (comprobar ahí la cifra)
 - [ ] **Experiencia**: la web dice «2 años» (texto de 2024). ¿Desde cuándo?
+      Cuando lo diga, vuelve como pregunta en `src/datos/preguntas.ts`
+- [ ] **Urgencias**: «siempre que el cliente asuma el coste». ¿Cuesta más que
+      un servicio normal? Para decirlo claro en la FAQ
 - [ ] **Servicios**: la lista tiene 26 y un duplicado. ¿Siguen todos? ¿Se
       agrupan? ¿Reparaciones eléctricas sigue siendo cosa suya?
 - [x] **Formularios**: ninguno por ahora. Contacto por WhatsApp, teléfono y

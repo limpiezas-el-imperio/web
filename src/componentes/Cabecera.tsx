@@ -1,15 +1,17 @@
 import { MessageCircle } from "lucide-react";
+import Link from "next/link";
 import Marca from "./Marca";
 import { enlaceWhatsApp } from "@/datos/negocio";
 
-// Los enlaces van a "/#…" y no a "#…" para que sigan funcionando el día que
-// haya más páginas.
+// Mientras no existan sus páginas, Servicios, Zonas y Opiniones van a su
+// sección de la portada. Con "/#…" y no "#…", para que funcionen desde
+// cualquier página.
 const enlaces = [
   { href: "/#servicios", texto: "Servicios" },
-  { href: "/#como-trabajamos", texto: "Cómo trabajamos" },
   { href: "/#zonas", texto: "Zonas" },
   { href: "/#opiniones", texto: "Opiniones" },
-  { href: "/#contacto", texto: "Contacto" },
+  { href: "/preguntas-frecuentes", texto: "Preguntas" },
+  { href: "#contacto", texto: "Contacto" },
 ];
 
 export default function Cabecera() {
@@ -21,7 +23,7 @@ export default function Cabecera() {
           <ul>
             {enlaces.map((e) => (
               <li key={e.href}>
-                <a href={e.href}>{e.texto}</a>
+                <Link href={e.href}>{e.texto}</Link>
               </li>
             ))}
           </ul>

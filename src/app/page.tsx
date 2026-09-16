@@ -7,13 +7,15 @@ import {
   Clock,
   HardHat,
   House,
-  Mail,
   MapPin,
   MessageCircle,
   Phone,
   Store,
   Wrench,
 } from "lucide-react";
+import Link from "next/link";
+import Contacto from "@/componentes/Contacto";
+import DatosEstructurados from "@/componentes/DatosEstructurados";
 import Destello from "@/componentes/Destello";
 import {
   type Categoria,
@@ -25,8 +27,14 @@ import {
   servicios,
   zonas,
 } from "@/datos/negocio";
-import { urlBase } from "@/datos/sitio";
+import { metadatosPagina, urlBase } from "@/datos/sitio";
 import s from "./inicio.module.css";
+
+export const metadata = metadatosPagina({
+  descripcion:
+    "Limpieza de viviendas, comunidades, oficinas y obras en La Pobla de Vallbona, el Camp de Túria y Valencia. Materiales y productos incluidos. Pide presupuesto por WhatsApp.",
+  ruta: "/",
+});
 
 const iconos: Record<Categoria, LucideIcon> = {
   viviendas: House,
@@ -64,52 +72,45 @@ const pasos = [
   },
 ];
 
-function datosEstructurados() {
-  const datos = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: negocio.nombre,
-    description:
-      "Limpieza de viviendas, comunidades, oficinas, locales y obras.",
-    image: `${urlBase}/limpiezaselimperio.webp`,
-    url: urlBase,
-    telephone: negocio.telefono,
-    email: negocio.correo,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: negocio.localidad,
-      postalCode: negocio.codigoPostal,
-      addressRegion: negocio.provincia,
-      addressCountry: "ES",
+const negocioEstructurado = {
+  "@type": "LocalBusiness",
+  name: negocio.nombre,
+  description:
+    "Limpieza de viviendas, comunidades, oficinas, locales y obras.",
+  image: `${urlBase}/limpiezaselimperio.webp`,
+  url: urlBase,
+  telephone: negocio.telefono,
+  email: negocio.correo,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: negocio.localidad,
+    postalCode: negocio.codigoPostal,
+    addressRegion: negocio.provincia,
+    addressCountry: "ES",
+  },
+  hasMap: negocio.mapa,
+  areaServed: zonas.map((z) => ({ "@type": "Place", name: z })),
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "06:00",
+      closes: "18:00",
     },
-    hasMap: negocio.mapa,
-    areaServed: zonas.map((z) => ({ "@type": "Place", name: z })),
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "06:00",
-        closes: "18:00",
-      },
-    ],
-    sameAs: redes.map((r) => r.url),
-  };
-  return JSON.stringify(datos).replace(/</g, "\\u003c");
-}
+  ],
+  sameAs: redes.map((r) => r.url),
+};
 
 export default function Inicio() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: datosEstructurados() }}
-      />
+      <DatosEstructurados datos={negocioEstructurado} />
 
       {/* ——— Portada ——— */}
       <section className={s.portada}>
-        <Destello className={`${s.destello} ${s.destello1}`} />
-        <Destello className={`${s.destello} ${s.destello2}`} />
-        <Destello className={`${s.destello} ${s.destello3}`} />
+        <Destello className={`adorno ${s.adorno1}`} />
+        <Destello className={`adorno ${s.adorno2}`} />
+        <Destello className={`adorno ${s.adorno3}`} />
 
         <div className={`contenedor ${s.portada__rejilla}`}>
           <div className={s.portada__texto}>
@@ -230,6 +231,10 @@ export default function Inicio() {
             <Destello className={s.pasos__destello} />
             Nuestro consejo: una limpieza profunda al mes.
           </p>
+          <p className={s.pasos__dudas}>
+            ¿Tienes dudas?{" "}
+            <Link href="/preguntas-frecuentes">Mira las preguntas frecuentes</Link>
+          </p>
         </div>
       </section>
 
@@ -294,63 +299,7 @@ export default function Inicio() {
         </div>
       </section>
 
-      {/* ——— Contacto ——— */}
-      <section id="contacto" className={`seccion ${s.contacto}`}>
-        <Destello className={`${s.destello} ${s.destello4}`} />
-        <div className={`contenedor ${s.contacto__rejilla}`}>
-          <header>
-            <p className="antetitulo antetitulo--claro">Contacto</p>
-            <h2 className="seccion__titulo">¿Hablamos?</h2>
-            <p className="seccion__entradilla">
-              Cuéntanos qué necesitas y te respondemos con tu presupuesto.
-            </p>
-            <a
-              className="boton boton--whatsapp boton--grande"
-              href={enlaceWhatsApp()}
-            >
-              <MessageCircle aria-hidden="true" size={22} />
-              Escríbenos por WhatsApp
-            </a>
-          </header>
-
-          <ul className={s.contacto__lista}>
-            <li>
-              <Phone aria-hidden="true" size={20} />
-              <div>
-                <span>Teléfono</span>
-                <a href={`tel:${negocio.telefono}`}>{negocio.telefonoVisible}</a>
-              </div>
-            </li>
-            <li>
-              <Mail aria-hidden="true" size={20} />
-              <div>
-                <span>Correo</span>
-                <a href={`mailto:${negocio.correo}`}>{negocio.correo}</a>
-              </div>
-            </li>
-            <li>
-              <Clock aria-hidden="true" size={20} />
-              <div>
-                <span>Horario</span>
-                <p>
-                  {horario.semana}
-                  <br />
-                  {horario.finDeSemana}
-                </p>
-              </div>
-            </li>
-            <li>
-              <MapPin aria-hidden="true" size={20} />
-              <div>
-                <span>Dónde estamos</span>
-                <a href={negocio.mapa}>
-                  {negocio.localidad} ({negocio.provincia})
-                </a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <Contacto />
     </>
   );
 }
