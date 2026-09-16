@@ -254,13 +254,16 @@ export default function Inicio() {
         </div>
       </section>
 
-      {/* ——— Opiniones: una, grande ——— */}
+      {/* ——— Opiniones de Google ——— */}
       <section id="opiniones" className={`seccion ${s.opiniones}`}>
         <div className="contenedor">
           <div className={s.opiniones__cabecera}>
-            <p className="antetitulo">Opiniones</p>
+            <div>
+              <p className="antetitulo">Opiniones</p>
+              <h2 className="seccion__titulo">Lo dicen nuestros clientes</h2>
+            </div>
             <a className="enlace-flecha" href={negocio.mapa}>
-              Más opiniones en Google
+              Todas las reseñas en Google
               <ArrowUpRight aria-hidden="true" size={18} />
             </a>
           </div>

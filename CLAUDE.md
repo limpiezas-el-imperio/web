@@ -68,8 +68,17 @@ Lo que **no** entra en git:
 - **Nada de la contabilidad.** Ni nombres de clientes o colaboradores, ni
   cifras. Si hace falta un ejemplo, se usan los nombres inventados de siempre
   (ELENA PRADOS, BEATRIZ SOLANO, TOMAS RIVAS…).
-- **Las reseñas se publican tal y como estén en su fuente pública**, con el
-  nombre que la persona puso allí, y nunca se inventan ni se retocan.
+- **Las opiniones salen de su ficha de Google Maps** y se publican como
+  **extractos literales**: donde se corta va «[…]», y no se corrige ni se
+  reescribe nada. Autor con nombre e inicial. **Se corta sobre todo para no
+  publicar los nombres de su personal**, que varias reseñas mencionan: en
+  Google ya están, pero en su web nadie les ha preguntado. Cada una enlaza a
+  Google para leerla entera. Detalles en `src/datos/negocio.ts`.
+- **La nota y el total de Google (4,9 · 68) van escritos a mano** con la fecha
+  en que se comprobaron. Cambian: revísalos de vez en cuando. Para leerlos,
+  Google Maps no se deja con un fetch (muro de cookies y todo por JavaScript):
+  hace falta un Chrome sin cabeza que rechace las cookies y abra la pestaña
+  Reseñas. Sin iniciar sesión sólo enseña cinco.
 
 Antes de cualquier commit, mira lo que entra:
 

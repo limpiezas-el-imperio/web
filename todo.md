@@ -49,8 +49,10 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
       Preguntarlo **antes** de cancelar nada
 - [ ] **NIF**: falta en el aviso legal y la ley lo exige
 - [ ] **Zonas**: la web tiene dos listas distintas, ¿cuál es la buena?
-- [ ] **Reseñas**: «más de 60 reseñas y 4,9», ¿de Google? Su ficha:
-      https://maps.app.goo.gl/fVZXBH8RQqnJXfyp9 (comprobar ahí la cifra)
+- [x] **Reseñas**: sí, de Google. 4,9 con 68 reseñas (16 sept 2026). En la
+      portada van cinco recientes, en extracto y sin nombres del personal
+- [ ] **Opiniones**: ¿le parece bien que salgan en su web? ¿Y los nombres de
+      su equipo (Michel, Maribel, Viviana…), los quiere o no?
 - [ ] **Experiencia**: la web dice «2 años» (texto de 2024). ¿Desde cuándo?
       Cuando lo diga, vuelve como pregunta en `src/datos/preguntas.ts`
 - [ ] **Urgencias**: «siempre que el cliente asuma el coste». ¿Cuesta más que

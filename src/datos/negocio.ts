@@ -130,21 +130,48 @@ export const zonas = [
   "Torrent",
 ] as const;
 
-// Literales de los comentarios de su web. Con el nombre que la persona puso.
+// Opiniones de su ficha de Google Maps, leídas el 16 sept 2026 (las cinco que
+// Google enseña sin iniciar sesión; todas de 5 estrellas y de los últimos seis
+// meses). Las de su web vieja se quitaron: eran de hace más de dos años.
+//
+// Cómo se publican, y por qué:
+// - `extracto` es literal. Donde se corta hay «[…]». No se corrige ni se
+//   reescribe nada de lo que escribió el cliente.
+// - Se corta, sobre todo, para no publicar los nombres de su personal
+//   (varias reseñas nombran a las chicas que fueron). En Google ya están, pero
+//   ponerlos en su web es otra cosa y nadie les ha preguntado.
+// - El autor va con nombre e inicial, no con el nombre completo.
+// - La reseña entera se lee en Google: cada una enlaza a su ficha.
+export const valoracion = {
+  nota: "4,9",
+  total: 68,
+  comprobado: "16 de septiembre de 2026", // cambia con el tiempo: revísalo
+} as const;
+
 export const opiniones = [
   {
-    autor: "Jorge",
-    texto:
-      "Contratamos con ellos para la limpieza de nuestra casa después de una reforma. Franc y Luz hicieron muy buen trabajo, cuidando mucho los detalles y dejando la casa impecable. Repetiremos.",
+    autor: "Cristina R.",
+    extracto:
+      "Estamos encantados con la limpieza a fondo que han hecho en nuestra nueva casa. Les avisé con muy poca antelación […] y lo organizaron todo muy rápido.",
   },
   {
-    autor: "Ema",
-    texto:
-      "Desde que estoy contando con sus servicios no me cambio por nada. Calidad, cumplimiento, se ajustan a mis horarios y lo mejor, respetuosos con el medio ambiente.",
+    autor: "Li T.",
+    extracto:
+      "Tengo muchos ventanales y todos los cristales quedaron perfectamente limpios. […] Se nota que tienen experiencia y que trabajan con mucha dedicación.",
   },
   {
-    autor: "Elena Jiménez",
-    texto:
-      "Prestan un servicio de calidad y totalmente recomendable. Estamos encantados.",
+    autor: "Marie C.",
+    extracto:
+      "Nos hemos comprado un chalet y estaba fatal. […] Estoy super contenta con el resultado. Además super atentas, puntuales, cuidadosas haciendo un gran trabajo.",
+  },
+  {
+    autor: "María G.",
+    extracto:
+      "He quedado encantada con la rapidez y calidad del servicio. […] Sin duda repetiré. Los recomiendo 100%.",
+  },
+  {
+    autor: "Vir M.",
+    extracto:
+      "Servicio excelente y muy profesional. […] Dejó todo impecable. Repetiré sin duda. ¡100% recomendables!",
   },
 ] as const;

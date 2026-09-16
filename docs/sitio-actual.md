@@ -190,6 +190,7 @@ Avinguda, «Valencia y sus alrededores».
 ### Opiniones
 
 - Afirma «más de 60 reseñas y una calificación de 4,9» **sin decir dónde**.
+  Es Google Maps: comprobado el 16 sept 2026, **4,9 con 68 reseñas**.
 - La votación de la propia página: 4,78 sobre 9 votos.
 - Comentarios en la web (5 reseñas y una pregunta), de hace ~2 años:
   - **Jorge:** «Contratamos con ellos para la limpieza de nuestra casa después

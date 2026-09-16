@@ -428,12 +428,8 @@
 .opiniones__cabecera {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.opiniones__cabecera :global(.antetitulo) {
-  margin: 0;
+  gap: 1rem 2rem;
+  margin-bottom: 2.5rem;
 }

@@ -1,48 +1,128 @@
 .opiniones {
   display: grid;
-  gap: 2.5rem;
+  gap: 2rem;
+  min-width: 0;
 }
 
-.cita {
-  animation: entrar 0.4s ease-out;
+/* ——— Resumen: 4,9 y el total ——— */
+.resumen {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.cita blockquote {
-  max-width: 36ch;
+.nota {
   font-family: var(--fuente-titulos), Georgia, serif;
-  font-size: clamp(1.625rem, 3.2vw, 2.625rem);
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(3.5rem, 7vw, 5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
   color: var(--marino);
   font-variation-settings:
     "SOFT" 100,
     "opsz" 144;
-  text-wrap: balance;
 }
 
-.cita figcaption {
+.total {
+  margin-top: 0.25rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.estrellas {
+  display: inline-flex;
+  gap: 0.125rem;
+  color: var(--oro);
+}
+
+/* ——— La pista: scroll horizontal con anclajes ——— */
+.pista {
+  display: grid;
+  grid-auto-flow: column;
+  /* Una opinión entera y el principio de la siguiente, para que se vea que
+     hay más sin tener que explicarlo. */
+  grid-auto-columns: min(100%, 40rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-block: 0.25rem;
+}
+
+.pista::-webkit-scrollbar {
+  display: none;
+}
+
+.pista:focus-visible {
+  outline-offset: 6px;
+}
+
+.diapositiva {
+  scroll-snap-align: start;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--marino);
+}
+
+.cita {
+  margin-top: 1.25rem;
+  font-family: var(--fuente-titulos), Georgia, serif;
+  font-size: clamp(1.375rem, 2.6vw, 2rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--marino);
+  font-variation-settings:
+    "SOFT" 100,
+    "opsz" 144;
+  text-wrap: pretty;
+}
+
+.autor {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-top: 1.5rem;
   font-weight: 700;
 }
 
-.cita figcaption::before {
+.autor > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.autor > span::before {
   content: "";
-  width: 2rem;
+  width: 1.5rem;
   height: 2px;
   background: var(--oro);
 }
 
+.fuente {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  text-underline-offset: 4px;
+}
+
+.fuente:hover {
+  color: var(--marino);
+}
+
+/* ——— Controles ——— */
 .controles {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.controles button {
+.controles > button {
   display: grid;
   place-items: center;
   width: 3rem;
@@ -54,24 +134,58 @@
   cursor: pointer;
   transition:
     background-color 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    opacity 0.15s ease;
 }
 
-.controles button:hover {
+.controles > button:hover:not(:disabled) {
   background: var(--marino);
   color: #fff;
 }
 
-.contador {
-  min-width: 3ch;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  color: var(--texto-suave);
+.controles > button:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 
-@keyframes entrar {
-  from {
-    opacity: 0;
-    transform: translateY(0.5rem);
+.puntos {
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* El punto se ve pequeño pero el área para pulsarlo es de 24 px. */
+.puntos button {
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.puntos button::after {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: var(--linea);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.puntos button[aria-current="true"]::after {
+  width: 1.25rem;
+  background: var(--marino);
+}
+
+@media (max-width: 40rem) {
+  /* En el móvil se asoma más la siguiente: se entiende que hay que deslizar. */
+  .pista {
+    grid-auto-columns: 86%;
+    gap: 1.25rem;
   }
 }
