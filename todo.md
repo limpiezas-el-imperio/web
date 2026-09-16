@@ -41,8 +41,9 @@ Opiniones se queda como sección de la portada.
 - [x] `/quienes-somos` — dónde estamos y el lema, cifras reales, por qué
       elegirnos (sin «tarifas premium») y los tres valores. Sin años de
       experiencia hasta que él diga desde cuándo
-- [ ] `/trabaja-con-nosotros` — sin formulario. Espera a saber si sigue
-      buscando gente así
+- [x] `/trabaja-con-nosotros` — sin formulario: candidatura guiada que abre
+      WhatsApp o el correo con nombre, zona, disponibilidad y experiencia. No
+      dice que esté contratando ni promete condiciones
 - [ ] `/zonas-de-servicio` — espera la lista buena de zonas
 - [x] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` —
       lo mínimo y en llano, mejorando lo de su web vieja. Falta el NIF
@@ -50,7 +51,7 @@ Opiniones se queda como sección de la portada.
       por debajo de 64rem (antes 60rem): la fila no cabía entre 960 y 1000 px
 - [ ] Menú: Zonas pasa de `/#zonas` a su página cuando exista
 - [x] Pie: enlaces a los legales, en la línea de abajo
-- [ ] Pie: enlace a Trabaja con nosotros cuando exista
+- [x] Pie: enlace a Trabaja con nosotros, en «La web»
 
 ## Preguntas para Frank
 
@@ -91,7 +92,9 @@ Opiniones se queda como sección de la portada.
       vaporeta aparte. ¿Se puede decir algo de eso en la web?
 - [ ] **Dirección**: hoy sólo sale «La Pobla de Vallbona (Valencia)», no la
       calle, porque es su casa. ¿La quiere completa?
-- [ ] **Trabaja con nosotros**: ¿sigue buscando gente por la web?
+- [ ] **Trabaja con nosotros**: la página ya está. ¿Sigue buscando gente? ¿Le
+      llegan las candidaturas por WhatsApp o prefiere sólo correo? Si no busca,
+      se quita el enlace del pie
 - [ ] **«Tarifas premium»**: estaba en su «Por qué elegirnos» y no se ha
       puesto, porque suena a caro. ¿Qué quería decir?
 - [ ] **Redes**: LinkedIn apunta a un enlace roto; ¿cuáles están vivas? Hoy
@@ -185,3 +188,4 @@ Opiniones se queda como sección de la portada.
 - Presupuesto guiado por WhatsApp, en la portada y en `/contacto`
 - Pasada rápida de rendimiento y accesibilidad: AA en el verde, AVIF
 - Páginas legales (aviso legal, privacidad, cookies), sin NIF todavía
+- `/trabaja-con-nosotros`, con candidatura guiada por WhatsApp o correo

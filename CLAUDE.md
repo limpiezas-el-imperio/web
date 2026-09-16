@@ -28,7 +28,7 @@ esto es la guía operativa.
 | `/preguntas-frecuentes` | Hecha |
 | `/contacto` | Hecha: WhatsApp, teléfono y correo en tarjetas, horario, zonas, redes, y el presupuesto guiado por WhatsApp |
 | `/quienes-somos` | Hecha: dónde estamos y el lema, cifras reales (Google, servicios, zonas), por qué elegirnos y los tres valores |
-| `/trabaja-con-nosotros` | Por hacer; espera a saber si sigue buscando gente |
+| `/trabaja-con-nosotros` | Hecha: cómo es el trabajo y candidatura guiada que abre WhatsApp o el correo. Enlazada desde el pie. No dice que esté contratando |
 | `/zonas-de-servicio` | Por hacer; espera a que él diga cuál de sus dos listas vale |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Hechas, lo mínimo y en llano (`TextoLegal`). **Al aviso legal le falta el NIF**, que exige la LSSI. Enlazadas en la línea legal del pie |
 
@@ -135,6 +135,7 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   preguntas-frecuentes/ (page.tsx + su módulo)
                   contacto/ (page.tsx + contacto.module.css)
                   quienes-somos/ (page.tsx + su módulo)
+                  trabaja-con-nosotros/ (page.tsx + su módulo)
                   aviso-legal/ · politica-de-privacidad/ · politica-de-cookies/
                   (sobre TextoLegal)
                   not-found.tsx (la 404, para quien llegue con una URL de la
@@ -150,6 +151,8 @@ src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
                   Opiniones (carrusel de reseñas; cliente)
                   Presupuesto (presupuesto guiado que abre WhatsApp con el
                   mensaje escrito; cliente. En la portada y en /contacto)
+                  Candidatura (lo mismo para quien quiere trabajar; usa los
+                  estilos de Presupuesto)
                   Galeria (fotos: rejilla o fila deslizable; cliente)
                   useCarrusel (lo común de los dos carruseles)
                   MapaZonas (esquema SVG con coordenadas reales)
@@ -182,7 +185,8 @@ Copia `preguntas-frecuentes/` o `nuestros-servicios/`, que son las plantillas
 - **Empieza con `<CabeceraPagina>`** y **acaba con `<Contacto />`**, el cierre
   con WhatsApp y los datos, que enlaza a `/contacto`. La única que no lo lleva
   es `/contacto`: repetiría lo mismo dos veces seguidas. Las legales tampoco
-  (van sobre `TextoLegal`). El enlace «Contacto»
+  (van sobre `TextoLegal`). Ni `/trabaja-con-nosotros`: ese cierre es
+  para clientes. El enlace «Contacto»
   del menú va a `/contacto`.
 - **JSON-LD con `<DatosEstructurados>`**, que escapa el `<`.
 - **Usa las piezas del *Sistema de diseño*** (etiqueta, número, enlaces,

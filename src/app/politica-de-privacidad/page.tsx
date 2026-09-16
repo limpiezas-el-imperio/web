@@ -48,12 +48,21 @@ export default function PoliticaPrivacidad() {
         <li>Para responderte y prepararte un presupuesto.</li>
         <li>Para organizar y prestar el servicio si lo contratas.</li>
         <li>Para hacer las facturas y cumplir con nuestras obligaciones fiscales.</li>
+        <li>
+          Si nos escribes para trabajar con nosotros, sólo para valorar tu
+          candidatura.
+        </li>
       </ul>
       <p>
         La base legal es tu petición de presupuesto y, si lo contratas, el propio
         servicio (art. 6.1.b del Reglamento General de Protección de Datos), además
         de las obligaciones legales de facturación (art. 6.1.c). No usamos tus datos
         para publicidad.
+      </p>
+      <p>
+        Si nos mandas tu candidatura, la base es tu consentimiento (art. 6.1.a):
+        guardamos tus datos mientras podamos contar contigo y los borramos cuando
+        nos lo pidas.
       </p>
 
       <h2>Cuánto tiempo los guardamos</h2>

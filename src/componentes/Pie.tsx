@@ -26,6 +26,9 @@ export default function Pie() {
                 <Link href={e.href}>{e.texto}</Link>
               </li>
             ))}
+            <li>
+              <Link href="/trabaja-con-nosotros">Trabaja con nosotros</Link>
+            </li>
           </ul>
         </nav>
 

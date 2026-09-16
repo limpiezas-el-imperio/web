@@ -10,6 +10,7 @@ const paginas: { ruta: string; prioridad: number }[] = [
   { ruta: "/contacto", prioridad: 0.8 },
   { ruta: "/quienes-somos", prioridad: 0.7 },
   { ruta: "/preguntas-frecuentes", prioridad: 0.7 },
+  { ruta: "/trabaja-con-nosotros", prioridad: 0.4 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

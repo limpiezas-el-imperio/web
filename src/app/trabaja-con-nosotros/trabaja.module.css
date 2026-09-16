@@ -1,0 +1,57 @@
+.rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.lateral {
+  position: sticky;
+  top: calc(var(--alto-cabecera) + 2rem);
+}
+
+.datos {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.datos li {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.datos h3 {
+  font-size: 1.0625rem;
+  color: var(--marino);
+}
+
+.datos p {
+  margin-top: 0.125rem;
+  color: var(--texto-suave);
+}
+
+.nota {
+  display: flex;
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--texto-suave);
+}
+
+.nota svg {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+  color: var(--azul);
+}
+
+@media (max-width: 56rem) {
+  .rejilla {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .lateral {
+    position: static;
+  }
+}
