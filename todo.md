@@ -38,8 +38,13 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
 ## 1. Preguntas para Frank
 
 - [x] ¿Dónde está registrado el `.net`? En Webador
-- [ ] **Dominio**: ¿compra el `.com`? ¿El buzón `info@` lo da Webador?
+- [x] ¿El buzón `info@` lo da Webador? **Sí** (MX `mail.webador.com`), y es
+      también el correo de su cuenta de Vercel
+- [ ] **Dominio**: se va hacia apuntar el `.net` a Vercel. ¿Deja el panel de
+      Webador editar el A y el CNAME sin cambiar los nameservers?
       (`docs/dominio.md`)
+- [ ] **Webador**: ¿el buzón `info@` sigue funcionando si se da de baja la web?
+      Preguntarlo **antes** de cancelar nada
 - [ ] **NIF**: falta en el aviso legal y la ley lo exige
 - [ ] **Zonas**: la web tiene dos listas distintas, ¿cuál es la buena?
 - [ ] **Reseñas**: «más de 60 reseñas y 4,9», ¿de Google? Su ficha:
