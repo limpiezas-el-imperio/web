@@ -6,6 +6,7 @@
 export const enlaces = [
   { href: "/nuestros-servicios", texto: "Servicios" },
   { href: "/#zonas", texto: "Zonas" },
+  { href: "/quienes-somos", texto: "Quiénes somos" },
   { href: "/#opiniones", texto: "Opiniones" },
   { href: "/preguntas-frecuentes", texto: "Preguntas frecuentes" },
   { href: "/contacto", texto: "Contacto" },

@@ -1,0 +1,180 @@
+/* ——— Presentación: texto y foto ——— */
+.presentacion {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.presentacion__texto > p:not(:global(.antetitulo)) {
+  margin-top: 1rem;
+  font-size: 1.0625rem;
+  color: var(--texto-suave);
+}
+
+.presentacion__texto :global(.seccion__titulo) {
+  margin-bottom: 0.5rem;
+}
+
+/* El lema, en una tarjeta azul muy claro con la raya dorada. */
+.lema {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--oro);
+  border-radius: var(--radio);
+  background: var(--azul-velo);
+}
+
+.lema p {
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--marino);
+}
+
+.lema footer {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--texto-suave);
+}
+
+.foto {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 6px solid var(--papel);
+  border-radius: var(--radio-grande);
+  background: var(--azul-velo);
+  box-shadow: var(--sombra-grande);
+}
+
+.foto img {
+  object-fit: cover;
+}
+
+/* ——— Cifras ——— */
+.cifras {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.cifras li {
+  display: grid;
+  gap: 0.125rem;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+}
+
+.cifras strong {
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: clamp(2rem, 4vw, 2.625rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--azul);
+}
+
+.cifras span {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+/* ——— Por qué elegirnos ——— */
+.motivos {
+  background: var(--papel);
+}
+
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.motivo {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--fondo);
+}
+
+.motivo h3 {
+  font-size: 1.125rem;
+  color: var(--marino);
+}
+
+.motivo p {
+  margin-top: 0.25rem;
+  color: var(--texto-suave);
+}
+
+/* ——— Valores ——— */
+.valores {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.valor {
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.valor__cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.valor__icono {
+  color: var(--oro);
+}
+
+.valor h3 {
+  margin-top: 1.25rem;
+  font-size: 1.5rem;
+  color: var(--marino);
+}
+
+.valor p {
+  margin-top: 0.5rem;
+  color: var(--texto-suave);
+}
+
+/* ——— Tablet ——— */
+@media (max-width: 56rem) {
+  .presentacion {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cifras,
+  .rejilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .valores {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ——— Móvil ——— */
+@media (max-width: 40rem) {
+  .cifras {
+    gap: 0.75rem;
+  }
+
+  .cifras li {
+    padding: 1rem 0.75rem;
+  }
+
+  .rejilla {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .motivo {
+    padding: 1.25rem;
+  }
+}

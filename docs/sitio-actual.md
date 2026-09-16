@@ -13,7 +13,7 @@ tal cual y las malas se renombran sin más.
 | Ruta nueva | Viene de | Qué lleva |
 |---|---|---|
 | `/` | `/` | ✅ Hecha |
-| `/quienes-somos` | igual | Reescrita: dónde está, por qué elegirle, los tres valores como texto (no imágenes). Visión y misión fuera |
+| `/quienes-somos` | igual | ✅ Hecha. Dónde está, por qué elegirle, los tres valores como texto (no imágenes). Visión y misión fuera; «tarifas premium» también, a preguntar |
 | `/nuestros-servicios` | igual | ✅ Hecha. **Una sola página** con los seis grupos y una descripción corta por servicio (borrador) |
 | `/zonas-de-servicio` | igual | Cuando él diga cuál de las dos listas vale |
 | `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |

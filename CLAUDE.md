@@ -27,7 +27,8 @@ esto es la guía operativa.
 | `/nuestros-servicios` | Hecha, **con descripciones en borrador** pendientes de Frank |
 | `/preguntas-frecuentes` | Hecha |
 | `/contacto` | Hecha: WhatsApp, teléfono y correo en tarjetas, horario, zonas, redes, y «Qué contarnos» con un WhatsApp con las preguntas ya escritas |
-| `/quienes-somos`, `/trabaja-con-nosotros` | Por hacer |
+| `/quienes-somos` | Hecha: dónde estamos y el lema, cifras reales (Google, servicios, zonas), por qué elegirnos y los tres valores |
+| `/trabaja-con-nosotros` | Por hacer; espera a saber si sigue buscando gente |
 | `/zonas-de-servicio` | Por hacer; espera a que él diga cuál de sus dos listas vale |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Por hacer; esperan su NIF |
 
@@ -128,6 +129,7 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   nuestros-servicios/ (page.tsx + servicios.module.css)
                   preguntas-frecuentes/ (page.tsx + su módulo)
                   contacto/ (page.tsx + contacto.module.css)
+                  quienes-somos/ (page.tsx + su módulo)
                   globals.css (paleta, sistema de diseño, cabecera, menú, pie)
                   icon.svg · apple-icon.png
 src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
@@ -376,7 +378,7 @@ Reglas:
   proporción: con la foto cuadrada, en pantallas bajas la valoración quedaba
   tapada por la barra. Compruébalo en 375×667 si tocas esa portada.
 - **Se navega por páginas, no por una sola página larga.** Cada tema importante
-  tiene la suya; la portada resume y enlaza. Por debajo de 60rem los enlaces de
+  tiene la suya; la portada resume y enlaza. Por debajo de 64rem los enlaces de
   la cabecera se sustituyen por el botón «Menú»: no los escondas sin dejar otra
   forma de navegar, que es como estaba al principio y en el móvil no había
   menú ninguno.

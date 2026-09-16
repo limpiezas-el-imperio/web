@@ -14,8 +14,8 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
    WhatsApp con el mensaje escrito (servicio, zona, habitaciones, baños,
    frecuencia, fecha). Sin formulario ni servidor. Se hizo una versión en la
    segunda sesión y se borró con `/propuesta`; se rehace en la portada.
-4. Mientras tanto, la página que no depende de él: `/quienes-somos` (con lo
-   que ya hay; ver `docs/sitio-actual.md`). `/contacto` ya está hecha.
+4. Las páginas que no dependían de él ya están (`/contacto` y
+   `/quienes-somos`). Las que quedan esperan respuestas suyas.
 5. `sitemap.ts` y `robots.ts`, y una página 404 propia.
 
 ## Plan de trabajo (acordado el 16 sept 2026)
@@ -42,16 +42,17 @@ Opiniones se queda como sección de la portada.
 - [x] `/contacto` — canales, horario, zonas, redes y qué contarnos para el
       presupuesto (WhatsApp con las preguntas ya escritas). El menú y la FAQ
       enlazan aquí
-- [ ] `/quienes-somos` — dónde está, por qué elegirle, los tres valores como
-      texto. Se puede empezar; la experiencia («desde cuándo») la tiene que
-      decir él
+- [x] `/quienes-somos` — dónde estamos y el lema, cifras reales, por qué
+      elegirnos (sin «tarifas premium») y los tres valores. Sin años de
+      experiencia hasta que él diga desde cuándo
 - [ ] `/trabaja-con-nosotros` — sin formulario. Espera a saber si sigue
       buscando gente así
 - [ ] `/zonas-de-servicio` — espera la lista buena de zonas
 - [ ] `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` —
       rehechos de cero; esperan su NIF
-- [ ] Menú: añadir Quiénes somos cuando exista; Zonas pasa de `/#zonas` a su
-      página cuando exista
+- [x] Menú: Quiénes somos añadido. Con seis enlaces, el botón «Menú» sale ya
+      por debajo de 64rem (antes 60rem): la fila no cabía entre 960 y 1000 px
+- [ ] Menú: Zonas pasa de `/#zonas` a su página cuando exista
 - [ ] Pie: enlaces a Trabaja con nosotros y a los legales cuando existan
 
 ## Preguntas para Frank
@@ -92,6 +93,8 @@ Opiniones se queda como sección de la portada.
 - [ ] **Dirección**: hoy sólo sale «La Pobla de Vallbona (Valencia)», no la
       calle, porque es su casa. ¿La quiere completa?
 - [ ] **Trabaja con nosotros**: ¿sigue buscando gente por la web?
+- [ ] **«Tarifas premium»**: estaba en su «Por qué elegirnos» y no se ha
+      puesto, porque suena a caro. ¿Qué quería decir?
 - [ ] **Redes**: LinkedIn apunta a un enlace roto; ¿cuáles están vivas? Hoy
       salen Facebook, Instagram, TikTok, YouTube y X
 
@@ -165,3 +168,5 @@ Opiniones se queda como sección de la portada.
 - `/contacto`: WhatsApp destacado, teléfono y correo en tarjetas; horario,
   zonas y redes; «Qué contarnos» con un WhatsApp con las preguntas escritas.
   El menú, la FAQ y el cierre de contacto de cada página enlazan aquí
+- `/quienes-somos`: dónde estamos, lema, cifras reales, por qué elegirnos y
+  valores. En el menú, que pasa a botón por debajo de 64rem

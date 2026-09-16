@@ -481,7 +481,8 @@ svg.lucide:not([fill="currentColor"]) {
 }
 
 /* ——— Menú de tablet y móvil ——— */
-@media (max-width: 60rem) {
+/* Con seis enlaces la fila no cabe por debajo de ~1000 px. */
+@media (max-width: 64rem) {
   .cabecera__nav {
     display: none;
   }

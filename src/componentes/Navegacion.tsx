@@ -54,7 +54,7 @@ export default function Navegacion() {
       if (e.key === "Escape") cerrar(true);
     };
     // Si se ensancha la ventana hasta escritorio, el menú ya no tiene sentido.
-    const escritorio = window.matchMedia("(min-width: 60.0625rem)");
+    const escritorio = window.matchMedia("(min-width: 64.0625rem)");
     const alEnsanchar = () => escritorio.matches && cerrar(false);
 
     document.addEventListener("keydown", alPulsar);
