@@ -169,6 +169,10 @@ export default function Inicio() {
               Si hay que limpiarlo, seguramente lo hacemos. Y si no ves lo que
               buscas, pregúntanos.
             </p>
+            <Link className={`enlace-flecha ${s.ver_todos}`} href="/nuestros-servicios">
+              Todos los servicios, con detalle
+              <ArrowRight aria-hidden="true" size={18} />
+            </Link>
           </header>
 
           <div className={s.indice}>
@@ -191,7 +195,7 @@ export default function Inicio() {
                     <p className={s.grupo__resumen}>{g.resumen}</p>
                     <ul className={s.grupo__lista}>
                       {g.lista.map((l) => (
-                        <li key={l}>{l}</li>
+                        <li key={l.nombre}>{l.nombre}</li>
                       ))}
                     </ul>
                     <a

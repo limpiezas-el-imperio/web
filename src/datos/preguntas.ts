@@ -21,7 +21,7 @@ export const preguntas: Pregunta[] = [
     pregunta: "¿Qué servicios ofrecéis?",
     respuesta:
       "Limpiamos pisos, casas y chalets, comunidades, oficinas, locales comerciales, obras y parkings. Hacemos limpieza general, regular y profunda, de cristales, ventanas y persianas, y también pequeñas reparaciones.",
-    enlace: { href: "/#servicios", texto: "Ver todos los servicios" },
+    enlace: { href: "/nuestros-servicios", texto: "Ver todos los servicios" },
   },
   {
     pregunta: "¿Cuánto cuesta una limpieza?",

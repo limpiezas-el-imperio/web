@@ -267,6 +267,10 @@
   }
 }
 
+.ver_todos {
+  margin-top: 1.5rem;
+}
+
 /* ——— Servicios: índice ——— */
 .indice {
   border-top: 1px solid var(--marino);

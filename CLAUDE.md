@@ -99,6 +99,7 @@ la raíz**: Next la tomaría como directorio de rutas y dejaría de ver `src/app
 ```
 src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   page.tsx + inicio.module.css (la portada)
+                  nuestros-servicios/ (page.tsx + servicios.module.css)
                   preguntas-frecuentes/ (page.tsx + su módulo)
                   globals.css (paleta, botones, enlace-flecha, cabecera, pie)
                   icon.svg · apple-icon.png

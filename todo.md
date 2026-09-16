@@ -15,7 +15,8 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
    - [x] Rediseño editorial de la portada: titular + foto, índice de servicios
          desplegable, franja de pasos, mapa de zonas, una opinión grande
    - [x] Fotos fuera de los servicios, en su sección «Nuestro trabajo»
-   - [ ] `/nuestros-servicios`
+   - [x] `/nuestros-servicios`: índice de áreas, cada servicio con descripción,
+         «En todos los servicios» y datos estructurados de los 26
    - [ ] `/contacto` (nueva: lo mismo que la sección de contacto, en su página)
    - [x] `/preguntas-frecuentes` (ya es la plantilla de las demás)
    - [ ] `/quienes-somos`
@@ -60,6 +61,10 @@ Paso a paso, sin prisa. Cada paso se cierra antes de abrir el siguiente.
       un servicio normal? Para decirlo claro en la FAQ
 - [ ] **Servicios**: la lista tiene 26 y un duplicado. ¿Siguen todos? ¿Se
       agrupan? ¿Reparaciones eléctricas sigue siendo cosa suya?
+- [ ] **Descripciones de los servicios**: son un borrador nuestro
+      (`src/datos/negocio.ts`). Que las lea y corrija; sobre todo «Cuidado de
+      propiedades», «Fachadas» y «Reparaciones eléctricas», que son las más
+      a ciegas
 - [x] **Formularios**: ninguno por ahora. Contacto por WhatsApp, teléfono y
       correo
 - [x] **Material**: logo en `public/` (ver `docs/sitio-actual.md`, *Imágenes*).

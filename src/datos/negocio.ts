@@ -43,24 +43,53 @@ export type Categoria =
   | "reparaciones";
 
 // Los 26 servicios de su web, agrupados. El reparto en grupos es nuestro y
-// está pendiente de que él lo vea; los nombres de cada servicio son los suyos.
+// los nombres de cada servicio son los suyos.
+//
+// ⚠️ Las `descripcion` son un BORRADOR nuestro, pendiente de que Frank las
+// revise: su web sólo tenía los nombres. Están escritas para no prometer nada
+// que no haya dicho él (ni precios, ni plazos, ni «por dentro y por fuera»).
+// Lo que sí sale de él va anotado: frecuencias y limpieza profunda mensual
+// (su FAQ), hidrolimpiadora y aspiradora industrial (sus fotos y su hoja de
+// servicio), hojas del jardín (una reseña de Google).
+export type Servicio = { nombre: string; descripcion: string };
+
 export const servicios: {
   categoria: Categoria;
   titulo: string;
   resumen: string;
-  lista: string[];
+  lista: Servicio[];
 }[] = [
   {
     categoria: "viviendas",
     titulo: "Viviendas",
     resumen: "Pisos, casas y chalets, de una vez o con la frecuencia que elijas.",
     lista: [
-      "Limpieza general",
-      "Limpieza regular",
-      "Limpieza profunda",
-      "Post mudanza",
-      "Cocinas con vaporeta",
-      "Baños con vaporeta",
+      {
+        nombre: "Limpieza general",
+        descripcion: "La limpieza de toda la vivienda: suelos, polvo, cocina y baños.",
+      },
+      {
+        nombre: "Limpieza regular",
+        descripcion:
+          "La misma limpieza con la frecuencia que elijas: diaria, semanal, quincenal o mensual.",
+      },
+      {
+        nombre: "Limpieza profunda",
+        descripcion:
+          "A fondo, también los rincones que no se tocan a diario. Nuestro consejo: una al mes.",
+      },
+      {
+        nombre: "Post mudanza",
+        descripcion: "Para entrar a vivir en una casa limpia, o para entregarla limpia al irte.",
+      },
+      {
+        nombre: "Cocinas con vaporeta",
+        descripcion: "La cocina limpiada con vapor: azulejos, juntas, encimeras y grasa.",
+      },
+      {
+        nombre: "Baños con vaporeta",
+        descripcion: "El baño limpiado con vapor: azulejos, juntas, mampara y grifería.",
+      },
     ],
   },
   {
@@ -68,9 +97,18 @@ export const servicios: {
     titulo: "Cristales y persianas",
     resumen: "Ventanas, cristales y persianas, también con vaporeta.",
     lista: [
-      "Limpieza de cristales",
-      "Cristales, ventanas y persianas con vaporeta",
-      "Limpieza de persianas",
+      {
+        nombre: "Limpieza de cristales",
+        descripcion: "Ventanas, ventanales y cristaleras de casas, oficinas y locales.",
+      },
+      {
+        nombre: "Cristales, ventanas y persianas con vaporeta",
+        descripcion: "Cristales, marcos, guías y persianas limpiados con vapor.",
+      },
+      {
+        nombre: "Limpieza de persianas",
+        descripcion: "Lamas y guías, que son las que más polvo acumulan.",
+      },
     ],
   },
   {
@@ -78,38 +116,98 @@ export const servicios: {
     titulo: "Comunidades y propiedades",
     resumen: "Zonas comunes, garajes y exteriores, y el cuidado de tu propiedad.",
     lista: [
-      "Limpieza de comunidades",
-      "Cuidado de propiedades",
-      "Garajes",
-      "Patios y jardines",
-      "Exteriores",
-      "Fachadas",
+      {
+        nombre: "Limpieza de comunidades",
+        descripcion: "Portales, escaleras, rellanos, ascensores y zonas comunes.",
+      },
+      {
+        nombre: "Cuidado de propiedades",
+        descripcion:
+          "Mantener limpia una vivienda vacía, de alquiler o una segunda residencia.",
+      },
+      {
+        nombre: "Garajes",
+        descripcion: "Plazas, rampas y zonas comunes del garaje.",
+      },
+      {
+        nombre: "Patios y jardines",
+        descripcion: "Patios y terrazas limpios, y el jardín sin hojas ni suciedad.",
+      },
+      {
+        nombre: "Exteriores",
+        descripcion: "Suelos exteriores, terrazas y muros, también con hidrolimpiadora.",
+      },
+      {
+        nombre: "Fachadas",
+        descripcion: "La fachada de la vivienda, el local o el edificio.",
+      },
     ],
   },
   {
     categoria: "empresas",
     titulo: "Oficinas y locales",
     resumen: "Oficinas, comercios y espacios después de un evento.",
-    lista: ["Limpieza de oficinas", "Limpieza comercial", "Post evento"],
+    lista: [
+      {
+        nombre: "Limpieza de oficinas",
+        descripcion:
+          "Despachos, puestos de trabajo, zonas comunes y aseos, con la frecuencia que necesites.",
+      },
+      {
+        nombre: "Limpieza comercial",
+        descripcion: "Tiendas y locales abiertos al público, listos para abrir.",
+      },
+      {
+        nombre: "Post evento",
+        descripcion: "Después de una celebración o un evento, el espacio como estaba.",
+      },
+    ],
   },
   {
     categoria: "obras",
     titulo: "Obras, parkings y naves",
     resumen: "Durante la obra, al terminarla, y en superficies grandes.",
     lista: [
-      "Limpieza de obra",
-      "Fin de obra",
-      "Aspirado en obras, parkings y naves",
-      "Parkings y naves",
-      "Aspirado a fondo",
-      "Pulido y vitrificado de suelos",
+      {
+        nombre: "Limpieza de obra",
+        descripcion: "Durante la obra, para retirar polvo y restos y poder seguir trabajando.",
+      },
+      {
+        nombre: "Fin de obra",
+        descripcion: "Al acabar la obra o la reforma, para dejarlo todo listo para usar.",
+      },
+      {
+        nombre: "Aspirado en obras, parkings y naves",
+        descripcion: "Con aspiradora industrial, para el polvo de obra y las superficies grandes.",
+      },
+      {
+        nombre: "Parkings y naves",
+        descripcion: "Aparcamientos y naves industriales.",
+      },
+      {
+        nombre: "Aspirado a fondo",
+        descripcion: "Aspirado profundo de suelos y alfombras.",
+      },
+      {
+        nombre: "Pulido y vitrificado de suelos",
+        descripcion: "Para devolver el brillo al suelo y protegerlo.",
+      },
     ],
   },
   {
     categoria: "reparaciones",
     titulo: "Reparaciones",
     resumen: "Pequeños arreglos para que todo quede en orden.",
-    lista: ["Reparaciones eléctricas", "Reparación de persianas"],
+    lista: [
+      {
+        nombre: "Reparaciones eléctricas",
+        descripcion: "Pequeñas reparaciones eléctricas. Cuéntanos qué necesitas.",
+      },
+      {
+        nombre: "Reparación de persianas",
+        descripcion: "Cintas, lamas y mecanismos de persianas que no suben o no bajan.",
+      },
+    ],
   },
 ];
 
