@@ -3,7 +3,8 @@
 # CLAUDE.md
 
 Web pública de Limpiezas El Imperio (La Pobla de Vallbona, Valencia), que
-sustituye a la de Webador en **limpiezaselimperio.net**. Next.js en Vercel.
+sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
+**www.limpiezaselimperio.es**. Next.js en Vercel.
 `README.md` explica el porqué de las decisiones; esto es la guía operativa y
 `todo.md`, lo pendiente.
 
@@ -12,14 +13,15 @@ sustituye a la de Webador en **limpiezaselimperio.net**. Next.js en Vercel.
 | Repositorio | `limpiezas-el-imperio/web` (**público**, del cliente). `kevjrmy` es colaborador |
 | Producción | https://limpiezaselimperio.vercel.app |
 | Vercel | proyecto `web` en la cuenta gratuita del cliente, enlazado al repositorio |
-| Dominio | `www.limpiezaselimperio.net` añadido en Vercel, **DNS aún en Webador**: sirve la web vieja. **El correo `info@` vive en Webador y muere si se borra la cuenta**: no se borra. Plan en `docs/dominio.md` |
+| Dominio | **`www.limpiezaselimperio.es`**, de Frank en Hostinger (Kevin con acceso de administrador). Configurado en Vercel y Hostinger; **el registro de `.es` aún no lo publica** (16 sept 2026). Todo en `docs/dominio.md` |
+| Correo | `info@limpiezaselimperio.net`, **en Webador**: muere si se borra la cuenta o se cambian los nameservers del `.net`. No se toca |
 | Web vieja | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
 | Negocio | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git) |
 
-## Estado (16 sept 2026, cierre de la segunda sesión)
+## Estado (16 sept 2026, cierre de la tercera sesión)
 
-**Todas las páginas están hechas** y publicadas en el `.vercel.app`, todavía
-sin dominio:
+**Todas las páginas están hechas** y publicadas en el `.vercel.app`. El dominio
+`.es` está configurado y **a la espera de que el registro lo publique**:
 
 | Ruta | Qué lleva |
 |---|---|
@@ -39,8 +41,11 @@ sin dominio:
   `docs/privado/negocio.md`): fuera reparaciones y parkings y naves; dentro
   alquiler vacacional, sofás, mosquiteras, piscinas y escaparates; «por horas o
   con precio cerrado» en vez de «paquete mensual»; el equipo; y las zonas.
-- **Falta**: las respuestas de Frank (`todo.md`) y el lanzamiento con el
-  dominio.
+- **Dominio**: Vercel no vende `.es`; Frank lo compró en Hostinger. DNS en
+  Hostinger (A y CNAME de Vercel), `www` como principal. Si 24 h después de la
+  compra sigue sin resolver, soporte de Hostinger.
+- **Falta**: que el `.es` responda y cambiar entonces `dominioPublico`, y las
+  respuestas de Frank (`todo.md`).
 
 **Mismo cliente que `../limpiezas-imperio-software/`** (su contabilidad, en
 https://limpiezas-imperio.vercel.app). Proyectos separados: esta web no lee ni
@@ -158,7 +163,8 @@ horario, redes, servicios, zonas y opiniones. Nunca a mano en un componente.
 salen canonical, imagen para compartir, datos estructurados, sitemap y robots.
 **No la saques de `VERCEL_PROJECT_PRODUCTION_URL`**: con el `.net` añadido en
 Vercel pero aún en Webador, la web mandaba a URLs de Webador que daban 404.
-**Se cambia el día que el dominio sirva esta web**, comprobado con `curl`.
+**Se cambia a `www.limpiezaselimperio.es` el día que sirva esta web**,
+comprobado con `curl`.
 
 ## Comprobar antes de dar nada por bueno
 

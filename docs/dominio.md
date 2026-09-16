@@ -1,92 +1,106 @@
 # Dominio
 
-**Estado (16 sept 2026): se va hacia la opción B, apuntar el `.net` a Vercel.**
-`www.limpiezaselimperio.net` ya está añadido al proyecto de Vercel, pero sus
-DNS siguen en Webador: el dominio todavía sirve la web vieja. **Falta que Frank
-diga si el panel de Webador deja editar registros sueltos.** Confirmado: si se
-borra la cuenta de Webador, el correo `info@` deja de funcionar, así que la
-cuenta se queda.
+**Estado (16 sept 2026, noche): la web se lanza con `limpiezaselimperio.es`,
+comprado por Frank en Hostinger. Todo configurado; falta que el registro de
+`.es` publique el dominio.** El `.net` se queda en Webador con la web vieja y
+el correo.
 
-Kevin dejó en `.env` (fuera de git) lo que pide Vercel. No son secretos:
+## `limpiezaselimperio.es` (el nuevo)
 
-| | |
+- **Registrador: Hostinger**, cuenta de Frank (entra con Google). Kevin tiene
+  acceso de administrador desde su propia cuenta de Hostinger.
+- Hostinger lo marca **«Actif»**, caduca el **11 sept 2029**, con renovación
+  automática.
+- **Vercel no lo vende**: `.es` no está entre sus dominios
+  (`vercel domains price` responde «TLD not supported»). Por eso Hostinger.
+- **Sin correo**: ni buzón ni MX. El correo sigue siendo `info@` del `.net`.
+
+### Configurado
+
+**En Vercel** (proyecto `web`, *Settings → Domains*, cuenta de Frank; la CLI de
+Kevin está en su propia cuenta y no llega):
+
+| Dominio | Papel |
 |---|---|
-| Nameservers de Vercel | `ns1.vercel-dns.com` · `ns2.vercel-dns.com` |
-| Registro A para `@` | `216.198.79.1` |
-| Correo de la cuenta de Vercel | `info@limpiezaselimperio.net` |
+| `www.limpiezaselimperio.es` | **Principal** (Production) |
+| `limpiezaselimperio.es` | Redirige con un 308 al `www` |
 
-## Cómo está hoy (consultado con `dig` el 16 sept 2026)
+**En Hostinger** (*DNS / Serveurs de noms*), con los nameservers de Hostinger y
+sin sus registros de aparcamiento:
+
+| Tipo | Nombre | Valor |
+|---|---|---|
+| A | `@` | `216.198.79.1` |
+| CNAME | `www` | el que da Vercel para `www` (un `…vercel-dns-017.com`); copiarlo de su panel |
+
+Se dejaron los DNS en Hostinger y no se pasaron a Vercel para que Kevin pueda
+editarlos con su acceso, sin entrar en la cuenta de Vercel de Frank.
+
+### Por qué aún no funciona
+
+El 16 sept por la noche, **los servidores de `.es` responden NXDOMAIN**: el
+registro todavía no lo ha publicado, aunque Hostinger diga «Actif». El
+navegador da `DNS_PROBE_POSSIBLE` (o `ERR_SOCKS_CONNECTION_FAILED` con un
+proxy): es lo esperado.
+
+```bash
+dig +norec NS limpiezaselimperio.es @a.nic.es   # NXDOMAIN = aún no publicado
+dig +short A limpiezaselimperio.es @8.8.8.8     # 216.198.79.1 cuando esté
+curl -sI https://www.limpiezaselimperio.es      # 200 servido por Vercel
+```
+
+- La zona `.es` se actualiza varias veces al día; lo normal son **unas horas**.
+- Los resolutores recuerdan el «no existe» **hasta 1 hora** (SOA de `.es`).
+- **Si 24 h después de la compra sigue en NXDOMAIN**, no es espera: hablar con
+  el soporte de Hostinger (activo en su panel pero sin publicar en el
+  registro; suele ser por los datos del titular).
+
+### Cuando responda
+
+1. Vercel marca los dos dominios como válidos y emite el certificado (botón
+   *Refresh* si tarda).
+2. Comprobar con `dig` y `curl` que `www.limpiezaselimperio.es` sirve esta web
+   y que `limpiezaselimperio.es` redirige.
+3. **Entonces** cambiar `dominioPublico` en `src/datos/sitio.ts` a
+   `www.limpiezaselimperio.es` y actualizar `CLAUDE.md`. Push.
+4. Frank cambia el enlace de la web en su ficha de Google y en sus redes.
+
+## `limpiezaselimperio.net` (el viejo)
+
+Sigue en **Webador**, con la web vieja. **Ya no está añadido en Vercel.**
 
 | Registro | Valor | Qué es |
 |---|---|---|
-| NS | `ns1.openprovider.nl` · `ns2.openprovider.be` · `ns3.openprovider.eu` | Openprovider, el registrador que usa Webador |
+| NS | `ns1.openprovider.nl` · `ns2.openprovider.be` · `ns3.openprovider.eu` | Openprovider, el registrador de Webador |
 | A `@` | `35.204.150.5` | Webador |
 | `www` | CNAME `website-rendering.webador.com` | Webador |
 | **MX** | **`0 mail.webador.com`** | **El correo lo da Webador** |
-| TXT | `v=spf1 include:_spf.webador.com ~all` | SPF del correo de Webador |
+| TXT | `v=spf1 include:_spf.webador.com ~all` | SPF del correo |
 
-## ⚠️ El correo es lo que no se puede romper
+### ⚠️ El correo `info@` no se puede romper
 
-**`info@limpiezaselimperio.net` vive en Webador** (MX a `mail.webador.com`).
-Y **ese mismo correo es el de su cuenta de Vercel**: si el correo deja de
-llegar, él pierde también la forma de recuperar Vercel, de recibir avisos y de
-verificar nada.
+`info@limpiezaselimperio.net` vive en Webador y **es también el correo de su
+cuenta de Vercel**. Se rompe sin avisar si:
 
-Dos maneras de romperlo sin darse cuenta:
+1. **Se borra la cuenta de Webador** (confirmado). No se borra.
+2. **Se cambian los nameservers del `.net`** (por ejemplo a Vercel): la zona
+   pasa entera y se pierden MX y SPF.
 
-1. **Cambiar los nameservers a Vercel.** La zona pasa entera a Vercel y en
-   Vercel no hay ningún MX ni SPF: el correo deja de llegar en cuanto el cambio
-   se propaga, que puede ser en minutos o en horas. Sin error, simplemente no
-   llega nada.
-2. **Borrar la cuenta de Webador.** **Confirmado (16 sept 2026): si se borra,
-   `info@` deja de funcionar.** Así que la cuenta de Webador **se queda**
-   mientras el correo viva allí. Si algún día se quiere dejar Webador, antes
-   hay que llevar el buzón a otro proveedor, cambiar el MX y el SPF, y cambiar
-   el correo de la cuenta de Vercel.
+### Webador rechaza correo de Gmail
 
-## Cómo hacerlo (recomendado)
+El 16 sept 2026 un correo de Kevin desde Gmail a `info@` rebotó:
+`550 5.7.1 … blocked using rbl.0spam.org`. El servidor de Webador consulta la
+lista negra 0spam, que tenía fichado un servidor compartido de Google (lo
+había usado otro remitente para spam). **Clientes o candidatos que escriban
+desde Gmail pueden estar rebotando**, y Frank no se entera: el aviso le llega
+al remitente. Sólo lo arregla Webador (dejar de usar 0spam), a petición de
+Frank con el rebote como prueba. Otra razón para llevar algún día el buzón a
+otro proveedor.
 
-**No cambiar los nameservers. Cambiar sólo los registros de la web, en el
-panel de DNS de Webador**, y dejar MX y TXT como están:
+### Si algún día el `.net` apunta a la web nueva
 
-| Registro | Antes | Después |
-|---|---|---|
-| A `@` | `35.204.150.5` | `216.198.79.1` |
-| `www` | CNAME Webador | CNAME al valor que dé Vercel en *Settings → Domains* (hoy suele ser `cname.vercel-dns.com`; copiar el de su panel) |
-| MX | `mail.webador.com` | **sin tocar** |
-| TXT SPF | Webador | **sin tocar** |
-
-Así la web pasa a Vercel y el correo sigue en Webador.
-
-**Falta comprobar** que el panel de Webador deja editar registros sueltos para
-un dominio registrado con ellos. Si no deja y **no queda más remedio que
-cambiar los nameservers**, antes de cambiarlos:
-
-1. Crear en el DNS de Vercel **el MX** (`0 mail.webador.com`) y **el TXT de
-   SPF** tal cual.
-2. Preguntar a Webador si hay DKIM u otros registros del correo que no se ven
-   con `dig` y copiarlos también.
-3. Cambiar los nameservers.
-4. Mandar un correo a `info@` desde fuera y comprobar que llega.
-
-## Después del cambio
-
-- `dig +short limpiezaselimperio.net A` → `216.198.79.1`
-- `dig +short limpiezaselimperio.net MX` → **sigue** `0 mail.webador.com`
-- Vercel marca el dominio como válido y emite el certificado.
-- Un correo de prueba a `info@` llega.
-- **Cambiar `dominioPublico` en `src/datos/sitio.ts`** a
-  `www.limpiezaselimperio.net` (o al que quede como principal), sólo cuando
-  `curl` confirme que el dominio sirve esta web. Ver `CLAUDE.md`.
-- Las rutas viejas de Webador que no existen aquí darán 404: decidido así, sin
-  redirecciones.
-- Actualizar el enlace en Google Business Profile y en las redes.
-
-## Opción A — comprar `limpiezaselimperio.com` en Vercel
-
-Queda como alternativa. Se compra desde su cuenta de Vercel y no hay que tocar
-DNS de nadie, así que **no pone en riesgo el correo**. El `.net` seguiría en
-Webador con la web vieja mientras se decide qué hacer con él.
-
-El 16 sept 2026 `limpiezaselimperio.com` no tenía ni DNS ni registro en
-`whois`: parecía libre. Comprobarlo otra vez antes de comprar.
+No está decidido (hoy la web nueva no redirige nada desde la vieja). Si se
+hace, **sin tocar los nameservers**: en el DNS de
+Webador cambiar sólo el A de `@` y el CNAME de `www` a los valores que dé
+Vercel al añadirlo, y dejar MX y TXT como están. Probar después que un correo
+a `info@` llega.

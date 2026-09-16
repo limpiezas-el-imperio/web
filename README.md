@@ -1,7 +1,8 @@
 # Limpiezas El Imperio — web
 
 Web pública de Limpiezas El Imperio, empresa de limpieza de La Pobla de
-Vallbona (Valencia). Sustituye a **limpiezaselimperio.net**, hecha en Webador.
+Vallbona (Valencia). Sustituye a **limpiezaselimperio.net**, hecha en Webador,
+y se publica en **www.limpiezaselimperio.es**.
 
 Este archivo explica **por qué** cada cosa es como es. `CLAUDE.md` es la guía
 operativa y `todo.md` lo que falta.
@@ -63,8 +64,11 @@ sobra.
 
 ## El dominio
 
-Ver `docs/dominio.md`. El correo `info@` vive en Webador y se perdería si se
-borra la cuenta: la cuenta se queda.
+La web se lanza en **`www.limpiezaselimperio.es`**, un dominio nuevo, en vez de
+llevar el `.net` a Vercel: el correo `info@` vive en Webador, y tocar la cuenta
+o los nameservers del `.net` lo rompería sin avisar. Un dominio aparte no pone
+el correo en riesgo. Es `.es` porque es lo que eligió Frank, y está en
+Hostinger porque Vercel no vende `.es`. Detalles en `docs/dominio.md`.
 
 ## Contenido
 

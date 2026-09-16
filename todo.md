@@ -1,23 +1,26 @@
 # Pendiente
 
-Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
+Actualizado el **16 de septiembre de 2026**, al cerrar la tercera sesión.
 
 ## Por dónde seguir
 
-**La web está completa**: todas las páginas hechas y el diseño validado por
-Frank. Lo que queda depende de él:
+**La web está completa** y el dominio `www.limpiezaselimperio.es`, configurado.
 
-1. **Mandarle las preguntas de abajo**, de una vez. Las que más pesan: el
-   dominio, las descripciones de los servicios y el horario.
-2. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
-3. **Lanzar** con el dominio, cuando conteste lo del panel de Webador.
+1. **Comprobar si el `.es` ya responde** (`dig +norec NS limpiezaselimperio.es
+   @a.nic.es`). El 16 sept por la noche daba NXDOMAIN. **Si 24 h después de la
+   compra sigue igual, soporte de Hostinger.** Cuando responda, *Lanzamiento*.
+2. **Mandarle a Frank las preguntas de abajo**, de una vez. Las que más pesan:
+   las descripciones de los servicios y el horario.
+3. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
 
 ## Preguntas para Frank
 
-**Para lanzar**
+**Correo**
 
-- [ ] **Dominio**: ¿deja el panel de Webador editar el registro A y el CNAME
-      del `.net` sin cambiar los nameservers? (`docs/dominio.md`)
+- [ ] **Webador rechaza correo de Gmail** (lista negra 0spam; rebotó uno de
+      Kevin el 16 sept). ¿Pide a Webador que lo arreglen, con el rebote como
+      prueba? ¿O se plantea llevar el buzón a otro proveedor?
+      (`docs/dominio.md`)
 
 **Contenido publicado que conviene que confirme**
 
@@ -56,22 +59,25 @@ Frank. Lo que queda depende de él:
 
 ## Lanzamiento
 
-- [ ] Registros DNS del `.net` hacia Vercel **sin tocar el MX ni el SPF**
-      (`docs/dominio.md`)
-- [ ] Comprobar con `curl` que el dominio sirve esta web y **entonces**
-      cambiar `dominioPublico` en `src/datos/sitio.ts`
-- [ ] Mandar un correo de prueba a `info@` y ver que llega
-- [ ] Actualizar el enlace de la web en su ficha de Google y en sus redes
-- [ ] **No borrar la cuenta de Webador**: con ella se iría el correo `info@`,
-      que es también el de su cuenta de Vercel. Si algún día se deja Webador,
-      antes se mueve el buzón a otro proveedor
+- [ ] Vercel marca `limpiezaselimperio.es` y `www.limpiezaselimperio.es` como
+      válidos, con certificado
+- [ ] Comprobar con `dig` y `curl` que el `www` sirve esta web y el otro
+      redirige, y **entonces** cambiar `dominioPublico` en
+      `src/datos/sitio.ts` a `www.limpiezaselimperio.es`. Push
+- [ ] Frank actualiza el enlace de la web en su ficha de Google y en sus redes
+- [ ] Decidir qué hacer con el `.net` (seguir con la web vieja o apuntarlo a
+      la nueva). Si se toca, **sólo A y CNAME, nunca nameservers, MX ni SPF**
 
 ## Ya decidido (no volver a preguntar)
 
 - **Diseño**: validado por Frank. Foto de portada de Unsplash, acreditada
 - **Zonas**: 18 localidades por áreas (Kevin, con sus dos listas y dónde
   trabaja de verdad)
-- **Correo**: `info@` muere si se borra la cuenta de Webador → no se borra
+- **Dominio**: `www.limpiezaselimperio.es` (principal; el sin `www` redirige),
+  comprado por Frank en Hostinger porque Vercel no vende `.es`. DNS en
+  Hostinger, no en Vercel
+- **Correo**: `info@` del `.net` sigue en Webador. Muere si se borra la cuenta
+  o se cambian los nameservers del `.net` → ni una cosa ni la otra
 - **NIF**: no se pone (Kevin)
 - **Logo**: se queda el actual, sin versión vectorial. **Fotos**: no hay más
   por ahora
@@ -81,7 +87,7 @@ Frank. Lo que queda depende de él:
   Search Console, revisión en un iPhone real y revisión de accesibilidad a
   fondo (Lighthouse ya da 100)
 
-## Hecho (16 sept 2026, dos sesiones)
+## Hecho (16 sept 2026, tres sesiones)
 
 - Inventario de la web vieja y decisión página a página
 - Repositorio público con despliegue automático en su Vercel
@@ -96,3 +102,5 @@ Frank. Lo que queda depende de él:
 - Sin cookies, analítica ni peticiones a terceros (comprobado)
 - Lectura de su contabilidad (`docs/privado/negocio.md`) y contenido alineado
   con cómo trabaja
+- Dominio `.es` comprado en Hostinger y configurado en Hostinger y Vercel; a la
+  espera del registro
