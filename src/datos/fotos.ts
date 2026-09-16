@@ -7,6 +7,7 @@ import sillas from "@/imagenes/sillas-limpias.jpg";
 import suelo from "@/imagenes/suelo-brillante.jpg";
 import aspirado from "@/imagenes/frank-aspirado-industrial.jpg";
 import karcher from "@/imagenes/frank-limpiando-con-karcher.jpg";
+import guante from "@/imagenes/portada-guante-pulverizador.jpg";
 
 // Fotos reales de sus trabajos, que pasó Kevin. Van en src/imagenes y no en
 // public/ para que sólo se sirvan optimizadas (next/image), nunca el original.
@@ -20,6 +21,17 @@ import karcher from "@/imagenes/frank-limpiando-con-karcher.jpg";
 // todos y emparejarlas a la fuerza no casaba.
 
 export type Foto = { src: StaticImageData; alt: string; pie: string };
+
+// La foto de la portada, la única que no es suya: es de Unsplash (licencia
+// libre, la atribución no es obligatoria). La de Frank aspirando no le gustó y
+// ésta sí (16 sept 2026). Se le da crédito, discreto, en el pie de la web.
+// Sin EXIF ni GPS, comprobado.
+export const fotoPortada = {
+  src: guante,
+  alt: "Mano con guante azul sujetando un pulverizador de limpieza",
+  autor: "Towfiqu barbhuiya",
+  enlace: "https://unsplash.com/@towfiqu999999",
+};
 
 export const fotos = {
   aspirado: {

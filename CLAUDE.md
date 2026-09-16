@@ -23,7 +23,7 @@ esto es la guía operativa.
 
 | Ruta | Estado |
 |---|---|
-| `/` | Hecha: portada con foto **provisional** de Unsplash, presupuesto guiado por WhatsApp, galería, mapa de zonas, opiniones de Google |
+| `/` | Hecha: portada con foto de Unsplash (acreditada en el pie), presupuesto guiado por WhatsApp, galería, mapa de zonas, opiniones de Google |
 | `/nuestros-servicios` | Hecha, **con descripciones en borrador** pendientes de Frank |
 | `/preguntas-frecuentes` | Hecha |
 | `/contacto` | Hecha: WhatsApp, teléfono y correo en tarjetas, horario, zonas, redes, y el presupuesto guiado por WhatsApp |
@@ -36,7 +36,7 @@ esto es la guía operativa.
 «demasiado plana», «sin color», «no parece de limpieza», «pocas funciones».
 Tampoco la foto de él aspirando que abría la portada. En la segunda sesión se
 rehízo todo con color y elevación (ver *Estilo*) y la portada lleva una foto
-provisional de Unsplash. **Frank ha visto la versión nueva y le gusta mucho:
+de Unsplash, que a Frank le gustó. **Frank ha visto la versión nueva y le gusta mucho:
 el diseño está validado** (16 sept 2026). Las páginas que falten se hacen con
 este mismo sistema, sin replantearlo. Las preguntas para él siguen en
 `todo.md`.
@@ -115,6 +115,11 @@ git diff --cached | grep -Ei 'token|secret|password|api[_-]?key|BEGIN .*PRIVATE'
 ```
 
 Si cualquiera de las dos imprime algo, para y míralo.
+
+**Y antes de `git add -A`, mira `git status`**: Kevin a veces deja archivos en
+el árbol mientras trabajas. Pasó con dos fotos en `public/` que entraron en un
+commit ajeno sin que nadie las revisara. Añade por nombre lo que es tuyo, o
+pregunta por lo que no reconozcas.
 
 ## Estructura
 
@@ -336,7 +341,7 @@ Reglas:
   - **Sin pasarse** (lo pidió Kevin): nada de destellos animados, olas,
     brillos ni degradados en todas partes. Si dudas, menos.
   - Las fotos reales llevan el peso en la galería. La portada lleva, de
-    momento, una foto provisional de Unsplash (ver *Fotos*).
+    momento, una foto de Unsplash (ver *Fotos*).
 - Responsive con el móvil primero, foco visible, `prefers-reduced-motion`
   respetado (también en los carruseles) y texto alternativo descriptivo en
   todas las fotos (`fotos.ts`).
@@ -359,12 +364,14 @@ Reglas:
   tamaño no se leen), en la imagen para compartir y en los datos estructurados.
   En ningún sitio más. Es `public/logo.jpg`, la versión **sin teléfono**; las
   que lo llevaban dentro se borraron.
-- **Foto de la portada, provisional de Unsplash** (16 sept 2026): la de Frank
-  aspirando no le gustó. Kevin pidió una de Unsplash **enlazada, no
-  descargada** (`fotoPortada` en `page.tsx`; `images.unsplash.com` está
-  permitido en `next.config.ts`). Es la única excepción a la regla de abajo,
-  y se cambia por una suya en cuanto la mande. Sin personas: una foto de banco
-  con alguien trabajando pasaría por su personal.
+- **Foto de la portada, de Unsplash** (16 sept 2026): la de Frank aspirando
+  no le gustó; se probó una de Unsplash (un guante azul con un pulverizador) y
+  **ésta sí le gustó**, así que se queda. Está descargada en
+  `src/imagenes/portada-guante-pulverizador.jpg` y se describe en `fotos.ts`
+  (`fotoPortada`). La licencia de Unsplash no obliga a acreditar, pero **se
+  acredita, discreto, en la línea legal del pie** (Towfiqu barbhuiya). Es la
+  única excepción a la regla de abajo. Sin personas: una foto de banco con
+  alguien trabajando pasaría por su personal.
 - **Fotos reales, nunca de banco ni generadas.** Van en `src/imagenes/` (no en
   `public/`, para que sólo se sirvan optimizadas) y se describen en
   `src/datos/fotos.ts` con su texto alternativo. **Antes de añadir una foto,

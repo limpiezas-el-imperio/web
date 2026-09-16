@@ -7,9 +7,8 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
 1. **Diseño validado por Frank** (16 sept 2026): le gusta mucho. Queda
    hacerle las preguntas de *Preguntas para Frank*: varias páginas y el
    dominio dependen de sus respuestas.
-2. **Pedirle una foto suya para la portada.** Va una provisional de Unsplash
-   (`fotoPortada` en `src/app/page.tsx`). Horizontal, luminosa, a ser posible
-   un trabajo terminado, sin personas que no sean ellos. Sin EXIF ni GPS.
+2. **Foto de la portada: resuelta.** A Frank le gustó la de Unsplash; se queda,
+   servida desde `src/imagenes/` y acreditada en el pie.
 3. **Presupuesto guiado por WhatsApp**: hecho, en la portada y en `/contacto`.
    Enseñárselo a Frank y preguntarle si le faltan o sobran preguntas.
 4. Las páginas que no dependían de él ya están (`/contacto` y
@@ -61,7 +60,7 @@ Opiniones se queda como sección de la portada.
       Rehecha con color y elevación
 - [x] **¿Y la nueva?** Sí: le gusta mucho, diseño validado (16 sept 2026)
 - [x] **Foto de la portada**: la de él aspirando no le gustó. Va una
-      provisional de Unsplash hasta que mande una suya
+      de Unsplash, y le gustó: se queda (acreditada en el pie)
 - [ ] **NIF**: lo exige el aviso legal. Va a `docs/privado/` hasta que lo
       publique él
 - [ ] **Dominio**: ¿deja el panel de Webador editar el A y el CNAME del `.net`
@@ -165,8 +164,9 @@ Opiniones se queda como sección de la portada.
   entero sin tocar la estructura: colores del logo (cielo, marino, oro),
   tarjetas con sombra, esquinas redondeadas, Montserrat y Nunito Sans, y
   WhatsApp en verde. `CLAUDE.md` y `README.md` recogen la dirección nueva
-- Portada con foto provisional de Unsplash, enlazada y no descargada
-  (`images.unsplash.com` permitido en `next.config.ts`)
+- Portada con foto de Unsplash. Primero enlazada; cuando a Frank le gustó,
+  descargada a `src/imagenes/`, acreditada en el pie y fuera la excepción de
+  `next.config.ts`
 - Se probó una página `/propuesta` aparte y se descartó: los cambios de
   diseño se hacen directamente en la web
 - Frank valida el diseño nuevo

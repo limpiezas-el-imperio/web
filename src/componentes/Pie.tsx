@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Marca from "./Marca";
+import { fotoPortada } from "@/datos/fotos";
 import { horario, negocio, redes } from "@/datos/negocio";
 import { enlaces } from "@/datos/navegacion";
 
@@ -70,6 +71,13 @@ export default function Pie() {
       <div className="contenedor pie__legal">
         <p>
           © {año} {negocio.nombre} · {negocio.titular}
+        </p>
+        <p>
+          Foto de portada:{" "}
+          <a href={fotoPortada.enlace} rel="noopener">
+            {fotoPortada.autor}
+          </a>{" "}
+          en Unsplash
         </p>
       </div>
     </footer>

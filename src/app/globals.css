@@ -752,6 +752,18 @@ svg.lucide:not([fill="currentColor"]) {
   color: var(--texto-sobre-azul);
 }
 
+/* El crédito de la foto de la portada: discreto, como el resto de la línea. */
+.pie__legal a {
+  text-decoration: underline;
+  text-decoration-color: var(--linea-sobre-azul);
+  text-underline-offset: 3px;
+}
+
+.pie__legal a:hover {
+  color: var(--blanco);
+  text-decoration-color: currentColor;
+}
+
 @media (max-width: 56rem) {
   .pie__rejilla {
     grid-template-columns: 1fr 1fr;

@@ -16,6 +16,7 @@ import Galeria from "@/componentes/Galeria";
 import MapaZonas from "@/componentes/MapaZonas";
 import Opiniones from "@/componentes/Opiniones";
 import Presupuesto from "@/componentes/Presupuesto";
+import { fotoPortada } from "@/datos/fotos";
 import {
   enlaceWhatsApp,
   negocio,
@@ -32,14 +33,6 @@ export const metadata = metadatosPagina({
     "Limpieza de viviendas, comunidades, oficinas y obras en La Pobla de Vallbona, el Camp de Túria y Valencia. Materiales y productos incluidos. Pide presupuesto por WhatsApp.",
   ruta: "/",
 });
-
-// ⚠️ PROVISIONAL: foto de Unsplash (licencia libre, sin atribución obligatoria),
-// enlazada y no descargada. La de Frank aspirando no le gustó. Se cambia por
-// una suya en cuanto la mande.
-const fotoPortada = {
-  src: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1600&q=80&fm=jpg",
-  alt: "Mano con guante azul sujetando un pulverizador de limpieza",
-};
 
 // Lo que dice su web de cómo trabaja: «Por qué elegirnos» y la FAQ.
 const hechos = [
@@ -153,6 +146,7 @@ export default function Inicio() {
               alt={fotoPortada.alt}
               fill
               sizes="(max-width: 56rem) 100vw, 32rem"
+              placeholder="blur"
               loading="eager"
               fetchPriority="high"
             />
