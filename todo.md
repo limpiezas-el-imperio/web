@@ -189,3 +189,5 @@ Opiniones se queda como sección de la portada.
 - Pasada rápida de rendimiento y accesibilidad: AA en el verde, AVIF
 - Páginas legales (aviso legal, privacidad, cookies), sin NIF todavía
 - `/trabaja-con-nosotros`, con candidatura guiada por WhatsApp o correo
+- «Trabaja con nosotros» también en el menú del móvil (secundario) y al final
+  de `/quienes-somos`; letra del menú del móvil un poco más pequeña

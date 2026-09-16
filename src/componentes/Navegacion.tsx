@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { ArrowRight, Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -142,10 +142,23 @@ export default function Navegacion() {
             </div>
             {/* El horario no va: con él el menú no cabía en un móvil sin
                 desplazarse. Está en el pie, en el contacto y en /contacto. */}
-            <a className="menu__correo" href={`mailto:${negocio.correo}`}>
-              <Mail aria-hidden="true" size={20} />
-              {negocio.correo}
-            </a>
+            <div className="menu__extra">
+              <a className="menu__correo" href={`mailto:${negocio.correo}`}>
+                <Mail aria-hidden="true" size={20} />
+                {negocio.correo}
+              </a>
+              {/* Secundario: el empleo no es para clientes, pero desde el
+                  móvil el pie queda lejos. */}
+              <Link
+                className="menu__secundario"
+                href="/trabaja-con-nosotros"
+                aria-current={actual("/trabaja-con-nosotros")}
+                onClick={() => cerrar(false)}
+              >
+                Trabaja con nosotros
+                <ArrowRight aria-hidden="true" size={16} />
+              </Link>
+            </div>
           </div>
         </div>
       </nav>

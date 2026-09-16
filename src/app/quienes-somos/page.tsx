@@ -1,4 +1,5 @@
 import {
+  ArrowRight,
   BadgeCheck,
   CalendarClock,
   HeartHandshake,
@@ -10,6 +11,7 @@ import {
   Timer,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import CabeceraPagina from "@/componentes/CabeceraPagina";
 import Contacto from "@/componentes/Contacto";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
@@ -223,6 +225,14 @@ export default function QuienesSomos() {
               </li>
             ))}
           </ol>
+
+          <div className={`tarjeta ${s.empleo}`}>
+            <p>¿Quieres trabajar con nosotros?</p>
+            <Link className="enlace-flecha" href="/trabaja-con-nosotros">
+              Mándanos tus datos
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
+          </div>
         </div>
       </section>
 

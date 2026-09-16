@@ -143,6 +143,24 @@
   color: var(--texto-suave);
 }
 
+/* ——— Empleo: una línea que lleva a /trabaja-con-nosotros ——— */
+.empleo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.25rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.empleo p {
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--marino);
+}
+
 /* ——— Tablet ——— */
 @media (max-width: 56rem) {
   .presentacion {
