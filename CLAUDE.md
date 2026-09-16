@@ -88,12 +88,27 @@ la raíz**: Next la tomaría como directorio de rutas y dejaría de ver `src/app
 (pasó en la contabilidad).
 
 ```
-src/app/        rutas (aún la plantilla de create-next-app)
-public/         estáticos (aún los SVG de la plantilla)
-docs/           contexto del proyecto (en git)
-docs/privado/   material del cliente no publicable (fuera de git)
-todo.md         lo pendiente, por fases
+src/app/          layout.tsx (fuentes, metadatos, cabecera y pie)
+                  page.tsx + inicio.module.css (la portada)
+                  globals.css (paleta, botones, cabecera, pie)
+                  icon.svg · apple-icon.png · opengraph-image.jpg
+src/componentes/  Cabecera · Pie · BarraContacto (sólo móvil)
+                  Marca (el nombre escrito) · Destello (la estrella del logo)
+src/datos/        negocio.ts (todos los datos del negocio) · sitio.ts (URL base)
+public/           el logo, tal cual venía de su web
+docs/             contexto del proyecto (en git)
+docs/privado/     material del cliente no publicable (fuera de git)
+todo.md           lo pendiente, por fases
 ```
+
+**Todo dato del negocio sale de `src/datos/negocio.ts`**: teléfono, correo,
+horario, redes, servicios, zonas y opiniones. La portada, la cabecera, el pie y
+los datos estructurados leen de ahí. No escribas un teléfono ni un horario a
+mano en un componente: el día que cambie, se quedaría el viejo.
+
+**La URL base sale de `VERCEL_PROJECT_PRODUCTION_URL`** (`src/datos/sitio.ts`),
+que Vercel pone solo. Hoy es el `.vercel.app`; el día que se conecte el dominio
+propio, el canonical y las imágenes de Open Graph cambian sin tocar código.
 
 ## Arrancar en local
 
@@ -144,7 +159,19 @@ Aprendido en la contabilidad, y aplica aquí:
   español.**
 - Responsive con el móvil primero, foco visible, `prefers-reduced-motion`
   respetado, textos alternativos en todas las imágenes (hoy no hay ni uno).
-- **CSS plano. Nada de Tailwind ni SASS**, como en la contabilidad.
+- **CSS plano. Nada de Tailwind ni SASS**, como en la contabilidad. Lo común
+  en `globals.css`; lo de cada página, en su `.module.css`.
+- **Paleta del logo**: azul marino, azul vivo y dorado, en variables de
+  `globals.css`. El dorado de texto sobre fondo claro es `--oro-texto`, no
+  `--oro`: el otro no llega al contraste AA.
+- Fraunces para títulos, Figtree para texto, con `next/font`.
+- Iconos de `lucide-react`. Lucide ya no trae logos de marcas: las redes van
+  como texto.
+- **El logo no va en la cabecera**: lleva el teléfono dentro y a ese tamaño no
+  se lee. La marca va escrita (`Marca.tsx`) y el logo se usa como imagen para
+  compartir.
+- **Contacto primero**: el WhatsApp es la acción principal en toda la web, y en
+  el móvil hay una barra fija con WhatsApp y Llamar.
 - **Sin formularios por ahora.** El contacto es WhatsApp, teléfono y correo. Un
   formulario pide servicio de correo, antispam y casilla de privacidad: no se
   añade sin que él lo pida.

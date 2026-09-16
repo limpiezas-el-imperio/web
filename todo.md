@@ -42,8 +42,13 @@
 
 ## 3. Diseño y construcción
 
-- [ ] Dirección visual
-- [ ] Portada con qué hace, dónde y cómo pedirlo
+- [x] Dirección visual: paleta del logo, Fraunces + Figtree, la estrella del logo
+      como único adorno
+- [x] Portada: qué hace, servicios agrupados, cómo trabaja, zonas, opiniones y
+      contacto. Metadatos, iconos, Open Graph y `LocalBusiness`
+- [ ] Que él vea la portada: agrupación de servicios, zonas (sólo las que están
+      en las dos listas), las tres opiniones elegidas
+- [ ] Pie: enlaces a aviso legal, privacidad y cookies cuando existan
 - [ ] Servicios, zonas, quiénes somos, opiniones, contacto/presupuesto
 - [ ] SEO: títulos y descripciones por página, `sitemap`, `robots`, datos
       estructurados `LocalBusiness`, Open Graph
