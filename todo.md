@@ -1,18 +1,24 @@
 # Pendiente
 
-Actualizado el **16 de septiembre de 2026**, al cerrar la primera sesión.
+Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
 
 ## Por dónde seguir
 
-1. **Enseñarle a Frank lo que hay** (https://limpiezaselimperio.vercel.app) y
-   hacerle las preguntas de *Preguntas para Frank*. Varias páginas y el
+1. **Enseñarle a Frank la versión nueva** (https://limpiezaselimperio.vercel.app):
+   color, tarjetas con sombra, WhatsApp en verde y foto de portada nueva. Y
+   hacerle las preguntas de *Preguntas para Frank*: varias páginas y el
    dominio dependen de sus respuestas.
-2. Mientras tanto, seguir con las páginas que no dependen de él: `/contacto` y
-   `/quienes-somos` (ésta con lo que ya hay; ver `docs/sitio-actual.md`).
-3. `sitemap.ts` y `robots.ts`, y una página 404 propia.
-4. **Pedirle a Frank una foto para la portada.** La de él aspirando no le
-   gustó y va una provisional de Unsplash (`fotoPortada` en `src/app/page.tsx`).
-   Horizontal, luminosa, a ser posible un trabajo terminado. Sin EXIF ni GPS
+2. **Pedirle una foto suya para la portada.** Va una provisional de Unsplash
+   (`fotoPortada` en `src/app/page.tsx`). Horizontal, luminosa, a ser posible
+   un trabajo terminado, sin personas que no sean ellos. Sin EXIF ni GPS.
+3. **Si sigue pidiendo «más funciones»**: presupuesto guiado que abre
+   WhatsApp con el mensaje escrito (servicio, zona, habitaciones, baños,
+   frecuencia, fecha). Sin formulario ni servidor. Se hizo una versión en la
+   segunda sesión y se borró con `/propuesta`; se rehace en la portada.
+4. Mientras tanto, las páginas que no dependen de él: `/contacto` y
+   `/quienes-somos` (ésta con lo que ya hay; ver `docs/sitio-actual.md`), con
+   el sistema de diseño nuevo.
+5. `sitemap.ts` y `robots.ts`, y una página 404 propia.
 
 ## Plan de trabajo (acordado el 16 sept 2026)
 
@@ -56,9 +62,9 @@ Opiniones se queda como sección de la portada.
 - [x] **¿Le gusta?** La primera versión no (16 sept 2026): «demasiado
       plana», «sin color», «no parece de limpieza», «pocas funciones».
       Rehecha con color y elevación
-- [ ] **¿Y la nueva?** Enseñársela. Si sigue pidiendo «más funciones», la
-      idea con más peso es un presupuesto guiado que abre WhatsApp con el
-      mensaje escrito (sin formulario ni servidor)
+- [ ] **¿Y la nueva?** Enseñársela (ver *Por dónde seguir*)
+- [x] **Foto de la portada**: la de él aspirando no le gustó. Va una
+      provisional de Unsplash hasta que mande una suya
 - [ ] **NIF**: lo exige el aviso legal. Va a `docs/privado/` hasta que lo
       publique él
 - [ ] **Dominio**: ¿deja el panel de Webador editar el A y el CNAME del `.net`
@@ -117,8 +123,7 @@ Opiniones se queda como sección de la portada.
       de contacto, carruseles, portada del móvil
 - [ ] Rendimiento y accesibilidad: Lighthouse en móvil, contraste, orden de
       tabulación
-- [ ] ¿Mensaje de WhatsApp prellenado con lo que pedía el formulario viejo
-      (tipo de vivienda, habitaciones, baños, fecha)? Idea, no decidida
+- [ ] Presupuesto guiado por WhatsApp: ver *Por dónde seguir*, punto 3
 - [ ] **Mantenimiento**: la nota y el total de Google (`valoracion` en
       `negocio.ts`) van escritos a mano; revisarlos de vez en cuando
 
@@ -146,3 +151,14 @@ Opiniones se queda como sección de la portada.
   tarjetas con sombra, Montserrat y Nunito Sans, y WhatsApp en verde
 - Metadatos por página, imagen para compartir, iconos, datos estructurados
   (`LocalBusiness`, `FAQPage`, servicios)
+
+## Hecho en la segunda sesión (16 sept 2026)
+
+- Frank vio la primera versión y no le gustó. Se rehízo el sistema de diseño
+  entero sin tocar la estructura: colores del logo (cielo, marino, oro),
+  tarjetas con sombra, esquinas redondeadas, Montserrat y Nunito Sans, y
+  WhatsApp en verde. `CLAUDE.md` y `README.md` recogen la dirección nueva
+- Portada con foto provisional de Unsplash, enlazada y no descargada
+  (`images.unsplash.com` permitido en `next.config.ts`)
+- Se probó una página `/propuesta` aparte y se descartó: los cambios de
+  diseño se hacen directamente en la web

@@ -17,13 +17,13 @@ esto es la guía operativa.
 | Web actual | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
 | Pendiente | `todo.md` (con *Por dónde seguir* arriba del todo) |
 
-## Estado (16 sept 2026, cierre de la primera sesión)
+## Estado (16 sept 2026, cierre de la segunda sesión)
 
 **En producción** (sólo en el `.vercel.app`, todavía sin dominio):
 
 | Ruta | Estado |
 |---|---|
-| `/` | Hecha: portada editorial, galería, mapa de zonas, opiniones de Google |
+| `/` | Hecha: portada con foto **provisional** de Unsplash, galería, mapa de zonas, opiniones de Google |
 | `/nuestros-servicios` | Hecha, **con descripciones en borrador** pendientes de Frank |
 | `/preguntas-frecuentes` | Hecha |
 | `/quienes-somos`, `/trabaja-con-nosotros`, `/contacto` | Por hacer |
@@ -31,8 +31,11 @@ esto es la guía operativa.
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Por hacer; esperan su NIF |
 
 **Frank vio la primera versión (16 sept 2026) y no le gustó el diseño**:
-plana, sin color, poco de limpieza. Se rehízo con color y elevación (ver
-*Estilo*). Las demás preguntas para él siguen en `todo.md`.
+«demasiado plana», «sin color», «no parece de limpieza», «pocas funciones».
+Tampoco la foto de él aspirando que abría la portada. En la segunda sesión se
+rehízo todo con color y elevación (ver *Estilo*) y la portada lleva una foto
+provisional de Unsplash. **A Kevin le gusta como ha quedado; Frank todavía no
+ha visto esta versión.** Las preguntas para él siguen en `todo.md`.
 
 **Mismo cliente que `../limpiezas-imperio-software/`** (la contabilidad, en
 https://limpiezas-imperio.vercel.app). Son proyectos separados: esta web no lee
@@ -208,10 +211,23 @@ que se ha hecho con cada cambio, y conviene seguir haciendo:
   la barra de contacto no tape lo importante.
 - **Después del push**, que el despliegue quede en `success` (ver abajo) y
   mirar la URL publicada con `curl`.
+- **Antes de hacer capturas, mira quién escucha en el puerto**
+  (`ss -ltnp`). En la segunda sesión un `next start` viejo seguía vivo después
+  de un `next build`: servía el HTML nuevo con CSS que daba 404, y la página
+  salía sin estilos y con el logo a 2000 px. Mata el tuyo por su PID, no con
+  `pkill -f` (el patrón coincide con tu propia orden y la mata). Puede haber
+  además un `next dev` de Kevin en el 3000: no lo toques.
 
 ## Lo que ya sabemos del cliente
 
 Aprendido en la contabilidad, y aplica aquí:
+
+- **Decide él, y Kevin no discute con clientes.** El diseño sobrio que a
+  Kevin le gustaba, a Frank no. Le va el color, las tarjetas, lo que se
+  reconoce (WhatsApp en verde) y ver «muchas cosas». Cuando pida un cambio,
+  **se hace directamente en la web**: nada de páginas de propuesta, maquetas
+  ni rondas de capturas antes (se probó con `/propuesta` y Kevin lo paró: sale
+  más caro que hacerlo e iterar).
 
 - **Usa el móvil**, y en Safari. Todo tiene que funcionar primero ahí.
 - **Si algo no se ve, para él «no funciona».** Un formulario que envía sin
