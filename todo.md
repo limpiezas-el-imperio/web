@@ -14,9 +14,8 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la segunda sesión.
    WhatsApp con el mensaje escrito (servicio, zona, habitaciones, baños,
    frecuencia, fecha). Sin formulario ni servidor. Se hizo una versión en la
    segunda sesión y se borró con `/propuesta`; se rehace en la portada.
-4. Mientras tanto, las páginas que no dependen de él: `/contacto` y
-   `/quienes-somos` (ésta con lo que ya hay; ver `docs/sitio-actual.md`), con
-   el sistema de diseño nuevo.
+4. Mientras tanto, la página que no depende de él: `/quienes-somos` (con lo
+   que ya hay; ver `docs/sitio-actual.md`). `/contacto` ya está hecha.
 5. `sitemap.ts` y `robots.ts`, y una página 404 propia.
 
 ## Plan de trabajo (acordado el 16 sept 2026)
@@ -40,8 +39,9 @@ Opiniones se queda como sección de la portada.
 - [x] `/` — portada
 - [x] `/nuestros-servicios`
 - [x] `/preguntas-frecuentes`
-- [ ] `/contacto` — lo mismo que la sección de contacto, en su página. **No
-      depende de nadie**
+- [x] `/contacto` — canales, horario, zonas, redes y qué contarnos para el
+      presupuesto (WhatsApp con las preguntas ya escritas). El menú y la FAQ
+      enlazan aquí
 - [ ] `/quienes-somos` — dónde está, por qué elegirle, los tres valores como
       texto. Se puede empezar; la experiencia («desde cuándo») la tiene que
       decir él
@@ -161,3 +161,7 @@ Opiniones se queda como sección de la portada.
   (`images.unsplash.com` permitido en `next.config.ts`)
 - Se probó una página `/propuesta` aparte y se descartó: los cambios de
   diseño se hacen directamente en la web
+- Frank valida el diseño nuevo
+- `/contacto`: WhatsApp destacado, teléfono y correo en tarjetas; horario,
+  zonas y redes; «Qué contarnos» con un WhatsApp con las preguntas escritas.
+  El menú, la FAQ y el cierre de contacto de cada página enlazan aquí

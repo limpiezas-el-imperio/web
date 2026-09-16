@@ -21,6 +21,13 @@
   color: var(--texto-sobre-azul);
 }
 
+/* El enlace a /contacto, debajo del botón. */
+.mas {
+  display: flex;
+  width: fit-content;
+  margin-top: 1.25rem;
+}
+
 .contacto__rejilla {
   position: relative;
   display: grid;

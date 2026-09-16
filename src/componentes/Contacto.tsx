@@ -1,4 +1,5 @@
-import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import Link from "next/link";
 import { enlaceWhatsApp, horario, negocio } from "@/datos/negocio";
 import s from "./Contacto.module.css";
 
@@ -20,6 +21,10 @@ export default function Contacto() {
             <MessageCircle aria-hidden="true" size={20} />
             Escríbenos por WhatsApp
           </a>
+          <Link className={`enlace-flecha enlace-flecha--claro ${s.mas}`} href="/contacto">
+            Qué contarnos para el presupuesto
+            <ArrowRight aria-hidden="true" size={16} />
+          </Link>
         </header>
 
         <ul className={s.contacto__lista}>

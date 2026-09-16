@@ -26,7 +26,8 @@ esto es la guía operativa.
 | `/` | Hecha: portada con foto **provisional** de Unsplash, galería, mapa de zonas, opiniones de Google |
 | `/nuestros-servicios` | Hecha, **con descripciones en borrador** pendientes de Frank |
 | `/preguntas-frecuentes` | Hecha |
-| `/quienes-somos`, `/trabaja-con-nosotros`, `/contacto` | Por hacer |
+| `/contacto` | Hecha: WhatsApp, teléfono y correo en tarjetas, horario, zonas, redes, y «Qué contarnos» con un WhatsApp con las preguntas ya escritas |
+| `/quienes-somos`, `/trabaja-con-nosotros` | Por hacer |
 | `/zonas-de-servicio` | Por hacer; espera a que él diga cuál de sus dos listas vale |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Por hacer; esperan su NIF |
 
@@ -126,6 +127,7 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   page.tsx + inicio.module.css (la portada)
                   nuestros-servicios/ (page.tsx + servicios.module.css)
                   preguntas-frecuentes/ (page.tsx + su módulo)
+                  contacto/ (page.tsx + contacto.module.css)
                   globals.css (paleta, sistema de diseño, cabecera, menú, pie)
                   icon.svg · apple-icon.png
 src/componentes/  Cabecera · Navegacion (enlaces y menú del móvil, cliente)
@@ -164,9 +166,10 @@ Copia `preguntas-frecuentes/` o `nuestros-servicios/`, que son las plantillas
   la página borra entero el del layout, imagen incluida. Pasó con esta misma
   página y se quedó sin imagen al compartirla. La imagen está en `public/` por
   eso, y no como `opengraph-image.jpg` en `src/app`.
-- **Empieza con `<CabeceraPagina>`** y **acaba con `<Contacto />`**. El enlace
-  «Contacto» de la cabecera va a `#contacto` de la página en la que estés: si
-  una página no lo lleva, ese enlace no hace nada.
+- **Empieza con `<CabeceraPagina>`** y **acaba con `<Contacto />`**, el cierre
+  con WhatsApp y los datos, que enlaza a `/contacto`. La única que no lo lleva
+  es `/contacto`: repetiría lo mismo dos veces seguidas. El enlace «Contacto»
+  del menú va a `/contacto`.
 - **JSON-LD con `<DatosEstructurados>`**, que escapa el `<`.
 - **Usa las piezas del *Sistema de diseño*** (etiqueta, número, enlaces,
   botones) antes de escribir estilos propios.

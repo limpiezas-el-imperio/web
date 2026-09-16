@@ -17,7 +17,7 @@ tal cual y las malas se renombran sin más.
 | `/nuestros-servicios` | igual | ✅ Hecha. **Una sola página** con los seis grupos y una descripción corta por servicio (borrador) |
 | `/zonas-de-servicio` | igual | Cuando él diga cuál de las dos listas vale |
 | `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |
-| `/contacto` | — (nueva) | Añadida después: lo mismo que la sección de contacto, en su página |
+| `/contacto` | — (nueva) | ✅ Hecha. Canales, horario, zonas, redes y qué contarnos para el presupuesto |
 | `/trabaja-con-nosotros` | igual | Sin formulario: datos por WhatsApp o correo |
 | `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | Reescrito de cero; falta su NIF |
 | `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | Reescrita de cero |

@@ -1,0 +1,190 @@
+.rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: start;
+}
+
+/* ——— Canales: una tarjeta por forma de contacto ——— */
+.canales {
+  display: grid;
+  gap: 1rem;
+}
+
+.canal {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+/* WhatsApp, la principal: más grande y con el botón debajo. */
+.canal_principal {
+  grid-template-columns: auto minmax(0, 1fr);
+  box-shadow: var(--sombra-grande);
+}
+
+.canal_principal :global(.boton) {
+  grid-column: 1 / -1;
+}
+
+.icono_verde {
+  background: var(--verde);
+  box-shadow: 0 8px 18px -8px rgb(23 156 74 / 0.7);
+}
+
+.canal__texto h2 {
+  font-size: 1.3125rem;
+  color: var(--marino);
+}
+
+.canal_principal .canal__texto h2 {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+}
+
+.canal__texto p {
+  margin-top: 0.125rem;
+  color: var(--texto-suave);
+}
+
+.canal__texto p.canal__dato {
+  margin-top: 0.375rem;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--marino);
+}
+
+.canal__correo {
+  overflow-wrap: anywhere;
+}
+
+/* ——— Lateral ——— */
+.lateral {
+  display: grid;
+  gap: 1rem;
+}
+
+.bloque {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+  padding: 1.5rem;
+  color: var(--texto-suave);
+}
+
+.bloque__titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1.125rem;
+  color: var(--marino);
+}
+
+.bloque__titulo svg {
+  color: var(--azul);
+}
+
+.zonas,
+.redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-block: 0.375rem 0.5rem;
+}
+
+.zonas li,
+.redes a {
+  display: block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--linea);
+  border-radius: 999px;
+  background: var(--papel);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--marino);
+  text-decoration: none;
+}
+
+.redes a {
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.redes a:hover {
+  border-color: var(--azul);
+  color: var(--azul);
+}
+
+/* ——— Qué contarnos ——— */
+.presupuesto {
+  background: var(--papel);
+}
+
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.pasos li {
+  padding: 1.5rem;
+  background: var(--fondo);
+}
+
+.pasos h3 {
+  margin-block: 1rem 0.375rem;
+  font-size: 1.1875rem;
+  color: var(--marino);
+}
+
+.pasos p {
+  color: var(--texto-suave);
+}
+
+.presupuesto__boton {
+  margin-top: 2rem;
+}
+
+/* ——— Tablet ——— */
+@media (max-width: 56rem) {
+  .rejilla {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pasos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ——— Móvil ——— */
+@media (max-width: 40rem) {
+  /* El botón baja debajo del texto en todas las tarjetas. */
+  .canal {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 1rem;
+  }
+
+  .canal :global(.boton) {
+    grid-column: 1 / -1;
+  }
+
+  .pasos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Que el correo quepa en una línea en un móvil de 375 px. */
+  .canal__texto p.canal__correo {
+    font-size: 0.9375rem;
+  }
+
+  .presupuesto__boton {
+    width: 100%;
+    white-space: normal;
+  }
+}

@@ -47,7 +47,7 @@ export const preguntas: Pregunta[] = [
     pregunta: "¿Cómo reservo una limpieza?",
     respuesta:
       "Escríbenos por WhatsApp, llámanos o mándanos un correo. Dinos qué hay que limpiar, dónde y cuándo, y lo organizamos.",
-    enlace: { href: "#contacto", texto: "Ver formas de contacto" },
+    enlace: { href: "/contacto", texto: "Ver formas de contacto" },
   },
   {
     pregunta: "¿En qué zonas trabajáis?",
