@@ -14,7 +14,10 @@ correo.
 - **Vercel no lo vende**: `.es` no está entre sus dominios
   (`vercel domains price` responde «TLD not supported»). Por eso Hostinger.
 - **Correo en Hostinger**: `info@limpiezaselimperio.es`, configurado por Kevin
-  el 17 sept 2026. Es el que publica la web.
+  el 17 sept 2026. Es el que publica la web, y **el buzón desde el que los
+  formularios se mandan a sí mismo** (SMTP `smtp.hostinger.com:465`, con la
+  contraseña en `EMAIL_PASSWORD` de Vercel). **Si se cambia la contraseña en
+  Hostinger, hay que cambiarla en Vercel**, o los formularios dejan de llegar.
 
 ### Configurado
 

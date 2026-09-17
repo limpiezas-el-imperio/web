@@ -21,7 +21,7 @@ tal cual y las malas se renombran sin más.
 | `/zonas-de-servicio` | igual | ✅ Hecha. La lista la decidió Kevin (sus dos listas y dónde trabaja de verdad) |
 | `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |
 | `/contacto` | — (nueva) | ✅ Hecha. Canales, horario, zonas, redes y qué contarnos para el presupuesto |
-| `/trabaja-con-nosotros` | igual | ✅ Hecha. Sin formulario: candidatura guiada por WhatsApp o correo |
+| `/trabaja-con-nosotros` | igual | ✅ Hecha. Formulario que llega por correo, sin DNI; WhatsApp como segunda vía |
 | `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | ✅ Reescrito de cero, sin NIF (decisión de Kevin) |
 | `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | ✅ Reescrita de cero |
 | `/politica-de-cookies` | `/politica-de-cookies-limpiezas-el-imperio` | ✅ Reescrita de cero |
@@ -29,8 +29,9 @@ tal cual y las malas se renombran sin más.
 **Fuera**, sin sustituto:
 
 - `/solicitar-presupuesto`, `/solicitar-servicios`, `/solicitar-presupuesto-1`:
-  no hay formularios. Lo que pedía (tipo de vivienda, habitaciones, baños,
-  fecha) está en el presupuesto guiado por WhatsApp.
+  lo que pedían (tipo de vivienda, habitaciones, baños, fecha) está en el
+  presupuesto guiado de la portada y `/contacto`, que se manda por correo o por
+  WhatsApp.
 - `/reserva-de-servicios` y su PDF: es su parte de trabajo interno.
 - `/datos-de-facturacion`: pedir DNI en un formulario público sin consentimiento
   es un riesgo. La facturación va por WhatsApp o correo.

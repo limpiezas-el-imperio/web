@@ -18,7 +18,7 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | Web vieja | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
 | Negocio | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git) |
 
-## Estado (17 sept 2026)
+## Estado (17 sept 2026, cierre de la cuarta sesión)
 
 **Todas las páginas están hechas** y publicadas en **`www.limpiezaselimperio.es`**:
 
@@ -43,8 +43,14 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 - **Dominio**: Vercel no vende `.es`; Frank lo compró en Hostinger. DNS en
   Hostinger (A y CNAME de Vercel, y MX, SPF, DKIM y DMARC del correo), `www`
   como principal. **Al tocar los DNS, no quites los del correo.**
-- **Falta**: probar el correo nuevo, que Frank cambie el enlace en Google y en
-  sus redes, y sus respuestas (`todo.md`).
+- **Correo y formularios** (17 sept): `info@limpiezaselimperio.es` en
+  Hostinger, publicado en la web. El presupuesto (por correo o WhatsApp) y la
+  candidatura llegan a ese buzón; **probado de verdad, llegan a la bandeja de
+  entrada** (ver *Restricciones*).
+- **Galería** con diez fotos: siete en la rejilla, una tarjeta «+3» y un visor
+  a pantalla completa (ver *Estilo*).
+- **Falta**: que Frank cambie el enlace en Google y en sus redes, y sus
+  respuestas (`todo.md`).
 
 **Mismo cliente que `../limpiezas-imperio-software/`** (su contabilidad, en
 https://limpiezas-imperio.vercel.app). Proyectos separados: esta web no lee ni
@@ -191,6 +197,12 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
   sin estilos). Mata el tuyo por su PID, nunca con `pkill -f` (el patrón
   coincide con tu propia orden). **El `next dev` del puerto 3000 es de Kevin:
   no lo toques.**
+- **Formularios**: se prueban con `next start` en local, que lee `.env`. Sin
+  mandar correo: rellenando el campo trampa (`web`), que responde «enviado»
+  sin tocar el SMTP; o con `EMAIL_PASSWORD=falsa` delante, que debe dar el
+  error. **Un envío real, sólo con datos marcados «PRUEBA DE LA WEB»** y
+  nombres inventados: llega al buzón de Frank. Prueba siempre **un segundo
+  intento tras un error** (así salió el fallo del `<form action>`).
 - **Lighthouse en móvil** si tocas colores o fotos
   (`npx lighthouse@12 URL --only-categories=performance,accessibility`). Hoy:
   accesibilidad 100, rendimiento 96–99.
@@ -251,6 +263,7 @@ parece a una de estas piezas, usa la clase, no copies sus valores.
 | Enlace de acción | `.enlace-flecha` (+ `--claro`) | «Pedir presupuesto», «Ver todos…» |
 | Botón principal | `.boton .boton--whatsapp` | Verde, redondeado, con sombra. También sobre azul |
 | Botón secundario | `.boton .boton--claro` | Blanco con borde: «Llamar» |
+| Formulario por correo | `PiezasFormulario` + `useFormularioCorreo` | Contacto, trampa, aceptar, error y «enviado». Estilos de campos en `Presupuesto.module.css` |
 
 - **Paleta del logo**: `--marino`/`--marino-hondo` (tinta y fondos oscuros),
   `--azul` (acento sobre claro), `--cielo` (sólo degradados y detalles, no pasa

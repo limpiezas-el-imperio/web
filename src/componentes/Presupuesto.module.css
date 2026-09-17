@@ -1,4 +1,5 @@
-/* Presupuesto guiado por WhatsApp (Presupuesto.tsx). */
+/* Presupuesto guiado (Presupuesto.tsx). Sus campos y opciones los usa también
+   la candidatura (Candidatura.tsx). */
 
 .presupuesto {
   display: grid;

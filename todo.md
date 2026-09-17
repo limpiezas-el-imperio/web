@@ -1,14 +1,14 @@
 # Pendiente
 
-Actualizado el **17 de septiembre de 2026**.
+Actualizado el **17 de septiembre de 2026**, al cerrar la cuarta sesión.
 
 ## Por dónde seguir
 
 **La web está completa y se sirve en `www.limpiezaselimperio.es`**, con el
 correo `info@limpiezaselimperio.es` en Hostinger.
 
-1. **Lo que queda de *Lanzamiento***: probar el correo nuevo y que Frank cambie
-   el enlace en Google y en sus redes.
+1. **Lo que queda de *Lanzamiento***: que Frank cambie el enlace en Google y en
+   sus redes, y decidir qué hacer con el `.net`.
 2. **Mandarle a Frank las preguntas de abajo**, de una vez. Las que más pesan:
    las descripciones de los servicios y el horario.
 3. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
@@ -17,9 +17,10 @@ correo `info@limpiezaselimperio.es` en Hostinger.
 
 **Correo**
 
-- [ ] **Correo nuevo**: la web ya publica `info@limpiezaselimperio.es`
-      (Hostinger). ¿Sabe entrar a leerlo, o se le reenvía a donde lea el
-      correo?
+- [ ] **Correo nuevo**: la web publica `info@limpiezaselimperio.es`
+      (Hostinger), y **ahí le llegan los presupuestos y las candidaturas de
+      los formularios**. ¿Sabe entrar a leerlo, o se le reenvía a donde lea el
+      correo? Si no lo mira, se pierden
 - [ ] **Webador rechaza correo de Gmail** (lista negra 0spam; rebotó uno de
       Kevin el 16 sept). Ya no afecta a la web, pero sí a quien escriba al
       `.net`. ¿Pide a Webador que lo arreglen, con el rebote como prueba?
@@ -62,18 +63,10 @@ correo `info@limpiezaselimperio.es` en Hostinger.
 
 ## Lanzamiento
 
-- [x] Vercel sirve `www.limpiezaselimperio.es` con certificado y
-      `limpiezaselimperio.es` redirige (comprobado con `dig` y `curl`, 17 sept)
-- [x] `dominioPublico` en `src/datos/sitio.ts` a `www.limpiezaselimperio.es`
-- [x] Correo `info@limpiezaselimperio.es` en Hostinger (MX, SPF, DKIM y DMARC
-      publicados) y en la web
-- [ ] **Probar el correo nuevo**: mandar uno desde Gmail y otro desde otro
-      proveedor, y que llegan; y responder desde el buzón, y que no cae en spam
-- [x] **`EMAIL_PASSWORD` en Vercel** (panel de Frank, *Settings →
-      Environment Variables*, sin comillas), 17 sept
-- [ ] Mandar una candidatura de prueba desde la web publicada y
-      comprobar que llega a `info@` y que «Responder» va al candidato
 - [ ] Frank actualiza el enlace de la web en su ficha de Google y en sus redes
+- [ ] **Recibir desde fuera**: que un correo escrito a mano desde Gmail (no
+      desde la web) llegue a `info@` y que una respuesta desde el buzón no caiga
+      en spam. Lo de los formularios ya está probado
 - [ ] Decidir qué hacer con el `.net` (seguir con la web vieja o apuntarlo a
       la nueva). Si se toca, **sólo A y CNAME, nunca nameservers, MX ni SPF**
 
@@ -100,7 +93,7 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   Search Console, revisión en un iPhone real y revisión de accesibilidad a
   fondo (Lighthouse ya da 100)
 
-## Hecho (16 sept 2026, tres sesiones)
+## Hecho (16 y 17 sept 2026, cuatro sesiones)
 
 - Inventario de la web vieja y decisión página a página
 - Repositorio público con despliegue automático en su Vercel
@@ -108,13 +101,20 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   WhatsApp en verde. Validado
 - Páginas: portada, servicios, zonas, quiénes somos, preguntas, contacto,
   trabaja con nosotros, legales y 404; sitemap y robots
-- Presupuesto guiado y candidatura con formularios que llegan por correo; el
-  presupuesto, también por WhatsApp (17 sept)
 - Menú del móvil a pantalla completa que cabe sin desplazarse; barra de
   contacto en el móvil; navegación sin animación
 - Lighthouse en móvil: accesibilidad 100, rendimiento 96–99. Imágenes AVIF
 - Sin cookies, analítica ni peticiones a terceros (comprobado)
 - Lectura de su contabilidad (`docs/privado/negocio.md`) y contenido alineado
   con cómo trabaja
-- Dominio `.es` comprado en Hostinger y configurado en Hostinger y Vercel; a la
-  espera del registro
+- **Lanzamiento (17 sept)**: dominio `.es` en Hostinger, publicado y servido
+  por Vercel (`dominioPublico` al día); correo `info@` del `.es` en Hostinger
+  con MX, SPF, DKIM y DMARC
+- **Formularios (17 sept)**: presupuesto (por correo o WhatsApp) y candidatura
+  llegan a `info@` por el SMTP de Hostinger (`EMAIL_PASSWORD` en Vercel), con
+  antispam, consentimiento y privacidad al día. Probados: llegan a la bandeja
+  de entrada
+- **Galería (17 sept)**: tres fotos nuevas, tarjeta «+N» y visor a pantalla
+  completa
+- Retoques de texto (17 sept): titular «Limpieza que transforma», «Servicios
+  de limpieza» y «Desde La Pobla de Vallbona, a todo el Camp de Túria…»
