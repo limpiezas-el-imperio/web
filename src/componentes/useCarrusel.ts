@@ -28,6 +28,8 @@ export function useCarrusel<T extends HTMLElement>(total: number) {
         const [a, b] = contenedor.children as HTMLCollectionOf<HTMLElement>;
         if (!a) return;
         const paso = b ? b.offsetLeft - a.offsetLeft : contenedor.clientWidth;
+        // Sin maquetar (dentro de un <dialog> cerrado) todo mide 0.
+        if (paso <= 0) return;
         const maximo = contenedor.scrollWidth - contenedor.clientWidth;
         setActual(
           maximo > 0 && contenedor.scrollLeft >= maximo - 4

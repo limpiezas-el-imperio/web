@@ -86,8 +86,8 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   se borra la cuenta o se cambian los nameservers del `.net` → ni una cosa ni
   la otra
 - **NIF**: no se pone (Kevin)
-- **Logo**: se queda el actual, sin versión vectorial. **Fotos**: no hay más
-  por ahora
+- **Logo**: se queda el actual, sin versión vectorial. **Fotos**: diez en la
+  galería (tres nuevas el 17 sept 2026); las que lleguen, detrás del «+N»
 - **Nota de Google**: 4,9 con 68, revisada por Kevin el 16 sept 2026. Va a
   mano: mirarla de vez en cuando
 - **Fuera**: formularios, blog, redirecciones desde la web vieja, Google

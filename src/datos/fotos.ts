@@ -3,6 +3,9 @@ import cocina from "@/imagenes/cocina-limpia.jpg";
 import banio from "@/imagenes/cuarto-de-bano-limpio.jpg";
 import ducha from "@/imagenes/ducha-limpia.jpg";
 import grifo from "@/imagenes/pomulo-ducha-super-brillante.jpg";
+import jardin from "@/imagenes/limpieza-de-jardin.jpg";
+import parterre from "@/imagenes/limpieza-de-jardin-2.jpg";
+import persianas from "@/imagenes/persianas-toldos.jpg";
 import sillas from "@/imagenes/sillas-limpias.jpg";
 import suelo from "@/imagenes/suelo-brillante.jpg";
 import aspirado from "@/imagenes/frank-aspirado-industrial.jpg";
@@ -15,7 +18,7 @@ import guante from "@/imagenes/portada-guante-pulverizador.jpg";
 // es público. Si llegan fotos nuevas, compruébalo antes de añadirlas:
 //   python3 -c "from PIL import Image; print(dict(Image.open('x.jpg').getexif()))"
 //
-// No hay página de galería a propósito: con ocho fotos quedaría vacía. Van en
+// No hay página de galería a propósito: con tan pocas fotos quedaría vacía. Van en
 // la portada, en la sección «Galería» (Galeria.tsx). La de Frank aspirando
 // abría la portada, pero no le gustó: ahora no sale en ningún sitio. No van dentro de cada servicio: no las hay para
 // todos y emparejarlas a la fuerza no casaba.
@@ -73,5 +76,22 @@ export const fotos = {
     src: suelo,
     alt: "Salón con sofá y suelo de madera brillante recién limpiado",
     pie: "Suelos",
+  },
+  // Las tres del 17 sept 2026, sin EXIF ni GPS (comprobado). Salen personas
+  // del equipo: no se las nombra.
+  persianas: {
+    src: persianas,
+    alt: "Operario con polo reflectante, subido a una escalera, trabajando en la persiana de una ventana",
+    pie: "Persianas",
+  },
+  parterre: {
+    src: parterre,
+    alt: "Operario con chaleco naranja y guantes recortando las plantas de un parterre junto a un muro blanco",
+    pie: "Parterres",
+  },
+  jardin: {
+    src: jardin,
+    alt: "Dos operarios con chaleco naranja limpiando un jardín; uno recoge plantas cortadas y el otro, en primer plano, se hace la foto",
+    pie: "Jardines",
   },
 } satisfies Record<string, Foto>;

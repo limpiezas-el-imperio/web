@@ -29,6 +29,45 @@
   transform: scale(1.05);
 }
 
+/* Toda la foto es el botón que abre el visor. */
+.abrir {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: none;
+  cursor: zoom-in;
+}
+
+/* ——— La tarjeta «+N»: la siguiente foto, tapada de azul ——— */
+.mas {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.mas::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(8 31 66 / 0.72); /* --marino-hondo */
+  transition: background-color 0.2s ease;
+}
+
+.mas:hover::after {
+  background: rgb(8 31 66 / 0.6);
+}
+
+.mas__numero {
+  position: relative;
+  z-index: 1;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--blanco);
+}
+
 .foto figcaption {
   font-family: var(--fuente-titulos), system-ui, sans-serif;
   font-size: 0.875rem;
@@ -44,7 +83,7 @@
   display: none;
 }
 
-/* ——— Escritorio: rejilla a medida para siete fotos ——— */
+/* ——— Escritorio: rejilla a medida para siete fotos y la tarjeta ——— */
 @media (min-width: 56.0625rem) {
   .galeria {
     display: grid;
@@ -53,7 +92,7 @@
     grid-template-areas:
       "a b b c"
       "a d e c"
-      "f g g g";
+      "f g g h";
     gap: 1.25rem 1rem;
   }
 
@@ -64,6 +103,7 @@
   .fotoE { grid-area: e; }
   .fotoF { grid-area: f; }
   .fotoG { grid-area: g; }
+  .fotoH { grid-area: h; }
 }
 
 /* ——— Tablet: dos columnas; las verticales en dos filas ——— */
@@ -78,10 +118,6 @@
   .fotoA,
   .fotoC {
     grid-row: span 2;
-  }
-
-  .fotoG {
-    grid-column: span 2;
   }
 }
 
@@ -162,4 +198,106 @@
     width: 1.25rem;
     background: var(--azul);
   }
+}
+
+/* ——— Visor: todas las fotos a pantalla completa ——— */
+.visor {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  background: var(--marino-hondo);
+  color: var(--blanco);
+}
+
+.visor[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.visor::backdrop {
+  background: var(--marino-hondo);
+}
+
+.visor__barra,
+.visor__controles {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem clamp(1rem, 4vw, 2rem);
+}
+
+.visor__barra {
+  justify-content: space-between;
+}
+
+.visor__controles {
+  justify-content: center;
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.visor__pie {
+  display: flex;
+  gap: 0.5rem;
+  font-family: var(--fuente-titulos), system-ui, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+.visor__numero {
+  font-variant-numeric: tabular-nums;
+  color: var(--azul-claro);
+}
+
+.visor__boton {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--linea-sobre-azul);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--blanco);
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.visor__boton:hover:not(:disabled) {
+  background: var(--linea-sobre-azul);
+}
+
+.visor__boton:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.visor__pista {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.visor__pista::-webkit-scrollbar {
+  display: none;
+}
+
+.visor__pista > li {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.visor__pista img {
+  object-fit: contain;
 }

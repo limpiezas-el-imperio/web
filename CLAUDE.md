@@ -278,9 +278,12 @@ parece a una de estas piezas, usa la clase, no copies sus valores.
   excepción, la de la portada**: de Unsplash (guante azul con pulverizador),
   porque a Frank no le gustó la suya aspirando y ésta sí. Se acredita discreto
   en el pie (Towfiqu barbhuiya). Nada de fotos de banco con personas: pasarían
-  por su personal. **No hay más fotos por ahora.**
+  por su personal. **Salen personas del equipo: no se las nombra en el `alt`.**
 - **Sin página de galería**: las fotos van en la portada (rejilla en escritorio,
-  fila deslizable en el móvil). No van dentro de cada servicio.
+  fila deslizable en el móvil). No van dentro de cada servicio. En la rejilla
+  caben **siete fotos y una tarjeta «+N»** con el resto; cualquiera abre el
+  **visor** (`<dialog>` a pantalla completa, con todas). Una foto nueva va a
+  `ocultas` en `Galeria.tsx`, y el «+N» se cuenta solo.
 - **El logo es `public/logo.jpg`** (sin teléfono), y se queda: no hay versión
   vectorial. Sólo en cabecera y pie (pequeño, con el nombre escrito al lado),
   imagen para compartir y datos estructurados.
@@ -305,7 +308,7 @@ parece a una de estas piezas, usa la clase, no copies sus valores.
     `<html>` (en `<body>` la cabecera sticky se iba); **nada de
     `backdrop-filter` ni `transform` en la cabecera** (encierran el panel
     fijo); y `focus({ preventScroll: true })` al cerrar.
-- **Carruseles** (opiniones y galería del móvil): scroll nativo con
+- **Carruseles** (opiniones, galería del móvil y visor): scroll nativo con
   `scroll-snap`, sin librerías. **Nunca pasan solos.** Lógica en `useCarrusel`.
 
 <!-- BEGIN:nextjs-agent-rules -->
