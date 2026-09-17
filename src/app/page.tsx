@@ -280,7 +280,7 @@ export default function Inicio() {
             <p className="antetitulo">Zonas</p>
             <h2 className="seccion__titulo">Cerca de ti</h2>
             <p className="seccion__entradilla">
-              Salimos desde {negocio.localidad} y todo el Camp de Túria,
+              Desde {negocio.localidad}, a todo el Camp de Túria,
               Valencia y alrededores.
             </p>
             <ul className={s.zonas__lista}>

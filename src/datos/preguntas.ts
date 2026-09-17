@@ -51,7 +51,7 @@ export const preguntas: Pregunta[] = [
   },
   {
     pregunta: "¿En qué zonas trabajáis?",
-    respuesta: `Salimos desde ${negocio.localidad} y trabajamos en el Camp de Túria, Valencia y alrededores: ${zonas.filter((z) => z !== negocio.localidad).join(", ")}. Si no ves tu zona, pregúntanos.`,
+    respuesta: `Desde ${negocio.localidad}, a todo el Camp de Túria, Valencia y alrededores: ${zonas.filter((z) => z !== negocio.localidad).join(", ")}. Si no ves tu zona, pregúntanos.`,
   },
   {
     pregunta: "¿Qué horario tenéis?",

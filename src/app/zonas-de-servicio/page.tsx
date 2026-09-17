@@ -41,7 +41,7 @@ export default function ZonasDeServicio() {
         }
       >
         <p>
-          Salimos desde {negocio.localidad} y trabajamos en el Camp de Túria, el
+          Desde {negocio.localidad}, a todo el Camp de Túria, el
           área metropolitana y la ciudad de Valencia.
         </p>
       </CabeceraPagina>
