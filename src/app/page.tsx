@@ -105,7 +105,7 @@ export default function Inicio() {
               </span>
             </p>
             <h1 className={s.portada__titulo}>
-              Limpieza que <em>se&nbsp;nota</em>.
+              Limpieza que <em>transforma</em>.
             </h1>
             <p className={s.portada__entradilla}>
               Viviendas, comunidades, oficinas, locales y obras.
