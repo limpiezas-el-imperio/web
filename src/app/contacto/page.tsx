@@ -127,7 +127,7 @@ export default function PaginaContacto() {
                 Dónde trabajamos
               </h2>
               <p>
-                Salimos desde {negocio.localidad} y trabajamos en el Camp de Túria,
+                Salimos desde {negocio.localidad} y todo el Camp de Túria,
                 Valencia y alrededores.
               </p>
               <ul className={s.zonas}>
