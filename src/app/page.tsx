@@ -173,8 +173,8 @@ export default function Inicio() {
             <p className="antetitulo">Servicios</p>
             <h2 className="seccion__titulo">Servicios de limpieza</h2>
             <p className="seccion__entradilla">
-              Si hay que limpiarlo, seguramente lo hacemos. Y si no ves lo que
-              buscas, pregúntanos.
+              Para particulares, comunidades y empresas, de forma puntual o
+              periódica. Si&nbsp;no encuentras lo que buscas, consúltanos.
             </p>
             <Link className={`enlace-flecha ${s.ver_todos}`} href="/nuestros-servicios">
               Todos los servicios, con detalle
