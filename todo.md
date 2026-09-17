@@ -42,7 +42,7 @@ correo `info@limpiezaselimperio.es` en Hostinger.
       trabajo». ¿Quiere decir algo más (mínimo de horas, desplazamiento,
       vaporeta y Kärcher aparte)?
 - [ ] **Presupuesto guiado** (portada y `/contacto`): ¿le faltan o le sobran
-      preguntas?
+      preguntas? Ahora le llega por correo a `info@` o por WhatsApp
 - [ ] **Opiniones**: ¿le parece bien que salgan las de Google? Van cortadas
       para no nombrar a su equipo
 - [ ] **Redes**: ¿cuáles están vivas? Hoy salen Facebook, Instagram, TikTok,
@@ -94,8 +94,8 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   galería (tres nuevas el 17 sept 2026); las que lleguen, detrás del «+N»
 - **Nota de Google**: 4,9 con 68, revisada por Kevin el 16 sept 2026. Va a
   mano: mirarla de vez en cuando
-- **Formularios**: sólo el de candidatura, que llega por correo (Kevin, 17
-  sept 2026). Ninguno más sin hablarlo
+- **Formularios**: presupuesto (por correo o WhatsApp) y candidatura, que
+  llegan por correo (Kevin, 17 sept 2026). Ninguno más sin hablarlo
 - **Fuera**: blog, redirecciones desde la web vieja, Google
   Search Console, revisión en un iPhone real y revisión de accesibilidad a
   fondo (Lighthouse ya da 100)
@@ -108,8 +108,8 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   WhatsApp en verde. Validado
 - Páginas: portada, servicios, zonas, quiénes somos, preguntas, contacto,
   trabaja con nosotros, legales y 404; sitemap y robots
-- Presupuesto guiado por WhatsApp; candidatura con formulario que llega por
-  correo (17 sept)
+- Presupuesto guiado y candidatura con formularios que llegan por correo; el
+  presupuesto, también por WhatsApp (17 sept)
 - Menú del móvil a pantalla completa que cabe sin desplazarse; barra de
   contacto en el móvil; navegación sin animación
 - Lighthouse en móvil: accesibilidad 100, rendimiento 96–99. Imágenes AVIF

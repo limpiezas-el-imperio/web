@@ -13,7 +13,7 @@ export const metadata = metadatosPagina({
 });
 
 // La candidatura es un formulario que llega por correo a info@ (Candidatura.tsx
-// y acciones.ts), con WhatsApp como segunda vía. El texto no dice que esté contratando ahora ni promete condiciones:
+// y src/acciones/candidatura.ts), con WhatsApp como segunda vía. El texto no dice que esté contratando ahora ni promete condiciones:
 // no lo sabemos (pregunta pendiente en todo.md). Sólo datos que ya son suyos.
 // No acaba con <Contacto />: ese cierre es para clientes.
 const datos = [

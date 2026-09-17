@@ -1,4 +1,4 @@
-/* Lo propio del formulario de candidatura (Candidatura.tsx). Campos y
+/* Lo común de los formularios que llegan por correo (PiezasFormulario.tsx). Campos y
    opciones vienen de Presupuesto.module.css. */
 
 /* Fuera de la vista y del lector de pantalla, pero en el formulario. */
@@ -47,7 +47,7 @@
   color: var(--verde);
 }
 
-.enviada h2 {
+.enviada h3 {
   font-family: var(--fuente-titulos), system-ui, sans-serif;
   font-size: 1.5rem;
   font-weight: 800;

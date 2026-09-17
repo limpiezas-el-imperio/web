@@ -9,8 +9,8 @@ export const metadata = metadatosPagina({
   ruta: "/politica-de-privacidad",
 });
 
-// Lo mínimo, y fiel a lo que hace la web de verdad: un único formulario (la
-// candidatura, que llega por correo), sin cuentas, sin cookies ni analítica. Sustituye a la de su web vieja, que era
+// Lo mínimo, y fiel a lo que hace la web de verdad: dos formularios que llegan
+// por correo (presupuesto y candidatura), sin cuentas, sin cookies ni analítica. Sustituye a la de su web vieja, que era
 // la plantilla de otra empresa sin limpiar (docs/sitio-actual.md).
 export default function PoliticaPrivacidad() {
   return (
@@ -33,21 +33,29 @@ export default function PoliticaPrivacidad() {
       <h2>Qué datos tratamos</h2>
       <p>
         <strong>
-          Esta web sólo recoge datos en el formulario de{" "}
+          Esta web sólo recoge datos en dos formularios: el de presupuesto y el de{" "}
           <Link className="enlace" href="/trabaja-con-nosotros">
             trabaja con nosotros
           </Link>
           .
         </strong>{" "}
-        No tiene registro, ni cookies, ni analítica. El presupuesto guiado solo
-        prepara el texto en tu navegador: no se envía a ningún sitio hasta que tú lo
-        mandas desde tu WhatsApp.
+        No tiene registro, ni cookies, ni analítica.
       </p>
       <p>
-        Si nos mandas tu candidatura con ese formulario, nos llega por correo lo que
-        escribas: tu nombre y tu teléfono y, si nos los das, tu correo, dónde vives,
-        cuándo puedes trabajar y tu experiencia. La web no los guarda: sólo los
-        manda a nuestro buzón.
+        Si pides presupuesto por correo, nos llega lo que elijas y escribas (qué hay
+        que limpiar, cada cuánto, dónde y cuándo) con tu nombre, tu teléfono y, si
+        nos lo das, tu correo. Si lo pides por WhatsApp, la web sólo prepara el
+        texto en tu navegador: no se envía a ningún sitio hasta que tú lo mandas
+        desde tu WhatsApp.
+      </p>
+      <p>
+        Si nos mandas tu candidatura, nos llega por correo lo que escribas: tu
+        nombre y tu teléfono y, si nos los das, tu correo, dónde vives, cuándo
+        puedes trabajar y tu experiencia.
+      </p>
+      <p>
+        La web no guarda los datos de ninguno de los dos formularios: sólo los manda
+        a nuestro buzón.
       </p>
       <p>
         Sí tratamos los datos que tú nos das cuando nos escribes por WhatsApp, nos
@@ -91,7 +99,7 @@ export default function PoliticaPrivacidad() {
       <p>
         Si nos escribes por WhatsApp, ese mensaje pasa por WhatsApp, que es de Meta
         y tiene su propia política de privacidad. Nuestro correo, donde llegan
-        también las candidaturas del formulario, está en Hostinger. La web está alojada en Vercel,
+        también lo que se manda desde los formularios, está en Hostinger. La web está alojada en Vercel,
         que puede registrar datos técnicos de la conexión, como la dirección IP,
         para servir la web y protegerla.
       </p>

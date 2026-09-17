@@ -1,15 +1,19 @@
 "use client";
 
-import { Minus, Plus, Send } from "lucide-react";
+import { Mail, MessageCircle, Minus, Plus } from "lucide-react";
 import { useId, useState } from "react";
+import { enviarPresupuesto } from "@/acciones/presupuesto";
 import { enlaceWhatsApp, servicios, zonas } from "@/datos/negocio";
+import { Aceptar, AvisoError, CamposContacto, Enviado, Trampa } from "./PiezasFormulario";
 import s from "./Presupuesto.module.css";
+import { useFormularioCorreo } from "./useFormularioCorreo";
 
-// Presupuesto guiado: se eligen unas opciones y se abre WhatsApp con el
-// mensaje ya escrito. No es un formulario: no se envía nada a ningún servidor,
-// así que no hace falta servicio de correo, antispam ni casilla de privacidad
-// (CLAUDE.md, «Sin formularios»). El mensaje lo manda el cliente desde su
-// WhatsApp, si quiere.
+// Presupuesto guiado: se eligen unas opciones y, al final, cómo mandarlo.
+// - Por correo (lo primero): un formulario con los datos de contacto que llega
+//   a info@ (src/acciones/presupuesto.ts).
+// - Por WhatsApp: se abre WhatsApp con el mensaje ya escrito, y lo manda el
+//   cliente desde su móvil, si quiere. Eso no pasa por ningún servidor.
+// Las dos vías mandan el mismo texto.
 //
 // Pregunta lo mismo que los formularios de su web vieja (tipo de vivienda,
 // habitaciones, baños, fecha) y lo que dice su FAQ: qué, dónde, cuándo y cada
@@ -19,6 +23,7 @@ import s from "./Presupuesto.module.css";
 const frecuencias = ["Semanal", "Quincenal", "Mensual", "Una sola vez", "Diaria"] as const;
 const tiposVivienda = ["Piso", "Casa", "Chalet", "Alquiler vacacional"] as const;
 const OTRA_ZONA = "Otra zona";
+const vias = ["Por correo", "Por WhatsApp"] as const;
 const MAX_HABITACIONES = 6;
 const MAX_BANOS = 4;
 
@@ -38,6 +43,12 @@ export default function Presupuesto() {
   const [otraZona, setOtraZona] = useState("");
   const [fecha, setFecha] = useState("");
   const [comentario, setComentario] = useState("");
+  const [via, setVia] = useState<string>(vias[0]);
+  const nombre = useState("");
+  const telefono = useState("");
+  const correo = useState("");
+  const [acepto, setAcepto] = useState(false);
+  const porCorreo = via === vias[0];
 
   const esVivienda = servicio === servicios[0].titulo;
   const lugar = zona === OTRA_ZONA ? otraZona.trim() : zona;
@@ -55,8 +66,27 @@ export default function Presupuesto() {
     .filter(Boolean)
     .join("\n");
 
+  // Al correo va lo que pide, sin el saludo.
+  const { resultado, enviando, formulario } = useFormularioCorreo(enviarPresupuesto, (datos) =>
+    datos.set("detalles", mensaje.split("\n").slice(1).join("\n")),
+  );
+
+  if (resultado.estado === "enviado") {
+    return (
+      <Enviado
+        titulo="Petición enviada"
+        texto={`Gracias${nombre[0].trim() ? `, ${nombre[0].trim()}` : ""}. La hemos recibido y te contactamos para darte el presupuesto.`}
+      />
+    );
+  }
+
   return (
-    <div className={`tarjeta ${s.presupuesto}`}>
+    <form
+      className={`tarjeta ${s.presupuesto}`}
+      {...formulario}
+      // Por WhatsApp no hay nada que enviar: Intro en un campo no hace nada.
+      onSubmit={(e) => (porCorreo ? formulario.onSubmit(e) : e.preventDefault())}
+    >
       <fieldset className={s.grupo}>
         <legend>
           <span className="numero" aria-hidden="true">1</span>
@@ -177,17 +207,62 @@ export default function Presupuesto() {
         </label>
       </fieldset>
 
-      <div className={s.vista}>
-        <p className={s.vista__titulo}>Tu mensaje de WhatsApp</p>
-        <p className={s.burbuja}>{mensaje}</p>
-      </div>
+      <fieldset className={s.grupo}>
+        <legend>
+          <span className="numero" aria-hidden="true">4</span>
+          ¿Cómo nos lo mandas?
+        </legend>
+        <div className={s.opciones}>
+          {vias.map((v) => (
+            <label key={v} className={s.opcion}>
+              <input
+                type="radio"
+                name={`${id}-via`}
+                checked={via === v}
+                onChange={() => setVia(v)}
+              />
+              <span>{v}</span>
+            </label>
+          ))}
+        </div>
+        {porCorreo && (
+          <div className={s.campos}>
+            <CamposContacto nombre={nombre} telefono={telefono} correo={correo} />
+          </div>
+        )}
+      </fieldset>
 
-      <a className={`boton boton--whatsapp boton--grande ${s.enviar}`} href={enlaceWhatsApp(mensaje)}>
-        <Send aria-hidden="true" size={20} />
-        Enviar por WhatsApp
-      </a>
-      <p className={s.nota}>Se abre WhatsApp con el mensaje escrito. Tú decides si lo envías.</p>
-    </div>
+      {porCorreo ? (
+        <>
+          <Trampa />
+          <Aceptar para="para darme presupuesto" marcada={acepto} cambiar={setAcepto} />
+          <AvisoError resultado={resultado} />
+          <button
+            type="submit"
+            className={`boton boton--whatsapp boton--grande ${s.enviar}`}
+            disabled={enviando}
+          >
+            <Mail aria-hidden="true" size={20} />
+            {enviando ? "Enviando…" : "Pedir presupuesto"}
+          </button>
+        </>
+      ) : (
+        <>
+          <div className={s.vista}>
+            <p className={s.vista__titulo}>Tu mensaje de WhatsApp</p>
+            <p className={s.burbuja}>{mensaje}</p>
+          </div>
+          <a
+            className={`boton boton--whatsapp boton--grande ${s.enviar}`}
+            href={enlaceWhatsApp(mensaje)}
+          >
+            <MessageCircle aria-hidden="true" size={20} />
+            Enviar por WhatsApp
+          </a>
+          <p className={s.nota}>Se abre WhatsApp con el mensaje escrito. Tú decides si lo envías.</p>
+        </>
+      )}
+    </form>
   );
 }
 

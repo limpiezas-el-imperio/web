@@ -37,12 +37,12 @@ sobra.
   privado bloquea los despliegues de commits que no son del dueño de la
   cuenta. Público, cada push despliega solo. A cambio, nada privado entra en
   git (ver `CLAUDE.md`).
-- **Un solo formulario, el de candidatura.** El contacto de clientes es
-  WhatsApp, teléfono y correo, que es como trabaja él: el presupuesto guiado
-  sólo escribe el mensaje y abre WhatsApp. La candidatura sí es un formulario
-  (desde que hay buzón en el `.es`): la manda por correo a `info@` desde ese
-  mismo buzón, sin guardar nada, con antispam y consentimiento. Los de su web
-  vieja pedían DNI sin nada de eso.
+- **Formularios que llegan por correo, sin guardar nada.** Desde que hay buzón
+  en el `.es`, el presupuesto guiado y la candidatura se mandan por correo a
+  `info@` desde ese mismo buzón, con antispam y consentimiento. El presupuesto
+  se puede mandar también por WhatsApp, que es como trabaja él: la web sólo
+  escribe el mensaje y lo abre. Los formularios de su web vieja pedían DNI sin
+  nada de eso.
 - **Sin redirecciones.** Las rutas buenas de la web vieja se conservan y las
   malas se renombran (`docs/sitio-actual.md`, *Decisión por página*). Quien
   llegue con una dirección vieja ve una 404 que se lo explica.

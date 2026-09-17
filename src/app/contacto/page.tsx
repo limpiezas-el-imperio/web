@@ -164,7 +164,7 @@ export default function PaginaContacto() {
         </div>
       </section>
 
-      {/* ——— Presupuesto guiado por WhatsApp (ver Presupuesto.tsx) ——— */}
+      {/* ——— Presupuesto guiado, por correo o WhatsApp (ver Presupuesto.tsx) ——— */}
       <section id="presupuesto" className={`seccion ${s.presupuesto}`}>
         <div className={`contenedor ${s.presupuesto__rejilla}`}>
           <header>
@@ -172,7 +172,7 @@ export default function PaginaContacto() {
             <h2 className="seccion__titulo">Qué contarnos</h2>
             <p className="seccion__entradilla">
               Qué hay que limpiar, cada cuánto, dónde y cuándo. Elige las opciones
-              y te abrimos WhatsApp con el mensaje ya escrito.
+              y mándanoslo por correo o por WhatsApp.
             </p>
           </header>
           <Presupuesto />
