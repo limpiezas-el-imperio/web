@@ -11,8 +11,8 @@ import { negocio } from "@/datos/negocio";
 // Manda la candidatura por correo a info@, desde el propio buzón de Hostinger.
 // No guarda nada: el correo es el único registro.
 //
-// La contraseña del buzón va en CORREO_CONTRASENA (en Vercel, sin comillas; en
-// local, en .env.local). Si falta o se cambia en Hostinger sin cambiarla en
+// La contraseña del buzón va en EMAIL_PASSWORD (en Vercel, sin comillas; en
+// local, en .env, fuera de git). Si falta o se cambia en Hostinger sin cambiarla en
 // Vercel, el formulario da error y ofrece WhatsApp: no se pierde en silencio.
 
 // Una línea: sin saltos, para el asunto y los campos cortos.
@@ -55,9 +55,9 @@ export async function enviarCandidatura(
     return error("Tienes que aceptar la política de privacidad.");
   }
 
-  const contrasena = process.env.CORREO_CONTRASENA;
+  const contrasena = process.env.EMAIL_PASSWORD;
   if (!contrasena) {
-    console.error("Candidatura: falta CORREO_CONTRASENA");
+    console.error("Candidatura: falta EMAIL_PASSWORD");
     return error("No se ha podido enviar.");
   }
 

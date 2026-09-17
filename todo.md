@@ -69,9 +69,9 @@ correo `info@limpiezaselimperio.es` en Hostinger.
       publicados) y en la web
 - [ ] **Probar el correo nuevo**: mandar uno desde Gmail y otro desde otro
       proveedor, y que llegan; y responder desde el buzón, y que no cae en spam
-- [ ] **`CORREO_CONTRASENA` en Vercel** (panel de Frank, *Settings →
-      Environment Variables*, Production, sin comillas) y volver a desplegar.
-      Luego mandar una candidatura de prueba desde la web publicada y
+- [x] **`EMAIL_PASSWORD` en Vercel** (panel de Frank, *Settings →
+      Environment Variables*, sin comillas), 17 sept
+- [ ] Mandar una candidatura de prueba desde la web publicada y
       comprobar que llega a `info@` y que «Responder» va al candidato
 - [ ] Frank actualiza el enlace de la web en su ficha de Google y en sus redes
 - [ ] Decidir qué hacer con el `.net` (seguir con la web vieja o apuntarlo a

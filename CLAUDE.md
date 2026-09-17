@@ -69,8 +69,8 @@ escribe en esa base de datos.
   ```
 
 - **Variables de entorno**: en el panel de Vercel y **sin comillas**. Hoy sólo
-  hay una, **`CORREO_CONTRASENA`** (la del buzón `info@` del `.es`), para el
-  formulario de candidatura. En local, en `.env.local`. **Si se cambia la
+  hay una, **`EMAIL_PASSWORD`** (la del buzón `info@` del `.es`), para el
+  formulario de candidatura. En local, en `.env` (fuera de git). **Si se cambia la
   contraseña en Hostinger, hay que cambiarla también en Vercel**: si no, el
   formulario da error (y ofrece WhatsApp).
 
