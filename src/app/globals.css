@@ -294,6 +294,7 @@ svg.lucide:not([fill="currentColor"]) {
   transform: translateY(-2px);
 }
 
+
 .boton:active {
   transform: translateY(0);
 }
@@ -330,6 +331,24 @@ svg.lucide:not([fill="currentColor"]) {
 
 .boton--claro:hover {
   border-color: var(--cielo);
+}
+
+/* En pantallas estrechas (320 px) un botón largo sin partir («Escríbenos por
+   WhatsApp») ensanchaba su columna y la página se desplazaba de lado. En
+   Chrome no se veía: el overflow-x del body lo tapa, pero Safari del iPhone lo
+   ignora al arrastrar con el dedo. Aquí los botones tienen menos relleno y, si
+   aun así no caben, el texto se parte en dos líneas. */
+@media (max-width: 24rem) {
+  .boton {
+    padding-inline: 1rem;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .boton--grande {
+    padding-inline: 1.125rem;
+    font-size: 1rem;
+  }
 }
 
 /* Enlace de texto con flecha: la acción secundaria de toda la web. */
@@ -557,6 +576,8 @@ svg.lucide:not([fill="currentColor"]) {
     letter-spacing: -0.02em;
     color: var(--marino);
     text-decoration: none;
+    /* Sitio para que la flecha se mueva al enfocar sin salirse del enlace. */
+    padding-right: 0.25rem;
   }
 
   .menu__lista a::after {

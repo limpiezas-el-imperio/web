@@ -190,8 +190,15 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
 - **Alturas de móvil reales**, con las barras de Safari: **375×548** y
   **390×664**, no sólo la pantalla entera. El menú cabía en 375×667 y en un
   iPhone pequeño no.
-- **Siempre**: sin desplazamiento horizontal (`scrollWidth > innerWidth`), sin
-  imágenes rotas, y que la barra de contacto no tape lo importante.
+- **Siempre**: sin desplazamiento horizontal, sin imágenes rotas, y que la
+  barra de contacto no tape lo importante.
+- **El desplazamiento horizontal se mide sin el `overflow-x: clip` del body**
+  (`document.body.style.overflowX = 'visible'` y luego `scrollWidth >
+  innerWidth`), **también a 320 px** y con estados abiertos (menú, visor,
+  presupuesto por WhatsApp). Ese clip lo tapa en Chrome, pero Safari del iPhone
+  lo ignora al arrastrar: a 320 px la página se movía de lado por botones largos
+  sin partir. Los botones, a menos de 24rem, llevan menos relleno y pueden
+  partirse en dos líneas (`globals.css`).
 - **Mira quién escucha en el puerto** (`ss -ltnp`) antes de capturar: un
   `next start` viejo servía HTML nuevo con CSS de otra compilación (la página
   sin estilos). Mata el tuyo por su PID, nunca con `pkill -f` (el patrón
