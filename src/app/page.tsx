@@ -171,7 +171,7 @@ export default function Inicio() {
         <div className={`contenedor ${s.dos_columnas}`}>
           <header className={s.lateral}>
             <p className="antetitulo">Servicios</p>
-            <h2 className="seccion__titulo">De la casa a la obra</h2>
+            <h2 className="seccion__titulo">Servicios de limpieza</h2>
             <p className="seccion__entradilla">
               Si hay que limpiarlo, seguramente lo hacemos. Y si no ves lo que
               buscas, pregúntanos.
