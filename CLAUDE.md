@@ -30,7 +30,7 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | `/quienes-somos` | Dónde estamos, lema, equipo, cifras reales, por qué elegirnos, valores |
 | `/preguntas-frecuentes` | La FAQ de su web, corregida |
 | `/contacto` | WhatsApp, teléfono y correo; horario, zonas, redes; presupuesto guiado |
-| `/trabaja-con-nosotros` | Candidatura guiada por WhatsApp o correo. No dice que esté contratando |
+| `/trabaja-con-nosotros` | **Formulario de candidatura que llega por correo a `info@`**, y WhatsApp como segunda vía. No dice que esté contratando |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Lo mínimo y en llano, sin NIF (decisión de Kevin) |
 | 404, `sitemap.xml`, `robots.txt` | La 404 explica que la web es nueva, para quien llegue con una URL de Webador |
 
@@ -68,8 +68,11 @@ escribe en esa base de datos.
     --jq '.statuses[] | "\(.context): \(.state) — \(.description)"'
   ```
 
-- Variables de entorno, si alguna vez hacen falta: en el panel de Vercel y
-  **sin comillas**.
+- **Variables de entorno**: en el panel de Vercel y **sin comillas**. Hoy sólo
+  hay una, **`CORREO_CONTRASENA`** (la del buzón `info@` del `.es`), para el
+  formulario de candidatura. En local, en `.env.local`. **Si se cambia la
+  contraseña en Hostinger, hay que cambiarla también en Vercel**: si no, el
+  formulario da error (y ofrece WhatsApp).
 
 ## Qué se puede publicar y qué no
 
@@ -129,11 +132,12 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   not-found.tsx · sitemap.ts · robots.ts · icon.svg · apple-icon.png
 src/componentes/  Cabecera · Navegacion (menú del móvil) · Pie · BarraContacto
                   CabeceraPagina (arranque de cada página) · Contacto (cierre)
-                  Presupuesto y Candidatura (componen un WhatsApp o un correo)
+                  Presupuesto (compone un WhatsApp) · Candidatura (formulario)
                   Opiniones · Galeria · useCarrusel · MapaZonas
                   TextoLegal · DatosEstructurados (JSON-LD) · Marca
 src/datos/        negocio.ts (datos del negocio, servicios, zonas, opiniones)
                   preguntas.ts · fotos.ts · navegacion.ts · sitio.ts
+                  candidatura.ts (lo que comparten formulario y acción)
 src/imagenes/     fotos (se importan, nunca desde public/)
 public/           logo.jpg (sin teléfono) · opengraph-image.jpg
 docs/             sitio-actual.md (la web vieja) · dominio.md
@@ -214,11 +218,17 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
   dice tal cual: **si añades algo de terceros** (analítica, mapa o vídeo
   incrustado, fuente de Google enlazada), **revísala** y, si hace falta, aviso
   de cookies.
-- **Sin formularios**: el contacto es WhatsApp, teléfono y correo. El
-  presupuesto y la candidatura guiados **no son formularios**: sólo componen el
-  texto y abren WhatsApp o el correo; no mandan nada a ningún servidor. Si
-  algún día enviaran datos, harían falta servicio de correo, antispam y
-  consentimiento, y se habla antes.
+- **Un único formulario: la candidatura** (decisión de Kevin, 17 sept 2026).
+  La acción de servidor (`trabaja-con-nosotros/acciones.ts`) la manda por SMTP
+  desde el buzón de Hostinger (`smtp.hostinger.com:465`) a `info@` mismo, con
+  «Responder a» el correo del candidato. **No guarda nada.** Lleva antispam
+  (campo trampa y un mínimo de 3 s rellenándolo), casilla de consentimiento y
+  su párrafo en la política de privacidad. Se envía con `onSubmit` y
+  `startTransition`, **no con `<form action>`**: React vaciaba el formulario y
+  el segundo intento se bloqueaba sin avisar.
+- **El presupuesto no es un formulario**: sólo compone el texto y abre
+  WhatsApp. El contacto de clientes sigue siendo WhatsApp, teléfono y correo.
+  Otro formulario se habla antes.
 - **Legales: lo mínimo y en llano.** No somos abogados; el titular es él.
 
 ## Sistema de diseño

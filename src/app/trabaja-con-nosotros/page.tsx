@@ -8,12 +8,12 @@ import s from "./trabaja.module.css";
 
 export const metadata = metadatosPagina({
   titulo: "Trabaja con nosotros",
-  descripcion: `¿Te interesa trabajar en limpieza en el Camp de Túria o en Valencia? Manda tus datos a ${negocio.nombre} por WhatsApp o correo.`,
+  descripcion: `¿Te interesa trabajar en limpieza en el Camp de Túria o en Valencia? Manda tu candidatura a ${negocio.nombre}.`,
   ruta: "/trabaja-con-nosotros",
 });
 
-// Sin formulario (docs/sitio-actual.md): la candidatura se manda por WhatsApp
-// o correo. El texto no dice que esté contratando ahora ni promete condiciones:
+// La candidatura es un formulario que llega por correo a info@ (Candidatura.tsx
+// y acciones.ts), con WhatsApp como segunda vía. El texto no dice que esté contratando ahora ni promete condiciones:
 // no lo sabemos (pregunta pendiente en todo.md). Sólo datos que ya son suyos.
 // No acaba con <Contacto />: ese cierre es para clientes.
 const datos = [
@@ -72,8 +72,8 @@ export default function TrabajaConNosotros() {
             <p className={s.nota}>
               <MessageCircle aria-hidden="true" size={18} />
               <span>
-                Rellena lo que puedas y envíanoslo. Usamos tus datos sólo para valorar
-                tu candidatura (
+                Rellena el formulario y nos llega directamente. Usamos tus datos sólo
+                para valorar tu candidatura (
                 <Link className="enlace" href="/politica-de-privacidad">
                   privacidad
                 </Link>

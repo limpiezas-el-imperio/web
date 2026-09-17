@@ -1,25 +1,43 @@
 "use client";
 
-import { Mail, Send } from "lucide-react";
-import { useId, useState } from "react";
-import { enlaceWhatsApp, negocio } from "@/datos/negocio";
-// Mismas piezas que el presupuesto guiado: opciones, campos y vista previa.
-import s from "./Presupuesto.module.css";
+import { CircleCheck, MessageCircle, Send } from "lucide-react";
+import Link from "next/link";
+import { startTransition, useActionState, useRef, useState } from "react";
+import { enviarCandidatura } from "@/app/trabaja-con-nosotros/acciones";
+import { disponibilidades, type EstadoCandidatura } from "@/datos/candidatura";
+import { enlaceWhatsApp } from "@/datos/negocio";
+import s from "./Candidatura.module.css";
+// Mismas piezas que el presupuesto guiado: opciones y campos.
+import p from "./Presupuesto.module.css";
 
-// Candidatura para trabajar con él. Igual que el presupuesto: compone el
-// mensaje y abre WhatsApp (o el correo) con él escrito. No manda nada a ningún
-// servidor. Pide lo mismo que el formulario de empleo de su web vieja (nombre,
-// ciudad y barrio, disponibilidad, comentario); el teléfono y el correo ya van
-// en el propio WhatsApp o correo.
+// Candidatura para trabajar con él: un formulario que manda un correo a info@
+// (acciones.ts). Pide lo mismo que el formulario de empleo de su web vieja
+// (nombre, ciudad y barrio, disponibilidad, comentario) más el teléfono, para
+// poder llamar. WhatsApp queda como segunda vía, con el mensaje ya escrito.
+//
+// Los campos van con estado: así no se vacían si el envío da error, y de ahí
+// sale también el mensaje de WhatsApp. Se envía con onSubmit y no con
+// <form action>: React vacía el formulario tras la acción, y la casilla de
+// aceptar quedaba desmarcada sin que el estado lo supiera; el navegador
+// bloqueaba entonces el segundo intento sin decir nada.
 
-const disponibilidades = ["Mañanas", "Tardes", "Fines de semana"] as const;
+const inicial: EstadoCandidatura = { estado: "inicial" };
 
 export default function Candidatura() {
-  const id = useId();
   const [nombre, setNombre] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [correo, setCorreo] = useState("");
   const [lugar, setLugar] = useState("");
   const [disponible, setDisponible] = useState<string[]>([]);
   const [experiencia, setExperiencia] = useState("");
+  const [acepto, setAcepto] = useState(false);
+  const [resultado, enviar, enviando] = useActionState(enviarCandidatura, inicial);
+  // Cuándo empezó a rellenarlo (antispam, ver acciones.ts).
+  const empezado = useRef(0);
+
+  const empezar = () => {
+    if (!empezado.current) empezado.current = Date.now();
+  };
 
   const alternar = (d: string) =>
     setDisponible((actual) =>
@@ -38,51 +56,97 @@ export default function Candidatura() {
     .filter(Boolean)
     .join("\n");
 
-  const correo = `mailto:${negocio.correo}?subject=${encodeURIComponent(
-    "Trabaja con nosotros",
-  )}&body=${encodeURIComponent(mensaje)}`;
+  if (resultado.estado === "enviada") {
+    return (
+      <div className={`tarjeta ${p.presupuesto} ${s.enviada}`} role="status">
+        <CircleCheck aria-hidden="true" size={48} className={s.enviada__icono} />
+        <h2>Candidatura enviada</h2>
+        <p>Gracias{nombre.trim() ? `, ${nombre.trim()}` : ""}. La hemos recibido y la tendremos en cuenta.</p>
+      </div>
+    );
+  }
 
   return (
-    <div className={`tarjeta ${s.presupuesto}`}>
-      <fieldset className={s.grupo}>
+    <form
+      className={`tarjeta ${p.presupuesto}`}
+      onSubmit={(e) => {
+        e.preventDefault();
+        const datos = new FormData(e.currentTarget);
+        datos.set("tiempo", String(empezado.current ? Date.now() - empezado.current : 0));
+        startTransition(() => enviar(datos));
+      }}
+      onFocusCapture={empezar}
+      onPointerDownCapture={empezar}
+      onKeyDownCapture={empezar}
+    >
+      <fieldset className={p.grupo}>
         <legend>
           <span className="numero" aria-hidden="true">1</span>
           Sobre ti
         </legend>
-        <div className={s.campos}>
-          <label className={s.campo}>
+        <div className={p.campos}>
+          <label className={p.campo}>
             <span>Nombre</span>
             <input
               type="text"
+              name="nombre"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}
               autoComplete="name"
+              maxLength={100}
+              required
             />
           </label>
-          <label className={s.campo}>
+          <label className={p.campo}>
+            <span>Teléfono</span>
+            <input
+              type="tel"
+              name="telefono"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+              autoComplete="tel"
+              maxLength={30}
+              required
+            />
+          </label>
+          <label className={p.campo}>
+            <span>Correo (opcional)</span>
+            <input
+              type="email"
+              name="correo"
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+              autoComplete="email"
+              maxLength={120}
+            />
+          </label>
+          <label className={p.campo}>
             <span>Dónde vives</span>
             <input
               type="text"
+              name="lugar"
               value={lugar}
               onChange={(e) => setLugar(e.target.value)}
               placeholder="Localidad y barrio"
               autoComplete="address-level2"
+              maxLength={120}
             />
           </label>
         </div>
       </fieldset>
 
-      <fieldset className={s.grupo}>
+      <fieldset className={p.grupo}>
         <legend>
           <span className="numero" aria-hidden="true">2</span>
           ¿Cuándo puedes trabajar?
         </legend>
-        <div className={s.opciones}>
+        <div className={p.opciones}>
           {disponibilidades.map((d) => (
-            <label key={d} className={s.opcion}>
+            <label key={d} className={p.opcion}>
               <input
                 type="checkbox"
-                name={`${id}-disponibilidad`}
+                name="disponibilidad"
+                value={d}
                 checked={disponible.includes(d)}
                 onChange={() => alternar(d)}
               />
@@ -92,38 +156,66 @@ export default function Candidatura() {
         </div>
       </fieldset>
 
-      <fieldset className={s.grupo}>
+      <fieldset className={p.grupo}>
         <legend>
           <span className="numero" aria-hidden="true">3</span>
           Tu experiencia
         </legend>
-        <label className={s.campo}>
+        <label className={p.campo}>
           <span>Cuéntanos dónde has trabajado (opcional)</span>
           <textarea
+            name="experiencia"
             rows={3}
             value={experiencia}
             onChange={(e) => setExperiencia(e.target.value)}
             placeholder="Por ejemplo: dos años limpiando casas y oficinas, tengo carnet de conducir…"
+            maxLength={2000}
           />
         </label>
       </fieldset>
 
-      <div className={s.vista}>
-        <p className={s.vista__titulo}>Tu mensaje</p>
-        <p className={s.burbuja}>{mensaje}</p>
-      </div>
+      {/* Trampa para programas: una persona no lo ve ni llega con el tabulador. */}
+      <label className={s.trampa} aria-hidden="true">
+        Web
+        <input type="text" name="web" tabIndex={-1} autoComplete="off" />
+      </label>
 
-      <a className={`boton boton--whatsapp boton--grande ${s.enviar}`} href={enlaceWhatsApp(mensaje)}>
+      <label className={s.acepto}>
+        <input
+          type="checkbox"
+          name="acepto"
+          value="si"
+          checked={acepto}
+          onChange={(e) => setAcepto(e.target.checked)}
+          required
+        />
+        <span>
+          Acepto que uséis mis datos sólo para valorar mi candidatura (
+          <Link className="enlace" href="/politica-de-privacidad">
+            política de privacidad
+          </Link>
+          ).
+        </span>
+      </label>
+
+      {resultado.estado === "error" && (
+        <p className={s.error} role="alert">
+          {resultado.mensaje} Si sigue fallando, mándanosla por WhatsApp.
+        </p>
+      )}
+
+      <button
+        type="submit"
+        className={`boton boton--whatsapp boton--grande ${p.enviar}`}
+        disabled={enviando}
+      >
         <Send aria-hidden="true" size={20} />
-        Enviar por WhatsApp
+        {enviando ? "Enviando…" : "Enviar candidatura"}
+      </button>
+      <a className={`boton boton--claro ${p.enviar}`} href={enlaceWhatsApp(mensaje)}>
+        <MessageCircle aria-hidden="true" size={20} />
+        O mándala por WhatsApp
       </a>
-      <a className={`boton boton--claro ${s.enviar}`} href={correo}>
-        <Mail aria-hidden="true" size={20} />
-        O mandarlo por correo
-      </a>
-      <p className={s.nota}>
-        Se abre WhatsApp o tu correo con el mensaje escrito. Tú decides si lo envías.
-      </p>
-    </div>
+    </form>
   );
 }

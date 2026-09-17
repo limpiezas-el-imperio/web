@@ -47,9 +47,9 @@ correo `info@limpiezaselimperio.es` en Hostinger.
       para no nombrar a su equipo
 - [ ] **Redes**: ¿cuáles están vivas? Hoy salen Facebook, Instagram, TikTok,
       YouTube y X (LinkedIn se quitó: enlace roto)
-- [ ] **Trabaja con nosotros**: ¿sigue buscando gente? ¿Candidaturas por
-      WhatsApp o sólo por correo? Si no busca, se quitan la página y sus
-      enlaces (pie, menú del móvil y Quiénes somos)
+- [ ] **Trabaja con nosotros**: ¿sigue buscando gente? Las candidaturas le
+      llegan ahora a `info@` desde un formulario. Si no busca, se quitan la
+      página y sus enlaces (pie, menú del móvil y Quiénes somos)
 
 **Lo que no está en la web hasta que lo diga**
 
@@ -69,6 +69,10 @@ correo `info@limpiezaselimperio.es` en Hostinger.
       publicados) y en la web
 - [ ] **Probar el correo nuevo**: mandar uno desde Gmail y otro desde otro
       proveedor, y que llegan; y responder desde el buzón, y que no cae en spam
+- [ ] **`CORREO_CONTRASENA` en Vercel** (panel de Frank, *Settings →
+      Environment Variables*, Production, sin comillas) y volver a desplegar.
+      Luego mandar una candidatura de prueba desde la web publicada y
+      comprobar que llega a `info@` y que «Responder» va al candidato
 - [ ] Frank actualiza el enlace de la web en su ficha de Google y en sus redes
 - [ ] Decidir qué hacer con el `.net` (seguir con la web vieja o apuntarlo a
       la nueva). Si se toca, **sólo A y CNAME, nunca nameservers, MX ni SPF**
@@ -90,7 +94,9 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   galería (tres nuevas el 17 sept 2026); las que lleguen, detrás del «+N»
 - **Nota de Google**: 4,9 con 68, revisada por Kevin el 16 sept 2026. Va a
   mano: mirarla de vez en cuando
-- **Fuera**: formularios, blog, redirecciones desde la web vieja, Google
+- **Formularios**: sólo el de candidatura, que llega por correo (Kevin, 17
+  sept 2026). Ninguno más sin hablarlo
+- **Fuera**: blog, redirecciones desde la web vieja, Google
   Search Console, revisión en un iPhone real y revisión de accesibilidad a
   fondo (Lighthouse ya da 100)
 
@@ -102,7 +108,8 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   WhatsApp en verde. Validado
 - Páginas: portada, servicios, zonas, quiénes somos, preguntas, contacto,
   trabaja con nosotros, legales y 404; sitemap y robots
-- Presupuesto y candidatura guiados por WhatsApp o correo, sin formularios
+- Presupuesto guiado por WhatsApp; candidatura con formulario que llega por
+  correo (17 sept)
 - Menú del móvil a pantalla completa que cabe sin desplazarse; barra de
   contacto en el móvil; navegación sin animación
 - Lighthouse en móvil: accesibilidad 100, rendimiento 96–99. Imágenes AVIF

@@ -9,15 +9,15 @@ export const metadata = metadatosPagina({
   ruta: "/politica-de-privacidad",
 });
 
-// Lo mínimo, y fiel a lo que hace la web de verdad: sin formularios, sin
-// cuentas, sin cookies ni analítica. Sustituye a la de su web vieja, que era
+// Lo mínimo, y fiel a lo que hace la web de verdad: un único formulario (la
+// candidatura, que llega por correo), sin cuentas, sin cookies ni analítica. Sustituye a la de su web vieja, que era
 // la plantilla de otra empresa sin limpiar (docs/sitio-actual.md).
 export default function PoliticaPrivacidad() {
   return (
     <TextoLegal
       antetitulo="Legal"
       titulo="Política de privacidad"
-      actualizado="16 de septiembre de 2026"
+      actualizado="17 de septiembre de 2026"
     >
       <h2>Quién es el responsable</h2>
       <p>
@@ -32,10 +32,22 @@ export default function PoliticaPrivacidad() {
 
       <h2>Qué datos tratamos</h2>
       <p>
-        <strong>Esta web no recoge datos personales.</strong> No tiene formularios,
-        ni registro, ni cookies, ni analítica. El presupuesto guiado solo prepara el
-        texto en tu navegador: no se envía a ningún sitio hasta que tú lo mandas
-        desde tu WhatsApp.
+        <strong>
+          Esta web sólo recoge datos en el formulario de{" "}
+          <Link className="enlace" href="/trabaja-con-nosotros">
+            trabaja con nosotros
+          </Link>
+          .
+        </strong>{" "}
+        No tiene registro, ni cookies, ni analítica. El presupuesto guiado solo
+        prepara el texto en tu navegador: no se envía a ningún sitio hasta que tú lo
+        mandas desde tu WhatsApp.
+      </p>
+      <p>
+        Si nos mandas tu candidatura con ese formulario, nos llega por correo lo que
+        escribas: tu nombre y tu teléfono y, si nos los das, tu correo, dónde vives,
+        cuándo puedes trabajar y tu experiencia. La web no los guarda: sólo los
+        manda a nuestro buzón.
       </p>
       <p>
         Sí tratamos los datos que tú nos das cuando nos escribes por WhatsApp, nos
@@ -78,7 +90,8 @@ export default function PoliticaPrivacidad() {
       </p>
       <p>
         Si nos escribes por WhatsApp, ese mensaje pasa por WhatsApp, que es de Meta
-        y tiene su propia política de privacidad. La web está alojada en Vercel,
+        y tiene su propia política de privacidad. Nuestro correo, donde llegan
+        también las candidaturas del formulario, está en Hostinger. La web está alojada en Vercel,
         que puede registrar datos técnicos de la conexión, como la dirección IP,
         para servir la web y protegerla.
       </p>
