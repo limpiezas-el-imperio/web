@@ -7,7 +7,7 @@ export const negocio = {
   titular: "Frank Elías Cuero Palacios",
   telefono: "+34617545397",
   telefonoVisible: "617 545 397",
-  correo: "info@limpiezaselimperio.net",
+  correo: "info@limpiezaselimperio.es",
   // La calle sólo sale en el aviso legal, que la exige (LSSI) y donde ya la
   // publicaba su web vieja. En el resto de la web va sólo la localidad: es su
   // casa (pregunta pendiente en todo.md).

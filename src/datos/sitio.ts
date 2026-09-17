@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 // compartir apuntaban a páginas que daban 404.
 //
 // Cámbialo el día que el dominio propio sirva esta web, y no antes.
-const dominioPublico = "limpiezaselimperio.vercel.app";
+const dominioPublico = "www.limpiezaselimperio.es";
 
 export const urlBase =
   process.env.VERCEL_ENV === "production"

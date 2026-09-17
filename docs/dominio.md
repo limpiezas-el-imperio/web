@@ -1,9 +1,9 @@
 # Dominio
 
-**Estado (16 sept 2026, noche): la web se lanza con `limpiezaselimperio.es`,
-comprado por Frank en Hostinger. Todo configurado; falta que el registro de
-`.es` publique el dominio.** El `.net` se queda en Webador con la web vieja y
-el correo.
+**Estado (17 sept 2026): la web se sirve en `www.limpiezaselimperio.es`**,
+comprado por Frank en Hostinger, **con el correo `info@limpiezaselimperio.es`
+también en Hostinger**. El `.net` se queda en Webador con la web vieja y su
+correo.
 
 ## `limpiezaselimperio.es` (el nuevo)
 
@@ -13,7 +13,8 @@ el correo.
   automática.
 - **Vercel no lo vende**: `.es` no está entre sus dominios
   (`vercel domains price` responde «TLD not supported»). Por eso Hostinger.
-- **Sin correo**: ni buzón ni MX. El correo sigue siendo `info@` del `.net`.
+- **Correo en Hostinger**: `info@limpiezaselimperio.es`, configurado por Kevin
+  el 17 sept 2026. Es el que publica la web.
 
 ### Configurado
 
@@ -32,42 +33,38 @@ sin sus registros de aparcamiento:
 |---|---|---|
 | A | `@` | `216.198.79.1` |
 | CNAME | `www` | el que da Vercel para `www` (un `…vercel-dns-017.com`); copiarlo de su panel |
+| MX | `@` | `5 mx1.hostinger.com` · `10 mx2.hostinger.com` |
+| TXT | `@` | `v=spf1 include:_spf.mail.hostinger.com ~all` |
+| CNAME | `hostingermail-a/b/c._domainkey` | `hostingermail-a/b/c.dkim.mail.hostinger.com` (DKIM) |
+| TXT | `_dmarc` | `v=DMARC1; p=none` |
+| CNAME | `autodiscover` | `autodiscover.mail.hostinger.com` |
+
+**No quites MX, SPF, DKIM ni DMARC** al tocar los registros de la web: el
+correo de la web depende de ellos.
 
 Se dejaron los DNS en Hostinger y no se pasaron a Vercel para que Kevin pueda
 editarlos con su acceso, sin entrar en la cuenta de Vercel de Frank.
 
-### Por qué aún no funciona
+### Lanzamiento (17 sept 2026)
 
-El 16 sept por la noche, **los servidores de `.es` responden NXDOMAIN**: el
-registro todavía no lo ha publicado, aunque Hostinger diga «Actif». El
-navegador da `DNS_PROBE_POSSIBLE` (o `ERR_SOCKS_CONNECTION_FAILED` con un
-proxy): es lo esperado.
+El 16 sept por la noche el registro de `.es` aún respondía NXDOMAIN; al día
+siguiente ya publicaba el dominio. Comprobado el 17 sept:
 
 ```bash
-dig +norec NS limpiezaselimperio.es @a.nic.es   # NXDOMAIN = aún no publicado
-dig +short A limpiezaselimperio.es @8.8.8.8     # 216.198.79.1 cuando esté
+dig +norec NS limpiezaselimperio.es @a.nic.es   # los NS de Hostinger
+dig +short A limpiezaselimperio.es @8.8.8.8     # 216.198.79.1
 curl -sI https://www.limpiezaselimperio.es      # 200 servido por Vercel
+curl -sI https://limpiezaselimperio.es          # 308 al www
 ```
 
-- La zona `.es` se actualiza varias veces al día; lo normal son **unas horas**.
-- Los resolutores recuerdan el «no existe» **hasta 1 hora** (SOA de `.es`).
-- **Si 24 h después de la compra sigue en NXDOMAIN**, no es espera: hablar con
-  el soporte de Hostinger (activo en su panel pero sin publicar en el
-  registro; suele ser por los datos del titular).
-
-### Cuando responda
-
-1. Vercel marca los dos dominios como válidos y emite el certificado (botón
-   *Refresh* si tarda).
-2. Comprobar con `dig` y `curl` que `www.limpiezaselimperio.es` sirve esta web
-   y que `limpiezaselimperio.es` redirige.
-3. **Entonces** cambiar `dominioPublico` en `src/datos/sitio.ts` a
-   `www.limpiezaselimperio.es` y actualizar `CLAUDE.md`. Push.
-4. Frank cambia el enlace de la web en su ficha de Google y en sus redes.
+Con eso, `dominioPublico` en `src/datos/sitio.ts` pasó a
+`www.limpiezaselimperio.es`. Falta que Frank cambie el enlace de la web en su
+ficha de Google y en sus redes.
 
 ## `limpiezaselimperio.net` (el viejo)
 
-Sigue en **Webador**, con la web vieja. **Ya no está añadido en Vercel.**
+Sigue en **Webador**, con la web vieja. **Ya no está añadido en Vercel.** Su
+correo ya no sale en la web nueva, pero sigue vivo.
 
 | Registro | Valor | Qué es |
 |---|---|---|
@@ -80,7 +77,7 @@ Sigue en **Webador**, con la web vieja. **Ya no está añadido en Vercel.**
 ### ⚠️ El correo `info@` no se puede romper
 
 `info@limpiezaselimperio.net` vive en Webador y **es también el correo de su
-cuenta de Vercel**. Se rompe sin avisar si:
+cuenta de Vercel** (y lo tendrán clientes antiguos). Se rompe sin avisar si:
 
 1. **Se borra la cuenta de Webador** (confirmado). No se borra.
 2. **Se cambian los nameservers del `.net`** (por ejemplo a Vercel): la zona
@@ -94,8 +91,8 @@ lista negra 0spam, que tenía fichado un servidor compartido de Google (lo
 había usado otro remitente para spam). **Clientes o candidatos que escriban
 desde Gmail pueden estar rebotando**, y Frank no se entera: el aviso le llega
 al remitente. Sólo lo arregla Webador (dejar de usar 0spam), a petición de
-Frank con el rebote como prueba. Otra razón para llevar algún día el buzón a
-otro proveedor.
+Frank con el rebote como prueba. La web nueva ya publica el correo del `.es`,
+en Hostinger.
 
 ### Si algún día el `.net` apunta a la web nueva
 

@@ -1,14 +1,14 @@
 # Pendiente
 
-Actualizado el **16 de septiembre de 2026**, al cerrar la tercera sesión.
+Actualizado el **17 de septiembre de 2026**.
 
 ## Por dónde seguir
 
-**La web está completa** y el dominio `www.limpiezaselimperio.es`, configurado.
+**La web está completa y se sirve en `www.limpiezaselimperio.es`**, con el
+correo `info@limpiezaselimperio.es` en Hostinger.
 
-1. **Comprobar si el `.es` ya responde** (`dig +norec NS limpiezaselimperio.es
-   @a.nic.es`). El 16 sept por la noche daba NXDOMAIN. **Si 24 h después de la
-   compra sigue igual, soporte de Hostinger.** Cuando responda, *Lanzamiento*.
+1. **Lo que queda de *Lanzamiento***: probar el correo nuevo y que Frank cambie
+   el enlace en Google y en sus redes.
 2. **Mandarle a Frank las preguntas de abajo**, de una vez. Las que más pesan:
    las descripciones de los servicios y el horario.
 3. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
@@ -17,9 +17,12 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la tercera sesión.
 
 **Correo**
 
+- [ ] **Correo nuevo**: la web ya publica `info@limpiezaselimperio.es`
+      (Hostinger). ¿Sabe entrar a leerlo, o se le reenvía a donde lea el
+      correo?
 - [ ] **Webador rechaza correo de Gmail** (lista negra 0spam; rebotó uno de
-      Kevin el 16 sept). ¿Pide a Webador que lo arreglen, con el rebote como
-      prueba? ¿O se plantea llevar el buzón a otro proveedor?
+      Kevin el 16 sept). Ya no afecta a la web, pero sí a quien escriba al
+      `.net`. ¿Pide a Webador que lo arreglen, con el rebote como prueba?
       (`docs/dominio.md`)
 
 **Contenido publicado que conviene que confirme**
@@ -59,11 +62,13 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la tercera sesión.
 
 ## Lanzamiento
 
-- [ ] Vercel marca `limpiezaselimperio.es` y `www.limpiezaselimperio.es` como
-      válidos, con certificado
-- [ ] Comprobar con `dig` y `curl` que el `www` sirve esta web y el otro
-      redirige, y **entonces** cambiar `dominioPublico` en
-      `src/datos/sitio.ts` a `www.limpiezaselimperio.es`. Push
+- [x] Vercel sirve `www.limpiezaselimperio.es` con certificado y
+      `limpiezaselimperio.es` redirige (comprobado con `dig` y `curl`, 17 sept)
+- [x] `dominioPublico` en `src/datos/sitio.ts` a `www.limpiezaselimperio.es`
+- [x] Correo `info@limpiezaselimperio.es` en Hostinger (MX, SPF, DKIM y DMARC
+      publicados) y en la web
+- [ ] **Probar el correo nuevo**: mandar uno desde Gmail y otro desde otro
+      proveedor, y que llegan; y responder desde el buzón, y que no cae en spam
 - [ ] Frank actualiza el enlace de la web en su ficha de Google y en sus redes
 - [ ] Decidir qué hacer con el `.net` (seguir con la web vieja o apuntarlo a
       la nueva). Si se toca, **sólo A y CNAME, nunca nameservers, MX ni SPF**
@@ -76,8 +81,10 @@ Actualizado el **16 de septiembre de 2026**, al cerrar la tercera sesión.
 - **Dominio**: `www.limpiezaselimperio.es` (principal; el sin `www` redirige),
   comprado por Frank en Hostinger porque Vercel no vende `.es`. DNS en
   Hostinger, no en Vercel
-- **Correo**: `info@` del `.net` sigue en Webador. Muere si se borra la cuenta
-  o se cambian los nameservers del `.net` → ni una cosa ni la otra
+- **Correo**: la web publica `info@limpiezaselimperio.es`, en Hostinger. El
+  `info@` del `.net` sigue en Webador (es el de su cuenta de Vercel): muere si
+  se borra la cuenta o se cambian los nameservers del `.net` → ni una cosa ni
+  la otra
 - **NIF**: no se pone (Kevin)
 - **Logo**: se queda el actual, sin versión vectorial. **Fotos**: no hay más
   por ahora
