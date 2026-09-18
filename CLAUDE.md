@@ -192,7 +192,8 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
 - **Anchos**: 375 y 390 (móvil), 820 (tablet), 1280 (escritorio). Casi todos
   los fallos salían sólo en uno.
 - **Alturas de móvil reales**, con las barras de Safari: **375×548** y
-  **390×664**, no sólo la pantalla entera. El menú cabía en 375×667 y en un
+  **390×664**, no sólo la pantalla entera, y la de un Android antiguo con las
+  barras de Chrome, **360×560** (el de Frank). El menú cabía en 375×667 y en un
   iPhone pequeño no.
 - **Siempre**: sin desplazamiento horizontal, sin imágenes rotas, y que la
   barra de contacto no tape lo importante.
@@ -224,7 +225,10 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
   color, las tarjetas, lo que se reconoce (WhatsApp en verde) y ver «muchas
   cosas». **Los cambios se hacen directamente en la web**: nada de páginas de
   propuesta, maquetas ni rondas de capturas (se probó y sale más caro).
-- **Usa el móvil**, con Safari. Todo tiene que funcionar primero ahí.
+- **Usa el móvil: un Android antiguo**, no un iPhone como se creía (se vio el
+  18 sept 2026, cuando no encontraba cómo poner la web en la pantalla de
+  inicio; el botón de `/instalar` le funcionó). Todo tiene que funcionar primero ahí. Sus clientes,
+  en cambio, usan de todo: el iPhone con Safari sigue contando.
 - **Si algo no se ve, para él «no funciona».**
 - No es técnico. Todo en español.
 
