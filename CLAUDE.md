@@ -351,15 +351,21 @@ parece a una de estas piezas, usa la clase, no copies sus valores.
   tapada: compruébalo en 375×667 si tocas esa portada.
 - **Navegación por páginas**, no una página larga. **Sin desplazamiento
   animado** (nada de `scroll-behavior: smooth`, lo pidió Kevin).
-- **Cabecera** opaca y blanca, con sombra. Por debajo de 64rem los enlaces se
-  cambian por el botón «Menú».
+- **Cabecera** opaca y blanca, con sombra. Por debajo de 75rem (1200 px) los
+  enlaces se cambian por el botón «Menú» (antes 64rem, pero entre 1025 y 1200
+  se partían en dos líneas). **La fila va justa**: seis enlaces (con
+  «Preguntas» corto, `corto` en `navegacion.ts`) y el desplegable «Clientes»
+  (reserva y facturación), que se abre al pulsar. Si añades algo, mide que no
+  desborde de 1200 px en adelante.
 - **Menú del móvil** (`Navegacion.tsx`), a pantalla completa: los enlaces
-  (Inicio, los de la cabecera y «Trabaja con nosotros», igual que los demás),
-  y abajo WhatsApp y Llamar lado a lado y el correo.
+  (Inicio, los de la cabecera, reserva y facturación sueltos y «Trabaja con
+  nosotros»: diez, igual que los demás), y abajo WhatsApp y Llamar lado a lado
+  y el correo.
   - **Tiene que caber sin desplazarse** (lo pidió Kevin). Alturas en `svh`, sin
-    el horario, y en horizontal en dos columnas sin el correo. **Va justo**: si
-    añades algo, mide el panel abierto (`scrollHeight` frente a
-    `clientHeight`) en 375×548, 320×568 y 667×375.
+    el horario; sin el correo en pantallas de menos de 38rem de alto y en
+    horizontal (dos columnas de cinco). **Va justo** (26 px de sobra en
+    375×548): si añades algo, mide el panel abierto (`scrollHeight` frente a
+    `clientHeight`) en 375×548, 320×568, 667×375 y 1199×650.
   - Tres detalles que costaron un fallo cada uno: `overflow: hidden` sólo en
     `<html>` (en `<body>` la cabecera sticky se iba); **nada de
     `backdrop-filter` ni `transform` en la cabecera** (encierran el panel

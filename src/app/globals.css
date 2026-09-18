@@ -462,9 +462,11 @@ svg.lucide:not([fill="currentColor"]) {
   gap: 0.25rem;
 }
 
-.cabecera__nav a {
+.cabecera__nav a,
+.desplegable__boton {
   display: block;
-  padding: 0.5rem 0.875rem;
+  padding: 0.5rem 0.75rem;
+  white-space: nowrap;
   border-radius: 999px;
   font-family: var(--fuente-titulos), system-ui, sans-serif;
   font-size: 0.9375rem;
@@ -476,15 +478,63 @@ svg.lucide:not([fill="currentColor"]) {
     background-color 0.15s ease;
 }
 
-.cabecera__nav a:hover {
+.cabecera__nav a:hover,
+.desplegable__boton:hover,
+.desplegable__boton[aria-expanded="true"] {
   color: var(--azul);
   background: var(--azul-velo);
 }
 
-.cabecera__nav a[aria-current="page"] {
+.cabecera__nav a[aria-current="page"],
+.desplegable__boton[data-actual] {
   color: var(--azul);
   background: var(--azul-velo);
 }
+
+/* «Clientes»: un botón con la pinta de los enlaces y su lista debajo, en una
+   tarjeta. Con ocho enlaces sueltos la fila no cabía. */
+.desplegable {
+  position: relative;
+}
+
+.desplegable__boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border: 0;
+  background: none;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.desplegable__boton svg {
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.desplegable__boton[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.cabecera__nav .desplegable__lista {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  z-index: 60;
+  display: grid;
+  gap: 0.125rem;
+  min-width: 100%;
+  padding: 0.5rem;
+  border-radius: var(--radio);
+  background: var(--papel);
+  box-shadow: var(--sombra-grande);
+  animation: aparecer 0.15s ease-out;
+}
+
+.cabecera__nav .desplegable__lista[hidden] {
+  display: none;
+}
+
 
 /* El WhatsApp se queda a la derecha del todo; el menú, justo antes. */
 .cabecera__whatsapp {
@@ -500,8 +550,11 @@ svg.lucide:not([fill="currentColor"]) {
 }
 
 /* ——— Menú de tablet y móvil ——— */
-/* Con seis enlaces la fila no cabe por debajo de ~1000 px. */
-@media (max-width: 64rem) {
+/* Con los seis enlaces y «Clientes», la fila cabe desde ~1185 px (antes, con
+   seis, los enlaces ya se partían en dos líneas entre 1025 y 1200). Por
+   debajo, el botón «Menú», como en el móvil. Si se añade algo a la fila, mide
+   que no se parta (white-space: nowrap la desbordaría). */
+@media (max-width: 75rem) {
   .cabecera__nav {
     display: none;
   }
@@ -569,7 +622,7 @@ svg.lucide:not([fill="currentColor"]) {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: clamp(2.5rem, 7svh, 3.75rem);
+    min-height: clamp(2.25rem, 6svh, 3.75rem);
     font-family: var(--fuente-titulos), system-ui, sans-serif;
     font-size: clamp(1.0625rem, min(5vw, 3.3svh), 1.5rem);
     font-weight: 700;
@@ -636,6 +689,15 @@ svg.lucide:not([fill="currentColor"]) {
     color: var(--azul);
   }
 
+  /* En un móvil bajo (375×548 con las barras de Safari) no cabían los diez
+     enlaces con el correo: se quita, como en horizontal. Sigue en el pie y en
+     /contacto. */
+  @media (max-height: 38rem) {
+    .menu__correo {
+      display: none;
+    }
+  }
+
 
 
   /* Con el menú abierto: la página no se desplaza y la barra de contacto
@@ -653,7 +715,7 @@ svg.lucide:not([fill="currentColor"]) {
     /* En columnas, de arriba abajo: se leen en el orden del menú. */
     .menu__lista {
       grid-auto-flow: column;
-      grid-template-rows: repeat(4, auto);
+      grid-template-rows: repeat(5, auto);
       grid-template-columns: repeat(2, minmax(0, 1fr));
       align-content: start;
       column-gap: 2rem;

@@ -1,21 +1,23 @@
 "use client";
 
-import { Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { ChevronDown, Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { enlaceWhatsApp, negocio } from "@/datos/negocio";
-import { enlaces } from "@/datos/navegacion";
+import { clientes, enlaces } from "@/datos/navegacion";
 
 // La navegación de la cabecera. En escritorio, los enlaces en fila; en tablet
 // y móvil, un botón «Menú» que abre el menú a pantalla completa. Es componente
 // de cliente sólo por eso: abrir y cerrar, y saber en qué página estás.
-// Los enlaces del menú del móvil: Inicio, los de la cabecera y, al final,
-// «Trabaja con nosotros» (en escritorio sólo está en el pie, pero desde el
-// móvil el pie queda lejos). Va en la lista, igual que los demás.
+// Los enlaces del menú del móvil: Inicio, los de la cabecera, los de
+// «Clientes» sueltos y, al final, «Trabaja con nosotros» (en escritorio sólo
+// está en el pie, pero desde el móvil el pie queda lejos). Van en la lista,
+// igual que los demás.
 const menuMovil = [
   { href: "/", texto: "Inicio" },
   ...enlaces,
+  ...clientes,
   { href: "/trabaja-con-nosotros", texto: "Trabaja con nosotros" },
 ];
 
@@ -63,7 +65,7 @@ export default function Navegacion() {
       if (e.key === "Escape") cerrar(true);
     };
     // Si se ensancha la ventana hasta escritorio, el menú ya no tiene sentido.
-    const escritorio = window.matchMedia("(min-width: 64.0625rem)");
+    const escritorio = window.matchMedia("(min-width: 75.0625rem)");
     const alEnsanchar = () => escritorio.matches && cerrar(false);
 
     document.addEventListener("keydown", alPulsar);
@@ -87,10 +89,13 @@ export default function Navegacion() {
           {enlaces.map((e) => (
             <li key={e.href}>
               <Link href={e.href} aria-current={actual(e.href)}>
-                {e.texto}
+                {e.corto ?? e.texto}
               </Link>
             </li>
           ))}
+          <li>
+            <Desplegable ruta={ruta} />
+          </li>
         </ul>
       </nav>
 
@@ -159,5 +164,77 @@ export default function Navegacion() {
         </div>
       </nav>
     </>
+  );
+}
+
+// «Clientes» en la cabecera de escritorio: un botón que abre la reserva y los
+// datos de facturación. Se abre al pulsar, no al pasar el ratón (en una
+// pantalla táctil grande no hay ratón). Se cierra con Escape, pulsando fuera,
+// sacando el foco o cambiando de página.
+function Desplegable({ ruta }: { ruta: string }) {
+  const [abierto, setAbierto] = useState(false);
+  const caja = useRef<HTMLDivElement>(null);
+  const boton = useRef<HTMLButtonElement>(null);
+
+  const [rutaAnterior, setRutaAnterior] = useState(ruta);
+  if (ruta !== rutaAnterior) {
+    setRutaAnterior(ruta);
+    setAbierto(false);
+  }
+
+  useEffect(() => {
+    if (!abierto) return;
+    const alPulsarFuera = (e: PointerEvent) => {
+      if (!caja.current?.contains(e.target as Node)) setAbierto(false);
+    };
+    const alTeclear = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setAbierto(false);
+      boton.current?.focus({ preventScroll: true });
+    };
+    document.addEventListener("pointerdown", alPulsarFuera);
+    document.addEventListener("keydown", alTeclear);
+    return () => {
+      document.removeEventListener("pointerdown", alPulsarFuera);
+      document.removeEventListener("keydown", alTeclear);
+    };
+  }, [abierto]);
+
+  const dentro = clientes.some((e) => e.href === ruta);
+
+  return (
+    <div
+      ref={caja}
+      className="desplegable"
+      onBlur={(e) => {
+        if (!caja.current?.contains(e.relatedTarget as Node)) setAbierto(false);
+      }}
+    >
+      <button
+        ref={boton}
+        type="button"
+        className="desplegable__boton"
+        aria-expanded={abierto}
+        aria-controls="menu-clientes"
+        data-actual={dentro || undefined}
+        onClick={() => setAbierto(!abierto)}
+      >
+        Clientes
+        <ChevronDown aria-hidden="true" size={16} />
+      </button>
+      <ul id="menu-clientes" className="desplegable__lista" hidden={!abierto}>
+        {clientes.map((e) => (
+          <li key={e.href}>
+            <Link
+              href={e.href}
+              aria-current={e.href === ruta ? "page" : undefined}
+              onClick={() => setAbierto(false)}
+            >
+              {e.texto}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

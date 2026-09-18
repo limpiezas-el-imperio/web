@@ -2,7 +2,7 @@ import Link from "next/link";
 import Marca from "./Marca";
 import { fotoPortada } from "@/datos/fotos";
 import { horario, negocio, redes } from "@/datos/negocio";
-import { enlaces } from "@/datos/navegacion";
+import { clientes, enlaces } from "@/datos/navegacion";
 
 export default function Pie() {
   const año = new Date().getFullYear();
@@ -26,14 +26,13 @@ export default function Pie() {
                 <Link href={e.href}>{e.texto}</Link>
               </li>
             ))}
+            {clientes.map((e) => (
+              <li key={e.href}>
+                <Link href={e.href}>{e.texto}</Link>
+              </li>
+            ))}
             <li>
               <Link href="/trabaja-con-nosotros">Trabaja con nosotros</Link>
-            </li>
-            <li>
-              <Link href="/reserva-de-servicios">Reserva de servicios</Link>
-            </li>
-            <li>
-              <Link href="/datos-de-facturacion">Datos de facturación</Link>
             </li>
           </ul>
         </nav>
