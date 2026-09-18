@@ -4,9 +4,10 @@ import type { EstadoEnvio } from "@/datos/formularios";
 import s from "./Formulario.module.css";
 import p from "./Presupuesto.module.css";
 
-// Piezas comunes de los formularios que llegan por correo (Presupuesto y
-// Candidatura). Los campos van con estado en cada formulario: así no se vacían
-// si el envío da error, y de ahí sale también el mensaje de WhatsApp.
+// Piezas comunes de los formularios que llegan por correo (Presupuesto,
+// Candidatura y Facturacion). Los campos van con estado en cada formulario: así
+// no se vacían si el envío da error, y de ahí sale también el mensaje de
+// WhatsApp.
 
 type Campo = [valor: string, cambiar: (v: string) => void];
 
@@ -14,10 +15,12 @@ export function CamposContacto({
   nombre,
   telefono,
   correo,
+  correoObligatorio = false,
 }: {
   nombre: Campo;
   telefono: Campo;
   correo: Campo;
+  correoObligatorio?: boolean;
 }) {
   return (
     <>
@@ -46,7 +49,7 @@ export function CamposContacto({
         />
       </label>
       <label className={p.campo}>
-        <span>Correo (opcional)</span>
+        <span>{correoObligatorio ? "Correo" : "Correo (opcional)"}</span>
         <input
           type="email"
           name="correo"
@@ -54,6 +57,7 @@ export function CamposContacto({
           onChange={(e) => correo[1](e.target.value)}
           autoComplete="email"
           maxLength={120}
+          required={correoObligatorio}
         />
       </label>
     </>

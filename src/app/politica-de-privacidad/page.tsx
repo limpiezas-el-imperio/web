@@ -9,15 +9,16 @@ export const metadata = metadatosPagina({
   ruta: "/politica-de-privacidad",
 });
 
-// Lo mínimo, y fiel a lo que hace la web de verdad: dos formularios que llegan
-// por correo (presupuesto y candidatura), sin cuentas, sin cookies ni analítica. Sustituye a la de su web vieja, que era
-// la plantilla de otra empresa sin limpiar (docs/sitio-actual.md).
+// Lo mínimo, y fiel a lo que hace la web de verdad: tres formularios que llegan
+// por correo (presupuesto, candidatura y datos de facturación), sin cuentas,
+// sin cookies ni analítica. Sustituye a la de su web vieja, que era la
+// plantilla de otra empresa sin limpiar (docs/sitio-actual.md).
 export default function PoliticaPrivacidad() {
   return (
     <TextoLegal
       antetitulo="Legal"
       titulo="Política de privacidad"
-      actualizado="17 de septiembre de 2026"
+      actualizado="18 de septiembre de 2026"
     >
       <h2>Quién es el responsable</h2>
       <p>
@@ -33,9 +34,13 @@ export default function PoliticaPrivacidad() {
       <h2>Qué datos tratamos</h2>
       <p>
         <strong>
-          Esta web sólo recoge datos en dos formularios: el de presupuesto y el de{" "}
+          Esta web sólo recoge datos en tres formularios: el de presupuesto, el de{" "}
           <Link className="enlace" href="/trabaja-con-nosotros">
             trabaja con nosotros
+          </Link>{" "}
+          y el de{" "}
+          <Link className="enlace" href="/datos-de-facturacion">
+            datos de facturación
           </Link>
           .
         </strong>{" "}
@@ -54,8 +59,14 @@ export default function PoliticaPrivacidad() {
         puedes trabajar y tu experiencia.
       </p>
       <p>
-        La web no guarda los datos de ninguno de los dos formularios: sólo los manda
-        a nuestro buzón.
+        Si nos mandas tus datos de facturación, nos llega por correo lo que
+        escribas: el nombre o la razón social, el NIF, CIF o DNI y la dirección
+        fiscal que tienen que salir en la factura, tu nombre, tu teléfono, tu correo
+        y de qué servicio es.
+      </p>
+      <p>
+        La web no guarda los datos de ninguno de los formularios: sólo los manda a
+        nuestro buzón.
       </p>
       <p>
         Sí tratamos los datos que tú nos das cuando nos escribes por WhatsApp, nos

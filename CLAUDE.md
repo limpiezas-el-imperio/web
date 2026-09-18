@@ -31,6 +31,7 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | `/preguntas-frecuentes` | La FAQ de su web, corregida |
 | `/contacto` | WhatsApp, teléfono y correo; horario, zonas, redes; presupuesto guiado (por correo o WhatsApp) |
 | `/trabaja-con-nosotros` | **Formulario de candidatura que llega por correo a `info@`**, y WhatsApp como segunda vía. No dice que esté contratando |
+| `/datos-de-facturacion` | **Formulario con los datos para la factura** (razón social, NIF, dirección fiscal, contacto y servicio), por correo a `info@`, con WhatsApp como segunda vía. Lo pidió Frank (lo tenía su web vieja). Sólo en el pie, no en el menú |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Lo mínimo y en llano, sin NIF (decisión de Kevin) |
 | `/instalar` | **Oculta** (sin menú, sitemap ni índice): botón «Instalar» y pasos a mano para poner la web en la pantalla de inicio. Se hizo para Frank (Android antiguo). Sólo ella enlaza el manifiesto instalable (`instalar/app.webmanifest`, `display: standalone`, `id` propio) y registra `public/sw.js`; el resto de la web sigue en `browser`, sin aviso de Chrome |
 | 404, `sitemap.xml`, `robots.txt` | La 404 explica que la web es nueva, para quien llegue con una URL de Webador |
@@ -141,14 +142,14 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   icon.png (pestaña: la casa y la corona) · apple-icon.png (el logo)
 src/componentes/  Cabecera · Navegacion (menú del móvil) · Pie · BarraContacto
                   CabeceraPagina (arranque de cada página) · Contacto (cierre)
-                  Presupuesto · Candidatura (formularios por correo)
+                  Presupuesto · Candidatura · Facturacion (formularios por correo)
                   PiezasFormulario · Formulario.module.css · useFormularioCorreo
                   Opiniones · Galeria · useCarrusel · MapaZonas
                   TextoLegal · DatosEstructurados (JSON-LD) · Marca
 src/datos/        negocio.ts (datos del negocio, servicios, zonas, opiniones)
                   preguntas.ts · fotos.ts · navegacion.ts · sitio.ts
                   formularios.ts (lo que comparten formularios y acciones)
-src/acciones/     acciones de servidor: presupuesto · candidatura
+src/acciones/     acciones de servidor: presupuesto · candidatura · facturacion
                   correo.ts (antispam, contacto y envío por SMTP)
 src/imagenes/     fotos (se importan, nunca desde public/)
 public/           logo.jpg (sin teléfono) · opengraph-image.jpg · sw.js (sólo /instalar)
@@ -248,8 +249,9 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
   dice tal cual: **si añades algo de terceros** (analítica, mapa o vídeo
   incrustado, fuente de Google enlazada), **revísala** y, si hace falta, aviso
   de cookies.
-- **Dos formularios que llegan por correo: presupuesto y candidatura**
-  (decisión de Kevin, 17 sept 2026). Las acciones de servidor (`src/acciones/`)
+- **Tres formularios que llegan por correo: presupuesto, candidatura y datos
+  de facturación** (decisión de Kevin, 17 sept 2026; el de facturación lo pidió
+  Frank el 18). Las acciones de servidor (`src/acciones/`)
   los mandan por SMTP desde el buzón de Hostinger (`smtp.hostinger.com:465`) a
   `info@` mismo, con «Responder a» el correo de quien escribe. **No guardan
   nada.** Llevan antispam (campo trampa y un mínimo de 3 s rellenándolo),
@@ -259,8 +261,8 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
   bloqueaba sin avisar.
 - **El presupuesto tiene dos vías**: por correo (la primera, con nombre,
   teléfono y correo) o por WhatsApp (compone el texto y abre WhatsApp, sin
-  pasar por el servidor). Mandan el mismo texto. La candidatura lleva WhatsApp
-  como segunda vía. **Otro formulario se habla antes.**
+  pasar por el servidor). Mandan el mismo texto. La candidatura y la facturación
+  llevan WhatsApp como segunda vía. **Otro formulario se habla antes.**
 - **Legales: lo mínimo y en llano.** No somos abogados; el titular es él.
 
 ## Sistema de diseño

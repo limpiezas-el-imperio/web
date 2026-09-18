@@ -29,6 +29,9 @@ export default function Pie() {
             <li>
               <Link href="/trabaja-con-nosotros">Trabaja con nosotros</Link>
             </li>
+            <li>
+              <Link href="/datos-de-facturacion">Datos de facturación</Link>
+            </li>
           </ul>
         </nav>
 
