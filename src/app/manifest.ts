@@ -4,7 +4,8 @@ import { negocio } from "@/datos/negocio";
 
 // Lo que usa Android (y Chrome en el ordenador) al añadir la web a la pantalla
 // de inicio o crear un acceso directo: el logo como icono. El iPhone usa
-// `apple-icon.png`, y la pestaña del navegador, `icon.png`.
+// `apple-icon.png`, y la pestaña del navegador, `icon.png`: sólo la casa y la
+// corona, porque el logo entero no se lee a 16 px.
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: negocio.nombre,
