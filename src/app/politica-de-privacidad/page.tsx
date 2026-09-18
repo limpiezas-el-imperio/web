@@ -9,9 +9,9 @@ export const metadata = metadatosPagina({
   ruta: "/politica-de-privacidad",
 });
 
-// Lo mínimo, y fiel a lo que hace la web de verdad: tres formularios que llegan
-// por correo (presupuesto, candidatura y datos de facturación), sin cuentas,
-// sin cookies ni analítica. Sustituye a la de su web vieja, que era la
+// Lo mínimo, y fiel a lo que hace la web de verdad: cuatro formularios que
+// llegan por correo (presupuesto, reserva, candidatura y datos de facturación),
+// sin cuentas, sin cookies ni analítica. Sustituye a la de su web vieja, que era la
 // plantilla de otra empresa sin limpiar (docs/sitio-actual.md).
 export default function PoliticaPrivacidad() {
   return (
@@ -34,7 +34,11 @@ export default function PoliticaPrivacidad() {
       <h2>Qué datos tratamos</h2>
       <p>
         <strong>
-          Esta web sólo recoge datos en tres formularios: el de presupuesto, el de{" "}
+          Esta web sólo recoge datos en cuatro formularios: el de presupuesto, el de{" "}
+          <Link className="enlace" href="/reserva-de-servicios">
+            reserva
+          </Link>
+          , el de{" "}
           <Link className="enlace" href="/trabaja-con-nosotros">
             trabaja con nosotros
           </Link>{" "}
@@ -52,6 +56,11 @@ export default function PoliticaPrivacidad() {
         nos lo das, tu correo. Si lo pides por WhatsApp, la web sólo prepara el
         texto en tu navegador: no se envía a ningún sitio hasta que tú lo mandas
         desde tu WhatsApp.
+      </p>
+      <p>
+        Si reservas un servicio, nos llega por correo lo que escribas: el tipo de
+        limpieza, el día y la hora, la dirección y qué hay que limpiar, con tu
+        nombre, tu teléfono y, si nos los das, tu correo y tu DNI, NIE o CIF.
       </p>
       <p>
         Si nos mandas tu candidatura, nos llega por correo lo que escribas: tu

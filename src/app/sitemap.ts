@@ -12,6 +12,7 @@ const paginas: { ruta: string; prioridad: number }[] = [
   { ruta: "/quienes-somos", prioridad: 0.7 },
   { ruta: "/preguntas-frecuentes", prioridad: 0.7 },
   { ruta: "/trabaja-con-nosotros", prioridad: 0.4 },
+  { ruta: "/reserva-de-servicios", prioridad: 0.5 },
   { ruta: "/datos-de-facturacion", prioridad: 0.3 },
 ];
 

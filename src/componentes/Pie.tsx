@@ -30,6 +30,9 @@ export default function Pie() {
               <Link href="/trabaja-con-nosotros">Trabaja con nosotros</Link>
             </li>
             <li>
+              <Link href="/reserva-de-servicios">Reserva de servicios</Link>
+            </li>
+            <li>
               <Link href="/datos-de-facturacion">Datos de facturación</Link>
             </li>
           </ul>

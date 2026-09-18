@@ -4,7 +4,7 @@ import CabeceraPagina from "@/componentes/CabeceraPagina";
 import Facturacion from "@/componentes/Facturacion";
 import { negocio } from "@/datos/negocio";
 import { metadatosPagina } from "@/datos/sitio";
-import s from "./facturacion.module.css";
+import s from "@/componentes/PaginaFormulario.module.css";
 
 export const metadata = metadatosPagina({
   titulo: "Datos de facturación",

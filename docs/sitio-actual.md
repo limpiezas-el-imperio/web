@@ -22,6 +22,7 @@ tal cual y las malas se renombran sin más.
 | `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |
 | `/contacto` | — (nueva) | ✅ Hecha. Canales, horario, zonas, redes y qué contarnos para el presupuesto |
 | `/trabaja-con-nosotros` | igual | ✅ Hecha. Formulario que llega por correo, sin DNI; WhatsApp como segunda vía |
+| `/reserva-de-servicios` | igual | ✅ Hecha (18 sept 2026, la pidió Frank). Formulario por correo con día y hora; DNI opcional; localidad en vez de provincia. **Sin el PDF**: es su parte de trabajo interno, con precios y el mínimo de 4 horas |
 | `/datos-de-facturacion` | igual | ✅ Hecha (18 sept 2026, la pidió Frank). Formulario por correo con consentimiento; escalera, piso y puerta en un solo campo opcional; sin «envíame una copia» |
 | `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | ✅ Reescrito de cero, sin NIF (decisión de Kevin) |
 | `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | ✅ Reescrita de cero |
@@ -33,7 +34,6 @@ tal cual y las malas se renombran sin más.
   lo que pedían (tipo de vivienda, habitaciones, baños, fecha) está en el
   presupuesto guiado de la portada y `/contacto`, que se manda por correo o por
   WhatsApp.
-- `/reserva-de-servicios` y su PDF: es su parte de trabajo interno.
 - `/tu-opinion-importa-mucho`: las opiniones ya están en la portada y la fuente
   real es Google.
 - Las 8 entradas del blog: relleno.

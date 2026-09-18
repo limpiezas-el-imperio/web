@@ -5,9 +5,9 @@ import s from "./Formulario.module.css";
 import p from "./Presupuesto.module.css";
 
 // Piezas comunes de los formularios que llegan por correo (Presupuesto,
-// Candidatura y Facturacion). Los campos van con estado en cada formulario: así
-// no se vacían si el envío da error, y de ahí sale también el mensaje de
-// WhatsApp.
+// Candidatura, Facturacion y Reserva). Los campos van con estado en cada
+// formulario: así no se vacían si el envío da error, y de ahí sale también el
+// mensaje de WhatsApp.
 
 type Campo = [valor: string, cambiar: (v: string) => void];
 
