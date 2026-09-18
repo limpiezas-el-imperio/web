@@ -136,7 +136,7 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   preguntas-frecuentes/ · contacto/ · trabaja-con-nosotros/
                   aviso-legal/ · politica-de-privacidad/ · politica-de-cookies/
                   not-found.tsx · sitemap.ts · robots.ts · manifest.ts
-                  icon.svg (pestaña) · apple-icon.png (logo, pantalla de inicio)
+                  icon.png (pestaña) · apple-icon.png (pantalla de inicio), las dos del logo
 src/componentes/  Cabecera · Navegacion (menú del móvil) · Pie · BarraContacto
                   CabeceraPagina (arranque de cada página) · Contacto (cierre)
                   Presupuesto · Candidatura (formularios por correo)
@@ -323,9 +323,9 @@ parece a una de estas piezas, usa la clase, no copies sus valores.
   `ocultas` en `Galeria.tsx`, y el «+N» se cuenta solo.
 - **El logo es `public/logo.jpg`** (sin teléfono), y se queda: no hay versión
   vectorial. Sólo en cabecera y pie (pequeño, con el nombre escrito al lado),
-  imagen para compartir, datos estructurados e icono de la pantalla de inicio
-  (`apple-icon.png` y los `icono-*.png` del manifest, sacados de él; la
-  pestaña sigue con la estrella de `icon.svg`, porque a 16 px no se lee).
+  imagen para compartir, datos estructurados e iconos (`icon.png` de la
+  pestaña, `apple-icon.png` y los `icono-*.png` del manifest, sacados de él;
+  lo pidió Frank).
 - **Contacto primero**: WhatsApp es la acción principal, y en el móvil hay una
   barra fija con WhatsApp y Llamar.
 - **Portada en el móvil sin botones**: la barra ya es la llamada a la acción.
