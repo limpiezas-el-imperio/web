@@ -15,8 +15,9 @@ export const metadata = metadatosPagina({
 // Para reservar día y hora: la tenía su web vieja (misma dirección, su «hoja
 // de servicio») y la pidió Frank. Formulario por correo a info@ (Reserva.tsx).
 // El PDF de la hoja que se descargaba allí no se publica: es su parte de
-// trabajo interno, con precios y el mínimo de horas. Sólo en el pie, no en el
-// menú. No acaba con <Contacto />: ya lleva WhatsApp y remite al presupuesto.
+// trabajo interno, con precios y el mínimo de horas. En la navegación, dentro
+// de «Clientes» (`clientes` en navegacion.ts). No acaba con <Contacto />: ya
+// lleva WhatsApp y remite al presupuesto.
 const datos = [
   {
     icono: Clock,

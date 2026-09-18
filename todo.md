@@ -58,6 +58,10 @@ correo `info@limpiezaselimperio.es` en Hostinger.
       hora»: ¿es así como lo hace? ¿Le vale?
 - [ ] **Datos de facturación**: escalera, piso, puerta y letra van en un
       solo campo opcional, y no está «envíame una copia». ¿Le vale?
+- [ ] **Cabecera**: la reserva y la facturación van en un desplegable
+      «Clientes», y para que cupiera, «Preguntas frecuentes» se lee
+      «Preguntas» en la cabecera de escritorio (en el menú y el pie, entero).
+      ¿Le vale?
 - [ ] **Borrar las dos pruebas** del buzón (18 sept, «PRUEBA DE LA WEB»:
       TOMAS RIVAS y BEATRIZ SOLANO)
 
@@ -138,5 +142,8 @@ correo `info@limpiezaselimperio.es` en Hostinger.
 - **Quinta sesión (18 sept)**: `/instalar` (oculta, con el manifiesto
   instalable y un service worker sólo ahí; a Frank le funcionó en su
   Android), `/datos-de-facturacion` y `/reserva-de-servicios` (formularios por
-  correo con WhatsApp de segunda vía, en el pie, el sitemap y la política de
-  privacidad; probados con un envío real, llegan a la bandeja de entrada)
+  correo con WhatsApp de segunda vía, en el sitemap y la política de
+  privacidad; probados con un envío real, llegan a la bandeja de entrada).
+  Navegación: desplegable «Clientes» en la cabecera, que ahora sale desde
+  1200 px (entre 1025 y 1200 los enlaces se partían en dos líneas), y diez
+  filas en el menú del móvil, que sigue cabiendo sin desplazarse

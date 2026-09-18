@@ -31,8 +31,8 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | `/preguntas-frecuentes` | La FAQ de su web, corregida |
 | `/contacto` | WhatsApp, teléfono y correo; horario, zonas, redes; presupuesto guiado (por correo o WhatsApp) |
 | `/trabaja-con-nosotros` | **Formulario de candidatura que llega por correo a `info@`**, y WhatsApp como segunda vía. No dice que esté contratando |
-| `/reserva-de-servicios` | **Reserva con día y hora** (tipo de limpieza, fecha, hora, qué limpiar, dirección y datos; DNI opcional), por correo a `info@`, con WhatsApp como segunda vía. Es su «hoja de servicio» de la web vieja, sin el PDF (su parte interno, con precios y el mínimo de horas). Lo pidió Frank. Sólo en el pie |
-| `/datos-de-facturacion` | **Formulario con los datos para la factura** (razón social, NIF, dirección fiscal, contacto y servicio), por correo a `info@`, con WhatsApp como segunda vía. Lo pidió Frank (lo tenía su web vieja). Sólo en el pie, no en el menú |
+| `/reserva-de-servicios` | **Reserva con día y hora** (tipo de limpieza, fecha, hora, qué limpiar, dirección y datos; DNI opcional), por correo a `info@`, con WhatsApp como segunda vía. Es su «hoja de servicio» de la web vieja, sin el PDF (su parte interno, con precios y el mínimo de horas). Lo pidió Frank. En «Clientes» (cabecera), el menú del móvil y el pie |
+| `/datos-de-facturacion` | **Formulario con los datos para la factura** (razón social, NIF, dirección fiscal, contacto y servicio), por correo a `info@`, con WhatsApp como segunda vía. Lo pidió Frank (lo tenía su web vieja). En «Clientes» (cabecera), el menú del móvil y el pie |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Lo mínimo y en llano, sin NIF (decisión de Kevin) |
 | `/instalar` | **Oculta** (sin menú, sitemap ni índice): botón «Instalar» y pasos a mano para poner la web en la pantalla de inicio. Se hizo para Frank (Android antiguo). Sólo ella enlaza el manifiesto instalable (`instalar/app.webmanifest`, `display: standalone`, `id` propio) y registra `public/sw.js`; el resto de la web sigue en `browser`, sin aviso de Chrome |
 | 404, `sitemap.xml`, `robots.txt` | La 404 explica que la web es nueva, para quien llegue con una URL de Webador |
@@ -54,7 +54,10 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
   misma dirección: **`/reserva-de-servicios`** y **`/datos-de-facturacion`**,
   dos formularios más por correo (probados de verdad, llegan). Y
   **`/instalar`**, oculta, para poner la web en la pantalla de inicio de su
-  Android: le funcionó.
+  Android: le funcionó. La reserva y la facturación entran en la navegación:
+  desplegable **«Clientes»** en la cabecera de escritorio (que ahora sale desde
+  1200 px, con «Preguntas» corto) y dos filas más en el menú del móvil (ver
+  *Estilo*).
 - **Galería** con diez fotos: siete en la rejilla, una tarjeta «+3» y un visor
   a pantalla completa (ver *Estilo*).
 - **Falta**: que Frank cambie el enlace en Google y en sus redes, y sus
@@ -181,8 +184,10 @@ horario, redes, servicios, zonas y opiniones. Nunca a mano en un componente.
 - **Estilos en su `.module.css`**, con las piezas de *Sistema de diseño*. Un
   `@keyframes` de `globals.css` no se puede nombrar desde un módulo.
 - **Añádela a `src/app/sitemap.ts`** (lista a mano) y, si va en el menú, a
-  `src/datos/navegacion.ts` (cabecera, menú del móvil y pie). Si va en el menú
-  del móvil, **mide que sigue cabiendo** (ver *Estilo*).
+  `src/datos/navegacion.ts` (`enlaces` para la fila de la cabecera, `clientes`
+  para el desplegable; los dos salen también en el menú del móvil y el pie).
+  **La cabecera y el menú del móvil van justos: mide que siguen cabiendo** (ver
+  *Estilo*).
 
 **La URL base va a mano en `src/datos/sitio.ts`** (`dominioPublico`), y de ella
 salen canonical, imagen para compartir, datos estructurados, sitemap y robots.

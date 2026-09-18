@@ -14,8 +14,8 @@ export const metadata = metadatosPagina({
 
 // Para los clientes que necesitan factura con sus datos: la tenía su web vieja
 // (misma dirección) y la pidió Frank. Formulario por correo a info@
-// (Facturacion.tsx). No va en el menú, sólo en el pie: Frank manda el enlace a
-// quien le pide factura. No acaba con <Contacto />: el que llega ya es cliente.
+// (Facturacion.tsx). En la navegación, dentro de «Clientes» (`clientes` en
+// navegacion.ts). No acaba con <Contacto />: el que llega ya es cliente.
 const datos = [
   {
     icono: FileText,
