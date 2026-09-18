@@ -32,6 +32,7 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | `/contacto` | WhatsApp, teléfono y correo; horario, zonas, redes; presupuesto guiado (por correo o WhatsApp) |
 | `/trabaja-con-nosotros` | **Formulario de candidatura que llega por correo a `info@`**, y WhatsApp como segunda vía. No dice que esté contratando |
 | `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Lo mínimo y en llano, sin NIF (decisión de Kevin) |
+| `/instalar` | **Oculta** (sin menú, sitemap ni índice): botón «Instalar» y pasos a mano para poner la web en la pantalla de inicio. Se hizo para Frank (Android antiguo). Sólo ella enlaza el manifiesto instalable (`instalar/app.webmanifest`, `display: standalone`, `id` propio) y registra `public/sw.js`; el resto de la web sigue en `browser`, sin aviso de Chrome |
 | 404, `sitemap.xml`, `robots.txt` | La 404 explica que la web es nueva, para quien llegue con una URL de Webador |
 
 - **Diseño validado por Frank** (16 sept 2026). La primera versión, sobria, no
@@ -135,6 +136,7 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   nuestros-servicios/ · zonas-de-servicio/ · quienes-somos/
                   preguntas-frecuentes/ · contacto/ · trabaja-con-nosotros/
                   aviso-legal/ · politica-de-privacidad/ · politica-de-cookies/
+                  instalar/ (oculta, con su app.webmanifest)
                   not-found.tsx · sitemap.ts · robots.ts · manifest.ts
                   icon.png (pestaña: la casa y la corona) · apple-icon.png (el logo)
 src/componentes/  Cabecera · Navegacion (menú del móvil) · Pie · BarraContacto
@@ -149,7 +151,7 @@ src/datos/        negocio.ts (datos del negocio, servicios, zonas, opiniones)
 src/acciones/     acciones de servidor: presupuesto · candidatura
                   correo.ts (antispam, contacto y envío por SMTP)
 src/imagenes/     fotos (se importan, nunca desde public/)
-public/           logo.jpg (sin teléfono) · opengraph-image.jpg
+public/           logo.jpg (sin teléfono) · opengraph-image.jpg · sw.js (sólo /instalar)
                   icono-192.png · icono-512.png (logo, para el manifest)
 docs/             sitio-actual.md (la web vieja) · dominio.md
 docs/privado/     fuera de git
