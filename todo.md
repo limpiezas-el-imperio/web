@@ -1,6 +1,6 @@
 # Pendiente
 
-Actualizado el **17 de septiembre de 2026**, al cerrar la cuarta sesión.
+Actualizado el **18 de septiembre de 2026**, al cerrar la quinta sesión.
 
 ## Por dónde seguir
 
@@ -18,8 +18,8 @@ correo `info@limpiezaselimperio.es` en Hostinger.
 **Correo**
 
 - [ ] **Correo nuevo**: la web publica `info@limpiezaselimperio.es`
-      (Hostinger), y **ahí le llegan los presupuestos y las candidaturas de
-      los formularios**. ¿Sabe entrar a leerlo, o se le reenvía a donde lea el
+      (Hostinger), y **ahí le llegan los presupuestos, las reservas, los datos
+      de facturación y las candidaturas de los formularios**. ¿Sabe entrar a leerlo, o se le reenvía a donde lea el
       correo? Si no lo mira, se pierden
 - [ ] **Webador rechaza correo de Gmail** (lista negra 0spam; rebotó uno de
       Kevin el 16 sept). Ya no afecta a la web, pero sí a quien escriba al
@@ -52,7 +52,21 @@ correo `info@limpiezaselimperio.es` en Hostinger.
       llegan ahora a `info@` desde un formulario. Si no busca, se quitan la
       página y sus enlaces (pie, menú del móvil y Quiénes somos)
 
+- [ ] **Reserva de servicios**: el DNI y el correo son opcionales (en su web
+      vieja, todo era obligatorio) y pide la localidad en vez de la
+      provincia. Al enviar dice «te contestamos para confirmar el día y la
+      hora»: ¿es así como lo hace? ¿Le vale?
+- [ ] **Datos de facturación**: escalera, piso, puerta y letra van en un
+      solo campo opcional, y no está «envíame una copia». ¿Le vale?
+- [ ] **Borrar las dos pruebas** del buzón (18 sept, «PRUEBA DE LA WEB»:
+      TOMAS RIVAS y BEATRIZ SOLANO)
+
 **Lo que no está en la web hasta que lo diga**
+
+- [ ] **El PDF de la hoja de servicio** que se descargaba en su reserva vieja:
+      no se ha puesto porque es su parte interno, con precios, el mínimo de 4
+      horas y el correo del `.net`. ¿Lo quiere en la web? Habría que
+      actualizarlo
 
 - [ ] **Experiencia**: su web vieja decía «2 años» (texto de 2024). ¿Desde
       cuándo? Iría en Quiénes somos y en la FAQ
@@ -87,13 +101,16 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   galería (tres nuevas el 17 sept 2026); las que lleguen, detrás del «+N»
 - **Nota de Google**: 4,9 con 68, revisada por Kevin el 16 sept 2026. Va a
   mano: mirarla de vez en cuando
-- **Formularios**: presupuesto (por correo o WhatsApp) y candidatura, que
-  llegan por correo (Kevin, 17 sept 2026). Ninguno más sin hablarlo
+- **Formularios**: presupuesto (por correo o WhatsApp) y candidatura (Kevin,
+  17 sept 2026), y reserva y datos de facturación (los pidió Frank, 18 sept).
+  Llegan por correo. Ninguno más sin hablarlo
+- **Móvil de Frank**: un Android antiguo, no un iPhone. La web instalada en
+  su pantalla de inicio desde `/instalar` (18 sept)
 - **Fuera**: blog, redirecciones desde la web vieja, Google
   Search Console, revisión en un iPhone real y revisión de accesibilidad a
   fondo (Lighthouse ya da 100)
 
-## Hecho (16 y 17 sept 2026, cuatro sesiones)
+## Hecho (16 a 18 sept 2026, cinco sesiones)
 
 - Inventario de la web vieja y decisión página a página
 - Repositorio público con despliegue automático en su Vercel
@@ -118,3 +135,8 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   completa
 - Retoques de texto (17 sept): titular «Limpieza que transforma», «Servicios
   de limpieza» y «Desde La Pobla de Vallbona, a todo el Camp de Túria…»
+- **Quinta sesión (18 sept)**: `/instalar` (oculta, con el manifiesto
+  instalable y un service worker sólo ahí; a Frank le funcionó en su
+  Android), `/datos-de-facturacion` y `/reserva-de-servicios` (formularios por
+  correo con WhatsApp de segunda vía, en el pie, el sitemap y la política de
+  privacidad; probados con un envío real, llegan a la bandeja de entrada)

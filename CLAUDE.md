@@ -18,7 +18,7 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | Web vieja | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
 | Negocio | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git) |
 
-## Estado (17 sept 2026, cierre de la cuarta sesión)
+## Estado (18 sept 2026, cierre de la quinta sesión)
 
 **Todas las páginas están hechas** y publicadas en **`www.limpiezaselimperio.es`**:
 
@@ -50,6 +50,11 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
   Hostinger, publicado en la web. El presupuesto (por correo o WhatsApp) y la
   candidatura llegan a ese buzón; **probado de verdad, llegan a la bandeja de
   entrada** (ver *Restricciones*).
+- **Quinta sesión** (18 sept): lo que pidió Frank de su web vieja, en la
+  misma dirección: **`/reserva-de-servicios`** y **`/datos-de-facturacion`**,
+  dos formularios más por correo (probados de verdad, llegan). Y
+  **`/instalar`**, oculta, para poner la web en la pantalla de inicio de su
+  Android: le funcionó.
 - **Galería** con diez fotos: siete en la rejilla, una tarjeta «+3» y un visor
   a pantalla completa (ver *Estilo*).
 - **Falta**: que Frank cambie el enlace en Google y en sus redes, y sus
