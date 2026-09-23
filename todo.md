@@ -27,15 +27,21 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
       servicios, las zonas y las fotos. Está abajo, en las preguntas
 - [ ] **Search Console** (Kevin): propiedad **de dominio** para
       `limpiezaselimperio.es`, verificada con un **TXT en Hostinger** —sin
-      tocar MX, SPF, DKIM ni DMARC— y enviar el sitemap. Sin cookies ni
-      analítica: no rompe la política. Luego, una mirada al mes a qué páginas
-      están indexadas y con qué palabras le buscan
-- [ ] **Una sola web** (necesita el sí de Frank: apaga su web vieja): añadir el
-      `.net` en Vercel **como redirección** al `www` del `.es`, cambiar en el
-      DNS del `.net` **sólo** el A de `@` y el CNAME de `www`, y usar el
-      «Cambio de dirección» de Search Console. **Ni nameservers, ni MX, ni
-      SPF**: ahí vive su `info@` del `.net`. Comprobar después que ese correo
-      sigue llegando
+      tocar MX, SPF, DKIM ni DMARC— y enviar el sitemap (9 URLs). Sin cookies
+      ni analítica: no rompe la política. Luego, una mirada al mes a qué
+      páginas están indexadas y con qué palabras le buscan.
+      **⏳ Esperando a que Frank diga con qué cuenta de Google gestiona su
+      ficha** (23 sept), para no crear la propiedad dos veces
+- [ ] **Una sola web: el `.net` redirige al `.es`** — **decidido el 23 sept
+      (Kevin)**, ya no se pregunta. El runbook entero, con el orden y las
+      trampas, en `docs/seo.md` §2. En resumen: verificar el `.net` en Search
+      Console **antes** de tocar nada, añadirlo en Vercel **como redirección**
+      al `www` del `.es`, cambiar en el DNS del `.net` **sólo** el A de `@` y
+      el CNAME de `www`, y luego el «Cambio de dirección».
+      **Ni nameservers, ni MX, ni SPF**: ahí vive su `info@` del `.net`, y hay
+      que comprobar después que sigue llegando.
+      **Hace falta entrar en la cuenta de Webador de Frank** (el DNS del
+      `.net`) **y en su Vercel**: si no hay acceso, los da él
 
 ## Preguntas para Frank
 
@@ -94,9 +100,13 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
 - [ ] **El enlace de la web en su ficha de Google**: hoy lleva al `.net`
       (la web vieja). Que lo cambie a `https://www.limpiezaselimperio.es`.
       Lo mismo en la bio de Facebook, Instagram, TikTok, YouTube y X
-- [ ] **Su web vieja**: ¿la apagamos? Las dos están vivas y compiten entre
-      ellas en Google. Si dice sí, el `.net` lleva a la nueva y su
-      `info@…net` **no se toca** (`docs/seo.md`, §2)
+- [ ] **Con qué cuenta de Google gestiona su ficha**: hace falta para Search
+      Console (23 sept). No es para entrar en su cuenta, es para que la ficha y
+      Search Console no acaben en cuentas distintas
+- [ ] **Su web vieja**: se apaga y el `.net` lleva a la nueva (decidido el
+      23 sept). Hay que **decírselo**, y pedirle acceso al DNS del `.net` en
+      Webador —o que lo cambie él— y a su Vercel. Su `info@…net` **no se
+      toca** y seguirá funcionando (`docs/seo.md`, §2)
 - [ ] **En la ficha**: categoría «Servicio de limpieza», los servicios y las
       zonas que ya están en la web, y fotos. ¿Las sube él o le pasamos las
       diez de la galería?
@@ -123,8 +133,9 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
 - [ ] **Recibir desde fuera**: que un correo escrito a mano desde Gmail (no
       desde la web) llegue a `info@` y que una respuesta desde el buzón no caiga
       en spam. Lo de los formularios ya está probado
-- [ ] Decidir qué hacer con el `.net` (seguir con la web vieja o apuntarlo a
-      la nueva). Si se toca, **sólo A y CNAME, nunca nameservers, MX ni SPF**
+- [x] Decidir qué hacer con el `.net`: **redirige al `.es`** (Kevin, 23 sept).
+      Ejecutarlo es el tercer punto de *SEO*, arriba. Al tocarlo, **sólo A y
+      CNAME, nunca nameservers, MX ni SPF**
 
 ## Ya decidido (no volver a preguntar)
 
@@ -151,6 +162,11 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
 - **Fuera**: blog, redirecciones desde la web vieja, analítica (rompería el
   «sin cookies»), meta `keywords`, comprar enlaces, revisión en un iPhone real
   y revisión de accesibilidad a fondo (Lighthouse ya da 100)
+- **El `.net` redirige al `.es`** (Kevin, 23 sept): la web vieja de Webador se
+  apaga y el dominio viejo manda un 308 al `www` del `.es`, para que Google no
+  tenga dos webs del mismo negocio. **Sin mapear ruta por ruta**: las URLs
+  viejas caen en la 404, que explica que la web es nueva. La cuenta de Webador
+  **no se borra** y su `info@…net` no se toca
 - **SEO, decidido el 23 sept** (`docs/seo.md`): **Search Console sí** (ya no
   está «fuera»: no añade cookies y es la única forma de saber si Google indexa
   la web). **`aggregateRating` no**: sus reseñas son de su ficha de Google y

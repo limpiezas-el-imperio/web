@@ -15,7 +15,7 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | Vercel | proyecto `web` en la cuenta gratuita del cliente, enlazado al repositorio |
 | Dominio | **`www.limpiezaselimperio.es`**, de Frank en Hostinger (Kevin con acceso de administrador), DNS en Hostinger. **En marcha desde el 17 sept 2026.** Todo en `docs/dominio.md` |
 | Correo | **`info@limpiezaselimperio.es`, en Hostinger**: el que publica la web. El `info@limpiezaselimperio.net` sigue en Webador (es el de su cuenta de Vercel): muere si se borra la cuenta o se cambian los nameservers del `.net`. No se toca |
-| Web vieja | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
+| Web vieja | https://limpiezaselimperio.net (Webador). **Se apaga: el `.net` redirige al `.es`** (Kevin, 23 sept 2026; sin ejecutar todavía). Runbook en `docs/seo.md` §2, inventario en `docs/sitio-actual.md` |
 | Negocio | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git) |
 
 ## Estado (23 sept 2026, cierre de la sexta sesión)
@@ -69,6 +69,10 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
   **Search Console** y **que haya una sola web** (el `.net` sigue vivo con la
   vieja, y compiten). Todo en **`docs/seo.md`**; páginas por servicio o
   localidad, aparcadas a propósito.
+- **El `.net` redirige al `.es`** (Kevin, 23 sept), pero **sin ejecutar
+  todavía**: hace falta entrar en el DNS del `.net` (cuenta de Webador de
+  Frank) y en su Vercel. Search Console espera a que Frank diga con qué cuenta
+  de Google gestiona su ficha. Los dos runbooks, en `docs/seo.md`.
 - **Falta**: que Frank cambie el enlace en Google y en sus redes, y sus
   respuestas (`todo.md`).
 
@@ -261,8 +265,11 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
 - **Antes de escribir código de Next, lee `node_modules/next/dist/docs/`** (ver
   `AGENTS.md`): esta versión no es la que recuerdas. `src/proxy.ts`, no
   `middleware.ts`, si alguna vez hace falta.
-- **No añadas páginas ni formularios** sin hablarlo. **Sin redirecciones 301**
-  desde la web vieja (decisión de Kevin).
+- **No añadas páginas ni formularios** sin hablarlo. **Sin redirecciones ruta
+  a ruta desde la web vieja** (decisión de Kevin): las URLs de Webador caen en
+  la 404, que explica que la web es nueva. Lo que sí se hace es redirigir **el
+  dominio entero**, en Vercel y no en el código: el `.net` manda un 308 al
+  `www` del `.es` (Kevin, 23 sept 2026; `docs/seo.md` §2).
 - **Nada de datos inventados**: ni años de experiencia, ni reseñas, ni zonas,
   ni servicios que no salgan de él, de su web, de su ficha de Google o de lo
   que ha decidido Kevin con su contabilidad. **Excepción consciente: las
