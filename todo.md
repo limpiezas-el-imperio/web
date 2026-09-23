@@ -1,17 +1,41 @@
 # Pendiente
 
-Actualizado el **18 de septiembre de 2026**, al cerrar la quinta sesión.
+Actualizado el **23 de septiembre de 2026**, al cerrar la sexta sesión.
 
 ## Por dónde seguir
 
 **La web está completa y se sirve en `www.limpiezaselimperio.es`**, con el
 correo `info@limpiezaselimperio.es` en Hostinger.
 
-1. **Lo que queda de *Lanzamiento***: que Frank cambie el enlace en Google y en
+1. **SEO** (lo pidió Frank el 23 sept): los tres pasos de *SEO*, abajo. Todo
+   el razonamiento está en `docs/seo.md`. El código ya está hecho; lo que
+   queda son pasos en paneles, y el primero es de Frank.
+2. **Lo que queda de *Lanzamiento***: que Frank cambie el enlace en Google y en
    sus redes, y decidir qué hacer con el `.net`.
-2. **Mandarle a Frank las preguntas de abajo**, de una vez. Las que más pesan:
-   las descripciones de los servicios y el horario.
-3. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
+3. **Mandarle a Frank las preguntas de abajo**, de una vez. Las que más pesan:
+   el enlace de su ficha de Google, las descripciones de los servicios y el
+   horario.
+4. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
+
+## SEO
+
+Los tres frentes que se abrieron el 23 sept 2026, por orden de lo que pesa.
+El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
+
+- [ ] **Su ficha de Google, lo primero** (es de Frank, y pesa más que la web
+      entera para el cliente local): el enlace a `.es`, la categoría, los
+      servicios, las zonas y las fotos. Está abajo, en las preguntas
+- [ ] **Search Console** (Kevin): propiedad **de dominio** para
+      `limpiezaselimperio.es`, verificada con un **TXT en Hostinger** —sin
+      tocar MX, SPF, DKIM ni DMARC— y enviar el sitemap. Sin cookies ni
+      analítica: no rompe la política. Luego, una mirada al mes a qué páginas
+      están indexadas y con qué palabras le buscan
+- [ ] **Una sola web** (necesita el sí de Frank: apaga su web vieja): añadir el
+      `.net` en Vercel **como redirección** al `www` del `.es`, cambiar en el
+      DNS del `.net` **sólo** el A de `@` y el CNAME de `www`, y usar el
+      «Cambio de dirección» de Search Console. **Ni nameservers, ni MX, ni
+      SPF**: ahí vive su `info@` del `.net`. Comprobar después que ese correo
+      sigue llegando
 
 ## Preguntas para Frank
 
@@ -65,6 +89,20 @@ correo `info@limpiezaselimperio.es` en Hostinger.
 - [ ] **Borrar las dos pruebas** del buzón (18 sept, «PRUEBA DE LA WEB»:
       TOMAS RIVAS y BEATRIZ SOLANO)
 
+**Su ficha de Google y sus redes** (esto es lo que más le va a mover, 23 sept)
+
+- [ ] **El enlace de la web en su ficha de Google**: hoy lleva al `.net`
+      (la web vieja). Que lo cambie a `https://www.limpiezaselimperio.es`.
+      Lo mismo en la bio de Facebook, Instagram, TikTok, YouTube y X
+- [ ] **Su web vieja**: ¿la apagamos? Las dos están vivas y compiten entre
+      ellas en Google. Si dice sí, el `.net` lleva a la nueva y su
+      `info@…net` **no se toca** (`docs/seo.md`, §2)
+- [ ] **En la ficha**: categoría «Servicio de limpieza», los servicios y las
+      zonas que ya están en la web, y fotos. ¿Las sube él o le pasamos las
+      diez de la galería?
+- [ ] **Reseñas**: que siga pidiéndolas. El 4,9 con 68 es suyo y es lo que
+      más convence
+
 **Lo que no está en la web hasta que lo diga**
 
 - [ ] **El PDF de la hoja de servicio** que se descargaba en su reserva vieja:
@@ -110,11 +148,17 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   Llegan por correo. Ninguno más sin hablarlo
 - **Móvil de Frank**: un Android antiguo, no un iPhone. La web instalada en
   su pantalla de inicio desde `/instalar` (18 sept)
-- **Fuera**: blog, redirecciones desde la web vieja, Google
-  Search Console, revisión en un iPhone real y revisión de accesibilidad a
-  fondo (Lighthouse ya da 100)
+- **Fuera**: blog, redirecciones desde la web vieja, analítica (rompería el
+  «sin cookies»), meta `keywords`, comprar enlaces, revisión en un iPhone real
+  y revisión de accesibilidad a fondo (Lighthouse ya da 100)
+- **SEO, decidido el 23 sept** (`docs/seo.md`): **Search Console sí** (ya no
+  está «fuera»: no añade cookies y es la única forma de saber si Google indexa
+  la web). **`aggregateRating` no**: sus reseñas son de su ficha de Google y
+  Google no admite marcarlas como propias. **Páginas por servicio o por
+  localidad, aparcadas**: se deciden con lo que diga Search Console y cuando
+  Frank haya revisado las descripciones, no a ojo
 
-## Hecho (16 a 18 sept 2026, cinco sesiones)
+## Hecho (16 a 23 sept 2026, seis sesiones)
 
 - Inventario de la web vieja y decisión página a página
 - Repositorio público con despliegue automático en su Vercel
@@ -147,3 +191,10 @@ correo `info@limpiezaselimperio.es` en Hostinger.
   Navegación: desplegable «Clientes» en la cabecera, que ahora sale desde
   1200 px (entre 1025 y 1200 los enlaces se partían en dos líneas), y diez
   filas en el menú del móvil, que sigue cabiendo sin desplazarse
+- **Sexta sesión (23 sept), SEO**: repaso de lo que ya había (bien: metadatos,
+  canonical, sitemap, robots, JSON-LD, un `<h1>`, `alt`, AVIF, Lighthouse).
+  Arreglado lo que no: cinco páginas describían el negocio con cinco nodos
+  `LocalBusiness` distintos e incompletos y ninguno decía que fuera el mismo;
+  ahora el nodo vive entero en `src/datos/estructurados.ts` con un `@id` común.
+  Y `docs/seo.md`, con los tres frentes, quién hace cada paso y lo que no se
+  hace y por qué

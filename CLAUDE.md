@@ -18,7 +18,7 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | Web vieja | https://limpiezaselimperio.net (Webador). Inventario en `docs/sitio-actual.md` |
 | Negocio | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git) |
 
-## Estado (18 sept 2026, cierre de la quinta sesión)
+## Estado (23 sept 2026, cierre de la sexta sesión)
 
 **Todas las páginas están hechas** y publicadas en **`www.limpiezaselimperio.es`**:
 
@@ -60,6 +60,15 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
   *Estilo*).
 - **Galería** con diez fotos: siete en la rejilla, una tarjeta «+3» y un visor
   a pantalla completa (ver *Estilo*).
+- **Sexta sesión** (23 sept): **SEO**, que pidió Frank. Lo de dentro ya
+  estaba bien (metadatos, canonical, sitemap, robots, JSON-LD, un `<h1>`,
+  `alt`, AVIF, Lighthouse); se arregló que cinco páginas describieran el
+  negocio con cinco nodos `LocalBusiness` distintos e incompletos, y ahora va
+  entero y con un `@id` común desde `src/datos/estructurados.ts`. Lo que falta
+  no es código: **su ficha de Google** (el enlace todavía lleva al `.net`),
+  **Search Console** y **que haya una sola web** (el `.net` sigue vivo con la
+  vieja, y compiten). Todo en **`docs/seo.md`**; páginas por servicio o
+  localidad, aparcadas a propósito.
 - **Falta**: que Frank cambie el enlace en Google y en sus redes, y sus
   respuestas (`todo.md`).
 
@@ -157,6 +166,7 @@ src/componentes/  Cabecera · Navegacion (menú del móvil) · Pie · BarraConta
                   Opiniones · Galeria · useCarrusel · MapaZonas
                   TextoLegal · DatosEstructurados (JSON-LD) · Marca
 src/datos/        negocio.ts (datos del negocio, servicios, zonas, opiniones)
+                  estructurados.ts (el negocio en JSON-LD, con @id común)
                   preguntas.ts · fotos.ts · navegacion.ts · sitio.ts
                   formularios.ts (lo que comparten formularios y acciones)
 src/acciones/     acciones de servidor: presupuesto · reserva · candidatura ·
@@ -165,7 +175,7 @@ src/acciones/     acciones de servidor: presupuesto · reserva · candidatura ·
 src/imagenes/     fotos (se importan, nunca desde public/)
 public/           logo.jpg (sin teléfono) · opengraph-image.jpg · sw.js (sólo /instalar)
                   icono-192.png · icono-512.png (logo, para el manifest)
-docs/             sitio-actual.md (la web vieja) · dominio.md
+docs/             sitio-actual.md (la web vieja) · dominio.md · seo.md
 docs/privado/     fuera de git
 ```
 
@@ -277,6 +287,12 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
   pasar por el servidor). Mandan el mismo texto. La reserva, la candidatura y la
   facturación llevan WhatsApp como segunda vía. **Otro formulario se habla antes.**
 - **Legales: lo mínimo y en llano.** No somos abogados; el titular es él.
+- **Datos estructurados: un solo negocio**, en `src/datos/estructurados.ts`,
+  con un `@id` común y el nodo entero en cada página que habla de él (antes
+  eran cinco nodos distintos e incompletos). **Nunca `aggregateRating`** con
+  la nota de Google: son reseñas de un tercero y Google no admite marcarlas
+  como propias. **Todo el SEO —lo hecho, lo que falta y lo que no se hace y
+  por qué— está en `docs/seo.md`.**
 
 ## Sistema de diseño
 
