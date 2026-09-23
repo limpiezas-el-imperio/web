@@ -45,6 +45,19 @@ sin sus registros de aparcamiento:
 **No quites MX, SPF, DKIM ni DMARC** al tocar los registros de la web: el
 correo de la web depende de ellos.
 
+El CNAME exacto del `www` **no hace falta buscarlo en el panel de Vercel**: ya
+está publicado en el DNS del `.es` y se lee desde fuera. Sirve, por ejemplo,
+para saber a dónde apuntar otro dominio (el `.net`, `docs/seo.md` §2):
+
+```bash
+dig +short CNAME www.limpiezaselimperio.es @8.8.8.8   # el …vercel-dns-0NN.com
+dig +short A     limpiezaselimperio.es     @8.8.8.8   # el apex de Vercel
+```
+
+Aun así, **al añadir un dominio nuevo en Vercel manda lo que diga su panel**
+(*Settings → Domains* del proyecto `web`): puede pedir otro valor, y el panel
+es la fuente buena.
+
 Se dejaron los DNS en Hostinger y no se pasaron a Vercel para que Kevin pueda
 editarlos con su acceso, sin entrar en la cuenta de Vercel de Frank.
 
