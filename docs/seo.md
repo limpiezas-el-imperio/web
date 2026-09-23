@@ -14,7 +14,7 @@ No hay que volver a tocarlo, y conviene no romperlo:
 | Qué | Dónde |
 |---|---|
 | Título y descripción propios en cada página, canonical y Open Graph | `metadatosPagina()` en `src/datos/sitio.ts` |
-| Sitemap con las 12 páginas públicas y robots que lo anuncia | `src/app/sitemap.ts`, `src/app/robots.ts` |
+| Sitemap con 9 URLs y robots que lo anuncia | `src/app/sitemap.ts`, `src/app/robots.ts` |
 | Un `LocalBusiness` con `@id` común, completo en las cinco páginas que hablan del negocio | `src/datos/estructurados.ts` |
 | Servicios como `ItemList` de `Service`, y la FAQ como `FAQPage` | `nuestros-servicios`, `preguntas-frecuentes` |
 | Un `<h1>` por página, `alt` en todas las fotos, foco visible | `CabeceraPagina`, `src/datos/fotos.ts` |
@@ -36,7 +36,7 @@ Para una empresa de limpieza de La Pobla, el orden es éste y no otro:
 ## 1. Search Console (paso de Kevin, en el navegador)
 
 Estaba en «fuera» en `todo.md`; **se reabrió el 23 sept 2026**, porque sin él
-no sabemos ni si las 12 páginas están indexadas. No añade cookies, analítica ni
+no sabemos ni si el sitemap está indexado. No añade cookies, analítica ni
 peticiones a terceros: es un panel de Google que lee el sitemap desde fuera, no
 un script en la web. **La política de cookies sigue valiendo tal cual.**
 
@@ -53,7 +53,10 @@ un script en la web. **La política de cookies sigue valiendo tal cual.**
 
 Qué mirar después, sin obsesionarse (una vez al mes vale):
 
-- **Páginas → indexadas**: deberían acabar siendo las 12 del sitemap.
+- **Páginas → indexadas**: el sitemap manda **9 URLs**, no las 12 públicas.
+  Las tres legales (aviso legal, privacidad, cookies) se dejaron fuera a
+  propósito en `sitemap.ts`, pero se enlazan desde el pie, así que Google
+  puede indexarlas igual: **entre 9 y 12 es lo normal**, y no es un fallo.
   `/instalar` no debe salir: va en `noindex` a propósito.
 - **Rendimiento → consultas**: con qué palabras le encuentran de verdad. **Es
   lo que decidirá si algún día se escriben las páginas de servicio o localidad
