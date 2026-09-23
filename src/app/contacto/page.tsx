@@ -2,14 +2,8 @@ import { ArrowUpRight, Clock, Mail, MapPin, MessageCircle, Phone, Share2 } from 
 import CabeceraPagina from "@/componentes/CabeceraPagina";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
 import Presupuesto from "@/componentes/Presupuesto";
-import {
-  enlaceWhatsApp,
-  horario,
-  negocio,
-  redes,
-  valoracion,
-  zonas,
-} from "@/datos/negocio";
+import { negocioEstructurado } from "@/datos/estructurados";
+import { enlaceWhatsApp, horario, negocio, redes, valoracion, zonas } from "@/datos/negocio";
 import { metadatosPagina, urlBase } from "@/datos/sitio";
 import s from "./contacto.module.css";
 
@@ -23,20 +17,7 @@ export const metadata = metadatosPagina({
 const paginaContacto = {
   "@type": "ContactPage",
   url: `${urlBase}/contacto`,
-  mainEntity: {
-    "@type": "LocalBusiness",
-    name: negocio.nombre,
-    url: urlBase,
-    telephone: negocio.telefono,
-    email: negocio.correo,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: negocio.localidad,
-      postalCode: negocio.codigoPostal,
-      addressRegion: negocio.provincia,
-      addressCountry: "ES",
-    },
-  },
+  mainEntity: negocioEstructurado,
 };
 
 // La página de contacto no acaba con <Contacto />, como las demás: sería

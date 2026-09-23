@@ -17,15 +17,9 @@ import MapaZonas from "@/componentes/MapaZonas";
 import Opiniones from "@/componentes/Opiniones";
 import Presupuesto from "@/componentes/Presupuesto";
 import { fotoPortada } from "@/datos/fotos";
-import {
-  enlaceWhatsApp,
-  negocio,
-  redes,
-  servicios,
-  valoracion,
-  zonas,
-} from "@/datos/negocio";
-import { metadatosPagina, urlBase } from "@/datos/sitio";
+import { negocioEstructurado } from "@/datos/estructurados";
+import { enlaceWhatsApp, negocio, servicios, valoracion, zonas } from "@/datos/negocio";
+import { metadatosPagina } from "@/datos/sitio";
 import s from "./inicio.module.css";
 
 export const metadata = metadatosPagina({
@@ -57,34 +51,6 @@ const pasos = [
   },
 ];
 
-const negocioEstructurado = {
-  "@type": "LocalBusiness",
-  name: negocio.nombre,
-  description: "Limpieza de viviendas, comunidades, oficinas, locales y obras.",
-  image: `${urlBase}/logo.jpg`,
-  logo: `${urlBase}/logo.jpg`,
-  url: urlBase,
-  telephone: negocio.telefono,
-  email: negocio.correo,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: negocio.localidad,
-    postalCode: negocio.codigoPostal,
-    addressRegion: negocio.provincia,
-    addressCountry: "ES",
-  },
-  hasMap: negocio.mapa,
-  areaServed: zonas.map((z) => ({ "@type": "Place", name: z })),
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "06:00",
-      closes: "18:00",
-    },
-  ],
-  sameAs: redes.map((r) => r.url),
-};
 
 export default function Inicio() {
   return (

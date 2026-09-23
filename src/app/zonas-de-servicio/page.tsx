@@ -3,15 +3,9 @@ import CabeceraPagina from "@/componentes/CabeceraPagina";
 import Contacto from "@/componentes/Contacto";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
 import MapaZonas from "@/componentes/MapaZonas";
-import {
-  areas,
-  barriosValencia,
-  enlaceWhatsApp,
-  negocio,
-  zonas,
-  zonasPorArea,
-} from "@/datos/negocio";
-import { metadatosPagina, urlBase } from "@/datos/sitio";
+import { negocioEstructurado } from "@/datos/estructurados";
+import { areas, barriosValencia, enlaceWhatsApp, negocio, zonasPorArea } from "@/datos/negocio";
+import { metadatosPagina } from "@/datos/sitio";
 import s from "./zonas.module.css";
 
 export const metadata = metadatosPagina({
@@ -20,17 +14,10 @@ export const metadata = metadatosPagina({
   ruta: "/zonas-de-servicio",
 });
 
-const zonasEstructuradas = {
-  "@type": "LocalBusiness",
-  name: negocio.nombre,
-  url: urlBase,
-  areaServed: [...zonas, ...barriosValencia].map((z) => ({ "@type": "Place", name: z })),
-};
-
 export default function ZonasDeServicio() {
   return (
     <>
-      <DatosEstructurados datos={zonasEstructuradas} />
+      <DatosEstructurados datos={negocioEstructurado} />
 
       <CabeceraPagina
         antetitulo="Zonas de servicio"

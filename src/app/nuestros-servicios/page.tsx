@@ -3,8 +3,9 @@ import Link from "next/link";
 import CabeceraPagina from "@/componentes/CabeceraPagina";
 import Contacto from "@/componentes/Contacto";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
-import { enlaceWhatsApp, negocio, servicios, zonas } from "@/datos/negocio";
-import { metadatosPagina, urlBase } from "@/datos/sitio";
+import { negocioEstructurado, referenciaNegocio } from "@/datos/estructurados";
+import { enlaceWhatsApp, negocio, servicios } from "@/datos/negocio";
+import { metadatosPagina } from "@/datos/sitio";
 import s from "./servicios.module.css";
 
 export const metadata = metadatosPagina({
@@ -41,6 +42,8 @@ const incluido = [
   },
 ];
 
+// El catálogo y el negocio juntos en un `@graph`: así el `provider` de cada
+// servicio, que va por `@id`, se resuelve en esta misma página.
 const catalogo = {
   "@type": "ItemList",
   name: `Servicios de ${negocio.nombre}`,
@@ -50,8 +53,7 @@ const catalogo = {
       name: l.nombre,
       description: l.descripcion,
       category: g.titulo,
-      provider: { "@type": "LocalBusiness", name: negocio.nombre, url: urlBase },
-      areaServed: zonas.map((z) => ({ "@type": "Place", name: z })),
+      provider: referenciaNegocio,
     })),
   ),
 };
@@ -59,7 +61,7 @@ const catalogo = {
 export default function NuestrosServicios() {
   return (
     <>
-      <DatosEstructurados datos={catalogo} />
+      <DatosEstructurados datos={{ "@graph": [negocioEstructurado, catalogo] }} />
 
       <CabeceraPagina
         antetitulo="Servicios"

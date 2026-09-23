@@ -15,6 +15,7 @@ import Link from "next/link";
 import CabeceraPagina from "@/componentes/CabeceraPagina";
 import Contacto from "@/componentes/Contacto";
 import DatosEstructurados from "@/componentes/DatosEstructurados";
+import { negocioEstructurado } from "@/datos/estructurados";
 import { fotos } from "@/datos/fotos";
 import { negocio, servicios, valoracion, zonas } from "@/datos/negocio";
 import { metadatosPagina, urlBase } from "@/datos/sitio";
@@ -100,19 +101,7 @@ const valores = [
 const sobreNosotros = {
   "@type": "AboutPage",
   url: `${urlBase}/quienes-somos`,
-  mainEntity: {
-    "@type": "LocalBusiness",
-    name: negocio.nombre,
-    url: urlBase,
-    slogan: negocio.lema,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: negocio.localidad,
-      postalCode: negocio.codigoPostal,
-      addressRegion: negocio.provincia,
-      addressCountry: "ES",
-    },
-  },
+  mainEntity: negocioEstructurado,
 };
 
 export default function QuienesSomos() {
