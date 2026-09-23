@@ -106,7 +106,19 @@ panel de Vercel.
    pasar las señales de un dominio al otro. Copiar de ahí el `A` del apex y el
    `CNAME` del `www`, que son los que toca poner en el paso 3.
 3. **En el DNS del `.net`**: cambiar **sólo** el `A` de `@` y el `CNAME` de
-   `www` a esos valores.
+   `www` a esos valores. El apex pide un `A` (el `216.198.79.1` de siempre) y
+   el `www`, un `CNAME` (el `…vercel-dns-0NN.com`).
+
+> ⚠️ **El `www` del `.net` es el que más importa, y es fácil olvidarlo.** La
+> web vieja se sirve en `www.limpiezaselimperio.net` —el apex ya redirige al
+> `www` en Webador— y es esa URL con `www` la que Google tiene indexada. Si
+> sólo se consolida el apex, la que sale en las búsquedas sigue sirviendo la
+> web vieja. **Los dos, y los dos con 308 al `www` del `.es`.**
+
+> ⚠️ **En Vercel, pestaña `DNS Records`, nunca `Vercel DNS`.** La segunda se
+> trae la zona entera a Vercel cambiando los nameservers, que es justo lo que
+> mata el `info@limpiezaselimperio.net`. Los valores que dé `DNS Records` se
+> copian **a mano en Webador**.
 
 > ⚠️ **Ni nameservers, ni MX, ni SPF.** El `info@limpiezaselimperio.net` vive
 > en Webador y es también el correo de la cuenta de Vercel de Frank. El correo
