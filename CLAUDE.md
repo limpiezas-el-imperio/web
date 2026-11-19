@@ -8,15 +8,15 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 `README.md` explica el porqué de las decisiones; esto es la guía operativa y
 `todo.md`, lo pendiente.
 
-| | |
-|---|---|
-| Repositorio | `limpiezas-el-imperio/web` (**público**, del cliente). `kevjrmy` es colaborador |
-| Producción | **https://www.limpiezaselimperio.es** (también en https://limpiezaselimperio.vercel.app) |
-| Vercel | proyecto `web` en la cuenta gratuita del cliente, enlazado al repositorio |
-| Dominio | **`www.limpiezaselimperio.es`**, de Frank en Hostinger (Kevin con acceso de administrador), DNS en Hostinger. **En marcha desde el 17 sept 2026.** Todo en `docs/dominio.md` |
-| Correo | **`info@limpiezaselimperio.es`, en Hostinger**: el que publica la web. El `info@limpiezaselimperio.net` sigue en Webador (es el de su cuenta de Vercel): muere si se borra la cuenta o se cambian los nameservers del `.net`. No se toca |
-| Web vieja | https://limpiezaselimperio.net (Webador). **Se apaga: el `.net` redirige al `.es`** (Kevin, 23 sept 2026; sin ejecutar todavía). Runbook en `docs/seo.md` §2, inventario en `docs/sitio-actual.md` |
-| Negocio | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git) |
+|             |                                                                                                                |
+| ----------- | -------------------------------------------------------------------------------------------------------------- |
+| Repositorio | `limpiezas-el-imperio/web`, **público**, del cliente. `kevjrmy` es colaborador                                 |
+| Producción  | https://www.limpiezaselimperio.es (y https://limpiezaselimperio.vercel.app)                                    |
+| Vercel      | Proyecto `web` en la cuenta gratuita de Frank, enlazado al repositorio                                         |
+| Dominio     | `www.limpiezaselimperio.es`, de Frank en Hostinger, con el DNS ahí. Desde el 17 sept 2026 (`docs/dominio.md`)  |
+| Correo      | `info@limpiezaselimperio.es`, en Hostinger: el que publica la web. El del `.net` sigue en Webador y no se toca |
+| Web vieja   | limpiezaselimperio.net (Webador). Se apaga: el `.net` redirigirá al `.es` (`docs/seo.md` §2)                   |
+| Negocio     | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git)                                            |
 
 ## Estado (19 nov 2026)
 
@@ -88,9 +88,22 @@ escribe en esa base de datos.
   contraseña en Hostinger, hay que cambiarla también en Vercel**: si no, el
   formulario da error (y ofrece WhatsApp).
 
+## Equipo nuevo
+
+Todo lo que puede ir en git está en git. En un equipo nuevo:
+
+1. **Herramientas**: Node 22 (`.nvmrc`; con nvm, `nvm use`), `gh` y la clave
+   SSH de Kevin en GitHub (los push van por `git@github.com`). Para comprobar
+   la web y para el vídeo, además Chrome; sólo para el vídeo, ffmpeg y Python 3.
+2. `git clone git@github.com:limpiezas-el-imperio/web.git` y `npm install`.
+3. **Lo de *Lo que no está en git***, abajo: `.env` y `docs/privado/`.
+4. `npm run build` para ver que todo está en su sitio.
+
 ## Lo que no está en git
 
-Al cambiar de equipo, `git clone` y `npm install` lo traen casi todo. Esto no:
+No entra porque es un secreto o porque es de Frank y no está publicado (ver
+*Qué se puede publicar*). Su proyecto hermano tampoco sirve para guardarlo: el
+repositorio `../limpiezas-imperio-software/` también es público.
 
 - **`.env`**: una línea, `EMAIL_PASSWORD=` con la contraseña del buzón
   `info@limpiezaselimperio.es`, sin comillas. Está en el panel de Hostinger
@@ -333,17 +346,17 @@ documentos) va en español.
 **Coherencia antes que novedad.** Todo vive en `globals.css`: si algo se
 parece a una de estas piezas, usa la clase, no copies sus valores.
 
-| Pieza | Clase | Cuándo |
-|---|---|---|
-| Etiqueta en mayúsculas | `.antetitulo` (+ `--claro` sobre azul) | Encima de un título, títulos del pie. Lleva la raya dorada |
-| Número de índice | `.numero` (+ `--claro`) | 01, 02… en un círculo |
-| Tarjeta | `.tarjeta` | Bloque blanco con esquina grande y sombra |
-| Icono en círculo | `.icono-circulo` | Iconos de hechos y ventajas, con el degradado |
-| Enlace en un texto | `.enlace` (+ `--claro`) | Dentro de una frase |
-| Enlace de acción | `.enlace-flecha` (+ `--claro`) | «Pedir presupuesto», «Ver todos…» |
-| Botón principal | `.boton .boton--whatsapp` | Verde, redondeado, con sombra. También sobre azul |
-| Botón secundario | `.boton .boton--claro` | Blanco con borde: «Llamar» |
-| Formulario por correo | `PiezasFormulario` + `useFormularioCorreo` | Contacto, trampa, aceptar, error y «enviado». Estilos de campos en `Presupuesto.module.css` |
+| Pieza                  | Clase                                      | Cuándo                                                                                      |
+| ---------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| Etiqueta en mayúsculas | `.antetitulo` (+ `--claro` sobre azul)     | Encima de un título, títulos del pie. Lleva la raya dorada                                  |
+| Número de índice       | `.numero` (+ `--claro`)                    | 01, 02… en un círculo                                                                       |
+| Tarjeta                | `.tarjeta`                                 | Bloque blanco con esquina grande y sombra                                                   |
+| Icono en círculo       | `.icono-circulo`                           | Iconos de hechos y ventajas, con el degradado                                               |
+| Enlace en un texto     | `.enlace` (+ `--claro`)                    | Dentro de una frase                                                                         |
+| Enlace de acción       | `.enlace-flecha` (+ `--claro`)             | «Pedir presupuesto», «Ver todos…»                                                           |
+| Botón principal        | `.boton .boton--whatsapp`                  | Verde, redondeado, con sombra. También sobre azul                                           |
+| Botón secundario       | `.boton .boton--claro`                     | Blanco con borde: «Llamar»                                                                  |
+| Formulario por correo  | `PiezasFormulario` + `useFormularioCorreo` | Contacto, trampa, aceptar, error y «enviado». Estilos de campos en `Presupuesto.module.css` |
 
 - **Paleta del logo**: `--marino`/`--marino-hondo` (tinta y fondos oscuros),
   `--azul` (acento sobre claro), `--cielo` (sólo degradados y detalles, no pasa
@@ -369,6 +382,13 @@ parece a una de estas piezas, usa la clase, no copies sus valores.
 
 ## Estilo
 
+- **Tablas en los archivos de contexto** (`CLAUDE.md`, `AGENTS.md`, `todo.md`,
+  `docs/`): celdas rellenadas con espacios para que las barras queden en
+  columna en todas las filas, y los guiones de la fila separadora a todo el
+  ancho de la columna. El texto en bruto tiene que leerse como una rejilla. Si
+  un cambio ensancha una columna, se realinea la tabla entera. Por eso, celdas
+  cortas: lo largo, en una lista debajo. (Preferencia de Kevin para todos sus
+  proyectos; aquí, para que no dependa de su equipo.)
 - **Todo en español**: interfaz, nombres, comentarios y commits. Única
   excepción: los hooks empiezan por `use`.
 - **CSS plano**, sin Tailwind ni SASS. Lo común en `globals.css`; lo de cada

@@ -24,23 +24,23 @@ correo.
 **En Vercel** (proyecto `web`, *Settings → Domains*, cuenta de Frank; la CLI de
 Kevin está en su propia cuenta y no llega):
 
-| Dominio | Papel |
-|---|---|
-| `www.limpiezaselimperio.es` | **Principal** (Production) |
-| `limpiezaselimperio.es` | Redirige con un 308 al `www` |
+| Dominio                     | Papel                        |
+| --------------------------- | ---------------------------- |
+| `www.limpiezaselimperio.es` | **Principal** (Production)   |
+| `limpiezaselimperio.es`     | Redirige con un 308 al `www` |
 
 **En Hostinger** (*DNS / Serveurs de noms*), con los nameservers de Hostinger y
 sin sus registros de aparcamiento:
 
-| Tipo | Nombre | Valor |
-|---|---|---|
-| A | `@` | `216.198.79.1` |
-| CNAME | `www` | el que da Vercel para `www` (un `…vercel-dns-017.com`); copiarlo de su panel |
-| MX | `@` | `5 mx1.hostinger.com` · `10 mx2.hostinger.com` |
-| TXT | `@` | `v=spf1 include:_spf.mail.hostinger.com ~all` |
-| CNAME | `hostingermail-a/b/c._domainkey` | `hostingermail-a/b/c.dkim.mail.hostinger.com` (DKIM) |
-| TXT | `_dmarc` | `v=DMARC1; p=none` |
-| CNAME | `autodiscover` | `autodiscover.mail.hostinger.com` |
+| Tipo  | Nombre                           | Valor                                                                        |
+| ----- | -------------------------------- | ---------------------------------------------------------------------------- |
+| A     | `@`                              | `216.198.79.1`                                                               |
+| CNAME | `www`                            | el que da Vercel para `www` (un `…vercel-dns-017.com`); copiarlo de su panel |
+| MX    | `@`                              | `5 mx1.hostinger.com` · `10 mx2.hostinger.com`                               |
+| TXT   | `@`                              | `v=spf1 include:_spf.mail.hostinger.com ~all`                                |
+| CNAME | `hostingermail-a/b/c._domainkey` | `hostingermail-a/b/c.dkim.mail.hostinger.com` (DKIM)                         |
+| TXT   | `_dmarc`                         | `v=DMARC1; p=none`                                                           |
+| CNAME | `autodiscover`                   | `autodiscover.mail.hostinger.com`                                            |
 
 **No quites MX, SPF, DKIM ni DMARC** al tocar los registros de la web: el
 correo de la web depende de ellos.
@@ -82,13 +82,13 @@ ficha de Google y en sus redes.
 Sigue en **Webador**, con la web vieja. **Ya no está añadido en Vercel.** Su
 correo ya no sale en la web nueva, pero sigue vivo.
 
-| Registro | Valor | Qué es |
-|---|---|---|
-| NS | `ns1.openprovider.nl` · `ns2.openprovider.be` · `ns3.openprovider.eu` | Openprovider, el registrador de Webador |
-| A `@` | `35.204.150.5` | Webador |
-| `www` | CNAME `website-rendering.webador.com` | Webador |
-| **MX** | **`0 mail.webador.com`** | **El correo lo da Webador** |
-| TXT | `v=spf1 include:_spf.webador.com ~all` | SPF del correo |
+| Registro | Valor                                                                 | Qué es                                  |
+| -------- | --------------------------------------------------------------------- | --------------------------------------- |
+| NS       | `ns1.openprovider.nl` · `ns2.openprovider.be` · `ns3.openprovider.eu` | Openprovider, el registrador de Webador |
+| A `@`    | `35.204.150.5`                                                        | Webador                                 |
+| `www`    | CNAME `website-rendering.webador.com`                                 | Webador                                 |
+| **MX**   | **`0 mail.webador.com`**                                              | **El correo lo da Webador**             |
+| TXT      | `v=spf1 include:_spf.webador.com ~all`                                | SPF del correo                          |
 
 ### ⚠️ El correo `info@` no se puede romper
 

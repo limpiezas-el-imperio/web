@@ -11,16 +11,16 @@ web y que Google sepa que esta existe—, y eso no se arregla escribiendo CSS.
 
 No hay que volver a tocarlo, y conviene no romperlo:
 
-| Qué | Dónde |
-|---|---|
-| Título y descripción propios en cada página, canonical y Open Graph | `metadatosPagina()` en `src/datos/sitio.ts` |
-| Sitemap con 9 URLs y robots que lo anuncia | `src/app/sitemap.ts`, `src/app/robots.ts` |
-| Un `LocalBusiness` con `@id` común, completo en las cinco páginas que hablan del negocio | `src/datos/estructurados.ts` |
-| Servicios como `ItemList` de `Service`, y la FAQ como `FAQPage` | `nuestros-servicios`, `preguntas-frecuentes` |
-| Un `<h1>` por página, `alt` en todas las fotos, foco visible | `CabeceraPagina`, `src/datos/fotos.ts` |
-| AVIF con WebP de respaldo y `sizes` reales | `next.config.ts` |
-| Lighthouse en móvil: accesibilidad 100, rendimiento 96–99 | — |
-| `/instalar` fuera del índice (`robots: { index: false }`) y del sitemap | `src/app/instalar/page.tsx` |
+| Qué                                                                                      | Dónde                                        |
+| ---------------------------------------------------------------------------------------- | -------------------------------------------- |
+| Título y descripción propios en cada página, canonical y Open Graph                      | `metadatosPagina()` en `src/datos/sitio.ts`  |
+| Sitemap con 9 URLs y robots que lo anuncia                                               | `src/app/sitemap.ts`, `src/app/robots.ts`    |
+| Un `LocalBusiness` con `@id` común, completo en las cinco páginas que hablan del negocio | `src/datos/estructurados.ts`                 |
+| Servicios como `ItemList` de `Service`, y la FAQ como `FAQPage`                          | `nuestros-servicios`, `preguntas-frecuentes` |
+| Un `<h1>` por página, `alt` en todas las fotos, foco visible                             | `CabeceraPagina`, `src/datos/fotos.ts`       |
+| AVIF con WebP de respaldo y `sizes` reales                                               | `next.config.ts`                             |
+| Lighthouse en móvil: accesibilidad 100, rendimiento 96–99                                | —                                            |
+| `/instalar` fuera del índice (`robots: { index: false }`) y del sitemap                  | `src/app/instalar/page.tsx`                  |
 
 ## Lo que de verdad mueve el posicionamiento local, por orden
 

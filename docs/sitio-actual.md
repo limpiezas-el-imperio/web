@@ -13,20 +13,20 @@ mirarlo en un navegador antes de darlo por sabido.
 Decidido con Kevin. **Sin redirecciones 301**: las rutas buenas se conservan
 tal cual y las malas se renombran sin más.
 
-| Ruta nueva | Viene de | Qué lleva |
-|---|---|---|
-| `/` | `/` | ✅ Hecha |
-| `/quienes-somos` | igual | ✅ Hecha. Dónde está, por qué elegirle, los tres valores como texto (no imágenes). Visión y misión fuera; «tarifas premium» también, a preguntar |
-| `/nuestros-servicios` | igual | ✅ Hecha. **Una sola página** con cinco áreas y una descripción corta por servicio (borrador) |
-| `/zonas-de-servicio` | igual | ✅ Hecha. La lista la decidió Kevin (sus dos listas y dónde trabaja de verdad) |
-| `/preguntas-frecuentes` | `/preguntas-frecuentes-blog` | ✅ Hecha. Sólo la FAQ; el blog fuera |
-| `/contacto` | — (nueva) | ✅ Hecha. Canales, horario, zonas, redes y qué contarnos para el presupuesto |
-| `/trabaja-con-nosotros` | igual | ✅ Hecha. Formulario que llega por correo, sin DNI; WhatsApp como segunda vía |
-| `/reserva-de-servicios` | igual | ✅ Hecha (18 sept 2026, la pidió Frank). Formulario por correo con día y hora; DNI opcional; localidad en vez de provincia. **Sin el PDF**: es su parte de trabajo interno, con precios y el mínimo de 4 horas |
-| `/datos-de-facturacion` | igual | ✅ Hecha (18 sept 2026, la pidió Frank). Formulario por correo con consentimiento; escalera, piso y puerta en un solo campo opcional; sin «envíame una copia» |
-| `/aviso-legal` | `/aviso-legal-limpiezas-el-imperio` | ✅ Reescrito de cero, sin NIF (decisión de Kevin) |
-| `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | ✅ Reescrita de cero |
-| `/politica-de-cookies` | `/politica-de-cookies-limpiezas-el-imperio` | ✅ Reescrita de cero |
+| Ruta nueva                | Viene de                                       | Qué lleva                                                                                                                                                                                                     |
+| ------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                       | `/`                                            | ✅ Hecha                                                                                                                                                                                                       |
+| `/quienes-somos`          | igual                                          | ✅ Hecha. Dónde está, por qué elegirle, los tres valores como texto (no imágenes). Visión y misión fuera; «tarifas premium» también, a preguntar                                                               |
+| `/nuestros-servicios`     | igual                                          | ✅ Hecha. **Una sola página** con cinco áreas y una descripción corta por servicio (borrador)                                                                                                                  |
+| `/zonas-de-servicio`      | igual                                          | ✅ Hecha. La lista la decidió Kevin (sus dos listas y dónde trabaja de verdad)                                                                                                                                 |
+| `/preguntas-frecuentes`   | `/preguntas-frecuentes-blog`                   | ✅ Hecha. Sólo la FAQ; el blog fuera                                                                                                                                                                           |
+| `/contacto`               | — (nueva)                                      | ✅ Hecha. Canales, horario, zonas, redes y qué contarnos para el presupuesto                                                                                                                                   |
+| `/trabaja-con-nosotros`   | igual                                          | ✅ Hecha. Formulario que llega por correo, sin DNI; WhatsApp como segunda vía                                                                                                                                  |
+| `/reserva-de-servicios`   | igual                                          | ✅ Hecha (18 sept 2026, la pidió Frank). Formulario por correo con día y hora; DNI opcional; localidad en vez de provincia. **Sin el PDF**: es su parte de trabajo interno, con precios y el mínimo de 4 horas |
+| `/datos-de-facturacion`   | igual                                          | ✅ Hecha (18 sept 2026, la pidió Frank). Formulario por correo con consentimiento; escalera, piso y puerta en un solo campo opcional; sin «envíame una copia»                                                  |
+| `/aviso-legal`            | `/aviso-legal-limpiezas-el-imperio`            | ✅ Reescrito de cero, sin NIF (decisión de Kevin)                                                                                                                                                              |
+| `/politica-de-privacidad` | `/politica-de-privacidad-limpiezas-el-imperio` | ✅ Reescrita de cero                                                                                                                                                                                           |
+| `/politica-de-cookies`    | `/politica-de-cookies-limpiezas-el-imperio`    | ✅ Reescrita de cero                                                                                                                                                                                           |
 
 **Fuera**, sin sustituto:
 
@@ -41,25 +41,25 @@ tal cual y las malas se renombran sin más.
 
 ## Mapa de la web antigua
 
-| Ruta actual | Título | Qué es |
-|---|---|---|
-| `/` | LIMPIEZAS EL IMPERIO | Inicio: una imagen y el bloque de contacto |
-| `/quienes-somos` | LIMPIEZAS EL IMPERIO | Quiénes somos y por qué elegirnos |
-| `/nuestros-servicios` | LIMPIEZAS EL IMPERIO | 27 tarjetas (26 servicios, uno duplicado) |
-| `/solicitar-presupuesto` | LIMPIEZAS EL IMPERIO | Formulario de presupuesto y zonas |
-| `/solicitar-servicios` | LIMPIEZAS EL IMPERIO | Igual que la anterior (alias) |
-| `/solicitar-presupuesto-1` | LIMPIEZAS EL IMPERIO | Igual que la anterior (alias) |
-| `/reserva-de-servicios` | Reserva de Servicios \| … | Formulario «Hoja de servicio» y PDF |
-| `/datos-de-facturacion` | LIMPIEZAS EL IMPERIO | Formulario de facturación |
-| `/tu-opinion-importa-mucho` | LIMPIEZAS EL IMPERIO | Comentarios y votación con estrellas |
-| `/zonas-de-servicio` | Zonas de servicio \| … | Lista de zonas |
-| `/preguntas-frecuentes-blog` | LIMPIEZAS EL IMPERIO | FAQ y listado del blog |
-| `/preguntas-frecuentes-blog/<id>_<slug>` | | 8 entradas, ver abajo |
-| `/trabaja-con-nosotros` | LIMPIEZAS EL IMPERIO | Formulario de empleo |
-| `/aviso-legal-limpiezas-el-imperio` | 📄 1. AVISO LEGAL – … | Aviso legal |
-| `/politica-de-privacidad-limpiezas-el-imperio` | POLITICA DE PRIVACIDAD - … | Condiciones y privacidad |
-| `/politica-de-cookies-limpiezas-el-imperio` | POLÍTICA DE COOKIES – … | Cookies |
-| `/cart`, `/wishlist` | | Tienda de Webador vacía (no se abrieron) |
+| Ruta actual                                    | Título                     | Qué es                                     |
+| ---------------------------------------------- | -------------------------- | ------------------------------------------ |
+| `/`                                            | LIMPIEZAS EL IMPERIO       | Inicio: una imagen y el bloque de contacto |
+| `/quienes-somos`                               | LIMPIEZAS EL IMPERIO       | Quiénes somos y por qué elegirnos          |
+| `/nuestros-servicios`                          | LIMPIEZAS EL IMPERIO       | 27 tarjetas (26 servicios, uno duplicado)  |
+| `/solicitar-presupuesto`                       | LIMPIEZAS EL IMPERIO       | Formulario de presupuesto y zonas          |
+| `/solicitar-servicios`                         | LIMPIEZAS EL IMPERIO       | Igual que la anterior (alias)              |
+| `/solicitar-presupuesto-1`                     | LIMPIEZAS EL IMPERIO       | Igual que la anterior (alias)              |
+| `/reserva-de-servicios`                        | Reserva de Servicios \| …  | Formulario «Hoja de servicio» y PDF        |
+| `/datos-de-facturacion`                        | LIMPIEZAS EL IMPERIO       | Formulario de facturación                  |
+| `/tu-opinion-importa-mucho`                    | LIMPIEZAS EL IMPERIO       | Comentarios y votación con estrellas       |
+| `/zonas-de-servicio`                           | Zonas de servicio \| …     | Lista de zonas                             |
+| `/preguntas-frecuentes-blog`                   | LIMPIEZAS EL IMPERIO       | FAQ y listado del blog                     |
+| `/preguntas-frecuentes-blog/<id>_<slug>`       |                            | 8 entradas, ver abajo                      |
+| `/trabaja-con-nosotros`                        | LIMPIEZAS EL IMPERIO       | Formulario de empleo                       |
+| `/aviso-legal-limpiezas-el-imperio`            | 📄 1. AVISO LEGAL – …       | Aviso legal                                |
+| `/politica-de-privacidad-limpiezas-el-imperio` | POLITICA DE PRIVACIDAD - … | Condiciones y privacidad                   |
+| `/politica-de-cookies-limpiezas-el-imperio`    | POLÍTICA DE COOKIES – …    | Cookies                                    |
+| `/cart`, `/wishlist`                           |                            | Tienda de Webador vacía (no se abrieron)   |
 
 Entradas del blog (sin abrir, sólo el listado):
 
@@ -231,16 +231,16 @@ Formulario con texto de bienvenida. Ver *Formularios*.
 
 **Nada que conservar.** Siete se publicaron el mismo día en hora y cuarto.
 
-| Entrada | Qué es |
-|---|---|
-| solicita-nuestros-servicios… | Lista de palabras clave SEO con «[tu ciudad]» sin rellenar |
-| segmentacion-de-clientes | Cuestionario de marketing para el dueño, con notas de IA y «¿Hay algún aspecto…?» al final |
-| historia-de-la-limpieza | Resumen copiado de otra web con las citas de la IA |
-| transforma-tu-oficina… | Dos párrafos promocionales iguales, uno con «[Nombre de la Empresa]» |
-| servicios-de-limpieza | El mismo párrafo, borrador con «[Nombre de la Empresa]» |
-| nuestros-servicio | Sólo una galería de imágenes (varias de IA) |
-| somos-tu-mejor-opcion | Una frase: el lema |
-| porque-es-importante… 2 limpiezas profundas | Seis motivos genéricos; no menciona la empresa |
+| Entrada                                     | Qué es                                                                                     |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| solicita-nuestros-servicios…                | Lista de palabras clave SEO con «[tu ciudad]» sin rellenar                                 |
+| segmentacion-de-clientes                    | Cuestionario de marketing para el dueño, con notas de IA y «¿Hay algún aspecto…?» al final |
+| historia-de-la-limpieza                     | Resumen copiado de otra web con las citas de la IA                                         |
+| transforma-tu-oficina…                      | Dos párrafos promocionales iguales, uno con «[Nombre de la Empresa]»                       |
+| servicios-de-limpieza                       | El mismo párrafo, borrador con «[Nombre de la Empresa]»                                    |
+| nuestros-servicio                           | Sólo una galería de imágenes (varias de IA)                                                |
+| somos-tu-mejor-opcion                       | Una frase: el lema                                                                         |
+| porque-es-importante… 2 limpiezas profundas | Seis motivos genéricos; no menciona la empresa                                             |
 
 La idea de la última (por qué hacer limpiezas profundas) podría servir para un
 texto nuevo con datos suyos. Ojo: la FAQ recomienda **una al mes** y esta
