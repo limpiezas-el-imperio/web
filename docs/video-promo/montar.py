@@ -6,6 +6,8 @@
 # Los vídeos son de Frank (WhatsApp, 5 nov 2026): casas de clientes, así que
 # NUNCA entran en git. Van en docs/privado/video/fuente/, renombrados v01…v11
 # por orden alfabético del zip original («flyer-limpiezas-el-imperio.zip»).
+# Sólo se guardan los cuatro que se usan (v01, v03, v04 y v05); los demás
+# siguen en el WhatsApp de Kevin, si hiciera falta otro plano.
 # Sólo se usan habitaciones vacías y limpias: nada de fotos de familia, objetos
 # personales, gente del equipo ni vistas largas por la ventana. v01 es un vídeo
 # ya montado que acaba con un logo viejo (redondo, con dos dibujos): no se usa

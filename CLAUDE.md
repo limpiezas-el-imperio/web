@@ -122,10 +122,10 @@ Al cambiar de equipo, `git clone` y `npm install` lo traen casi todo. Esto no:
 - **`docs/privado/`** (ignorada entera): hay que copiarla a mano, o se pierde.
   - `negocio.md`: cómo trabaja de verdad, sacado de su contabilidad. Si se
     pierde, se rehace leyendo `../limpiezas-imperio-software/`.
-  - `video/`: los vídeos de Frank para el vídeo promocional (`fuente/`,
-    v01…v11; él los mandó por WhatsApp el 5 nov 2026, en
-    `flyer-limpiezas-el-imperio.zip`), los rótulos pintados y el vídeo hecho.
-    Se rehace con `docs/video-promo/` (instrucciones en `montar.py`).
+  - `video/`: el vídeo promocional hecho y, en `fuente/`, los cuatro vídeos de
+    Frank que usa (v01, v03, v04 y v05, de los once que mandó por WhatsApp el
+    5 nov 2026). Los rótulos y la música no se guardan: se rehacen con
+    `docs/video-promo/` (instrucciones en `montar.py`).
 
 ## Qué se puede publicar y qué no
 
