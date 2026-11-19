@@ -16,16 +16,18 @@ export function CamposContacto({
   telefono,
   correo,
   correoObligatorio = false,
+  etiquetaNombre = "Nombre",
 }: {
   nombre: Campo;
   telefono: Campo;
   correo: Campo;
   correoObligatorio?: boolean;
+  etiquetaNombre?: string;
 }) {
   return (
     <>
       <label className={p.campo}>
-        <span>Nombre</span>
+        <span>{etiquetaNombre}</span>
         <input
           type="text"
           name="nombre"

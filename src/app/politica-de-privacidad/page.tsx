@@ -18,7 +18,7 @@ export default function PoliticaPrivacidad() {
     <TextoLegal
       antetitulo="Legal"
       titulo="Política de privacidad"
-      actualizado="18 de septiembre de 2026"
+      actualizado="19 de noviembre de 2026"
     >
       <h2>Quién es el responsable</h2>
       <p>
@@ -64,8 +64,8 @@ export default function PoliticaPrivacidad() {
       </p>
       <p>
         Si nos mandas tu candidatura, nos llega por correo lo que escribas: tu
-        nombre y tu teléfono y, si nos los das, tu correo, dónde vives, cuándo
-        puedes trabajar y tu experiencia.
+        nombre completo, tu teléfono y tu dirección (con el barrio y la ciudad) y,
+        si nos los das, tu correo, cuándo puedes trabajar y tu experiencia.
       </p>
       <p>
         Si nos mandas tus datos de facturación, nos llega por correo lo que

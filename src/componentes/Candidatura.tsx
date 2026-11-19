@@ -13,14 +13,18 @@ import { useFormularioCorreo } from "./useFormularioCorreo";
 // Candidatura para trabajar con él: un formulario que llega por correo a info@
 // (src/acciones/candidatura.ts). Pide lo mismo que el formulario de empleo de
 // su web vieja (nombre, ciudad y barrio, disponibilidad, comentario) más el
-// teléfono, para poder llamar. WhatsApp queda como segunda vía, con el mensaje
-// ya escrito.
+// teléfono, para poder llamar. Nombre completo, dirección, barrio y ciudad,
+// obligatorios y por separado, los pidió Frank (19 nov 2026): con un solo
+// «Dónde vives» ponían «Valencia». WhatsApp queda como segunda vía, con el
+// mensaje ya escrito.
 
 export default function Candidatura() {
   const nombre = useState("");
   const telefono = useState("");
   const correo = useState("");
-  const [lugar, setLugar] = useState("");
+  const [direccion, setDireccion] = useState("");
+  const [barrio, setBarrio] = useState("");
+  const [ciudad, setCiudad] = useState("");
   const [disponible, setDisponible] = useState<string[]>([]);
   const [experiencia, setExperiencia] = useState("");
   const [acepto, setAcepto] = useState(false);
@@ -36,7 +40,9 @@ export default function Candidatura() {
   const mensaje = [
     "Hola, me interesa trabajar con vosotros.",
     nombre[0].trim() && `• Me llamo ${nombre[0].trim()}`,
-    lugar.trim() && `• Vivo en ${lugar.trim()}`,
+    direccion.trim() && `• Mi dirección: ${direccion.trim()}`,
+    barrio.trim() && `• Barrio: ${barrio.trim()}`,
+    ciudad.trim() && `• Ciudad: ${ciudad.trim()}`,
     disponible.length > 0 && `• Disponibilidad: ${disponible.join(", ").toLowerCase()}`,
     experiencia.trim() && `• ${experiencia.trim()}`,
   ]
@@ -60,17 +66,56 @@ export default function Candidatura() {
           Sobre ti
         </legend>
         <div className={p.campos}>
-          <CamposContacto nombre={nombre} telefono={telefono} correo={correo} />
+          <CamposContacto
+            nombre={nombre}
+            telefono={telefono}
+            correo={correo}
+            etiquetaNombre="Nombre completo"
+          />
+        </div>
+      </fieldset>
+
+      <fieldset className={p.grupo}>
+        <legend>
+          <span className="numero" aria-hidden="true">2</span>
+          Dónde vives
+        </legend>
+        <div className={p.campos}>
           <label className={p.campo}>
-            <span>Dónde vives</span>
+            <span>Calle, número, piso y puerta</span>
             <input
               type="text"
-              name="lugar"
-              value={lugar}
-              onChange={(e) => setLugar(e.target.value)}
-              placeholder="Localidad y barrio"
+              name="direccion"
+              value={direccion}
+              onChange={(e) => setDireccion(e.target.value)}
+              autoComplete="street-address"
+              maxLength={150}
+              required
+            />
+          </label>
+          <label className={p.campo}>
+            <span>Barrio</span>
+            <input
+              type="text"
+              name="barrio"
+              value={barrio}
+              onChange={(e) => setBarrio(e.target.value)}
+              placeholder="Por ejemplo: Campanar"
+              autoComplete="address-level3"
+              maxLength={80}
+              required
+            />
+          </label>
+          <label className={p.campo}>
+            <span>Ciudad</span>
+            <input
+              type="text"
+              name="ciudad"
+              value={ciudad}
+              onChange={(e) => setCiudad(e.target.value)}
               autoComplete="address-level2"
-              maxLength={120}
+              maxLength={80}
+              required
             />
           </label>
         </div>
@@ -78,7 +123,7 @@ export default function Candidatura() {
 
       <fieldset className={p.grupo}>
         <legend>
-          <span className="numero" aria-hidden="true">2</span>
+          <span className="numero" aria-hidden="true">3</span>
           ¿Cuándo puedes trabajar?
         </legend>
         <div className={p.opciones}>
@@ -99,7 +144,7 @@ export default function Candidatura() {
 
       <fieldset className={p.grupo}>
         <legend>
-          <span className="numero" aria-hidden="true">3</span>
+          <span className="numero" aria-hidden="true">4</span>
           Tu experiencia
         </legend>
         <label className={p.campo}>

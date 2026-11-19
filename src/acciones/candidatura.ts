@@ -1,7 +1,7 @@
 "use server";
 
 import { disponibilidades, type EstadoEnvio } from "@/datos/formularios";
-import { antispam, contacto, linea, mandarCorreo, texto } from "./correo";
+import { antispam, contacto, error, linea, mandarCorreo, texto } from "./correo";
 
 // La candidatura de /trabaja-con-nosotros, por correo a info@ (ver correo.ts).
 export async function enviarCandidatura(
@@ -13,12 +13,17 @@ export async function enviarCandidatura(
   const de = contacto(datos);
   if ("estado" in de) return de;
 
-  const lugar = linea(datos, "lugar", 120);
+  const direccion = linea(datos, "direccion", 150);
+  const barrio = linea(datos, "barrio", 80);
+  const ciudad = linea(datos, "ciudad", 80);
   const experiencia = texto(datos, "experiencia", 2000);
   const disponible = datos
     .getAll("disponibilidad")
     .map(String)
     .filter((d) => (disponibilidades as readonly string[]).includes(d));
+  if (!direccion) return error("Falta tu dirección.");
+  if (!barrio) return error("Falta tu barrio.");
+  if (!ciudad) return error("Falta tu ciudad.");
 
   return mandarCorreo({
     asunto: `Candidatura: ${de.nombre}`,
@@ -26,10 +31,12 @@ export async function enviarCandidatura(
     cuerpo: [
       "Nueva candidatura desde la web (Trabaja con nosotros).",
       "",
-      `Nombre: ${de.nombre}`,
+      `Nombre completo: ${de.nombre}`,
       `Teléfono: ${de.telefono}`,
       `Correo: ${de.correo || "no lo ha dejado"}`,
-      `Dónde vive: ${lugar || "no lo ha dicho"}`,
+      `Dirección: ${direccion}`,
+      `Barrio: ${barrio}`,
+      `Ciudad: ${ciudad}`,
       `Disponibilidad: ${disponible.length > 0 ? disponible.join(", ").toLowerCase() : "no la ha dicho"}`,
       "",
       "Experiencia:",
