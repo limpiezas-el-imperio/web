@@ -18,70 +18,47 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | Web vieja | https://limpiezaselimperio.net (Webador). **Se apaga: el `.net` redirige al `.es`** (Kevin, 23 sept 2026; sin ejecutar todavía). Runbook en `docs/seo.md` §2, inventario en `docs/sitio-actual.md` |
 | Negocio | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git) |
 
-## Estado (19 nov 2026, séptima sesión)
+## Estado (19 nov 2026)
 
-**Todas las páginas están hechas** y publicadas en **`www.limpiezaselimperio.es`**:
+**Todas las páginas están hechas** y publicadas. Lo que se hizo en cada sesión,
+en `todo.md` («Hecho»); lo pendiente, en «Por dónde seguir».
 
-| Ruta                                                              | Qué lleva                                                                                                                                                                                                                                                                                                                                                    |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `/`                                                               | Foto de portada, servicios, presupuesto guiado (por correo o WhatsApp), galería, cómo trabajamos, zonas con mapa, opiniones de Google                                                                                                                                                                                                                        |
-| `/nuestros-servicios`                                             | 5 áreas y 25 servicios, **con descripciones en borrador** pendientes de Frank                                                                                                                                                                                                                                                                                |
-| `/zonas-de-servicio`                                              | 18 localidades en tres áreas, con el mapa                                                                                                                                                                                                                                                                                                                    |
-| `/quienes-somos`                                                  | Dónde estamos, lema, equipo, cifras reales, por qué elegirnos, valores                                                                                                                                                                                                                                                                                       |
-| `/preguntas-frecuentes`                                           | La FAQ de su web, corregida                                                                                                                                                                                                                                                                                                                                  |
-| `/contacto`                                                       | WhatsApp, teléfono y correo; horario, zonas, redes; presupuesto guiado (por correo o WhatsApp)                                                                                                                                                                                                                                                               |
-| `/trabaja-con-nosotros`                                           | **Formulario de candidatura que llega por correo a `info@`**, y WhatsApp como segunda vía: nombre completo, teléfono y correo (opcional); **calle, número, piso y puerta, barrio y ciudad, obligatorios y por separado** (ver *Séptima sesión*); disponibilidad y experiencia. No dice que esté contratando                                                  |
-| `/reserva-de-servicios`                                           | **Reserva con día y hora** (tipo de limpieza, fecha, hora, qué limpiar, dirección y datos; DNI opcional), por correo a `info@`, con WhatsApp como segunda vía. Es su «hoja de servicio» de la web vieja, sin el PDF (su parte interno, con precios y el mínimo de horas). Lo pidió Frank. En «Clientes» (cabecera), el menú del móvil y el pie               |
-| `/datos-de-facturacion`                                           | **Formulario con los datos para la factura** (razón social, NIF, dirección fiscal, contacto y servicio), por correo a `info@`, con WhatsApp como segunda vía. Lo pidió Frank (lo tenía su web vieja). En «Clientes» (cabecera), el menú del móvil y el pie                                                                                                   |
-| `/aviso-legal`, `/politica-de-privacidad`, `/politica-de-cookies` | Lo mínimo y en llano, sin NIF (decisión de Kevin)                                                                                                                                                                                                                                                                                                            |
-| `/instalar`                                                       | **Oculta** (sin menú, sitemap ni índice): botón «Instalar» y pasos a mano para poner la web en la pantalla de inicio. Se hizo para Frank (Android antiguo). Sólo ella enlaza el manifiesto instalable (`instalar/app.webmanifest`, `display: standalone`, `id` propio) y registra `public/sw.js`; el resto de la web sigue en `browser`, sin aviso de Chrome |
-| 404, `sitemap.xml`, `robots.txt`                                  | La 404 explica que la web es nueva, para quien llegue con una URL de Webador                                                                                                                                                                                                                                                                                 |
+| Ruta                    | Qué lleva                                                                                                                                 |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                     | Foto de portada, servicios, presupuesto guiado, galería, cómo trabajamos, zonas con mapa, opiniones de Google                             |
+| `/nuestros-servicios`   | 5 áreas y 25 servicios, **con descripciones en borrador** pendientes de Frank                                                             |
+| `/zonas-de-servicio`    | 18 localidades en tres áreas, con el mapa                                                                                                 |
+| `/quienes-somos`        | Dónde estamos, lema, equipo, cifras reales, por qué elegirnos, valores                                                                    |
+| `/preguntas-frecuentes` | La FAQ de su web, corregida                                                                                                               |
+| `/contacto`             | WhatsApp, teléfono, correo, horario, zonas, redes y presupuesto guiado                                                                    |
+| `/trabaja-con-nosotros` | Candidatura: nombre completo, contacto, calle, barrio y ciudad (obligatorios), disponibilidad y experiencia. No dice que esté contratando |
+| `/reserva-de-servicios` | Reserva con día y hora: su «hoja de servicio» vieja, sin el PDF (su parte interno, con precios)                                           |
+| `/datos-de-facturacion` | Datos para la factura: razón social, NIF, dirección fiscal, contacto y servicio                                                           |
+| Legales (tres)          | Aviso legal, privacidad y cookies: lo mínimo y en llano, sin NIF (Kevin)                                                                  |
+| `/instalar`             | **Oculta**: pone la web en la pantalla de inicio (se hizo para el Android de Frank)                                                       |
+| 404, sitemap, robots    | La 404 explica que la web es nueva, para quien llegue con una URL de Webador                                                              |
 
-- **Diseño validado por Frank** (16 sept 2026). La primera versión, sobria, no
-  le gustó; la de ahora sí. **No se replantea** (ver *Estilo*).
-- **El contenido se alineó con cómo trabaja de verdad** (decisión de Kevin, con
-  `docs/privado/negocio.md`): fuera reparaciones y parkings y naves; dentro
-  alquiler vacacional, sofás, mosquiteras, piscinas y escaparates; «por horas o
-  con precio cerrado» en vez de «paquete mensual»; el equipo; y las zonas.
-- **Dominio**: Vercel no vende `.es`; Frank lo compró en Hostinger. DNS en
-  Hostinger (A y CNAME de Vercel, y MX, SPF, DKIM y DMARC del correo), `www`
-  como principal. **Al tocar los DNS, no quites los del correo.**
-- **Correo y formularios** (17 sept): `info@limpiezaselimperio.es` en
-  Hostinger, publicado en la web. El presupuesto (por correo o WhatsApp) y la
-  candidatura llegan a ese buzón; **probado de verdad, llegan a la bandeja de
-  entrada** (ver *Restricciones*).
-- **Quinta sesión** (18 sept): lo que pidió Frank de su web vieja, en la
-  misma dirección: **`/reserva-de-servicios`** y **`/datos-de-facturacion`**,
-  dos formularios más por correo (probados de verdad, llegan). Y
-  **`/instalar`**, oculta, para poner la web en la pantalla de inicio de su
-  Android: le funcionó. La reserva y la facturación entran en la navegación:
-  desplegable **«Clientes»** en la cabecera de escritorio (que ahora sale desde
-  1200 px, con «Preguntas» corto) y dos filas más en el menú del móvil (ver
+- **Cuatro formularios por correo a `info@`** (presupuesto, candidatura,
+  reserva y facturación), cada uno con WhatsApp como otra vía (ver
+  *Restricciones*). La reserva y la facturación van en el desplegable
+  «Clientes» de la cabecera, en el menú del móvil y en el pie.
+- **`/instalar`** es la única página que enlaza el manifiesto instalable
+  (`instalar/app.webmanifest`, `display: standalone`, `id` propio) y registra
+  `public/sw.js`; el resto de la web sigue en `browser`, sin aviso de Chrome.
+  No sale en el menú, el sitemap ni el índice.
+- **Diseño validado por Frank** (16 sept 2026). **No se replantea** (ver
   *Estilo*).
-- **Galería** con diez fotos: siete en la rejilla, una tarjeta «+3» y un visor
-  a pantalla completa (ver *Estilo*).
-- **Sexta sesión** (23 sept): **SEO**, que pidió Frank. Lo de dentro ya
-  estaba bien (metadatos, canonical, sitemap, robots, JSON-LD, un `<h1>`,
-  `alt`, AVIF, Lighthouse); se arregló que cinco páginas describieran el
-  negocio con cinco nodos `LocalBusiness` distintos e incompletos, y ahora va
-  entero y con un `@id` común desde `src/datos/estructurados.ts`. Lo que falta
-  no es código: **su ficha de Google** (el enlace todavía lleva al `.net`),
-  **Search Console** y **que haya una sola web** (el `.net` sigue vivo con la
-  vieja, y compiten). Todo en **`docs/seo.md`**; páginas por servicio o
-  localidad, aparcadas a propósito.
-- **El `.net` redirige al `.es`** (Kevin, 23 sept), pero **sin ejecutar
-  todavía**: hace falta entrar en el DNS del `.net` (cuenta de Webador de
-  Frank) y en su Vercel. Search Console espera a que Frank diga con qué cuenta
-  de Google gestiona su ficha. Los dos runbooks, en `docs/seo.md`.
-- **Séptima sesión** (19 nov): Frank pidió que la **candidatura** pida el
-  **nombre completo** y la dirección por partes: **calle, número, piso y
-  puerta**, **barrio** y **ciudad**. Con un solo «Dónde vives» la gente ponía
-  «Valencia». Los tres son obligatorios, en su propio bloque «Dónde vives», y
-  se comprueban también en `src/acciones/candidatura.ts`. «Nombre completo» sale
-  de `etiquetaNombre` en `CamposContacto`: los demás formularios siguen con
-  «Nombre». La política de privacidad lo dice (actualizada el 19 nov).
-- **Falta**: que Frank cambie el enlace en Google y en sus redes, y sus
-  respuestas (`todo.md`).
+- **El contenido sigue cómo trabaja de verdad** (decisión de Kevin, con
+  `docs/privado/negocio.md`): servicios, zonas, «por horas o con precio
+  cerrado» y el equipo.
+- **DNS en Hostinger** (A y CNAME de Vercel, y MX, SPF, DKIM y DMARC del
+  correo), `www` como principal. **Al tocar los DNS, no quites los del correo.**
+- **Lo que falta no es código**: su ficha de Google (el enlace aún lleva al
+  `.net`), Search Console, **ejecutar la redirección del `.net`** (hace falta
+  entrar en el DNS del `.net`, en la cuenta de Webador de Frank, y en su
+  Vercel) y sus respuestas. Runbooks en `docs/seo.md`; la lista, en `todo.md`.
+- **Vídeo promocional para sus redes** (19 nov): fuera de la web; receta en
+  `docs/video-promo/`, vídeos en `docs/privado/video/`.
 
 **Mismo cliente que `../limpiezas-imperio-software/`** (su contabilidad, en
 https://limpiezas-imperio.vercel.app). Proyectos separados: esta web no lee ni
@@ -181,6 +158,7 @@ src/app/          layout.tsx (fuentes, metadatos base, cabecera y pie)
                   page.tsx + inicio.module.css (portada)
                   nuestros-servicios/ · zonas-de-servicio/ · quienes-somos/
                   preguntas-frecuentes/ · contacto/ · trabaja-con-nosotros/
+                  reserva-de-servicios/ · datos-de-facturacion/
                   aviso-legal/ · politica-de-privacidad/ · politica-de-cookies/
                   instalar/ (oculta, con su app.webmanifest)
                   not-found.tsx · sitemap.ts · robots.ts · manifest.ts

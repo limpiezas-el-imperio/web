@@ -1,6 +1,6 @@
 # Pendiente
 
-Actualizado el **23 de septiembre de 2026**, al cerrar la sexta sesión.
+Actualizado el **19 de noviembre de 2026**, en la séptima sesión.
 
 ## Por dónde seguir
 
@@ -85,9 +85,6 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
       para no nombrar a su equipo
 - [ ] **Redes**: ¿cuáles están vivas? Hoy salen Facebook, Instagram, TikTok,
       YouTube y X (LinkedIn se quitó: enlace roto)
-- [ ] **Trabaja con nosotros**: ¿sigue buscando gente? Las candidaturas le
-      llegan ahora a `info@` desde un formulario. Si no busca, se quitan la
-      página y sus enlaces (pie, menú del móvil y Quiénes somos)
 
 - [ ] **Reserva de servicios**: el DNI y el correo son opcionales (en su web
       vieja, todo era obligatorio) y pide la localidad en vez de la
@@ -174,6 +171,8 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
   tenga dos webs del mismo negocio. **Sin mapear ruta por ruta**: las URLs
   viejas caen en la 404, que explica que la web es nueva. La cuenta de Webador
   **no se borra** y su `info@…net` no se toca
+- **Trabaja con nosotros se queda**: Frank la usa y el 19 nov pidió nombre
+  completo, dirección, barrio y ciudad en la candidatura
 - **SEO, decidido el 23 sept** (`docs/seo.md`): **Search Console sí** (ya no
   está «fuera»: no añade cookies y es la única forma de saber si Google indexa
   la web). **`aggregateRating` no**: sus reseñas son de su ficha de Google y
@@ -181,7 +180,7 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
   localidad, aparcadas**: se deciden con lo que diga Search Console y cuando
   Frank haya revisado las descripciones, no a ojo
 
-## Hecho (16 a 23 sept 2026, seis sesiones)
+## Hecho (16 sept a 19 nov 2026, siete sesiones)
 
 - Inventario de la web vieja y decisión página a página
 - Repositorio público con despliegue automático en su Vercel
@@ -221,3 +220,9 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
   ahora el nodo vive entero en `src/datos/estructurados.ts` con un `@id` común.
   Y `docs/seo.md`, con los tres frentes, quién hace cada paso y lo que no se
   hace y por qué
+- **Séptima sesión (19 nov)**: la candidatura pide nombre completo y la
+  dirección por partes (calle, número, piso y puerta; barrio; ciudad),
+  obligatorias, porque con un solo «Dónde vives» ponían «Valencia». Vídeo
+  promocional para sus redes, con música compuesta por nosotros (receta en
+  `docs/video-promo/`). Y el contexto, sin depender del equipo: lo que había
+  en la memoria local de Claude pasó a `CLAUDE.md`

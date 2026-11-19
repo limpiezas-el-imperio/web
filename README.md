@@ -38,14 +38,17 @@ sobra.
   cuenta. Público, cada push despliega solo. A cambio, nada privado entra en
   git (ver `CLAUDE.md`).
 - **Formularios que llegan por correo, sin guardar nada.** Desde que hay buzón
-  en el `.es`, el presupuesto guiado y la candidatura se mandan por correo a
-  `info@` desde ese mismo buzón, con antispam y consentimiento. El presupuesto
+  en el `.es`, el presupuesto guiado, la candidatura, la reserva y los datos
+  de facturación se mandan por correo a `info@` desde ese mismo buzón, con
+  antispam y consentimiento. El presupuesto
   se puede mandar también por WhatsApp, que es como trabaja él: la web sólo
   escribe el mensaje y lo abre. Los formularios de su web vieja pedían DNI sin
   nada de eso.
-- **Sin redirecciones.** Las rutas buenas de la web vieja se conservan y las
-  malas se renombran (`docs/sitio-actual.md`, *Decisión por página*). Quien
-  llegue con una dirección vieja ve una 404 que se lo explica.
+- **Sin redirecciones ruta a ruta.** Las rutas buenas de la web vieja se
+  conservan y las malas se renombran (`docs/sitio-actual.md`, *Decisión por
+  página*). Quien llegue con una dirección vieja ve una 404 que se lo explica.
+  Lo que sí redirige es el dominio entero: el `.net` manda al `.es`, para que
+  Google no vea dos webs del mismo negocio (`docs/seo.md`).
 - **Diseño con color y elevación.** Se hizo primero una versión editorial y
   sobria; a Frank le pareció plana y sin color, y se rehízo con los colores de
   su logo, tarjetas con sombra, titulares en sans-serif gruesa y botones verdes
@@ -69,8 +72,10 @@ La web se lanza en **`www.limpiezaselimperio.es`**, un dominio nuevo, en vez de
 llevar el `.net` a Vercel: el correo `info@` vive en Webador, y tocar la cuenta
 o los nameservers del `.net` lo rompería sin avisar. Un dominio aparte no pone
 el correo en riesgo, y el `.es` lleva su propio correo en Hostinger
-(`info@limpiezaselimperio.es`), que es el que publica la web. Es `.es` porque es lo que eligió Frank, y está en
-Hostinger porque Vercel no vende `.es`. Detalles en `docs/dominio.md`.
+(`info@limpiezaselimperio.es`), que es el que publica la web. Es `.es` porque
+es lo que eligió Frank, y está en Hostinger porque Vercel no vende `.es`.
+Detalles en `docs/dominio.md`. Para redirigir el `.net` al `.es` sólo se tocan
+su A y su CNAME, nunca los nameservers ni el correo (`docs/seo.md`).
 
 ## Contenido
 
