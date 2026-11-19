@@ -1,5 +1,7 @@
 # Vídeo promocional para redes (Reels, TikTok, estados): 1080×1920, ~23 s,
-# sin música (Frank la pone desde la app al publicarlo, que así va con licencia).
+# con una música de fondo suave compuesta por nosotros (musica.py), sin
+# licencias de nadie. Si Frank pone música desde la app al publicarlo, que
+# silencie la del vídeo.
 #
 # Los vídeos son de Frank (WhatsApp, 5 nov 2026): casas de clientes, así que
 # NUNCA entran en git. Van en docs/privado/video/fuente/, renombrados v01…v11
@@ -14,15 +16,23 @@
 #        google-chrome --headless=new --remote-debugging-port=9334 \
 #          --allow-file-access-from-files --user-data-dir=/tmp/chrome-video about:blank &
 #   2. node docs/video-promo/render.mjs docs/video-promo docs/privado/video/rotulos
-#   3. python3 docs/video-promo/montar.py docs/privado/video/fuente \
-#        docs/privado/video/rotulos docs/privado/video/limpiezas-el-imperio-promo.mp4
+#   3. python3 docs/video-promo/musica.py docs/privado/video/musica.wav
+#   4. python3 docs/video-promo/montar.py docs/privado/video/fuente \
+#        docs/privado/video/rotulos docs/privado/video/limpiezas-el-imperio-promo.mp4 \
+#        docs/privado/video/musica.wav
+#   (Sin el último argumento sale en silencio.)
 #
 # Para cambiar planos o rótulos: la lista `planos` de abajo y la de `rotulos`
 # en render.mjs van a la par (el plano 1 lleva r1.png, etc.).
+import json
 import subprocess
 import sys
 
 fuente, rotulos, salida = sys.argv[1:4]
+musica = sys.argv[4] if len(sys.argv) > 4 else None
+# «Ligera», como la pidió Frank: por debajo de los −14 LUFS a los que
+# Instagram y TikTok igualan todo.
+SONORIDAD = -19
 
 # (vídeo, segundo de inicio)
 planos = [
@@ -68,16 +78,40 @@ for k in range(1, len(duraciones)):
     anterior, acumulado = f"x{k}", desde + duraciones[k]
 f.append(f"[{anterior}]format=yuv420p[v]")
 
-# Pista de audio en silencio: algunas apps no aceptan vídeo sin audio.
+# Música: un poco de sala (ecos cortos), fundidos y volumen en dos pasadas
+# (la primera mide, la segunda ajusta sin comprimir). Sin música, una pista
+# en silencio: algunas apps no aceptan vídeo sin audio.
+if musica:
+    fin = acumulado - 2.3
+    sala = (
+        "aecho=0.8:0.55:41|67|103|151|229:0.32|0.24|0.17|0.11|0.07,"
+        f"highpass=f=35,lowpass=f=11000,afade=t=in:d=0.8,afade=t=out:st={fin:.2f}:d=2.3"
+    )
+    medida = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-i", musica, "-af",
+         f"{sala},loudnorm=I={SONORIDAD}:TP=-2:LRA=11:print_format=json", "-f", "null", "-"],
+        capture_output=True, text=True, check=True,
+    ).stderr
+    m = json.loads(medida[medida.rindex("{"):medida.rindex("}") + 1])
+    audio_in = ["-i", musica]
+    f.append(
+        f"[{n_cierre + 1}:a]{sala},loudnorm=I={SONORIDAD}:TP=-2:LRA=11:"
+        f"measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}:"
+        f"measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true,"
+        f"aresample=44100,atrim=0:{acumulado:.3f}[a]"
+    )
+else:
+    audio_in = ["-f", "lavfi", "-t", f"{acumulado:.3f}", "-i", "anullsrc=r=44100:cl=stereo"]
+    f.append(f"[{n_cierre + 1}:a]anull[a]")
+
 # -map_metadata -1: sin metadatos de los originales.
 subprocess.run(
     [
-        "ffmpeg", "-v", "error", "-y", *ins,
-        "-f", "lavfi", "-t", f"{acumulado:.3f}", "-i", "anullsrc=r=44100:cl=stereo",
+        "ffmpeg", "-v", "error", "-y", *ins, *audio_in,
         "-filter_complex", ";".join(f),
-        "-map", "[v]", "-map", f"{n_cierre + 1}:a",
+        "-map", "[v]", "-map", "[a]",
         "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-profile:v", "high",
-        "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-b:a", "128k", "-shortest",
+        "-pix_fmt", "yuv420p", "-r", "30", "-c:a", "aac", "-b:a", "160k", "-shortest",
         "-map_metadata", "-1", "-movflags", "+faststart", salida,
     ],
     check=True,
