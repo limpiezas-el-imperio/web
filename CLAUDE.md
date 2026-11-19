@@ -111,6 +111,22 @@ escribe en esa base de datos.
   contraseña en Hostinger, hay que cambiarla también en Vercel**: si no, el
   formulario da error (y ofrece WhatsApp).
 
+## Lo que no está en git
+
+Al cambiar de equipo, `git clone` y `npm install` lo traen casi todo. Esto no:
+
+- **`.env`**: una línea, `EMAIL_PASSWORD=` con la contraseña del buzón
+  `info@limpiezaselimperio.es`, sin comillas. Está en el panel de Hostinger
+  (Kevin tiene acceso de administrador) y en las variables del proyecto `web`
+  en el Vercel de Frank. Sólo hace falta para probar los formularios en local.
+- **`docs/privado/`** (ignorada entera): hay que copiarla a mano, o se pierde.
+  - `negocio.md`: cómo trabaja de verdad, sacado de su contabilidad. Si se
+    pierde, se rehace leyendo `../limpiezas-imperio-software/`.
+  - `video/`: los vídeos de Frank para el vídeo promocional (`fuente/`,
+    v01…v11; él los mandó por WhatsApp el 5 nov 2026, en
+    `flyer-limpiezas-el-imperio.zip`), los rótulos pintados y el vídeo hecho.
+    Se rehace con `docs/video-promo/` (instrucciones en `montar.py`).
+
 ## Qué se puede publicar y qué no
 
 **Todo lo que entra en git lo puede leer cualquiera, para siempre**: borrarlo
@@ -187,7 +203,8 @@ src/imagenes/     fotos (se importan, nunca desde public/)
 public/           logo.jpg (sin teléfono) · opengraph-image.jpg · sw.js (sólo /instalar)
                   icono-192.png · icono-512.png (logo, para el manifest)
 docs/             sitio-actual.md (la web vieja) · dominio.md · seo.md
-docs/privado/     fuera de git
+docs/video-promo/ receta del vídeo para redes (rótulos en HTML y montaje con ffmpeg)
+docs/privado/     fuera de git (ver *Lo que no está en git*)
 ```
 
 **Todo dato del negocio sale de `src/datos/negocio.ts`**: teléfono, correo,
@@ -266,6 +283,31 @@ Es `www.limpiezaselimperio.es` desde el 17 sept 2026.
   en cambio, usan de todo: el iPhone con Safari sigue contando.
 - **Si algo no se ve, para él «no funciona».**
 - No es técnico. Todo en español.
+
+## Cómo trabaja Kevin
+
+Kevin (`kevjrmy`) es freelance y lleva la web de Frank. **Habla con Claude en
+inglés**; todo lo del repositorio (interfaz, código, comentarios, commits y
+documentos) va en español.
+
+- **Paso a paso, y cada paso cerrado antes del siguiente**: él da una orden
+  corta, se hace directamente, se comprueba en local (ver *Comprobar…*) y se
+  hace commit y push a `main`. Él lo revisa en la web publicada, en su móvil y
+  en el ordenador. Al acabar, cuéntale brevemente qué se ha comprobado.
+- **Excepción al push inmediato**: si publicar rompe la web hasta que él haga
+  algo fuera del repositorio (una variable en el Vercel de Frank, por ejemplo),
+  commit sin push y dile antes qué tiene que hacer (así se hizo con los
+  formularios, 17 sept 2026).
+- **Cuando pide «actualizar los archivos de contexto»**: reescribir, no ir
+  añadiendo. *Estado* al día aquí; en `todo.md`, «Por dónde seguir» sólo con
+  lo pendiente, «Ya decidido» para no volver a preguntarlo y un «Hecho» corto.
+- **Proyecto hermano**: `../limpiezas-imperio-software/` (su contabilidad).
+  Su `CLAUDE.md` guarda lo aprendido sobre Frank, su cuenta de Vercel y cómo
+  comprobar despliegues: míralo cuando salga algo de eso. Dice que Frank usa
+  Safari en el iPhone; es un Android antiguo (ver arriba).
+- **Nada vive sólo en un equipo**: lo que haya que recordar va en este archivo
+  o en `todo.md`, no en la memoria local de Claude. Lo que no puede ir en git,
+  en *Lo que no está en git*.
 
 ## Restricciones
 

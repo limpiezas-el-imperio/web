@@ -16,6 +16,12 @@ correo `info@limpiezaselimperio.es` en Hostinger.
    el enlace de su ficha de Google, las descripciones de los servicios y el
    horario.
 4. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
+5. **Vídeo promocional** (lo pidió Frank el 19 nov): hay un primer montaje de
+   23 s en `docs/privado/video/` (receta en `docs/video-promo/`). Falta
+   mandárselo y preguntarle: **qué logo usa en redes** (uno de sus vídeos acaba
+   con un logo redondo con dos dibujos; el montaje lleva el de la web) y si
+   puede mandar **los vídeos originales** como archivo, no por WhatsApp, que
+   los deja a media resolución. La música la pone él al publicarlo.
 
 ## SEO
 
