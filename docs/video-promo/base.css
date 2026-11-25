@@ -1,4 +1,0 @@
-/* Montserrat de Google Fonts: sólo para pintar los rótulos en local, no va en la web. */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=block");
-* { margin: 0; box-sizing: border-box; }
-html, body { width: 1080px; height: 1920px; font-family: Montserrat, sans-serif; }

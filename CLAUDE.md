@@ -57,10 +57,10 @@ en `todo.md` («Hecho»); lo pendiente, en «Por dónde seguir».
   `.net`), Search Console, **ejecutar la redirección del `.net`** (hace falta
   entrar en el DNS del `.net`, en la cuenta de Webador de Frank, y en su
   Vercel) y sus respuestas. Runbooks en `docs/seo.md`; la lista, en `todo.md`.
-- **Vídeo promocional para sus redes** (19 nov): fuera de la web; receta en
-  `docs/video-promo/`, vídeos en `docs/privado/video/`.
+- **Los vídeos para sus redes** (desde el 19 nov) viven fuera de la web, en
+  `../studio/` (Remotion, FFmpeg y MoviePy; sin git).
 
-**Mismo cliente que `../limpiezas-imperio-software/`** (su contabilidad, en
+**Mismo cliente que `../software/`** (su contabilidad, en
 https://limpiezas-imperio.vercel.app). Proyectos separados: esta web no lee ni
 escribe en esa base de datos.
 
@@ -103,7 +103,7 @@ Todo lo que puede ir en git está en git. En un equipo nuevo:
 
 No entra porque es un secreto o porque es de Frank y no está publicado (ver
 *Qué se puede publicar*). Su proyecto hermano tampoco sirve para guardarlo: el
-repositorio `../limpiezas-imperio-software/` también es público.
+repositorio `../software/` también es público.
 
 - **`.env`**: una línea, `EMAIL_PASSWORD=` con la contraseña del buzón
   `info@limpiezaselimperio.es`, sin comillas. Está en el panel de Hostinger
@@ -111,11 +111,7 @@ repositorio `../limpiezas-imperio-software/` también es público.
   en el Vercel de Frank. Sólo hace falta para probar los formularios en local.
 - **`docs/privado/`** (ignorada entera): hay que copiarla a mano, o se pierde.
   - `negocio.md`: cómo trabaja de verdad, sacado de su contabilidad. Si se
-    pierde, se rehace leyendo `../limpiezas-imperio-software/`.
-  - `video/`: el vídeo promocional hecho y, en `fuente/`, los cuatro vídeos de
-    Frank que usa (v01, v03, v04 y v05, de los once que mandó por WhatsApp el
-    5 nov 2026). Los rótulos y la música no se guardan: se rehacen con
-    `docs/video-promo/` (instrucciones en `montar.py`).
+    pierde, se rehace leyendo `../software/`.
 
 ## Qué se puede publicar y qué no
 
@@ -194,7 +190,6 @@ src/imagenes/     fotos (se importan, nunca desde public/)
 public/           logo.jpg (sin teléfono) · opengraph-image.jpg · sw.js (sólo /instalar)
                   icono-192.png · icono-512.png (logo, para el manifest)
 docs/             sitio-actual.md (la web vieja) · dominio.md · seo.md
-docs/video-promo/ receta del vídeo para redes (rótulos en HTML y montaje con ffmpeg)
 docs/privado/     fuera de git (ver *Lo que no está en git*)
 ```
 
@@ -292,7 +287,7 @@ documentos) va en español.
 - **Cuando pide «actualizar los archivos de contexto»**: reescribir, no ir
   añadiendo. *Estado* al día aquí; en `todo.md`, «Por dónde seguir» sólo con
   lo pendiente, «Ya decidido» para no volver a preguntarlo y un «Hecho» corto.
-- **Proyecto hermano**: `../limpiezas-imperio-software/` (su contabilidad).
+- **Proyecto hermano**: `../software/` (su contabilidad).
   Su `CLAUDE.md` guarda lo aprendido sobre Frank, su cuenta de Vercel y cómo
   comprobar despliegues: míralo cuando salga algo de eso. Dice que Frank usa
   Safari en el iPhone; es un Android antiguo (ver arriba).

@@ -16,13 +16,8 @@ correo `info@limpiezaselimperio.es` en Hostinger.
    el enlace de su ficha de Google, las descripciones de los servicios y el
    horario.
 4. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
-5. **Vídeo promocional** (lo pidió Frank el 19 nov; le gustó y pidió música
-   de fondo suave, que va compuesta por nosotros en `musica.py`, sin
-   licencias): 23 s en `docs/privado/video/`, receta en `docs/video-promo/`.
-   Queda preguntarle **qué logo usa en redes** (uno de sus vídeos acaba con un
-   logo redondo con dos dibujos; el montaje lleva el de la web) y si puede
-   mandar **los vídeos originales** como archivo, no por WhatsApp, que los deja
-   a media resolución.
+5. **Vídeos para sus redes**: se llevan en `../studio/` (el promocional del
+   19 nov y lo pendiente con Frank, en su `CLAUDE.md`).
 
 ## SEO
 
@@ -223,6 +218,6 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
 - **Séptima sesión (19 nov)**: la candidatura pide nombre completo y la
   dirección por partes (calle, número, piso y puerta; barrio; ciudad),
   obligatorias, porque con un solo «Dónde vives» ponían «Valencia». Vídeo
-  promocional para sus redes, con música compuesta por nosotros (receta en
-  `docs/video-promo/`). Y el contexto, sin depender del equipo: lo que había
+  promocional para sus redes, con música compuesta por nosotros (hoy en
+  `../studio/`). Y el contexto, sin depender del equipo: lo que había
   en la memoria local de Claude pasó a `CLAUDE.md`
