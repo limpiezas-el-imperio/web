@@ -1,6 +1,6 @@
 # Pendiente
 
-Actualizado el **19 de noviembre de 2026**, en la séptima sesión.
+Actualizado el **25 de noviembre de 2026**, en la octava sesión.
 
 ## Por dónde seguir
 
@@ -16,8 +16,9 @@ correo `info@limpiezaselimperio.es` en Hostinger.
    el enlace de su ficha de Google, las descripciones de los servicios y el
    horario.
 4. **Con sus respuestas, retocar el contenido** (sobre todo `src/datos/`).
-5. **Vídeos para sus redes**: se llevan en `../studio/` (el promocional del
-   19 nov y lo pendiente con Frank, en su `CLAUDE.md`).
+
+Los vídeos para sus redes ya no se llevan aquí: lo pendiente con Frank
+(qué logo usa en redes y los vídeos originales) está en `../studio/CLAUDE.md`.
 
 ## SEO
 
@@ -175,7 +176,7 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
   localidad, aparcadas**: se deciden con lo que diga Search Console y cuando
   Frank haya revisado las descripciones, no a ojo
 
-## Hecho (16 sept a 19 nov 2026, siete sesiones)
+## Hecho (16 sept a 25 nov 2026, ocho sesiones)
 
 - Inventario de la web vieja y decisión página a página
 - Repositorio público con despliegue automático en su Vercel
@@ -221,3 +222,6 @@ El detalle, los valores y el porqué de cada uno, en **`docs/seo.md`**.
   promocional para sus redes, con música compuesta por nosotros (hoy en
   `../studio/`). Y el contexto, sin depender del equipo: lo que había
   en la memoria local de Claude pasó a `CLAUDE.md`
+- **Octava sesión (25 nov)**: la carpeta del cliente se reordenó en `web/`,
+  `software/` y `studio/`. El vídeo (receta, vídeos de Frank y el montaje)
+  salió de `docs/` a `../studio/`, donde se rehízo en Remotion

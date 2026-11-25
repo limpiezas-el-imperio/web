@@ -18,7 +18,7 @@ sustituye a la de Webador (**limpiezaselimperio.net**) y se lanza en
 | Web vieja   | limpiezaselimperio.net (Webador). Se apaga: el `.net` redirigirá al `.es` (`docs/seo.md` §2)                   |
 | Negocio     | Cómo trabaja de verdad, en `docs/privado/negocio.md` (fuera de git)                                            |
 
-## Estado (19 nov 2026)
+## Estado (25 nov 2026)
 
 **Todas las páginas están hechas** y publicadas. Lo que se hizo en cada sesión,
 en `todo.md` («Hecho»); lo pendiente, en «Por dónde seguir».
@@ -57,12 +57,14 @@ en `todo.md` («Hecho»); lo pendiente, en «Por dónde seguir».
   `.net`), Search Console, **ejecutar la redirección del `.net`** (hace falta
   entrar en el DNS del `.net`, en la cuenta de Webador de Frank, y en su
   Vercel) y sus respuestas. Runbooks en `docs/seo.md`; la lista, en `todo.md`.
-- **Los vídeos para sus redes** (desde el 19 nov) viven fuera de la web, en
-  `../studio/` (Remotion, FFmpeg y MoviePy; sin git).
+- **Los vídeos para sus redes no son cosa de la web**: desde el 25 nov
+  viven en `../studio/` (Remotion, FFmpeg y MoviePy; sin git, porque son casas
+  de sus clientes). Aquí ya no queda nada de vídeo.
 
-**Mismo cliente que `../software/`** (su contabilidad, en
-https://limpiezas-imperio.vercel.app). Proyectos separados: esta web no lee ni
-escribe en esa base de datos.
+**La carpeta del cliente tiene tres proyectos hermanos**: esta web,
+`../software/` (su contabilidad, en https://limpiezas-imperio.vercel.app) y
+`../studio/` (sus vídeos). Separados: esta web no lee ni escribe en esa base
+de datos.
 
 ## Git y despliegue
 
@@ -94,7 +96,7 @@ Todo lo que puede ir en git está en git. En un equipo nuevo:
 
 1. **Herramientas**: Node 22 (`.nvmrc`; con nvm, `nvm use`), `gh` y la clave
    SSH de Kevin en GitHub (los push van por `git@github.com`). Para comprobar
-   la web y para el vídeo, además Chrome; sólo para el vídeo, ffmpeg y Python 3.
+   la web, además Chrome.
 2. `git clone git@github.com:limpiezas-el-imperio/web.git` y `npm install`.
 3. **Lo de *Lo que no está en git***, abajo: `.env` y `docs/privado/`.
 4. `npm run build` para ver que todo está en su sitio.
@@ -287,8 +289,8 @@ documentos) va en español.
 - **Cuando pide «actualizar los archivos de contexto»**: reescribir, no ir
   añadiendo. *Estado* al día aquí; en `todo.md`, «Por dónde seguir» sólo con
   lo pendiente, «Ya decidido» para no volver a preguntarlo y un «Hecho» corto.
-- **Proyecto hermano**: `../software/` (su contabilidad).
-  Su `CLAUDE.md` guarda lo aprendido sobre Frank, su cuenta de Vercel y cómo
+- **Proyectos hermanos**: `../software/` (su contabilidad) y `../studio/`
+  (sus vídeos, cada uno con su `CLAUDE.md`). El de `../software/` guarda lo aprendido sobre Frank, su cuenta de Vercel y cómo
   comprobar despliegues: míralo cuando salga algo de eso. Dice que Frank usa
   Safari en el iPhone; es un Android antiguo (ver arriba).
 - **Nada vive sólo en un equipo**: lo que haya que recordar va en este archivo
